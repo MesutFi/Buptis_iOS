@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="cxk-wN-pdQ" customClass="CustomImageTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Images/userforgaleri.png" translatesAutoresizingMaskIntoConstraints="NO" id="7675">
+                        <rect key="frame" x="8" y="0.0" width="94" height="130"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19543">
+                        <rect key="frame" x="8" y="0.0" width="94" height="130"/>
+                        <color key="tintColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9683">
+                        <rect key="frame" x="72" y="10" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="22500"/>
+                            <constraint firstAttribute="height" constant="30" id="22501"/>
+                        </constraints>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button" image="Images/delete.png">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7675" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" id="10876"/>
+                    <constraint firstItem="7675" firstAttribute="bottom" secondItem="YTl-1W-gDM" secondAttribute="bottom" id="11551"/>
+                    <constraint firstAttribute="trailing" secondItem="7675" secondAttribute="trailing" constant="8" id="15230"/>
+                    <constraint firstItem="7675" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="15455"/>
+                    <constraint firstItem="19543" firstAttribute="trailing" secondItem="7675" secondAttribute="trailing" id="19550"/>
+                    <constraint firstItem="19543" firstAttribute="bottom" secondItem="7675" secondAttribute="bottom" id="19551"/>
+                    <constraint firstItem="19543" firstAttribute="leading" secondItem="7675" secondAttribute="leading" id="19552"/>
+                    <constraint firstItem="19543" firstAttribute="top" secondItem="7675" secondAttribute="top" id="19553"/>
+                    <constraint firstItem="9683" firstAttribute="top" secondItem="19543" secondAttribute="top" constant="10" id="28757"/>
+                    <constraint firstAttribute="trailing" secondItem="9683" secondAttribute="trailing" constant="8" id="28758"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="DeleteButton" destination="9683" id="name-outlet-9683"/>
+                <outlet property="HiddenButton" destination="19543" id="name-outlet-19543"/>
+                <outlet property="ImageViewCell" destination="7675" id="name-outlet-7675"/>
+            </connections>
+            <point key="canvasLocation" x="-30" y="-87"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Images/delete.png" width="24" height="24"/>
+        <image name="Images/userforgaleri.png" width="444" height="708"/>
+    </resources>
+</document>

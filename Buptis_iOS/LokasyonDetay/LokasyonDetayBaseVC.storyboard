@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1345">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lokasyon Detay BaseVC-->
+        <scene sceneID="1344">
+            <objects>
+                <viewController id="1345" customClass="LokasyonDetayBaseVC" sceneMemberID="viewController" storyboardIdentifier="LokasyonDetayBaseVC" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1342"/>
+                        <viewControllerLayoutGuide type="bottom" id="1343"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1346">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1391">
+                                <rect key="frame" x="0.0" y="70" width="320" height="220"/>
+                                <color key="backgroundColor" red="0.26379683613777161" green="0.26379683613777161" blue="0.26379683613777161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1372">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1373">
+                                        <rect key="frame" x="16" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="2763"/>
+                                            <constraint firstAttribute="width" constant="35" id="2764"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/backicon2.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Küçükçiftlik Park" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1376">
+                                        <rect key="frame" x="59" y="56" width="210" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="1377"/>
+                                            <constraint firstAttribute="height" constant="21" id="2770"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1386">
+                                        <rect key="frame" x="277" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="1387"/>
+                                            <constraint firstAttribute="width" constant="35" id="1388"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/messageSend.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="2760"/>
+                                    <constraint firstItem="1373" firstAttribute="top" secondItem="1372" secondAttribute="top" constant="49" id="2761"/>
+                                    <constraint firstItem="1373" firstAttribute="leading" secondItem="1372" secondAttribute="leading" constant="16" id="2762"/>
+                                    <constraint firstItem="1386" firstAttribute="top" secondItem="1372" secondAttribute="top" constant="49" id="2765"/>
+                                    <constraint firstAttribute="trailing" secondItem="1386" secondAttribute="trailing" constant="8" id="2766"/>
+                                    <constraint firstItem="1376" firstAttribute="leading" secondItem="1373" secondAttribute="trailing" constant="8" id="2767"/>
+                                    <constraint firstItem="1386" firstAttribute="leading" secondItem="1376" secondAttribute="trailing" constant="8" id="2768"/>
+                                    <constraint firstItem="1376" firstAttribute="top" secondItem="1372" secondAttribute="top" constant="56" id="2769"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1392">
+                                <rect key="frame" x="30" y="311" width="260" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1393">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="2796"/>
+                                            <constraint firstAttribute="width" constant="60" id="2797"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Images/pinimgbg.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1394">
+                                        <rect key="frame" x="100" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="2802"/>
+                                            <constraint firstAttribute="width" constant="60" id="2803"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                        <state key="normal" title="8,7" backgroundImage="Images/stariconn2.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1395">
+                                        <rect key="frame" x="200" y="0.0" width="60" height="60"/>
+                                        <state key="normal" backgroundImage="Images/calliconbg.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2778"/>
+                                    <constraint firstItem="1393" firstAttribute="top" secondItem="1392" secondAttribute="top" id="2793"/>
+                                    <constraint firstItem="1393" firstAttribute="leading" secondItem="1392" secondAttribute="leading" id="2794"/>
+                                    <constraint firstItem="1393" firstAttribute="bottom" secondItem="1392" secondAttribute="bottom" id="2795"/>
+                                    <constraint firstItem="1394" firstAttribute="leading" secondItem="1393" secondAttribute="trailing" constant="40" id="2798"/>
+                                    <constraint firstItem="1394" firstAttribute="top" secondItem="1392" secondAttribute="top" id="2799"/>
+                                    <constraint firstItem="1394" firstAttribute="bottom" secondItem="1392" secondAttribute="bottom" id="2800"/>
+                                    <constraint firstItem="1395" firstAttribute="leading" secondItem="1394" secondAttribute="trailing" constant="40" id="2801"/>
+                                    <constraint firstItem="1395" firstAttribute="top" secondItem="1392" secondAttribute="top" id="2804"/>
+                                    <constraint firstItem="1395" firstAttribute="top" secondItem="1392" secondAttribute="top" id="2805"/>
+                                    <constraint firstItem="1395" firstAttribute="trailing" secondItem="1392" secondAttribute="trailing" id="2806"/>
+                                    <constraint firstItem="1395" firstAttribute="bottom" secondItem="1392" secondAttribute="bottom" id="2807"/>
+                                    <constraint id="7676" firstAttribute="width" constant="260"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1396">
+                                <rect key="frame" x="30" y="408" width="260" height="55"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                <state key="normal" title="Mekandakiler">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="8304" firstAttribute="height" constant="55"/>
+                                </constraints>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4325">
+                                <rect key="frame" x="92" y="488" width="136" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4326">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.57647058823529407" green="0.58431372549019611" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="Images/timee.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4327">
+                                        <rect key="frame" x="75" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.92941176470588238" green="0.0" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="Images/pinicon.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4328"/>
+                                    <constraint firstAttribute="width" constant="136" id="4329"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedRGB" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1"/>
+                        <constraints>
+                            <constraint firstItem="1372" firstAttribute="top" secondItem="1346" secondAttribute="top" id="2757"/>
+                            <constraint firstItem="1372" firstAttribute="trailing" secondItem="1346" secondAttribute="trailingMargin" constant="16" id="2758"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1372" secondAttribute="leading" constant="16" id="2759"/>
+                            <constraint firstItem="1391" firstAttribute="trailing" secondItem="1346" secondAttribute="trailingMargin" constant="16" id="2772"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1391" secondAttribute="leading" constant="16" id="2773"/>
+                            <constraint firstItem="1396" firstAttribute="leading" secondItem="1346" secondAttribute="leadingMargin" constant="14" id="2809"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1396" secondAttribute="trailing" constant="14" id="2810"/>
+                            <constraint firstItem="1391" firstAttribute="top" secondItem="1372" secondAttribute="top" constant="70" id="5150"/>
+                            <constraint firstItem="1343" firstAttribute="top" secondItem="4325" secondAttribute="bottom" constant="20" id="5208"/>
+                            <constraint firstItem="4325" firstAttribute="centerX" secondItem="1346" secondAttribute="centerX" id="5266"/>
+                            <constraint firstItem="1396" firstAttribute="top" secondItem="1392" secondAttribute="bottom" constant="37" id="5440"/>
+                            <constraint firstItem="1392" firstAttribute="top" secondItem="1391" secondAttribute="bottom" constant="21" id="5555"/>
+                            <constraint id="7677" firstItem="1392" firstAttribute="centerX" secondItem="1346" secondAttribute="centerX"/>
+                            <constraint id="8305" firstItem="4325" firstAttribute="top" secondItem="1396" secondAttribute="bottom" constant="25"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BackButton" destination="1373" id="name-outlet-1373"/>
+                        <outlet property="BekletmeButton" destination="4326" id="name-outlet-4326"/>
+                        <outlet property="CallButton" destination="1395" id="name-outlet-1395"/>
+                        <outlet property="CheckinButton" destination="4327" id="name-outlet-4327"/>
+                        <outlet property="HeaderView" destination="1372" id="name-outlet-1372"/>
+                        <outlet property="KonumButton" destination="1393" id="name-outlet-1393"/>
+                        <outlet property="Mapview" destination="1391" id="name-outlet-1391"/>
+                        <outlet property="MekandakilerButton" destination="1396" id="name-outlet-1396"/>
+                        <outlet property="MessageButton" destination="1386" id="name-outlet-1386"/>
+                        <outlet property="RatingButton" destination="1394" id="name-outlet-1394"/>
+                        <outlet property="mekanTitle" destination="1376" id="name-outlet-1376"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1347" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="-379"/>
+        </scene>
+        <scene sceneID="10277">
+            <objects>
+                <viewController id="10278" sceneMemberID="viewController" customClass="RatingVC" storyboardIdentifier="RatingVC" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="10275"/>
+                        <viewControllerLayoutGuide type="bottom" id="10276"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10279">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11876">
+                                <rect key="frame" x="0.0" y="223" width="320" height="345"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11877">
+                                        <rect key="frame" x="22" y="35" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.88235294117647056" green="0.0" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="Images/backicon2.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="74652" firstAttribute="height" constant="30"/>
+                                            <constraint id="74943" firstAttribute="width" constant="30"/>
+                                        </constraints>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11880" text="Puan Ver">
+                                        <rect key="frame" x="60" y="38" width="200" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="76107" firstAttribute="height" constant="21"/>
+                                        </constraints>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11882">
+                                        <rect key="frame" x="22" y="72" width="275" height="2"/>
+                                        <color key="backgroundColor" red="0.26379683613777161" green="0.26379683613777161" blue="0.26379683613777161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint id="80466" firstAttribute="height" constant="2"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="53312" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0.0" y="104" width="320" height="136"/>
+                                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54473" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="240" y="77" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="10">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="95887" firstAttribute="height" constant="50"/>
+                                                    <constraint id="96178" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54474" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="188" y="77" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="9">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="UIButton33723_TouchUpInside:" destination="54476" id="54475" eventType="touchUpInside"/>
+                                                </connections>
+                                                <constraints>
+                                                    <constraint id="94723" firstAttribute="width" constant="50"/>
+                                                    <constraint id="95014" firstAttribute="height" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54477" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="134" y="77" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="8">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="93849" firstAttribute="height" constant="50"/>
+                                                    <constraint id="93850" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54478" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="28" y="77" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="6">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="92101" firstAttribute="height" constant="50"/>
+                                                    <constraint id="92392" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54479" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="81" y="77" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="7">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="93265" firstAttribute="height" constant="50"/>
+                                                    <constraint id="93556" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54480" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="241" y="8" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="5">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="90937" firstAttribute="width" constant="50"/>
+                                                    <constraint id="91228" firstAttribute="height" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54481" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="189" y="8" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="4">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="89482" firstAttribute="height" constant="50"/>
+                                                    <constraint id="89773" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54482" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="136" y="8" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="3">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="88318" firstAttribute="height" constant="50"/>
+                                                    <constraint id="88609" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54483" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="81" y="8" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="2">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="87154" firstAttribute="height" constant="50"/>
+                                                    <constraint id="87445" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="54484" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="28" y="8" width="50" height="50"/>
+                                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" backgroundImage="Images/star2.png" title="1">
+                                                    <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                                </state>
+                                                <constraints>
+                                                    <constraint id="85990" firstAttribute="height" constant="50"/>
+                                                    <constraint id="86281" firstAttribute="width" constant="50"/>
+                                                </constraints>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint id="72906" firstAttribute="height" constant="136"/>
+                                            <constraint id="73197" firstAttribute="width" constant="320"/>
+                                            <constraint id="85408" firstItem="54484" firstAttribute="leading" secondItem="53312" secondAttribute="leading" constant="28"/>
+                                            <constraint id="85699" firstItem="54484" firstAttribute="top" secondItem="53312" secondAttribute="top" constant="8"/>
+                                            <constraint id="86572" firstItem="54483" firstAttribute="leading" secondItem="54484" secondAttribute="trailing" constant="3"/>
+                                            <constraint id="86863" firstItem="54483" firstAttribute="top" secondItem="53312" secondAttribute="top" constant="8"/>
+                                            <constraint id="87736" firstItem="54482" firstAttribute="leading" secondItem="54483" secondAttribute="trailing" constant="5"/>
+                                            <constraint id="88027" firstItem="54482" firstAttribute="top" secondItem="53312" secondAttribute="top" constant="8"/>
+                                            <constraint id="88900" firstItem="54481" firstAttribute="top" secondItem="53312" secondAttribute="top" constant="8"/>
+                                            <constraint id="89191" firstItem="54481" firstAttribute="leading" secondItem="54482" secondAttribute="trailing" constant="3"/>
+                                            <constraint id="90064" firstItem="54480" firstAttribute="top" secondItem="53312" secondAttribute="top" constant="8"/>
+                                            <constraint id="90355" firstItem="54480" firstAttribute="leading" secondItem="54481" secondAttribute="trailing" constant="2"/>
+                                            <constraint id="90646" firstItem="54480" firstAttribute="leading" secondItem="54481" secondAttribute="trailing" constant="2"/>
+                                            <constraint id="91519" firstItem="54478" firstAttribute="top" secondItem="54484" secondAttribute="bottom" constant="19"/>
+                                            <constraint id="91810" firstItem="54478" firstAttribute="leading" secondItem="53312" secondAttribute="leading" constant="28"/>
+                                            <constraint id="92683" firstItem="54479" firstAttribute="top" secondItem="54483" secondAttribute="bottom" constant="19"/>
+                                            <constraint id="92974" firstItem="54479" firstAttribute="leading" secondItem="54478" secondAttribute="trailing" constant="3"/>
+                                            <constraint id="93847" firstItem="54477" firstAttribute="top" secondItem="54482" secondAttribute="bottom" constant="19"/>
+                                            <constraint id="93848" firstItem="54477" firstAttribute="leading" secondItem="54479" secondAttribute="trailing" constant="3"/>
+                                            <constraint id="94141" firstItem="54474" firstAttribute="top" secondItem="54481" secondAttribute="bottom" constant="19"/>
+                                            <constraint id="94432" firstItem="54474" firstAttribute="leading" secondItem="54477" secondAttribute="trailing" constant="4"/>
+                                            <constraint id="95305" firstItem="54473" firstAttribute="top" secondItem="54480" secondAttribute="bottom" constant="19"/>
+                                            <constraint id="95596" firstItem="54473" firstAttribute="leading" secondItem="54474" secondAttribute="trailing" constant="2"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="58259" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="57" y="277" width="206" height="38"/>
+                                        <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Tamamla">
+                                            <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="84826" firstAttribute="height" constant="38"/>
+                                            <constraint id="85117" firstAttribute="width" constant="206"/>
+                                        </constraints>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint id="72034" firstAttribute="height" constant="345"/>
+                                    <constraint id="73779" firstItem="53312" firstAttribute="centerX" secondItem="11876" secondAttribute="centerX"/>
+                                    <constraint id="74070" firstItem="11877" firstAttribute="top" secondItem="11876" secondAttribute="top" constant="35"/>
+                                    <constraint id="74361" firstItem="11877" firstAttribute="leading" secondItem="11876" secondAttribute="leading" constant="22"/>
+                                    <constraint id="75234" firstItem="11880" firstAttribute="leading" secondItem="11877" secondAttribute="trailing" constant="8"/>
+                                    <constraint id="75525" firstItem="11880" firstAttribute="top" secondItem="11876" secondAttribute="top" constant="38"/>
+                                    <constraint id="75816" firstAttribute="trailing" secondItem="11880" secondAttribute="trailing" constant="60"/>
+                                    <constraint id="79593" firstItem="11882" firstAttribute="leading" secondItem="11876" secondAttribute="leading" constant="22"/>
+                                    <constraint id="79884" firstAttribute="trailing" secondItem="11882" secondAttribute="trailing" constant="23"/>
+                                    <constraint id="80175" firstItem="11882" firstAttribute="top" secondItem="11880" secondAttribute="bottom" constant="13"/>
+                                    <constraint id="80757" firstItem="53312" firstAttribute="top" secondItem="11882" secondAttribute="top" constant="32"/>
+                                    <constraint id="81048" firstItem="53312" firstAttribute="centerY" secondItem="11882" secondAttribute="centerY" constant="99"/>
+                                    <constraint id="84244" firstItem="58259" firstAttribute="centerX" secondItem="11876" secondAttribute="centerX"/>
+                                    <constraint id="84535" firstAttribute="bottom" secondItem="58259" secondAttribute="bottom" constant="30"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint id="71161" firstItem="11876" firstAttribute="bottom" secondItem="10279" secondAttribute="bottom"/>
+                            <constraint id="71452" firstItem="11876" firstAttribute="trailing" secondItem="10279" secondAttribute="trailingMargin" constant="16"/>
+                            <constraint id="71743" firstAttribute="leadingMargin" secondItem="11876" secondAttribute="leading" constant="16"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BackButton" destination="11877" id="name-outlet-11877"/>
+                        <outlet property="button1" destination="54484" id="name-outlet-54484"/>
+                        <outlet property="button2" destination="54483" id="name-outlet-54483"/>
+                        <outlet property="button3" destination="54482" id="name-outlet-54482"/>
+                        <outlet property="button4" destination="54481" id="name-outlet-54481"/>
+                        <outlet property="button5" destination="54480" id="name-outlet-54480"/>
+                        <outlet property="button6" destination="54478" id="name-outlet-54478"/>
+                        <outlet property="button7" destination="54479" id="name-outlet-54479"/>
+                        <outlet property="button8" destination="54477" id="name-outlet-54477"/>
+                        <outlet property="button9" destination="54474" id="name-outlet-54474"/>
+                        <outlet property="button10" destination="54473" id="name-outlet-54473"/>
+                        <outlet property="ViewHazne" destination="11876" id="name-outlet-11876"/>
+                        <outlet property="OkButton" destination="58259" id="name-outlet-58259"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10280" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="-377"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Images/backicon2.png" width="195" height="195"/>
+        <image name="Images/calliconbg.png" width="376" height="334"/>
+        <image name="Images/messageSend.png" width="64" height="64"/>
+        <image name="Images/pinicon.png" width="179" height="179"/>
+        <image name="Images/pinimgbg.png" width="376" height="334"/>
+        <image name="Images/stariconn2.png" width="188" height="178"/>
+        <image name="Images/timee.png" width="60" height="60"/>
+        <image name="Images/star2.png" width="60" height="60"/>
+    </resources>
+</document>

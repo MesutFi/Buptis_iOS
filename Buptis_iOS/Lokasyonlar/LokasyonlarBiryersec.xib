@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="LokasyonlarBiryersec" id="1" customClass="LokasyonlarBiryersec">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1922">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="361">
+                    <rect key="frame" x="0.0" y="410" width="320" height="144"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="144" id="636"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1922" firstAttribute="top" secondItem="1" secondAttribute="top" id="1923"/>
+                <constraint firstItem="1922" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="1924"/>
+                <constraint firstItem="1922" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="1925"/>
+                <constraint firstItem="1922" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="1926"/>
+                <constraint id="3494" firstItem="1922" firstAttribute="bottom" secondItem="361" secondAttribute="bottom" constant="14"/>
+                <constraint id="3495" firstItem="361" firstAttribute="trailing" secondItem="1922" secondAttribute="trailing"/>
+                <constraint id="3496" firstItem="361" firstAttribute="leading" secondItem="1922" secondAttribute="leading"/>
+            </constraints>
+            <connections>
+                <outlet property="Mapview" destination="1922" id="name-outlet-1922"/>
+                <outlet property="Scrolll" destination="361" id="name-outlet-361"/>
+            </connections>
+            <point key="canvasLocation" x="-182" y="-228"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1079">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="1078">
+            <objects>
+                <viewController id="1079" sceneMemberID="viewController" customClass="PopUp" storyboardIdentifier="PopUp" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1076"/>
+                        <viewControllerLayoutGuide type="bottom" id="1077"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1080">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="1083" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="25" y="124" width="270" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1084" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="212" y="8" width="50" height="50"/>
+                                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                        <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0" blue="0.25098039215686274" alpha="1"/>
+                                        <state key="normal" title="Button" image="Images/closeicon2.png">
+                                            <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="2241" firstAttribute="width" constant="50"/>
+                                            <constraint id="2242" firstAttribute="height" constant="50"/>
+                                        </constraints>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1085" translatesAutoresizingMaskIntoConstraints="NO" image="Images/star2.png">
+                                        <rect key="frame" x="105" y="66" width="60" height="60"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0.25098039215686274" alpha="1"/>
+                                        <constraints>
+                                            <constraint id="2247" firstAttribute="height" constant="60"/>
+                                            <constraint id="2248" firstAttribute="width" constant="60"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1086" translatesAutoresizingMaskIntoConstraints="NO" text="Lorem Upsum">
+                                        <rect key="frame" x="0.0" y="148" width="270" height="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2264" firstAttribute="height" constant="25"/>
+                                        </constraints>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem upsum del mundo lel diptca orem nunpu." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" id="1087" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="2" minimumFontSize="9">
+                                        <rect key="frame" x="50" y="189" width="170" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint id="2268" firstAttribute="height" constant="30"/>
+                                        </constraints>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1088" translatesAutoresizingMaskIntoConstraints="NO" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
+                                        <rect key="frame" x="35" y="232" width="200" height="40"/>
+                                        <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="2280" firstAttribute="height" constant="40"/>
+                                        </constraints>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2542" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="35" y="272" width="200" height="40"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                        <state key="normal" title="Upsum">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButton2542_TouchUpInside:" destination="1079" id="2543" eventType="touchUpInside"/>
+                                        </connections>
+                                        <constraints>
+                                            <constraint id="2547" firstAttribute="height" constant="40"/>
+                                        </constraints>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint id="2243" firstItem="1084" firstAttribute="top" secondItem="1083" secondAttribute="top" constant="8"/>
+                                    <constraint id="2244" firstAttribute="trailing" secondItem="1084" secondAttribute="trailing" constant="8"/>
+                                    <constraint id="2245" firstItem="1085" firstAttribute="top" secondItem="1084" secondAttribute="bottom" constant="8"/>
+                                    <constraint id="2246" firstItem="1085" firstAttribute="centerX" secondItem="1083" secondAttribute="centerX"/>
+                                    <constraint id="2261" firstItem="1086" firstAttribute="top" secondItem="1085" secondAttribute="bottom" constant="22"/>
+                                    <constraint id="2262" firstItem="1086" firstAttribute="trailing" secondItem="1083" secondAttribute="trailing"/>
+                                    <constraint id="2263" firstItem="1086" firstAttribute="leading" secondItem="1083" secondAttribute="leading"/>
+                                    <constraint id="2265" firstItem="1087" firstAttribute="top" secondItem="1086" secondAttribute="bottom" constant="16"/>
+                                    <constraint id="2266" firstAttribute="trailing" secondItem="1087" secondAttribute="trailing" constant="50"/>
+                                    <constraint id="2267" firstItem="1087" firstAttribute="leading" secondItem="1083" secondAttribute="leading" constant="50"/>
+                                    <constraint id="2277" firstItem="1088" firstAttribute="top" secondItem="1087" secondAttribute="bottom" constant="13"/>
+                                    <constraint id="2278" firstAttribute="trailing" secondItem="1088" secondAttribute="trailing" constant="35"/>
+                                    <constraint id="2279" firstItem="1088" firstAttribute="leading" secondItem="1083" secondAttribute="leading" constant="35"/>
+                                    <constraint id="2285" firstAttribute="height" constant="320"/>
+                                    <constraint id="2544" firstItem="2542" firstAttribute="top" secondItem="1088" secondAttribute="bottom"/>
+                                    <constraint id="2545" firstAttribute="trailing" secondItem="2542" secondAttribute="trailing" constant="35"/>
+                                    <constraint id="2546" firstItem="2542" firstAttribute="leading" secondItem="1083" secondAttribute="leading" constant="35"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint id="2238" firstAttribute="trailingMargin" secondItem="1083" secondAttribute="trailing" constant="9"/>
+                            <constraint id="2239" firstItem="1083" firstAttribute="leading" secondItem="1080" secondAttribute="leadingMargin" constant="9"/>
+                            <constraint id="2286" firstItem="1083" firstAttribute="centerX" secondItem="1080" secondAttribute="centerX"/>
+                            <constraint id="2287" firstItem="1083" firstAttribute="centerY" secondItem="1080" secondAttribute="centerY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PopupButton1" destination="1088" id="name-outlet-1088"/>
+                        <outlet property="CloseButton" destination="1084" id="name-outlet-1084"/>
+                        <outlet property="ImageView2" destination="1085" id="name-outlet-1085"/>
+                        <outlet property="TitleLabel" destination="1086" id="name-outlet-1086"/>
+                        <outlet property="DescriptionLabel" destination="1087" id="name-outlet-1087"/>
+                        <outlet property="PopupButton2" destination="2542" id="name-outlet-2542"/>
+                        <outlet property="PopUpView" destination="1083" id="name-outlet-1083"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1081" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-608" y="-376"/>
+        </scene>
+        <scene sceneID="3780">
+            <objects>
+                <viewController id="3781" sceneMemberID="viewController" customClass="LoadingImageView" storyboardIdentifier="LoadingImageView" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3778"/>
+                        <viewControllerLayoutGuide type="bottom" id="3779"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3782">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="3785" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="97" y="230" width="126" height="109"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3786" translatesAutoresizingMaskIntoConstraints="NO" image="Images/loading.png">
+                                        <rect key="frame" x="33" y="12" width="60" height="60"/>
+                                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                        <constraints>
+                                            <constraint id="6340" firstAttribute="height" constant="60"/>
+                                            <constraint id="6341" firstAttribute="width" constant="60"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lütfen Bekleyin..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="6335" translatesAutoresizingMaskIntoConstraints="NO" minimumFontSize="6">
+                                        <rect key="frame" x="0.0" y="83" width="126" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint id="6336" firstAttribute="height" constant="109"/>
+                                    <constraint id="6337" firstAttribute="width" constant="126"/>
+                                    <constraint id="6342" firstItem="3786" firstAttribute="centerX" secondItem="3785" secondAttribute="centerX"/>
+                                    <constraint id="6343" firstItem="3786" firstAttribute="top" secondItem="3785" secondAttribute="top" constant="12"/>
+                                    <constraint id="6344" firstItem="6335" firstAttribute="trailing" secondItem="3785" secondAttribute="trailing"/>
+                                    <constraint id="6345" firstItem="6335" firstAttribute="leading" secondItem="3785" secondAttribute="leading"/>
+                                    <constraint id="6346" firstAttribute="bottom" secondItem="6335" secondAttribute="bottom" constant="5"/>
+                                    <constraint id="6347" firstItem="6335" firstAttribute="top" secondItem="3786" secondAttribute="bottom" constant="11"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint id="6338" firstItem="3785" firstAttribute="centerX" secondItem="3782" secondAttribute="centerX"/>
+                            <constraint id="6339" firstItem="3785" firstAttribute="centerY" secondItem="3782" secondAttribute="centerY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="LoadingimView" destination="3786" id="name-outlet-3786"/>
+                        <outlet property="ArkaHazne" destination="3785" id="name-outlet-3785"/>
+                        <outlet property="AciklamaLabel" destination="6335" id="name-outlet-6335"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3783" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-179" y="-370"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Images/closeicon2.png" width="60" height="60"/>
+        <image name="Images/star2.png" width="60" height="60"/>
+        <image name="Images/loading.png" width="256" height="256"/>
+    </resources>
+</document>

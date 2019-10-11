@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1" customClass="LokasyondakiKisilerCevrimici" restorationIdentifier="LokasyondakiKisilerCevrimici">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="-234" y="-233"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="472" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint id="473" firstItem="472" firstAttribute="top" secondItem="1" secondAttribute="top"/>
+                <constraint id="474" firstItem="472" firstAttribute="trailing" secondItem="1" secondAttribute="trailing"/>
+                <constraint id="475" firstItem="472" firstAttribute="leading" secondItem="1" secondAttribute="leading"/>
+                <constraint id="476" firstItem="472" firstAttribute="bottom" secondItem="1" secondAttribute="bottom"/>
+            </constraints>
+            <connections>
+                <outlet property="ScrollVieww" destination="472" id="name-outlet-472"/>
+            </connections>
+        </view>
+    </objects>
+</document>

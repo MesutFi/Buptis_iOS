@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6498">
+    <device id="retina4_0" orientation="portrait"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mesajlar BaseVC-->
+        <scene sceneID="742">
+            <objects>
+                <viewController storyboardIdentifier="MesajlarBaseVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="743" customClass="MesajlarBaseVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="740"/>
+                        <viewControllerLayoutGuide type="bottom" id="741"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="744">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="893">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="894">
+                                        <rect key="frame" x="16" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="895"/>
+                                            <constraint firstAttribute="width" constant="35" id="896"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/backicon2.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="897">
+                                        <rect key="frame" x="274" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="898"/>
+                                            <constraint firstAttribute="width" constant="35" id="899"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/searchicon.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="904">
+                                        <rect key="frame" x="12" y="110" width="297" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="905">
+                                                <rect key="frame" x="0.0" y="0.0" width="99" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="906"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="Mesajlar">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="907">
+                                                <rect key="frame" x="98" y="0.0" width="99" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="908"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="İstekler">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="909">
+                                                <rect key="frame" x="198" y="0.0" width="99" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="910"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="Favoriler">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="911"/>
+                                            <constraint firstItem="905" firstAttribute="leading" secondItem="904" secondAttribute="leading" id="912"/>
+                                            <constraint firstItem="905" firstAttribute="top" secondItem="904" secondAttribute="top" id="913"/>
+                                            <constraint firstItem="905" firstAttribute="bottom" secondItem="904" secondAttribute="bottom" id="914"/>
+                                            <constraint firstItem="905" firstAttribute="trailing" secondItem="907" secondAttribute="leading" constant="1" id="915"/>
+                                            <constraint firstItem="907" firstAttribute="top" secondItem="904" secondAttribute="top" id="916"/>
+                                            <constraint firstItem="907" firstAttribute="bottom" secondItem="904" secondAttribute="bottom" id="917"/>
+                                            <constraint firstItem="909" firstAttribute="leading" secondItem="907" secondAttribute="trailing" constant="1" id="918"/>
+                                            <constraint firstItem="909" firstAttribute="top" secondItem="904" secondAttribute="top" id="919"/>
+                                            <constraint firstItem="909" firstAttribute="bottom" secondItem="904" secondAttribute="bottom" id="920"/>
+                                            <constraint firstItem="909" firstAttribute="trailing" secondItem="904" secondAttribute="trailing" id="921"/>
+                                            <constraint firstItem="907" firstAttribute="width" secondItem="905" secondAttribute="width" id="922"/>
+                                            <constraint firstItem="909" firstAttribute="width" secondItem="905" secondAttribute="width" id="923"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Images/logo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="1346">
+                                        <rect key="frame" x="59" y="53" width="210" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="2404"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" id="50393" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="12" y="49" width="297" height="35"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="50396" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Bir isim yazmayı dene...">
+                                                <rect key="frame" x="4" y="0.0" width="247" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50399">
+                                                <rect key="frame" x="259" y="0.0" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="50400"/>
+                                                    <constraint firstAttribute="width" constant="35" id="50401"/>
+                                                </constraints>
+                                                <state key="normal" image="Images/close_editing_icon.png">
+                                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint id="50505" firstAttribute="trailing" secondItem="50399" secondAttribute="trailing" constant="3"/>
+                                            <constraint id="50506" firstItem="50399" firstAttribute="top" secondItem="50393" secondAttribute="top"/>
+                                            <constraint id="50509" firstAttribute="height" constant="35"/>
+                                            <constraint id="50511" firstItem="50399" firstAttribute="leading" secondItem="50396" secondAttribute="trailing" constant="8"/>
+                                            <constraint id="50512" firstItem="50396" firstAttribute="leading" secondItem="50393" secondAttribute="leading" constant="4"/>
+                                            <constraint id="50513" firstItem="50396" firstAttribute="top" secondItem="50393" secondAttribute="top"/>
+                                            <constraint id="50514" firstItem="50396" firstAttribute="bottom" secondItem="50393" secondAttribute="bottom"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="894" firstAttribute="leading" secondItem="893" secondAttribute="leading" constant="16" id="924"/>
+                                    <constraint firstItem="894" firstAttribute="top" secondItem="893" secondAttribute="top" constant="49" id="925"/>
+                                    <constraint firstItem="897" firstAttribute="top" secondItem="893" secondAttribute="top" constant="49" id="926"/>
+                                    <constraint firstAttribute="trailing" secondItem="904" secondAttribute="trailing" constant="11" id="934"/>
+                                    <constraint firstItem="904" firstAttribute="leading" secondItem="893" secondAttribute="leading" constant="12" id="935"/>
+                                    <constraint firstAttribute="height" constant="180" id="2047"/>
+                                    <constraint firstItem="1346" firstAttribute="leading" secondItem="894" secondAttribute="trailing" constant="8" id="2302"/>
+                                    <constraint firstItem="1346" firstAttribute="top" secondItem="893" secondAttribute="top" constant="53" id="2353"/>
+                                    <constraint firstItem="904" firstAttribute="top" secondItem="1346" secondAttribute="bottom" constant="30" id="4444"/>
+                                    <constraint id="50394" firstAttribute="trailing" secondItem="897" secondAttribute="trailing" constant="11"/>
+                                    <constraint id="50395" firstItem="897" firstAttribute="leading" secondItem="1346" secondAttribute="trailing" constant="5"/>
+                                    <constraint id="50507" firstAttribute="trailing" secondItem="50393" secondAttribute="trailing" constant="11"/>
+                                    <constraint id="50508" firstItem="50393" firstAttribute="leading" secondItem="893" secondAttribute="leading" constant="12"/>
+                                    <constraint id="50510" firstItem="904" firstAttribute="top" secondItem="50393" secondAttribute="bottom" constant="26"/>
+                                </constraints>
+                            </view>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4087">
+                                <rect key="frame" x="0.0" y="180" width="320" height="388"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="893" firstAttribute="top" secondItem="744" secondAttribute="top" id="2098"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="893" secondAttribute="leading" constant="16" id="2149"/>
+                            <constraint firstItem="893" firstAttribute="trailing" secondItem="744" secondAttribute="trailingMargin" constant="16" id="2200"/>
+                            <constraint firstItem="4087" firstAttribute="bottom" secondItem="744" secondAttribute="bottom" id="4745"/>
+                            <constraint firstItem="4087" firstAttribute="trailing" secondItem="744" secondAttribute="trailingMargin" constant="16" id="4796"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="4087" secondAttribute="leading" constant="16" id="4847"/>
+                            <constraint firstItem="4087" firstAttribute="top" secondItem="893" secondAttribute="bottom" id="4898"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AraButton" destination="897" id="name-outlet-897"/>
+                        <outlet property="ContentView" destination="4087" id="name-outlet-4087"/>
+                        <outlet property="FavorilerButton" destination="909" id="name-outlet-909"/>
+                        <outlet property="GeriButton" destination="894" id="name-outlet-894"/>
+                        <outlet property="HeaderView" destination="893" id="name-outlet-893"/>
+                        <outlet property="IsteklerButton" destination="907" id="name-outlet-907"/>
+                        <outlet property="MesajlarButton" destination="905" id="name-outlet-905"/>
+                        <outlet property="TabMenu" destination="904" id="name-outlet-904"/>
+                        <outlet property="AraBgView" destination="50393" id="name-outlet-50393"/>
+                        <outlet property="AraText" destination="50396" id="name-outlet-50396"/>
+                        <outlet property="KapatButton" destination="50399" id="name-outlet-50399"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="745" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682" y="-328"/>
+        </scene>
+        <!--ChatVC-->
+        <scene sceneID="6497">
+            <objects>
+                <viewController storyboardIdentifier="ChatVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6498" customClass="ChatVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6495"/>
+                        <viewControllerLayoutGuide type="bottom" id="6496"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6499">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14307">
+                                <rect key="frame" x="0.0" y="526" width="320" height="41"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15588">
+                                        <rect key="frame" x="8" y="3" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="15589"/>
+                                            <constraint firstAttribute="width" constant="35" id="15590"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/gift.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15595">
+                                        <rect key="frame" x="277" y="3" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="15596"/>
+                                            <constraint firstAttribute="width" constant="35" id="15597"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/send_icon2.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bir mesaj yazın..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16881">
+                                        <rect key="frame" x="51" y="0.0" width="218" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="14309"/>
+                                    <constraint firstAttribute="height" constant="41" id="14310"/>
+                                    <constraint firstAttribute="trailing" secondItem="15595" secondAttribute="trailing" constant="8" id="15697"/>
+                                    <constraint firstItem="15595" firstAttribute="top" secondItem="14307" secondAttribute="top" constant="3" id="15698"/>
+                                    <constraint firstItem="15588" firstAttribute="top" secondItem="14307" secondAttribute="top" constant="3" id="15699"/>
+                                    <constraint firstItem="15588" firstAttribute="leading" secondItem="14307" secondAttribute="leading" constant="8" id="15700"/>
+                                    <constraint firstItem="16881" firstAttribute="top" secondItem="14307" secondAttribute="top" id="16882"/>
+                                    <constraint firstItem="16881" firstAttribute="leading" secondItem="15588" secondAttribute="trailing" constant="8" id="16883"/>
+                                    <constraint firstItem="16881" firstAttribute="bottom" secondItem="14307" secondAttribute="bottom" id="16884"/>
+                                    <constraint firstItem="15595" firstAttribute="leading" secondItem="16881" secondAttribute="trailing" constant="8" id="16885"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14314">
+                                <rect key="frame" x="0.0" y="139" width="320" height="379"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="48661">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="53340" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0.0" y="339" width="320" height="40"/>
+                                        <constraints>
+                                            <constraint id="53344" firstAttribute="height" constant="40"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="48661" firstAttribute="top" secondItem="14314" secondAttribute="top" id="48664"/>
+                                    <constraint firstItem="48661" firstAttribute="trailing" secondItem="14314" secondAttribute="trailing" id="48665"/>
+                                    <constraint firstItem="48661" firstAttribute="leading" secondItem="14314" secondAttribute="leading" id="48666"/>
+                                    <constraint id="53341" firstItem="53340" firstAttribute="trailing" secondItem="14314" secondAttribute="trailing"/>
+                                    <constraint id="53342" firstItem="53340" firstAttribute="leading" secondItem="14314" secondAttribute="leading"/>
+                                    <constraint id="53343" firstItem="53340" firstAttribute="bottom" secondItem="14314" secondAttribute="bottom"/>
+                                    <constraint id="53345" firstItem="53340" firstAttribute="top" secondItem="48661" secondAttribute="bottom" constant="4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15037">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15038">
+                                        <rect key="frame" x="16" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="15039"/>
+                                            <constraint firstAttribute="width" constant="35" id="15040"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/backicon2.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18440">
+                                        <rect key="frame" x="282" y="50" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.83724695444107056" green="0.0" blue="0.34949362277984619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="18441"/>
+                                            <constraint firstAttribute="width" constant="30" id="18442"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/yildiz1.png">
+                                            <color key="titleColor" red="0.046552892774343491" green="0.26085317134857178" blue="0.99829316139221191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20504">
+                                        <rect key="frame" x="134" y="48" width="54" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="28990"/>
+                                            <constraint firstAttribute="width" constant="54" id="29283"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/auser.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mesut P." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22265">
+                                        <rect key="frame" x="0.0" y="109" width="320" height="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="15038" firstAttribute="leading" secondItem="15037" secondAttribute="leading" constant="16" id="15066"/>
+                                    <constraint firstItem="15038" firstAttribute="top" secondItem="15037" secondAttribute="top" constant="49" id="15067"/>
+                                    <constraint firstItem="18440" firstAttribute="top" secondItem="15037" secondAttribute="top" constant="50" id="18611"/>
+                                    <constraint firstAttribute="trailing" secondItem="18440" secondAttribute="trailing" constant="8" id="18695"/>
+                                    <constraint firstAttribute="height" constant="140" id="24312"/>
+                                    <constraint firstItem="22265" firstAttribute="trailing" secondItem="15037" secondAttribute="trailing" id="27234"/>
+                                    <constraint firstItem="22265" firstAttribute="leading" secondItem="15037" secondAttribute="leading" id="27527"/>
+                                    <constraint firstItem="20504" firstAttribute="centerX" secondItem="15037" secondAttribute="centerX" constant="1" id="32500"/>
+                                    <constraint firstItem="20504" firstAttribute="centerY" secondItem="15037" secondAttribute="centerY" constant="5" id="32793"/>
+                                    <constraint firstItem="22265" firstAttribute="top" secondItem="20504" secondAttribute="bottom" constant="7" id="48565"/>
+                                    <constraint firstAttribute="bottom" secondItem="22265" secondAttribute="bottom" constant="9" id="48566"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="14314" firstAttribute="trailing" secondItem="6499" secondAttribute="trailingMargin" constant="16" id="14321"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="14314" secondAttribute="leading" constant="16" id="14322"/>
+                            <constraint firstItem="14307" firstAttribute="trailing" secondItem="6499" secondAttribute="trailingMargin" constant="16" id="14326"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="14307" secondAttribute="leading" constant="16" id="14327"/>
+                            <constraint firstItem="15037" firstAttribute="trailing" secondItem="6499" secondAttribute="trailingMargin" constant="16" id="15077"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="15037" secondAttribute="leading" constant="16" id="15078"/>
+                            <constraint firstItem="15037" firstAttribute="top" secondItem="6499" secondAttribute="top" id="15079"/>
+                            <constraint firstItem="15037" firstAttribute="bottom" secondItem="14314" secondAttribute="top" constant="1" id="24897"/>
+                            <constraint firstItem="6496" firstAttribute="top" secondItem="14307" secondAttribute="bottom" constant="1" id="40565"/>
+                            <constraint firstItem="14307" firstAttribute="top" secondItem="14314" secondAttribute="bottom" constant="8" id="40566"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ButtomKisitlamaa" destination="40565" id="name-outlet-40565"/>
+                        <outlet property="ChatTableView" destination="48661" id="name-outlet-48661"/>
+                        <outlet property="FavButton" destination="18440" id="name-outlet-18440"/>
+                        <outlet property="BackButton" destination="15038" id="name-outlet-15038"/>
+                        <outlet property="HeaderView" destination="15037" id="name-outlet-15037"/>
+                        <outlet property="MesajBGVieww" destination="14307" id="name-outlet-14307"/>
+                        <outlet property="MesajText" destination="16881" id="name-outlet-16881"/>
+                        <outlet property="UserImageView" destination="20504" id="name-outlet-20504"/>
+                        <outlet property="UserNameLabel" destination="22265" id="name-outlet-22265"/>
+                        <outlet property="HediyeButton" destination="15588" id="name-outlet-15588"/>
+                        <outlet property="GonderButton" destination="15595" id="name-outlet-15595"/>
+                        <outlet property="HazirMesajlarScroll" destination="53340" id="name-outlet-53340"/>
+                        <outlet property="ChatArkaHazne" destination="14314" id="name-outlet-14314"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6500" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="-331"/>
+        </scene>
+        <scene sceneID="55374">
+            <objects>
+                <viewController id="55375" sceneMemberID="viewController" customClass="HediyeGonderVC" storyboardIdentifier="HediyeGonderVC" useStoryboardIdentifierAsRestorationIdentifier="YES">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="55372"/>
+                        <viewControllerLayoutGuide type="bottom" id="55373"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="55376">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57735">
+                                <rect key="frame" x="0.0" y="271" width="320" height="296"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57736">
+                                        <rect key="frame" x="22" y="35" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="57737"/>
+                                            <constraint firstAttribute="width" constant="30" id="57738"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.88235294117647056" green="0.0" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="Images/backicon2.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hediye Gönder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57739">
+                                        <rect key="frame" x="60" y="38" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="57740"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57741">
+                                        <rect key="frame" x="22" y="72" width="275" height="2"/>
+                                        <color key="backgroundColor" red="0.26379683613777161" green="0.26379683613777161" blue="0.26379683613777161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="57742"/>
+                                        </constraints>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57743">
+                                        <rect key="frame" x="0.0" y="93" width="320" height="166"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="166" id="57744"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="57736" firstAttribute="top" secondItem="57735" secondAttribute="top" constant="35" id="57748"/>
+                                    <constraint firstItem="57736" firstAttribute="leading" secondItem="57735" secondAttribute="leading" constant="22" id="57749"/>
+                                    <constraint firstItem="57739" firstAttribute="leading" secondItem="57736" secondAttribute="trailing" constant="8" id="57750"/>
+                                    <constraint firstAttribute="trailing" secondItem="57739" secondAttribute="trailing" constant="60" id="57751"/>
+                                    <constraint firstItem="57739" firstAttribute="top" secondItem="57735" secondAttribute="top" constant="38" id="57752"/>
+                                    <constraint firstItem="57741" firstAttribute="top" secondItem="57739" secondAttribute="bottom" constant="13" id="57753"/>
+                                    <constraint firstItem="57741" firstAttribute="leading" secondItem="57735" secondAttribute="leading" constant="22" id="57754"/>
+                                    <constraint firstAttribute="trailing" secondItem="57741" secondAttribute="trailing" constant="23" id="57755"/>
+                                    <constraint firstItem="57743" firstAttribute="leading" secondItem="57735" secondAttribute="leading" id="57756"/>
+                                    <constraint firstItem="57743" firstAttribute="trailing" secondItem="57735" secondAttribute="trailing" id="57757"/>
+                                    <constraint firstItem="57743" firstAttribute="top" secondItem="57741" secondAttribute="bottom" constant="19" id="57758"/>
+                                    <constraint id="60982" firstAttribute="height" constant="296"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint id="60106" firstAttribute="bottom" secondItem="57735" secondAttribute="bottom" constant="1"/>
+                            <constraint id="60398" firstItem="57735" firstAttribute="trailing" secondItem="55376" secondAttribute="trailingMargin" constant="16"/>
+                            <constraint id="60690" firstAttribute="leadingMargin" secondItem="57735" secondAttribute="leading" constant="16"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="GeriButton" destination="57736" id="name-outlet-57736"/>
+                        <outlet property="HediyelerScroll" destination="57743" id="name-outlet-57743"/>
+                        <outlet property="ViewHazne" destination="57735" id="name-outlet-57735"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55377" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="-324"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Images/auser.png" width="200" height="200"/>
+        <image name="Images/backicon2.png" width="195" height="195"/>
+        <image name="Images/gift.png" width="128" height="128"/>
+        <image name="Images/logo1.png" width="800" height="262"/>
+        <image name="Images/searchicon.png" width="63" height="63"/>
+        <image name="Images/send_icon2.png" width="512" height="512"/>
+        <image name="Images/yildiz1.png" width="64" height="60"/>
+        <image name="Images/close_editing_icon.png" width="64" height="64"/>
+    </resources>
+</document>

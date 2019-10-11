@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" customClass="GelenMesajCell" id="cxk-wN-pdQ" rowHeight="121">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="36819" translatesAutoresizingMaskIntoConstraints="NO" text="..." textAlignment="natural" editable="NO" scrollEnabled="NO">
+                        <rect key="frame" x="16" y="8" width="288" height="105"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint id="36820" firstAttribute="trailing" secondItem="36819" secondAttribute="trailing" constant="16"/>
+                    <constraint id="36821" firstItem="36819" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="8"/>
+                    <constraint id="36822" firstItem="36819" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="16"/>
+                    <constraint id="36823" firstAttribute="bottom" secondItem="36819" secondAttribute="bottom" constant="7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-247" y="-109"/>
+            <connections>
+                <outlet property="MesajTextVieww" destination="36819" id="name-outlet-36819"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

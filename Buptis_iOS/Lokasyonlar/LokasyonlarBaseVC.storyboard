@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="341">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lokasyonlar BaseVC-->
+        <scene sceneID="340">
+            <objects>
+                <viewController storyboardIdentifier="LokasyonlarBaseVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="341" customClass="LokasyonlarBaseVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="338"/>
+                        <viewControllerLayoutGuide type="bottom" id="339"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="342">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="350">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="263"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="528">
+                                        <rect key="frame" x="16" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="529"/>
+                                            <constraint firstAttribute="width" constant="35" id="530"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/auser.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="866">
+                                        <rect key="frame" x="277" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="867"/>
+                                            <constraint firstAttribute="width" constant="35" id="868"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/messageSend.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etrafındaki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2011">
+                                        <rect key="frame" x="16" y="96" width="304" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="5236"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="insanlarla tanış." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3677">
+                                        <rect key="frame" x="16" y="138" width="304" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="5684"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5947">
+                                        <rect key="frame" x="12" y="195" width="297" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8334">
+                                                <rect key="frame" x="0.0" y="0.0" width="99" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="14287"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="Bana Yakın">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11339">
+                                                <rect key="frame" x="98" y="0.0" width="99" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="14175"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="Popüler">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11562">
+                                                <rect key="frame" x="198" y="0.0" width="99" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="14063"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="Bir yer seç">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="7838"/>
+                                            <constraint firstItem="8334" firstAttribute="leading" secondItem="5947" secondAttribute="leading" id="12943"/>
+                                            <constraint firstItem="8334" firstAttribute="top" secondItem="5947" secondAttribute="top" id="13055"/>
+                                            <constraint firstItem="8334" firstAttribute="bottom" secondItem="5947" secondAttribute="bottom" id="13167"/>
+                                            <constraint firstItem="8334" firstAttribute="trailing" secondItem="11339" secondAttribute="leading" constant="1" id="13279"/>
+                                            <constraint firstItem="11339" firstAttribute="top" secondItem="5947" secondAttribute="top" id="13391"/>
+                                            <constraint firstItem="11339" firstAttribute="bottom" secondItem="5947" secondAttribute="bottom" id="13503"/>
+                                            <constraint firstItem="11562" firstAttribute="leading" secondItem="11339" secondAttribute="trailing" constant="1" id="13615"/>
+                                            <constraint firstItem="11562" firstAttribute="top" secondItem="5947" secondAttribute="top" id="13727"/>
+                                            <constraint firstItem="11562" firstAttribute="bottom" secondItem="5947" secondAttribute="bottom" id="13839"/>
+                                            <constraint firstItem="11562" firstAttribute="trailing" secondItem="5947" secondAttribute="trailing" id="13951"/>
+                                            <constraint firstItem="11339" firstAttribute="width" secondItem="8334" secondAttribute="width" id="14399"/>
+                                            <constraint firstItem="11562" firstAttribute="width" secondItem="8334" secondAttribute="width" id="14400"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="528" firstAttribute="leading" secondItem="350" secondAttribute="leading" constant="16" id="1317"/>
+                                    <constraint firstItem="528" firstAttribute="top" secondItem="350" secondAttribute="top" constant="49" id="1429"/>
+                                    <constraint firstItem="866" firstAttribute="top" secondItem="350" secondAttribute="top" constant="49" id="1541"/>
+                                    <constraint firstAttribute="trailing" secondItem="866" secondAttribute="trailing" constant="8" id="1653"/>
+                                    <constraint firstItem="2011" firstAttribute="top" secondItem="528" secondAttribute="bottom" constant="12" id="4900"/>
+                                    <constraint firstItem="2011" firstAttribute="leading" secondItem="350" secondAttribute="leading" constant="16" id="5012"/>
+                                    <constraint firstItem="2011" firstAttribute="trailing" secondItem="350" secondAttribute="trailing" id="5124"/>
+                                    <constraint firstItem="3677" firstAttribute="top" secondItem="2011" secondAttribute="bottom" constant="8" id="5348"/>
+                                    <constraint firstItem="3677" firstAttribute="leading" secondItem="350" secondAttribute="leading" constant="16" id="5460"/>
+                                    <constraint firstItem="3677" firstAttribute="trailing" secondItem="350" secondAttribute="trailing" id="5572"/>
+                                    <constraint firstAttribute="trailing" secondItem="5947" secondAttribute="trailing" constant="11" id="10781"/>
+                                    <constraint firstItem="5947" firstAttribute="leading" secondItem="350" secondAttribute="leading" constant="12" id="10893"/>
+                                    <constraint firstItem="5947" firstAttribute="top" secondItem="3677" secondAttribute="bottom" constant="23" id="11116"/>
+                                    <constraint firstAttribute="height" constant="263" id="24639"/>
+                                </constraints>
+                            </view>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14704">
+                                <rect key="frame" x="0.0" y="263" width="320" height="305"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="350" firstAttribute="top" secondItem="342" secondAttribute="top" id="351"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="350" secondAttribute="leading" constant="16" id="353"/>
+                            <constraint firstItem="350" firstAttribute="trailing" secondItem="342" secondAttribute="trailingMargin" constant="16" id="354"/>
+                            <constraint firstItem="14704" firstAttribute="bottom" secondItem="342" secondAttribute="bottom" id="15488"/>
+                            <constraint firstItem="14704" firstAttribute="trailing" secondItem="342" secondAttribute="trailingMargin" constant="16" id="15600"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="14704" secondAttribute="leading" constant="16" id="15712"/>
+                            <constraint firstItem="14704" firstAttribute="top" secondItem="350" secondAttribute="bottom" id="25195"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BanaYakinButton" destination="8334" id="name-outlet-8334"/>
+                        <outlet property="BiryersecButton" destination="11562" id="name-outlet-11562"/>
+                        <outlet property="HeaderView" destination="350" id="name-outlet-350"/>
+                        <outlet property="ListeHazne" destination="14704" id="name-outlet-14704"/>
+                        <outlet property="MesajlarButton" destination="866" id="name-outlet-866"/>
+                        <outlet property="MyProfileButton" destination="528" id="name-outlet-528"/>
+                        <outlet property="PopulerButton" destination="11339" id="name-outlet-11339"/>
+                        <outlet property="TabMenuHazne" destination="5947" id="name-outlet-5947"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="343" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="-396"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Images/auser.png" width="200" height="200"/>
+        <image name="Images/messageSend.png" width="64" height="64"/>
+    </resources>
+</document>

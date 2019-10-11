@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="639">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Public Profile BaseVC-->
+        <scene sceneID="638">
+            <objects>
+                <viewController storyboardIdentifier="PublicProfileBaseVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="639" customClass="PublicProfileBaseVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="636"/>
+                        <viewControllerLayoutGuide type="bottom" id="637"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="640">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="650">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="650" firstAttribute="bottom" secondItem="640" secondAttribute="bottom" id="651"/>
+                            <constraint firstItem="650" firstAttribute="trailing" secondItem="640" secondAttribute="trailingMargin" constant="16" id="652"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="650" secondAttribute="leading" constant="16" id="653"/>
+                            <constraint firstItem="650" firstAttribute="top" secondItem="640" secondAttribute="top" id="18828"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ScrollVieww" destination="650" id="name-outlet-650"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="641" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="-386"/>
+        </scene>
+        <!--Public ProfileVC-->
+        <scene sceneID="645">
+            <objects>
+                <viewController storyboardIdentifier="PublicProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="646" customClass="PublicProfileVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="643"/>
+                        <viewControllerLayoutGuide type="bottom" id="644"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="647">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="820"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="667">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="411" id="2371"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="779">
+                                <rect key="frame" x="16" y="65" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="780"/>
+                                    <constraint firstAttribute="width" constant="35" id="781"/>
+                                </constraints>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.8784313725490196" green="0" blue="0.42352941176470588" alpha="1"/>
+                                <state key="normal" image="Images/backicon2.png">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2591">
+                                <rect key="frame" x="19" y="474" width="288" height="1"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="2592"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hakkımda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2593">
+                                <rect key="frame" x="19" y="489" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2594"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2595">
+                                <rect key="frame" x="16" y="518" width="288" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2596"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2597">
+                                <rect key="frame" x="19" y="659" width="288" height="1"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="2598"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En son lokasyon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2599">
+                                <rect key="frame" x="19" y="674" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2600"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul, Beyoğlu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2601">
+                                <rect key="frame" x="19" y="704" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2602"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2603">
+                                <rect key="frame" x="19" y="739" width="288" height="1"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="2604"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2774">
+                                <rect key="frame" x="19" y="433" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8873"/>
+                                    <constraint firstAttribute="width" constant="30" id="8954"/>
+                                </constraints>
+                                <state key="normal" image="Images/yildiz1.png">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mesut P. 26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4633">
+                                <rect key="frame" x="57" y="438" width="250" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4634"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5468">
+                                <rect key="frame" x="230" y="382" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5469"/>
+                                    <constraint firstAttribute="width" constant="60" id="5470"/>
+                                </constraints>
+                                <state key="normal" image="Images/messageSend.png">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7832">
+                                <rect key="frame" x="19" y="757" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="12263"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Engelle, Şikayet Et">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="12617">
+                                <rect key="frame" x="0.0" y="350" width="320" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="0.39215686274509803" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="779" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" id="862"/>
+                            <constraint firstItem="667" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="16" id="1680"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="667" secondAttribute="leading" constant="16" id="1761"/>
+                            <constraint firstItem="667" firstAttribute="top" secondItem="647" secondAttribute="top" id="1842"/>
+                            <constraint firstItem="5468" firstAttribute="centerY" secondItem="667" secondAttribute="bottom" constant="1" id="7057"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5468" secondAttribute="trailing" constant="14" id="7138"/>
+                            <constraint firstItem="2774" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="9035"/>
+                            <constraint firstItem="2774" firstAttribute="top" secondItem="667" secondAttribute="bottom" constant="22" id="9116"/>
+                            <constraint firstItem="4633" firstAttribute="leading" secondItem="2774" secondAttribute="trailing" constant="8" id="9197"/>
+                            <constraint firstItem="4633" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="9278"/>
+                            <constraint firstItem="4633" firstAttribute="top" secondItem="667" secondAttribute="bottom" constant="27" id="9359"/>
+                            <constraint firstItem="2591" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="9440"/>
+                            <constraint firstItem="2591" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="9521"/>
+                            <constraint firstItem="2591" firstAttribute="top" secondItem="4633" secondAttribute="bottom" constant="15" id="9602"/>
+                            <constraint firstItem="2593" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="9683"/>
+                            <constraint firstItem="2593" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="9764"/>
+                            <constraint firstItem="2593" firstAttribute="top" secondItem="2591" secondAttribute="centerY" constant="14" id="9845"/>
+                            <constraint firstItem="2595" firstAttribute="top" secondItem="2593" secondAttribute="bottom" constant="8" id="9926"/>
+                            <constraint firstItem="2595" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" id="10007"/>
+                            <constraint firstItem="2595" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" id="10088"/>
+                            <constraint firstItem="2597" firstAttribute="top" secondItem="2595" secondAttribute="bottom" constant="13" id="10169"/>
+                            <constraint firstItem="2597" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="10250"/>
+                            <constraint firstItem="2597" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="10331"/>
+                            <constraint firstItem="2599" firstAttribute="top" secondItem="2597" secondAttribute="bottom" constant="14" id="10412"/>
+                            <constraint firstItem="2599" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="10493"/>
+                            <constraint firstItem="2599" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="10574"/>
+                            <constraint firstItem="2601" firstAttribute="top" secondItem="2599" secondAttribute="bottom" constant="9" id="10655"/>
+                            <constraint firstItem="2601" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="10736"/>
+                            <constraint firstItem="2601" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="10817"/>
+                            <constraint firstItem="2603" firstAttribute="top" secondItem="2601" secondAttribute="bottom" constant="14" id="10898"/>
+                            <constraint firstItem="2603" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="10979"/>
+                            <constraint firstItem="2603" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="11060"/>
+                            <constraint firstItem="7832" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="3" id="12101"/>
+                            <constraint firstItem="7832" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="12182"/>
+                            <constraint firstItem="7832" firstAttribute="top" secondItem="2603" secondAttribute="bottom" constant="17" id="12344"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="12617" secondAttribute="leading" constant="16" id="13178"/>
+                            <constraint firstItem="12617" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="16" id="13259"/>
+                            <constraint firstItem="667" firstAttribute="bottom" secondItem="12617" secondAttribute="bottom" constant="24" id="13340"/>
+                            <constraint firstItem="779" firstAttribute="top" secondItem="667" secondAttribute="top" constant="65" id="18999"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="320" height="820"/>
+                    <connections>
+                        <outlet property="EngelleButton" destination="7832" id="name-outlet-7832"/>
+                        <outlet property="FavoriEkleButton" destination="2774" id="name-outlet-2774"/>
+                        <outlet property="GeriButton" destination="779" id="name-outlet-779"/>
+                        <outlet property="MesajAtButton" destination="5468" id="name-outlet-5468"/>
+                        <outlet property="PageControll" destination="12617" id="name-outlet-12617"/>
+                        <outlet property="ScrollFotograf" destination="667" id="name-outlet-667"/>
+                        <outlet property="KullaniciAdiYasi" destination="4633" id="name-outlet-4633"/>
+                        <outlet property="HakkindaYazisi" destination="2595" id="name-outlet-2595"/>
+                        <outlet property="EnSonLokasyonu" destination="2601" id="name-outlet-2601"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="648" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-131" y="-635"/>
+        </scene>
+        <!--EngelleVC-->
+        <scene sceneID="19775">
+            <objects>
+                <viewController storyboardIdentifier="EngelleVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="19776" customClass="EngelleVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="19773"/>
+                        <viewControllerLayoutGuide type="bottom" id="19774"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="19777">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20576">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20577">
+                                        <rect key="frame" x="16" y="49" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="20578"/>
+                                            <constraint firstAttribute="width" constant="35" id="20579"/>
+                                        </constraints>
+                                        <state key="normal" image="Images/backicon2.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engelle, Şikayet Et." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20590">
+                                        <rect key="frame" x="59" y="56" width="253" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="20591"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="20577" firstAttribute="leading" secondItem="20576" secondAttribute="leading" constant="16" id="20592"/>
+                                    <constraint firstItem="20577" firstAttribute="top" secondItem="20576" secondAttribute="top" constant="49" id="20593"/>
+                                    <constraint firstAttribute="height" constant="126" id="23970"/>
+                                    <constraint firstItem="20590" firstAttribute="top" secondItem="20576" secondAttribute="top" constant="56" id="24294"/>
+                                    <constraint firstItem="20590" firstAttribute="leading" secondItem="20577" secondAttribute="trailing" constant="8" id="24375"/>
+                                    <constraint firstAttribute="trailing" secondItem="20590" secondAttribute="trailing" constant="8" id="24456"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="20576" firstAttribute="trailing" secondItem="19777" secondAttribute="trailingMargin" constant="16" id="24051"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="20576" secondAttribute="leading" constant="16" id="24132"/>
+                            <constraint firstItem="20576" firstAttribute="top" secondItem="19777" secondAttribute="top" id="24213"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="GeriButton" destination="20577" id="name-outlet-20577"/>
+                        <outlet property="HeaderView" destination="20576" id="name-outlet-20576"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="19778" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213" y="-387"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Images/backicon2.png" width="195" height="195"/>
+        <image name="Images/messageSend.png" width="64" height="64"/>
+        <image name="Images/yildiz1.png" width="64" height="60"/>
+    </resources>
+</document>
