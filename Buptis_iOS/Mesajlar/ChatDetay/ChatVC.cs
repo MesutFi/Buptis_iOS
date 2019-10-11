@@ -1,3 +1,4 @@
+using Buptis_iOS.ChatDetay.Cells;
 using Buptis_iOS.Database;
 using Buptis_iOS.GenericClass;
 using Buptis_iOS.Mesajlar.ChatDetay;
@@ -80,24 +81,28 @@ namespace Buptis_iOS
         {
             FavoriIslemleri();
         }
+        bool Actinmi1 = false;
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            HeaderView.Hidden = true;
-            BackButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
-            FavButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
-            HediyeButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
-            GonderButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
-            ChatTableView.BackgroundColor = UIColor.Clear;
-            ChatTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-            ChatTableView.TableFooterView = new UIView();
-            ChatTableView.Source = null;
-            ChatTableView.ReloadData();
-            MeDTO = DataBase.MEMBER_DATA_GETIR()[0];
-            FavorileriCagir();
-            IconlariAyarla(HediyeButton);
-            IconlariAyarla(GonderButton);
-            
+            if (!Actinmi1)
+            {
+                HeaderView.Hidden = true;
+                BackButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+                FavButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+                HediyeButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+                GonderButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+                ChatTableView.BackgroundColor = UIColor.Clear;
+                ChatTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+                ChatTableView.TableFooterView = new UIView();
+                ChatTableView.Source = null;
+                ChatTableView.ReloadData();
+                MeDTO = DataBase.MEMBER_DATA_GETIR()[0];
+                FavorileriCagir();
+                IconlariAyarla(HediyeButton);
+                IconlariAyarla(GonderButton);
+                Actinmi1 = true;
+            }
         }
         void IconlariAyarla(UIButton Buttonn)
         {
@@ -185,18 +190,23 @@ namespace Buptis_iOS
                 this.View.LayoutIfNeeded();
             });
         }
+        bool Actinmi2 = false;
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            TasarimiDuzenle();
-            MesajAtinAltiniDoldur();
-            MesajBGViewwFrameBottom = MesajBGVieww.Frame.Bottom;
-            nfloat AralikDurumu = this.View.Frame.Height - MesajBGVieww.Frame.Bottom;
-            ChatTableView.BackgroundColor = UIColor.Clear;
-            ChatTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-            ChatTableView.TableFooterView = new UIView();
-            MessageListenerr();
-            KategoriyeGoreHazirMesajlariGetir();
+            if (!Actinmi2)
+            {
+                TasarimiDuzenle();
+                MesajAtinAltiniDoldur();
+                MesajBGViewwFrameBottom = MesajBGVieww.Frame.Bottom;
+                nfloat AralikDurumu = this.View.Frame.Height - MesajBGVieww.Frame.Bottom;
+                ChatTableView.BackgroundColor = UIColor.Clear;
+                ChatTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+                ChatTableView.TableFooterView = new UIView();
+                MessageListenerr();
+                KategoriyeGoreHazirMesajlariGetir();
+                Actinmi2 = true;
+            }
         }
         void MesajAtinAltiniDoldur()
         {
@@ -607,16 +617,36 @@ namespace Buptis_iOS
                         {
                             if (Durum) //Ýçerik  Deðiþmiþse Uygula
                             {
-                                ChatTableView.Source = new ChatCustomTableCellSoruce(ChatDetayDTO1, this, Mee);
-                                ChatTableView.RowHeight = UITableView.AutomaticDimension;
-                                ChatTableView.EstimatedRowHeight = 100f;
-                                ChatTableView.ReloadData();
+
+
+                                //ChatTableView.TranslatesAutoresizingMaskIntoConstraints = false;
+
                                 ChatTableView.AllowsSelection = false;
+                                ChatTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+                                ChatTableView.RegisterClassForCellReuse(typeof(IncomingCell), IncomingCell.CellId);
+                                ChatTableView.RegisterClassForCellReuse(typeof(OutgoingCell), OutgoingCell.CellId);
+                                ChatTableView.RegisterClassForCellReuse(typeof(OutgoingCell_Resim), OutgoingCell_Resim.CellId);
+                                ChatTableView.RegisterClassForCellReuse(typeof(IncomingCell_Resim), IncomingCell_Resim.CellId);
+                                //View.AddSubview(tableView);
+                                ChatTableView.Source = new ChatCustomTableCellSoruce(ChatDetayDTO1, this, Mee);
+                                ChatTableView.ReloadData();
                                 if (ChatDetayDTO1.Count > 0)
                                 {
                                     var bottomIndexPath = NSIndexPath.FromRowSection(ChatTableView.NumberOfRowsInSection(0) - 1, 0);
                                     ChatTableView.ScrollToRow(bottomIndexPath, UITableViewScrollPosition.Bottom, true);
                                 }
+
+                                //ChatTableView.Source = new ChatCustomTableCellSoruce(ChatDetayDTO1, this, Mee);
+                                ChatTableView.BackgroundColor = UIColor.Clear;
+                                //ChatTableView.RowHeight = UITableView.AutomaticDimension;
+                                //ChatTableView.EstimatedRowHeight = 100f;
+                                //ChatTableView.ReloadData();
+                                //ChatTableView.AllowsSelection = false;
+                                //if (ChatDetayDTO1.Count > 0)
+                                //{
+                                //    var bottomIndexPath = NSIndexPath.FromRowSection(ChatTableView.NumberOfRowsInSection(0) - 1, 0);
+                                //    ChatTableView.ScrollToRow(bottomIndexPath, UITableViewScrollPosition.Bottom, true);
+                                //}
                                 MesajOkunduYap();
                             }
                         });
@@ -646,122 +676,119 @@ namespace Buptis_iOS
         #endregion
 
         #region Chat Table Source
-        class ChatCustomTableCellSoruce : UITableViewSource
+        public class ChatCustomTableCellSoruce : UITableViewSource
         {
-            List<ChatDetayDTO> TableItems;
+            static readonly NSString IncomingCellId = new NSString("Incoming");
+            static readonly NSString OutgoingCellId = new NSString("Outgoing");
+            static readonly NSString Outgoing_Resim_CellId = new NSString("OutgoingCell_Resim");
+            static readonly NSString Incoming_Resim_CellId = new NSString("IncomingCell_Resim");
+
+            IList<ChatDetayDTO> messages;
             ChatVC ChatVC1;
             MEMBER_DATA ME;
 
-            public ChatCustomTableCellSoruce(List<ChatDetayDTO> mekanlist, ChatVC ChatVC2, MEMBER_DATA ME2)
+            readonly BubbleCell[] sizingCells;
+
+            public ChatCustomTableCellSoruce(IList<ChatDetayDTO> messages, ChatVC ChatVC2, MEMBER_DATA ME2)
             {
-                TableItems = mekanlist;
+                if (messages == null)
+                    throw new ArgumentNullException(nameof(messages));
+
+                this.messages = messages;
+                sizingCells = new BubbleCell[2];
                 ChatVC1 = ChatVC2;
                 ME = ME2;
             }
+
             public override nint RowsInSection(UITableView tableview, nint section)
             {
-                return TableItems.Count;
+                return messages.Count;
             }
-            public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
-            {
-                if (TableItems[indexPath.Row].BelirlenenBoyut == 0)//Henüz boyut almamýþsa boyutu hesapla
-                {
-                    var Boll = TableItems[indexPath.Row].text.Split('#');
-                    if (Boll.Length > 1)
-                    {
-                        TableItems[indexPath.Row].BelirlenenBoyut = 142f;
-                        return 142f;
-                    }
-                    else
-                    {
-                        var boyut = YukseklikGetir(TableItems[indexPath.Row].text);
-                        TableItems[indexPath.Row].BelirlenenBoyut = boyut;
-                        return boyut;
-                    }
-                }
-                else //Boyut almýþsa devam et
-                {
-                    return TableItems[indexPath.Row].BelirlenenBoyut;
-                }
-            }
-            nfloat YukseklikGetir(string message)
-            {
-                var MesajlarFavoriler3 = ChatCustomTextContentView.Create(message);
-                MesajlarFavoriler3.LayoutIfNeeded();
-                var boyutgetir = MesajlarFavoriler3.GetRowSize();
-                return (boyutgetir.Height + 32);
-            }
+
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
-                var itemss = TableItems[indexPath.Row];
-                
-                var CellMevcutmu = tableView.CellAt(indexPath);
-                if (CellMevcutmu == null)
-                {
-                    Console.WriteLine("YENÝÝ");
-                    UITableViewCell cell;
-                    if (ME.id == itemss.receiverId)
-                    {
-                        var Boll = itemss.text.Split('#');
-                        if (Boll.Length > 1)
-                        {
-                            cell = (GelenHediye)tableView.DequeueReusableCell(GelenHediye.Key);
-                            if (cell == null)
-                            {
-                                cell = GelenHediye.Create(itemss.text);
-                                cell.BackgroundColor = UIColor.Clear;
-                            }
-                        }
-                        else
-                        {
-                            cell = (GelenMesajCell)tableView.DequeueReusableCell(GelenMesajCell.Key);
-                            if (cell == null)
-                            {
-                                cell = GelenMesajCell.Create(itemss.text);
-                                ((GelenMesajCell)cell).BubleAyarla();
-                                cell.BackgroundColor = UIColor.Clear;
-                            }
-                        }
+                BubbleCell cell = null;
+                ChatDetayDTO msg = messages[indexPath.Row];
 
+                cell = (BubbleCell)tableView.DequeueReusableCell(GetReuseId(msg));
+                cell.Message = msg;
+                cell.BackgroundColor = UIColor.Clear;
+                return cell;
+            }
+
+            public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+            {
+                ChatDetayDTO msg = messages[indexPath.Row];
+                return CalculateHeightFor(msg, tableView);
+            }
+
+            public override nfloat EstimatedHeight(UITableView tableView, NSIndexPath indexPath)
+            {
+                ChatDetayDTO msg = messages[indexPath.Row];
+                return CalculateHeightFor(msg, tableView);
+            }
+
+            nfloat CalculateHeightFor(ChatDetayDTO msg, UITableView tableView)
+            {
+                var Boll = msg.text.Split('#');
+                if (Boll.Length <= 1)//Resim
+                {
+                    int index = -1;
+                    if (ME.id == msg.receiverId) //GelenMesaj
+                    {
+                        index = 0;
                     }
                     else
                     {
-                        var Boll = itemss.text.Split('#');
-                        if (Boll.Length > 1)
-                        {
-                            cell = (GidenHediye)tableView.DequeueReusableCell(GidenHediye.Key);
-                            if (cell == null)
-                            {
-                                cell = GidenHediye.Create(itemss.text);
-                                cell.BackgroundColor = UIColor.Clear;
-                            }
-                        }
-                        else
-                        {
-                            cell = (GidenMesajCell)tableView.DequeueReusableCell(GidenMesajCell.Key);
-                            if (cell == null)
-                            {
-                                cell = GidenMesajCell.Create(itemss.text);
-                                ((GidenMesajCell)cell).BubleAyarla();
-                                cell.BackgroundColor = UIColor.Clear;
-                            }
-                        }
+                        index = 1;
                     }
-                    return cell;
+                    BubbleCell cell = sizingCells[index];
+                    if (cell == null)
+                        cell = sizingCells[index] = (BubbleCell)tableView.DequeueReusableCell(GetReuseId(msg));
+
+                    cell.Message = msg;
+
+                    cell.SetNeedsLayout();
+                    cell.LayoutIfNeeded();
+                    CGSize size = cell.ContentView.SystemLayoutSizeFittingSize(UIView.UILayoutFittingCompressedSize);
+
+                    return NMath.Ceiling(size.Height) + 1;
                 }
                 else
                 {
-                    Console.WriteLine("MEVCUTT");
-                    return CellMevcutmu;
+                    return NMath.Ceiling(200f) + 1;
                 }
-               
-              
+
             }
 
-            public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+            NSString GetReuseId(ChatDetayDTO GelenDTO)
             {
-                tableView.DeselectRow(indexPath, true);
-                //LokasyonlarBanaYakin1.RowSelectt();
+                if (ME.id == GelenDTO.receiverId)//Incoming
+                {
+                    var Boll = GelenDTO.text.Split('#');
+                    if (Boll.Length > 1)//Resim
+                    {
+                        return Incoming_Resim_CellId;
+                    }
+                    else
+                    {
+                        return IncomingCellId;
+                    }
+                }
+                else //OutGoing
+                {
+                    var Boll = GelenDTO.text.Split('#');
+                    if (Boll.Length > 1)//Resim
+                    {
+                        return Outgoing_Resim_CellId;
+                    }
+                    else
+                    {
+                        return OutgoingCellId;
+                    }
+
+
+                }
             }
         }
         #endregion
@@ -780,8 +807,6 @@ namespace Buptis_iOS
 
             //CUSTOM 
             public nfloat BelirlenenBoyut { get; set; }
-            public bool Benmi { get; set; }
-            public bool Resimmi { get; set; }
         }
         public class UserImageDTO
         {

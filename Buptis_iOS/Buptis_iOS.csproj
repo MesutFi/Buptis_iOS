@@ -184,6 +184,30 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleIncoming.imageset\bubble_regular.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleIncoming.imageset\bubble_regular@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleIncoming.imageset\bubble_regular@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleIncoming.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleOutgoing.imageset\bubble_regular.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleOutgoing.imageset\bubble_regular@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleOutgoing.imageset\bubble_regular@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BubbleOutgoing.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\logo1.png" />
@@ -227,45 +251,25 @@
     <InterfaceDefinition Include="Mesajlar\MesajlarFavoriler.xib" />
     <InterfaceDefinition Include="PrivateProfile\Ayarlar\AyarlarBaseVC.storyboard" />
     <InterfaceDefinition Include="LokasyonDetay\LokasyonDetayBaseVC.storyboard" />
-    <InterfaceDefinition Include="Mesajlar\ChatDetay\GelenMesajCell.xib" />
-    <InterfaceDefinition Include="Mesajlar\ChatDetay\ChatCustomTextContentView.xib" />
-    <InterfaceDefinition Include="Mesajlar\ChatDetay\GidenMesajCell.xib" />
-    <InterfaceDefinition Include="Mesajlar\ChatDetay\GidenHediye.xib" />
-    <InterfaceDefinition Include="Mesajlar\ChatDetay\GelenHediye.xib" />
     <InterfaceDefinition Include="Mesajlar\ChatDetay\HediyelerCustomListItem.xib" />
     <None Include="packages.config" />
     <InterfaceDefinition Include="PrivateProfile\CustomImageTableCell.xib" />
     <InterfaceDefinition Include="PrivateProfile\Ayarlar\BlockedUserTableView.xib" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mesajlar\ChatDetay\Cells\BubbleCell.cs" />
+    <Compile Include="Mesajlar\ChatDetay\Cells\IncomingCell.cs" />
+    <Compile Include="Mesajlar\ChatDetay\Cells\IncomingCell_Resim.cs" />
+    <Compile Include="Mesajlar\ChatDetay\Cells\OutgoingCell.cs" />
+    <Compile Include="Mesajlar\ChatDetay\Cells\OutgoingCell_Resim.cs" />
     <Compile Include="Mesajlar\ChatDetay\HediyeGonderVC.cs" />
     <Compile Include="Mesajlar\ChatDetay\HediyeGonderVC.designer.cs">
       <DependentUpon>HediyeGonderVC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mesajlar\ChatDetay\ChatCustomTextContentView.cs" />
-    <Compile Include="Mesajlar\ChatDetay\ChatCustomTextContentView.designer.cs">
-      <DependentUpon>ChatCustomTextContentView.cs</DependentUpon>
     </Compile>
     <Compile Include="GenericClass\KeyboardHelper.cs" />
     <Compile Include="Mesajlar\ChatDetay\ChatVC.cs" />
     <Compile Include="Mesajlar\ChatDetay\ChatVC.designer.cs">
       <DependentUpon>ChatVC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mesajlar\ChatDetay\GelenHediye.cs" />
-    <Compile Include="Mesajlar\ChatDetay\GelenHediye.designer.cs">
-      <DependentUpon>GelenHediye.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mesajlar\ChatDetay\GelenMesajCell.cs" />
-    <Compile Include="Mesajlar\ChatDetay\GelenMesajCell.designer.cs">
-      <DependentUpon>GelenMesajCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mesajlar\ChatDetay\GidenHediye.cs" />
-    <Compile Include="Mesajlar\ChatDetay\GidenHediye.designer.cs">
-      <DependentUpon>GidenHediye.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mesajlar\ChatDetay\GidenMesajCell.cs" />
-    <Compile Include="Mesajlar\ChatDetay\GidenMesajCell.designer.cs">
-      <DependentUpon>GidenMesajCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Mesajlar\ChatDetay\HediyelerCustomListItem.cs" />
     <Compile Include="Mesajlar\ChatDetay\HediyelerCustomListItem.designer.cs">

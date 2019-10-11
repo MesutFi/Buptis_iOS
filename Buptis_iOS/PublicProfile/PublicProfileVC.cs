@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UIKit;
 using static Buptis_iOS.LokasyondakiKisiler.LokasyondakiKisilerBaseVC;
+using static Buptis_iOS.Mesajlar.MesajlarBaseVC;
 using static Buptis_iOS.ProfilSorulariBaseVC;
 
 namespace Buptis_iOS
@@ -132,9 +133,34 @@ namespace Buptis_iOS
 
         private void MesajAtButton_TouchUpInside(object sender, EventArgs e)
         {
-            
-        }
+            MesajlarIcinSecilenKullanici.Kullanici = SecilenKisi.SecilenKisiDTO;
+            var mesKey = GetMessageKey(MesajlarIcinSecilenKullanici.Kullanici.id);
+            MesajlarIcinSecilenKullanici.key = mesKey;
 
+            var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
+            ChatVC controller = LokasyonKisilerStory.InstantiateViewController("ChatVC") as ChatVC;
+            this.PresentViewController(controller, true, null);
+        }
+        string GetMessageKey(int UserId)
+        {
+            var MessageKey = DataBase.CHAT_KEYS_GETIR();
+            if (MessageKey.Count > 0)
+            {
+                MessageKey = MessageKey.FindAll(item => item.UserID == UserId);
+                if (MessageKey.Count > 0)
+                {
+                    return MessageKey[MessageKey.Count - 1].MessageKey;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
         private void GeriButton_TouchUpInside(object sender, EventArgs e)
         {
             GelenBase.Closee();
