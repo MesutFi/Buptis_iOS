@@ -54,29 +54,6 @@ namespace Buptis_iOS.ChatDetay.Cells
 			BubbleHighlightedImage = highlightedBubbleImage;
 			BubbleImage = normalBubbleImage;
 
-            //ContentView.AddConstraints (NSLayoutConstraint.FromVisualFormat ("H:|[bubble]",
-            //	0, 
-            //	"bubble", BubbleImageView));
-            //ContentView.AddConstraints (NSLayoutConstraint.FromVisualFormat ("V:|-2-[bubble]-2-|",
-            //	0,
-            //	"bubble", BubbleImageView
-            //));
-            //BubbleImageView.AddConstraints (NSLayoutConstraint.FromVisualFormat ("H:[bubble(>=48)]",
-            //	0,
-            //	"bubble", BubbleImageView
-            //));
-
-            //var vSpaceTop = NSLayoutConstraint.Create (MessageLabel, NSLayoutAttribute.Top, NSLayoutRelation.Equal, BubbleImageView, NSLayoutAttribute.Top, 1, 10);
-            //ContentView.AddConstraint (vSpaceTop);
-
-            //var vSpaceBottom = NSLayoutConstraint.Create (MessageLabel, NSLayoutAttribute.Bottom, NSLayoutRelation.Equal, BubbleImageView, NSLayoutAttribute.Bottom, 1, -10);
-            //ContentView.AddConstraint (vSpaceBottom);
-
-            //var msgLeading = NSLayoutConstraint.Create (MessageLabel, NSLayoutAttribute.Leading, NSLayoutRelation.GreaterThanOrEqual, BubbleImageView, NSLayoutAttribute.Leading, 1, 16);
-            //ContentView.AddConstraint (msgLeading);
-
-            //var msgCenter = NSLayoutConstraint.Create (MessageLabel, NSLayoutAttribute.CenterX, NSLayoutRelation.Equal, BubbleImageView, NSLayoutAttribute.CenterX, 1, 3);
-            //ContentView.AddConstraint (msgCenter);
 
             Hediye.Layer.CornerRadius = 25;
             Hediye.Layer.BorderWidth = 10f;

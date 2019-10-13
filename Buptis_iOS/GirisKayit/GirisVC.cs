@@ -1,6 +1,8 @@
 ﻿
 using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Input;
 using Buptis_iOS.Database;
 using Buptis_iOS.GenericClass;
 using Buptis_iOS.Lokasyonlar;
@@ -19,7 +21,9 @@ namespace Buptis_iOS.GirisKayit
     {
         const string TAG = "Buptis";
         const int RC_SIGN_IN = 9001;
-       
+
+        public static Authenticator Auth;
+
         public GirisVC(IntPtr handle) : base(handle)
         {
         }
@@ -29,6 +33,7 @@ namespace Buptis_iOS.GirisKayit
         {
             base.ViewDidLoad();
             SifreTxt.SecureTextEntry = true;
+            
         }
         public override void ViewWillAppear(bool animated)
         {
@@ -37,7 +42,14 @@ namespace Buptis_iOS.GirisKayit
             UyeOlButton.TouchUpInside += UyeOlButton_TouchUpInside;
             GirisButton.TouchUpInside += GirisButton_TouchUpInside;
             FacebookButton.TouchUpInside += FacebookButton_TouchUpInside;
+            GoogleButton.TouchUpInside += GoogleButton_TouchUpInside;
         }
+
+        private void GoogleButton_TouchUpInside(object sender, EventArgs e)
+        {
+            
+        }
+
         UIViewController FacebookVC;
         private void FacebookButton_TouchUpInside(object sender, EventArgs e)
         {

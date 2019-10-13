@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>702647090904-9jq9jks90iuai4t46fuift9evfnt8b72.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.702647090904-9jq9jks90iuai4t46fuift9evfnt8b72</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>702647090904-kl55fbci18m2qttfrj2j3qs3l5k6bhea.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMcuWaS4G84CTlhrl2IeWNWxWzr3fDbfE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>702647090904</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.buptis.ios</string>
+	<key>PROJECT_ID</key>
+	<string>eattus-android</string>
+	<key>STORAGE_BUCKET</key>
+	<string>eattus-android.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:702647090904:ios:fc1e71ba8cb2a8439361ad</string>
+	<key>DATABASE_URL</key>
+	<string>https://eattus-android.firebaseio.com</string>
+</dict>
+</plist>

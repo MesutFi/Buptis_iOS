@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>Buptis_iOS</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.companyname.Buptis_iOS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -58,5 +56,20 @@
 	<string>10.0</string>
 	<key>CFBundleName</key>
 	<string>Buptis_iOS</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.buptis.ios</string>
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>Buptis</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>com.buptis.ios</string>
+      </array>
+      <key>CFBundleURLTypes</key>
+      <string>Viewer</string>
+    </dict>
+  </array>
 </dict>
 </plist>
