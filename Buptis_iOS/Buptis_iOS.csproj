@@ -111,6 +111,7 @@
       <HintPath>..\packages\Xamarin.Google.iOS.SignIn.4.1.1\lib\Xamarin.iOS10\Google.SignIn.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -281,8 +282,26 @@
     <None Include="packages.config" />
     <InterfaceDefinition Include="PrivateProfile\CustomImageTableCell.xib" />
     <InterfaceDefinition Include="PrivateProfile\Ayarlar\BlockedUserTableView.xib" />
+    <InterfaceDefinition Include="Paketler\PaketlerBase.storyboard" />
+    <InterfaceDefinition Include="Paketler\BuptisGoldCustomSlideItem.xib" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Paketler\BuptisGoldCustomSlideItem.cs" />
+    <Compile Include="Paketler\BuptisGoldCustomSlideItem.designer.cs">
+      <DependentUpon>BuptisGoldCustomSlideItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paketler\BustisGoldBaseVC.cs" />
+    <Compile Include="Paketler\BustisGoldBaseVC.designer.cs">
+      <DependentUpon>BustisGoldBaseVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paketler\BoostBaseVC.cs" />
+    <Compile Include="Paketler\BoostBaseVC.designer.cs">
+      <DependentUpon>BoostBaseVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paketler\KrediYukleBaseVC.cs" />
+    <Compile Include="Paketler\KrediYukleBaseVC.designer.cs">
+      <DependentUpon>KrediYukleBaseVC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mesajlar\ChatDetay\Cells\BubbleCell.cs" />
     <Compile Include="Mesajlar\ChatDetay\Cells\IncomingCell.cs" />
     <Compile Include="Mesajlar\ChatDetay\Cells\IncomingCell_Resim.cs" />
@@ -489,6 +508,10 @@
     <Compile Include="GirisKayit\SplashScrennBaseVC.designer.cs">
       <DependentUpon>SplashScrennBaseVC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paketler\SuperBoostBaseVC.cs" />
+    <Compile Include="Paketler\SuperBoostBaseVC.designer.cs">
+      <DependentUpon>SuperBoostBaseVC.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
@@ -654,6 +677,60 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\fav_pasif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\boost_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\kredi_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\kredi_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\kredi_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\kredi_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\kredi_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\super_boost_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\close_boost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\close_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Strings\kredi_info_string.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Strings\boost_info_string.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Strings\super_boost_info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Strings\bustis_gold_info_string.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_icon5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="113" id="cxk-wN-pdQ" customClass="BuptisGoldCustomSlideItem">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2777" translatesAutoresizingMaskIntoConstraints="NO" image="Images/gold_icon1.png">
+                        <rect key="frame" x="0.0" y="5" width="320" height="51"/>
+                        <constraints>
+                            <constraint id="11867" firstAttribute="height" constant="51"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daha çok kişiyle sohbet edin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6333" translatesAutoresizingMaskIntoConstraints="NO">
+                        <rect key="frame" x="0.0" y="67" width="320" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" colorSpace="calibratedRGB" red="0.792156862745098" green="0.6705882352941176" blue="0.27843137254901962" alpha="1"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint id="10679" firstItem="2777" firstAttribute="trailing" secondItem="YTl-1W-gDM" secondAttribute="trailing"/>
+                    <constraint id="11075" firstItem="2777" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading"/>
+                    <constraint id="11471" firstItem="2777" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="5"/>
+                    <constraint id="12263" firstItem="6333" firstAttribute="trailing" secondItem="YTl-1W-gDM" secondAttribute="trailing"/>
+                    <constraint id="12659" firstItem="6333" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading"/>
+                    <constraint id="13055" firstItem="6333" firstAttribute="top" secondItem="2777" secondAttribute="bottom" constant="11"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-177" y="-56"/>
+            <connections>
+                <outlet property="SlideImage" destination="2777" id="name-outlet-2777"/>
+                <outlet property="SlideMetin" destination="6333" id="name-outlet-6333"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Images/gold_icon1.png" width="230" height="206"/>
+    </resources>
+</document>
