@@ -1,10 +1,12 @@
 ﻿using Buptis_iOS.Database;
+using Buptis_iOS.GenericClass;
 using Buptis_iOS.Lokasyonlar;
 using Foundation;
 using Google.Maps;
 using Google.SignIn;
 using System;
 using UIKit;
+using static Buptis_iOS.GirisKayit.GirisVC;
 
 namespace Buptis_iOS
 {
@@ -66,21 +68,23 @@ namespace Buptis_iOS
         {
             new DataBase();
             MapServices.ProvideAPIKey(MapsApiKey);
-            var googleServiceDictionary = NSDictionary.FromFile("GoogleService-Info.plist");
-            SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
+            Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
+            //var googleServiceDictionary = NSDictionary.FromFile("GoogleService-Info.plist");
+            //SignIn.SharedInstance.ClientID = googleServiceDictionary["CLIENT_ID"].ToString();
             return true;
         }
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
-            // Convert iOS NSUrl to C#/netxf/BCL System.Uri
-            var uri_netfx = new Uri(url.AbsoluteString);
+            //var uri_netfx = new Uri(url.AbsoluteString);
 
-            AuthViewController.Auth?.OnPageLoading(uri_netfx);
-
-            //Crome daki örneği kullarak devam edeceksin aynı zamanda örnek visual studio da açık
+            //GoogleAuthenticatorHelper.Auth?.OnPageLoading(uri_netfx);
 
 
+            // Convert NSUrl to Uri
+            var uri = new Uri(url.AbsoluteString);
 
+            // Load redirectUrl page
+            AuthenticationState.Authenticator.OnPageLoading(uri);
 
             return true;
         }

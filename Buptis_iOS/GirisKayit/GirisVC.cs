@@ -1,7 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Input;
 using Buptis_iOS.Database;
 using Buptis_iOS.GenericClass;
@@ -23,7 +23,8 @@ namespace Buptis_iOS.GirisKayit
         const int RC_SIGN_IN = 9001;
 
         public static Authenticator Auth;
-
+        Account account;
+        AccountStore store;
         public GirisVC(IntPtr handle) : base(handle)
         {
         }
@@ -45,10 +46,84 @@ namespace Buptis_iOS.GirisKayit
             GoogleButton.TouchUpInside += GoogleButton_TouchUpInside;
         }
 
+
+        #region Gmail Login
+
+       
         private void GoogleButton_TouchUpInside(object sender, EventArgs e)
         {
-            
+            store = AccountStore.Create();
+            string clientId = "702647090904-45v1qskciukrf1ojmnotljnmk9k7ph23.apps.googleusercontent.com";
+            string redirectUri = "com.buptis.ios:/oauth2redirect";
+
+            account = store.FindAccountsForService("Buptis").FirstOrDefault();
+            var authenticator = new OAuth2Authenticator(
+               clientId,
+               null,
+               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile",  //https://www.googleapis.com/auth/userinfo.profile //SADECE EMAİL GELİYOR BAK BUNA
+               new Uri("https://accounts.google.com/o/oauth2/auth"),
+               new Uri(redirectUri),
+               new Uri("https://www.googleapis.com/oauth2/v4/token"),
+               null,
+               true);
+
+            authenticator.Completed += OnAuthCompleted;
+            authenticator.Error += OnAuthError;
+
+            AuthenticationState.Authenticator = authenticator;
+
+            var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            presenter.Login(authenticator);
         }
+        async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
+        {
+            var authenticator = sender as OAuth2Authenticator;
+            if (authenticator != null)
+            {
+                authenticator.Completed -= OnAuthCompleted;
+                authenticator.Error -= OnAuthError;
+            }
+
+            User user = null;
+            if (e.IsAuthenticated)
+            {
+                // If the user is authenticated, request their basic user data from Google
+                // UserInfoUrl = https://www.googleapis.com/oauth2/v2/userinfo
+                var request = new OAuth2Request("GET", new Uri("https://www.googleapis.com/oauth2/v2/userinfo"), null, e.Account);
+                var response = await request.GetResponseAsync();
+                if (response != null)
+                {
+                    // The users email address will be used to identify data in SimpleDB
+                    string userJson = await response.GetResponseTextAsync();
+                    var aaa = userJson.ToString();
+                    user = JsonConvert.DeserializeObject<User>(userJson);
+                    
+                    SosyalKullaniciKaydet(user.given_name, user.family_name, user.email, "Buptis2019");
+                }
+                else
+                {
+                    CustomAlert.GetCustomAlert(this, "Giriş Yapılamadı. Başka bir yöntem deneyebilirsiniz.");
+                    return;
+                }
+            }
+        }
+        void OnAuthError(object sender, AuthenticatorErrorEventArgs e)
+        {
+            var authenticator = sender as OAuth2Authenticator;
+            if (authenticator != null)
+            {
+                authenticator.Completed -= OnAuthCompleted;
+                authenticator.Error -= OnAuthError;
+            }
+            CustomAlert.GetCustomAlert(this, "Bir sorun oluştu. Lütfen tekrar deneyin.");
+        }
+        public class AuthenticationState
+        {
+            public static OAuth2Authenticator Authenticator;
+        }
+
+        #endregion
+
 
         UIViewController FacebookVC;
         private void FacebookButton_TouchUpInside(object sender, EventArgs e)
@@ -300,6 +375,7 @@ namespace Buptis_iOS.GirisKayit
             GelenButton.Layer.BorderColor = UIColor.White.ColorWithAlpha(0.33f).CGColor;
         }
 
+
         #endregion
 
         #region Facebook Login DTO
@@ -326,6 +402,21 @@ namespace Buptis_iOS.GirisKayit
             public string name { get; set; }
             public Picture picture { get; set; }
         }
+        #endregion
+
+        #region Google Login DTO
+        public class User
+        {
+            public string id { get; set; }
+            public string email { get; set; }
+            public bool verified_email { get; set; }
+            public string name { get; set; }
+            public string given_name { get; set; }
+            public string family_name { get; set; }
+            public string picture { get; set; }
+            public string locale { get; set; }
+        }
+
         #endregion
     }
 }

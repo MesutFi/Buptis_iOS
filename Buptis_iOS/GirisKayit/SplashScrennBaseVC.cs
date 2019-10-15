@@ -81,6 +81,13 @@ namespace Buptis_iOS
                     alert.Show();
                 });
             }
+            else
+            {
+                if ((bool)CheckLocationPermission())
+                {
+                    alert.Dispose();
+                }
+            }
         }
 
         void UserLocationCheck()
