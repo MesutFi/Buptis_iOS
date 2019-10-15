@@ -74,19 +74,23 @@ namespace Buptis_iOS
                     alert.AlertViewStyle = UIAlertViewStyle.Default;
                     alert.Clicked += (object s, UIButtonEventArgs ev) =>
                     {
-                        SurekliKontrol();
-                        UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
-                        alert.Dispose();
+
+
+                        if ((bool)CheckLocationPermission())
+                        {
+                            SurekliKontrol();
+                            alert.Dispose();
+                        }
+                        else
+                        {
+                            SurekliKontrol();
+                            UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
+                            alert.Dispose();
+                        }
+                        
                     };
                     alert.Show();
                 });
-            }
-            else
-            {
-                if ((bool)CheckLocationPermission())
-                {
-                    alert.Dispose();
-                }
             }
         }
 
