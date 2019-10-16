@@ -20,6 +20,22 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BoostButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel BoostCountLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BuptisGoldButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BuptisGoldToggle { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton FiltreButton { get; set; }
 
         [Outlet]
@@ -36,7 +52,23 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton KrediButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel KrediCountLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ProfilDuzenleButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SuperBoostButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel SuperBoostCountLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -69,6 +101,26 @@ namespace Buptis_iOS
                 AyarlarButton = null;
             }
 
+            if (BoostButton != null) {
+                BoostButton.Dispose ();
+                BoostButton = null;
+            }
+
+            if (BoostCountLabel != null) {
+                BoostCountLabel.Dispose ();
+                BoostCountLabel = null;
+            }
+
+            if (BuptisGoldButton != null) {
+                BuptisGoldButton.Dispose ();
+                BuptisGoldButton = null;
+            }
+
+            if (BuptisGoldToggle != null) {
+                BuptisGoldToggle.Dispose ();
+                BuptisGoldToggle = null;
+            }
+
             if (FiltreButton != null) {
                 FiltreButton.Dispose ();
                 FiltreButton = null;
@@ -89,9 +141,29 @@ namespace Buptis_iOS
                 HeaderHazne = null;
             }
 
+            if (KrediButton != null) {
+                KrediButton.Dispose ();
+                KrediButton = null;
+            }
+
+            if (KrediCountLabel != null) {
+                KrediCountLabel.Dispose ();
+                KrediCountLabel = null;
+            }
+
             if (ProfilDuzenleButton != null) {
                 ProfilDuzenleButton.Dispose ();
                 ProfilDuzenleButton = null;
+            }
+
+            if (SuperBoostButton != null) {
+                SuperBoostButton.Dispose ();
+                SuperBoostButton = null;
+            }
+
+            if (SuperBoostCountLabel != null) {
+                SuperBoostCountLabel.Dispose ();
+                SuperBoostCountLabel = null;
             }
 
             if (UserAbout != null) {

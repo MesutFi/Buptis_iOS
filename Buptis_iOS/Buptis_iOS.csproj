@@ -732,6 +732,12 @@
   <ItemGroup>
     <BundleResource Include="Resources\Images\gold_icon5.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_kapali.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_acik.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -2,6 +2,7 @@ using Buptis_iOS.Database;
 using Buptis_iOS.PrivateProfile.Ayarlar;
 using Buptis_iOS.Web_Service;
 using CoreAnimation;
+using CoreGraphics;
 using FFImageLoading;
 using FFImageLoading.Transformations;
 using FFImageLoading.Work;
@@ -83,12 +84,14 @@ namespace Buptis_iOS
 
             FiltreButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
             GeriButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+
+            PaketUIDuzenle();
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            GetUserInfo();
+            //GetUserInfo();
             var marginn = 15;
             AyarlarButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
             FotografEkleButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
@@ -265,6 +268,82 @@ namespace Buptis_iOS
 
             })).Start();
         }
+
+        #region PaketIslemler
+        void PaketUIDuzenle()
+        {
+            SetShadow(BoostButton);
+            SetShadow(SuperBoostButton);
+            SetShadow(KrediButton);
+
+            BoostCountLabel.Layer.CornerRadius = 10f;
+            SuperBoostCountLabel.Layer.CornerRadius = 10f;
+            KrediCountLabel.Layer.CornerRadius = 10f;
+            BoostCountLabel.ClipsToBounds = true;
+            SuperBoostCountLabel.ClipsToBounds = true;
+            KrediCountLabel.ClipsToBounds = true;
+
+
+            BoostButton.TouchUpInside += BoostButton_TouchUpInside;
+            SuperBoostButton.TouchUpInside += SuperBoostButton_TouchUpInside;
+            KrediButton.TouchUpInside += KrediButton_TouchUpInside;
+            BuptisGoldButton.TouchUpInside += BuptisGoldButton_TouchUpInside;
+            BuptisGoldToggle.TouchUpInside += BuptisGoldToggle_TouchUpInside;
+        }
+
+        private void BuptisGoldToggle_TouchUpInside(object sender, EventArgs e)
+        {
+            var GoldModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+            BustisGoldBaseVC controller = GoldModal.InstantiateViewController("BustisGoldBaseVC") as BustisGoldBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+            this.PresentViewController(controller, true, null);
+        }
+
+        private void BuptisGoldButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var GoldModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+            BustisGoldBaseVC controller = GoldModal.InstantiateViewController("BustisGoldBaseVC") as BustisGoldBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+            this.PresentViewController(controller, true, null);
+        }
+
+        private void KrediButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var KrediModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+            KrediYukleBaseVC controller = KrediModal.InstantiateViewController("KrediYukleBaseVC") as KrediYukleBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+            this.PresentViewController(controller, true, null);
+        }
+
+        private void SuperBoostButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var SuperBoostModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+            SuperBoostBaseVC controller = SuperBoostModal.InstantiateViewController("SuperBoostBaseVC") as SuperBoostBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+            this.PresentViewController(controller, true, null);
+        }
+
+        private void BoostButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var BoostModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+            BoostBaseVC controller = BoostModal.InstantiateViewController("BoostBaseVC") as BoostBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+            this.PresentViewController(controller, true, null);
+        }
+
+        void SetShadow(UIButton GelenBut)
+        {
+            GelenBut.Layer.CornerRadius = 20f;
+            GelenBut.Layer.ShadowOpacity = 0.8f;
+            GelenBut.Layer.ShadowOffset = new CGSize(0, 0);
+            GelenBut.Layer.ShadowColor = UIColor.Black.CGColor;
+            GelenBut.ContentEdgeInsets = new UIEdgeInsets(20, 20, 20, 20);
+            GelenBut.ClipsToBounds = true;
+        }
+
+        #endregion
+
+
         public class UserImageDTO
         {
             public string createdDate { get; set; }

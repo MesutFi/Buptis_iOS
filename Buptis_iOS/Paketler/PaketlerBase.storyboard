@@ -88,12 +88,19 @@
                                                     <constraint id="9984" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9970" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9970" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37423">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="8878" firstAttribute="height" constant="104"/>
@@ -109,6 +116,10 @@
                                             <constraint id="9982" firstItem="9969" firstAttribute="leading" secondItem="8290" secondAttribute="leading"/>
                                             <constraint id="9983" firstItem="9969" firstAttribute="trailing" secondItem="8290" secondAttribute="trailing"/>
                                             <constraint id="9985" firstItem="9968" firstAttribute="bottom" secondItem="9969" secondAttribute="top" constant="1"/>
+                                            <constraint id="37426" firstItem="37423" firstAttribute="trailing" secondItem="8290" secondAttribute="trailing"/>
+                                            <constraint id="37427" firstItem="37423" firstAttribute="leading" secondItem="8290" secondAttribute="leading"/>
+                                            <constraint id="37428" firstItem="37423" firstAttribute="top" secondItem="8290" secondAttribute="top"/>
+                                            <constraint id="37429" firstItem="37423" firstAttribute="bottom" secondItem="9969" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="8291" translatesAutoresizingMaskIntoConstraints="NO">
@@ -121,7 +132,7 @@
                                                     <constraint id="10309" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10310" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10310" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
@@ -145,6 +156,13 @@
                                                     <constraint id="10314" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37430">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="8881" firstAttribute="height" constant="104"/>
@@ -160,6 +178,10 @@
                                             <constraint id="10326" firstItem="10313" firstAttribute="trailing" secondItem="8291" secondAttribute="trailing"/>
                                             <constraint id="10327" firstItem="10313" firstAttribute="leading" secondItem="8291" secondAttribute="leading"/>
                                             <constraint id="10328" firstItem="10311" firstAttribute="bottom" secondItem="10313" secondAttribute="top" constant="1"/>
+                                            <constraint id="37431" firstItem="37430" firstAttribute="trailing" secondItem="8291" secondAttribute="trailing"/>
+                                            <constraint id="37432" firstItem="37430" firstAttribute="leading" secondItem="8291" secondAttribute="leading"/>
+                                            <constraint id="37433" firstItem="37430" firstAttribute="bottom" secondItem="10313" secondAttribute="bottom"/>
+                                            <constraint id="37434" firstItem="37430" firstAttribute="top" secondItem="8291" secondAttribute="top"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="8292" translatesAutoresizingMaskIntoConstraints="NO">
@@ -172,7 +194,7 @@
                                                     <constraint id="10333" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10334" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10334" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
@@ -196,6 +218,13 @@
                                                     <constraint id="10338" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37435">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="8887" firstAttribute="height" constant="104"/>
@@ -211,6 +240,10 @@
                                             <constraint id="10349" firstItem="10335" firstAttribute="bottom" secondItem="10337" secondAttribute="top" constant="1"/>
                                             <constraint id="10350" firstItem="10337" firstAttribute="leading" secondItem="8292" secondAttribute="leading"/>
                                             <constraint id="10351" firstItem="10337" firstAttribute="trailing" secondItem="8292" secondAttribute="trailing"/>
+                                            <constraint id="37436" firstItem="37435" firstAttribute="trailing" secondItem="8292" secondAttribute="trailing"/>
+                                            <constraint id="37437" firstItem="37435" firstAttribute="bottom" secondItem="10337" secondAttribute="bottom"/>
+                                            <constraint id="37438" firstItem="37435" firstAttribute="leading" secondItem="8292" secondAttribute="leading"/>
+                                            <constraint id="37439" firstItem="37435" firstAttribute="top" secondItem="8292" secondAttribute="top"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="8293" translatesAutoresizingMaskIntoConstraints="NO">
@@ -223,7 +256,7 @@
                                                     <constraint id="10447" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10448" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000 Kredi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10448" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
@@ -247,6 +280,13 @@
                                                     <constraint id="10452" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37440">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="8890" firstAttribute="height" constant="104"/>
@@ -262,6 +302,10 @@
                                             <constraint id="10464" firstItem="10451" firstAttribute="leading" secondItem="8293" secondAttribute="leading"/>
                                             <constraint id="10465" firstItem="10451" firstAttribute="trailing" secondItem="8293" secondAttribute="trailing"/>
                                             <constraint id="10466" firstItem="10449" firstAttribute="bottom" secondItem="10451" secondAttribute="top" constant="1"/>
+                                            <constraint id="37441" firstItem="37440" firstAttribute="trailing" secondItem="8293" secondAttribute="trailing"/>
+                                            <constraint id="37442" firstItem="37440" firstAttribute="bottom" secondItem="10451" secondAttribute="bottom"/>
+                                            <constraint id="37443" firstItem="37440" firstAttribute="leading" secondItem="8293" secondAttribute="leading"/>
+                                            <constraint id="37444" firstItem="37440" firstAttribute="top" secondItem="8293" secondAttribute="top"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -310,6 +354,10 @@
                         <outlet property="Paket2View" destination="8291" id="name-outlet-8291"/>
                         <outlet property="Paket3View" destination="8292" id="name-outlet-8292"/>
                         <outlet property="Paket4View" destination="8293" id="name-outlet-8293"/>
+                        <outlet property="Paket1Button" destination="37423" id="name-outlet-37423"/>
+                        <outlet property="Paket2Button" destination="37430" id="name-outlet-37430"/>
+                        <outlet property="Paket3Button" destination="37435" id="name-outlet-37435"/>
+                        <outlet property="Paket4Button" destination="37440" id="name-outlet-37440"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1665" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,6 +452,13 @@
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38904">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="11405" firstAttribute="height" constant="104"/>
@@ -419,6 +474,10 @@
                                             <constraint id="11415" firstItem="11402" firstAttribute="leading" secondItem="11397" secondAttribute="leading"/>
                                             <constraint id="11416" firstItem="11402" firstAttribute="trailing" secondItem="11397" secondAttribute="trailing"/>
                                             <constraint id="11417" firstItem="11400" firstAttribute="bottom" secondItem="11402" secondAttribute="top" constant="1"/>
+                                            <constraint id="38908" firstItem="38904" firstAttribute="trailing" secondItem="11397" secondAttribute="trailing"/>
+                                            <constraint id="38909" firstItem="38904" firstAttribute="leading" secondItem="11397" secondAttribute="leading"/>
+                                            <constraint id="38910" firstItem="38904" firstAttribute="top" secondItem="11397" secondAttribute="top"/>
+                                            <constraint id="38911" firstItem="38904" firstAttribute="bottom" secondItem="11402" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="11418" translatesAutoresizingMaskIntoConstraints="NO">
@@ -455,6 +514,13 @@
                                                     <constraint id="11425" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38905">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="11426" firstAttribute="height" constant="104"/>
@@ -470,6 +536,10 @@
                                             <constraint id="11436" firstItem="11424" firstAttribute="trailing" secondItem="11418" secondAttribute="trailing"/>
                                             <constraint id="11437" firstItem="11424" firstAttribute="leading" secondItem="11418" secondAttribute="leading"/>
                                             <constraint id="11438" firstItem="11422" firstAttribute="bottom" secondItem="11424" secondAttribute="top" constant="1"/>
+                                            <constraint id="38912" firstItem="38905" firstAttribute="trailing" secondItem="11418" secondAttribute="trailing"/>
+                                            <constraint id="38913" firstItem="38905" firstAttribute="leading" secondItem="11418" secondAttribute="leading"/>
+                                            <constraint id="38914" firstItem="38905" firstAttribute="top" secondItem="11418" secondAttribute="top"/>
+                                            <constraint id="38915" firstItem="38905" firstAttribute="bottom" secondItem="11424" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="11439" translatesAutoresizingMaskIntoConstraints="NO">
@@ -506,6 +576,13 @@
                                                     <constraint id="11446" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38906">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="11447" firstAttribute="height" constant="104"/>
@@ -521,6 +598,10 @@
                                             <constraint id="11457" firstItem="11443" firstAttribute="bottom" secondItem="11445" secondAttribute="top" constant="1"/>
                                             <constraint id="11458" firstItem="11445" firstAttribute="leading" secondItem="11439" secondAttribute="leading"/>
                                             <constraint id="11459" firstItem="11445" firstAttribute="trailing" secondItem="11439" secondAttribute="trailing"/>
+                                            <constraint id="38916" firstItem="38906" firstAttribute="trailing" secondItem="11439" secondAttribute="trailing"/>
+                                            <constraint id="38917" firstItem="38906" firstAttribute="leading" secondItem="11439" secondAttribute="leading"/>
+                                            <constraint id="38918" firstItem="38906" firstAttribute="top" secondItem="11439" secondAttribute="top"/>
+                                            <constraint id="38919" firstItem="38906" firstAttribute="bottom" secondItem="11445" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="11460" translatesAutoresizingMaskIntoConstraints="NO">
@@ -557,6 +638,13 @@
                                                     <constraint id="11467" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38907">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="11468" firstAttribute="height" constant="104"/>
@@ -572,6 +660,10 @@
                                             <constraint id="11478" firstItem="11466" firstAttribute="leading" secondItem="11460" secondAttribute="leading"/>
                                             <constraint id="11479" firstItem="11466" firstAttribute="trailing" secondItem="11460" secondAttribute="trailing"/>
                                             <constraint id="11480" firstItem="11464" firstAttribute="bottom" secondItem="11466" secondAttribute="top" constant="1"/>
+                                            <constraint id="38920" firstItem="38907" firstAttribute="trailing" secondItem="11460" secondAttribute="trailing"/>
+                                            <constraint id="38921" firstItem="38907" firstAttribute="leading" secondItem="11460" secondAttribute="leading"/>
+                                            <constraint id="38922" firstItem="38907" firstAttribute="top" secondItem="11460" secondAttribute="top"/>
+                                            <constraint id="38923" firstItem="38907" firstAttribute="bottom" secondItem="11466" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -619,6 +711,11 @@
                         <outlet property="Paket3View" destination="11439" id="name-outlet-11439"/>
                         <outlet property="Paket4View" destination="11460" id="name-outlet-11460"/>
                         <outlet property="SatinAlButton" destination="11393" id="name-outlet-11393"/>
+                        <outlet property="KapatButtonn" destination="11390" id="name-outlet-11390"/>
+                        <outlet property="Paket1Button" destination="38904" id="name-outlet-38904"/>
+                        <outlet property="Paket2Button" destination="38905" id="name-outlet-38905"/>
+                        <outlet property="Paket3Button" destination="38906" id="name-outlet-38906"/>
+                        <outlet property="Paket4Button" destination="38907" id="name-outlet-38907"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11184" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -713,6 +810,13 @@
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38924">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="13473" firstAttribute="height" constant="104"/>
@@ -728,6 +832,10 @@
                                             <constraint id="13483" firstItem="13470" firstAttribute="leading" secondItem="13465" secondAttribute="leading"/>
                                             <constraint id="13484" firstItem="13470" firstAttribute="trailing" secondItem="13465" secondAttribute="trailing"/>
                                             <constraint id="13485" firstItem="13468" firstAttribute="bottom" secondItem="13470" secondAttribute="top" constant="1"/>
+                                            <constraint id="38928" firstItem="38924" firstAttribute="trailing" secondItem="13465" secondAttribute="trailing"/>
+                                            <constraint id="38929" firstItem="38924" firstAttribute="leading" secondItem="13465" secondAttribute="leading"/>
+                                            <constraint id="38930" firstItem="38924" firstAttribute="top" secondItem="13465" secondAttribute="top"/>
+                                            <constraint id="38931" firstItem="38924" firstAttribute="bottom" secondItem="13470" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="13486" translatesAutoresizingMaskIntoConstraints="NO">
@@ -764,6 +872,13 @@
                                                     <constraint id="13493" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38925">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="13494" firstAttribute="height" constant="104"/>
@@ -779,6 +894,10 @@
                                             <constraint id="13504" firstItem="13492" firstAttribute="trailing" secondItem="13486" secondAttribute="trailing"/>
                                             <constraint id="13505" firstItem="13492" firstAttribute="leading" secondItem="13486" secondAttribute="leading"/>
                                             <constraint id="13506" firstItem="13490" firstAttribute="bottom" secondItem="13492" secondAttribute="top" constant="1"/>
+                                            <constraint id="38932" firstItem="38925" firstAttribute="trailing" secondItem="13486" secondAttribute="trailing"/>
+                                            <constraint id="38933" firstItem="38925" firstAttribute="leading" secondItem="13486" secondAttribute="leading"/>
+                                            <constraint id="38934" firstItem="38925" firstAttribute="top" secondItem="13486" secondAttribute="top"/>
+                                            <constraint id="38935" firstItem="38925" firstAttribute="bottom" secondItem="13492" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="13507" translatesAutoresizingMaskIntoConstraints="NO">
@@ -815,6 +934,13 @@
                                                     <constraint id="13514" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38926">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="13515" firstAttribute="height" constant="104"/>
@@ -830,6 +956,10 @@
                                             <constraint id="13525" firstItem="13511" firstAttribute="bottom" secondItem="13513" secondAttribute="top" constant="1"/>
                                             <constraint id="13526" firstItem="13513" firstAttribute="leading" secondItem="13507" secondAttribute="leading"/>
                                             <constraint id="13527" firstItem="13513" firstAttribute="trailing" secondItem="13507" secondAttribute="trailing"/>
+                                            <constraint id="38936" firstItem="38926" firstAttribute="trailing" secondItem="13507" secondAttribute="trailing"/>
+                                            <constraint id="38937" firstItem="38926" firstAttribute="leading" secondItem="13507" secondAttribute="leading"/>
+                                            <constraint id="38938" firstItem="38926" firstAttribute="top" secondItem="13507" secondAttribute="top"/>
+                                            <constraint id="38939" firstItem="38926" firstAttribute="bottom" secondItem="13513" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="13528" translatesAutoresizingMaskIntoConstraints="NO">
@@ -866,6 +996,13 @@
                                                     <constraint id="13535" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38927">
+                                                <rect key="frame" x="0.0" y="0.0" width="136" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="13536" firstAttribute="height" constant="104"/>
@@ -881,6 +1018,10 @@
                                             <constraint id="13546" firstItem="13534" firstAttribute="leading" secondItem="13528" secondAttribute="leading"/>
                                             <constraint id="13547" firstItem="13534" firstAttribute="trailing" secondItem="13528" secondAttribute="trailing"/>
                                             <constraint id="13548" firstItem="13532" firstAttribute="bottom" secondItem="13534" secondAttribute="top" constant="1"/>
+                                            <constraint id="38940" firstItem="38927" firstAttribute="trailing" secondItem="13528" secondAttribute="trailing"/>
+                                            <constraint id="38941" firstItem="38927" firstAttribute="leading" secondItem="13528" secondAttribute="leading"/>
+                                            <constraint id="38942" firstItem="38927" firstAttribute="bottom" secondItem="13534" secondAttribute="bottom"/>
+                                            <constraint id="38943" firstItem="38927" firstAttribute="top" secondItem="13528" secondAttribute="top"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -928,6 +1069,11 @@
                         <outlet property="Paket3View" destination="13507" id="name-outlet-13507"/>
                         <outlet property="Paket4View" destination="13528" id="name-outlet-13528"/>
                         <outlet property="SatinAlButton" destination="13461" id="name-outlet-13461"/>
+                        <outlet property="KapatButton" destination="13458" id="name-outlet-13458"/>
+                        <outlet property="Paket2Button" destination="38925" id="name-outlet-38925"/>
+                        <outlet property="Paket3Button" destination="38926" id="name-outlet-38926"/>
+                        <outlet property="Paket4Button" destination="38927" id="name-outlet-38927"/>
+                        <outlet property="Paket1Button" destination="38924" id="name-outlet-38924"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13358" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1026,6 +1172,13 @@
                                                     <constraint id="16902" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40536">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="16176" firstAttribute="height" constant="104"/>
@@ -1038,6 +1191,10 @@
                                             <constraint id="16912" firstItem="16901" firstAttribute="trailing" secondItem="16128" secondAttribute="trailing"/>
                                             <constraint id="16913" firstItem="16901" firstAttribute="leading" secondItem="16128" secondAttribute="leading"/>
                                             <constraint id="16914" firstItem="16901" firstAttribute="top" secondItem="16897" secondAttribute="bottom" constant="2"/>
+                                            <constraint id="40537" firstItem="40536" firstAttribute="trailing" secondItem="16128" secondAttribute="trailing"/>
+                                            <constraint id="40538" firstItem="40536" firstAttribute="top" secondItem="16128" secondAttribute="top"/>
+                                            <constraint id="40539" firstItem="40536" firstAttribute="leading" secondItem="16128" secondAttribute="leading"/>
+                                            <constraint id="40540" firstItem="40536" firstAttribute="bottom" secondItem="16128" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="16928" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1071,6 +1228,13 @@
                                                     <constraint id="16934" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40546">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="16935" firstAttribute="height" constant="104"/>
@@ -1083,6 +1247,10 @@
                                             <constraint id="16942" firstItem="16933" firstAttribute="trailing" secondItem="16928" secondAttribute="trailing"/>
                                             <constraint id="16943" firstItem="16933" firstAttribute="leading" secondItem="16928" secondAttribute="leading"/>
                                             <constraint id="16944" firstItem="16933" firstAttribute="top" secondItem="16931" secondAttribute="bottom" constant="2"/>
+                                            <constraint id="40547" firstItem="40546" firstAttribute="trailing" secondItem="16928" secondAttribute="trailing"/>
+                                            <constraint id="40548" firstItem="40546" firstAttribute="leading" secondItem="16928" secondAttribute="leading"/>
+                                            <constraint id="40549" firstItem="40546" firstAttribute="top" secondItem="16928" secondAttribute="top"/>
+                                            <constraint id="40550" firstItem="40546" firstAttribute="bottom" secondItem="16928" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" id="17001" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1116,6 +1284,13 @@
                                                     <constraint id="17007" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40541">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="104"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint id="17008" firstAttribute="height" constant="104"/>
@@ -1128,6 +1303,10 @@
                                             <constraint id="17015" firstItem="17006" firstAttribute="trailing" secondItem="17001" secondAttribute="trailing"/>
                                             <constraint id="17016" firstItem="17006" firstAttribute="leading" secondItem="17001" secondAttribute="leading"/>
                                             <constraint id="17017" firstItem="17006" firstAttribute="top" secondItem="17004" secondAttribute="bottom" constant="2"/>
+                                            <constraint id="40542" firstItem="40541" firstAttribute="trailing" secondItem="17001" secondAttribute="trailing"/>
+                                            <constraint id="40543" firstItem="40541" firstAttribute="top" secondItem="17001" secondAttribute="top"/>
+                                            <constraint id="40544" firstItem="40541" firstAttribute="leading" secondItem="17001" secondAttribute="leading"/>
+                                            <constraint id="40545" firstItem="40541" firstAttribute="bottom" secondItem="17001" secondAttribute="bottom"/>
                                         </constraints>
                                     </view>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="33253" translatesAutoresizingMaskIntoConstraints="NO">
@@ -1182,6 +1361,19 @@
                         <outlet property="Paket2View" destination="17001" id="name-outlet-17001"/>
                         <outlet property="Paket3View" destination="16928" id="name-outlet-16928"/>
                         <outlet property="PageControll" destination="33253" id="name-outlet-33253"/>
+                        <outlet property="KapatButtonn" destination="15955" id="name-outlet-15955"/>
+                        <outlet property="Paket1AyLabel" destination="16895" id="name-outlet-16895"/>
+                        <outlet property="Paket1IndirimLabel" destination="16897" id="name-outlet-16897"/>
+                        <outlet property="Paket1FiyatLabel" destination="16901" id="name-outlet-16901"/>
+                        <outlet property="Paket2AyLabel" destination="17002" id="name-outlet-17002"/>
+                        <outlet property="Paket2IndirimLabel" destination="17004" id="name-outlet-17004"/>
+                        <outlet property="Paket2FiyatLabel" destination="17006" id="name-outlet-17006"/>
+                        <outlet property="Paket3AyLabel" destination="16929" id="name-outlet-16929"/>
+                        <outlet property="Paket3IndirimLabel" destination="16931" id="name-outlet-16931"/>
+                        <outlet property="Paket3FiyatLabel" destination="16933" id="name-outlet-16933"/>
+                        <outlet property="Paket2Button" destination="40541" id="name-outlet-40541"/>
+                        <outlet property="Paket3Button" destination="40546" id="name-outlet-40546"/>
+                        <outlet property="Paket1Button" destination="40536" id="name-outlet-40536"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15855" userLabel="First Responder" sceneMemberID="firstResponder"/>

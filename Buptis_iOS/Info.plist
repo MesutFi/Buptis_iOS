@@ -75,6 +75,6 @@
 		<true/>
 	</dict>
 	<key>UIMainStoryboardFile</key>
-	<string>PaketlerBase</string>
+	<string>GirisKayit</string>
 </dict>
 </plist>

@@ -23,6 +23,49 @@ namespace Buptis_iOS
             string contentDirectoryPath = Path.Combine(NSBundle.MainBundle.BundlePath, "Content/");
             AciklamaWebView.LoadHtmlString(ReadFile(), new NSUrl(contentDirectoryPath, true));
             Desing();
+            KapatButtonn.TouchUpInside += KapatButtonn_TouchUpInside;
+            Paket1Button.TouchUpInside += Paket1Button_TouchUpInside;
+            Paket2Button.TouchUpInside += Paket2Button_TouchUpInside;
+            Paket3Button.TouchUpInside += Paket3Button_TouchUpInside;
+            
+        }
+        int SecilenPaket = 0;
+        private void Paket1Button_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketViewDuzenle(Paket2View);
+            PaketViewDuzenle(Paket3View);
+            PaketViewDuzenle(Paket1View, true);
+
+            Paket1AyLabel.TextColor = UIColor.FromRGB(34, 30, 32);
+            Paket1FiyatLabel.TextColor = UIColor.White;
+            Paket1IndirimLabel.TextColor = UIColor.FromRGB(34, 30, 32);
+
+            SecilenPaket = 1;
+        }
+        private void Paket2Button_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketViewDuzenle(Paket1View);
+            PaketViewDuzenle(Paket3View);
+            PaketViewDuzenle(Paket2View, true);
+            Paket2AyLabel.TextColor = UIColor.FromRGB(34, 30, 32);
+            Paket2FiyatLabel.TextColor = UIColor.White;
+            Paket2IndirimLabel.TextColor = UIColor.FromRGB(34, 30, 32);
+            SecilenPaket = 2;
+        }
+        private void Paket3Button_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketViewDuzenle(Paket1View);
+            PaketViewDuzenle(Paket2View);
+            PaketViewDuzenle(Paket3View, true);
+            Paket3AyLabel.TextColor = UIColor.FromRGB(34, 30, 32);
+            Paket3FiyatLabel.TextColor = UIColor.White;
+            Paket3IndirimLabel.TextColor = UIColor.FromRGB(34, 30, 32);
+            SecilenPaket = 3;
+        }
+
+        private void KapatButtonn_TouchUpInside(object sender, EventArgs e)
+        {
+            this.DismissViewController(true, null);
         }
 
         public override void ViewDidAppear(bool animated)
@@ -39,7 +82,7 @@ namespace Buptis_iOS
         void Desing()
         {
             PaketViewDuzenle(Paket1View);
-            PaketViewDuzenle(Paket2View, true);
+            PaketViewDuzenle(Paket2View);
             PaketViewDuzenle(Paket3View);
 
             SatinAlButton.Layer.CornerRadius = 23f;
@@ -69,8 +112,18 @@ namespace Buptis_iOS
                 GelenView.Layer.ShadowOpacity = 0f;
                 GelenView.Layer.ShadowOffset = new CGSize(0, 0);
                 GelenView.Layer.ShadowColor = UIColor.Clear.CGColor;
-            }
+                Paket1AyLabel.TextColor = UIColor.FromRGB(188, 159, 67);
+                Paket2AyLabel.TextColor = UIColor.FromRGB(188, 159, 67);
+                Paket3AyLabel.TextColor = UIColor.FromRGB(188, 159, 67);
 
+                Paket1FiyatLabel.TextColor = UIColor.White;
+                Paket2FiyatLabel.TextColor = UIColor.White;
+                Paket3FiyatLabel.TextColor = UIColor.White;
+
+                Paket1IndirimLabel.TextColor = UIColor.FromRGB(155, 155, 155);
+                Paket2IndirimLabel.TextColor = UIColor.FromRGB(155, 155, 155);
+                Paket3IndirimLabel.TextColor = UIColor.FromRGB(155, 155, 155);
+            }
         }
         #endregion
 
@@ -85,7 +138,7 @@ namespace Buptis_iOS
         void CreateScrollViews()
         {
             InfoScroll.ShowsVerticalScrollIndicator = false;
-
+            InfoScroll.ShowsHorizontalScrollIndicator = false;
             slideContents.Add(new SlideContent() { 
             AciklamaText = "Daha çok kiþiyle sohbet edin!",
             ImageName = "gold_icon1.png"

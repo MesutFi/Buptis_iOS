@@ -20,7 +20,51 @@ namespace Buptis_iOS
             AciklamaWebView.Opaque = false;
             string contentDirectoryPath = Path.Combine(NSBundle.MainBundle.BundlePath, "Content/");
             AciklamaWebView.LoadHtmlString(ReadFile(), new NSUrl(contentDirectoryPath, true));
+            KapatButtonn.TouchUpInside += KapatButtonn_TouchUpInside;
             Desing();
+            Paket1Button.TouchUpInside += Paket1Button_TouchUpInside;
+            Paket2Button.TouchUpInside += Paket2Button_TouchUpInside;
+            Paket3Button.TouchUpInside += Paket3Button_TouchUpInside;
+            Paket4Button.TouchUpInside += Paket4Button_TouchUpInside;
+
+        }
+        int SecilenPaket = 0;
+        private void Paket1Button_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketViewDuzenle(Paket1View, true);
+            PaketViewDuzenle(Paket2View);
+            PaketViewDuzenle(Paket3View);
+            PaketViewDuzenle(Paket4View);
+            SecilenPaket = 1;
+        }
+        private void Paket2Button_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketViewDuzenle(Paket1View);
+            PaketViewDuzenle(Paket2View, true);
+            PaketViewDuzenle(Paket3View);
+            PaketViewDuzenle(Paket4View);
+            SecilenPaket = 2;
+        }
+        private void Paket3Button_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketViewDuzenle(Paket1View);
+            PaketViewDuzenle(Paket2View);
+            PaketViewDuzenle(Paket3View, true);
+            PaketViewDuzenle(Paket4View);
+            SecilenPaket = 3;
+        }
+        private void Paket4Button_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketViewDuzenle(Paket1View);
+            PaketViewDuzenle(Paket2View);
+            PaketViewDuzenle(Paket3View);
+            PaketViewDuzenle(Paket4View, true);
+            SecilenPaket = 4;
+        }
+
+        private void KapatButtonn_TouchUpInside(object sender, EventArgs e)
+        {
+            this.DismissViewController(true, null);
         }
 
         public override void ViewDidAppear(bool animated)
@@ -41,7 +85,7 @@ namespace Buptis_iOS
         void Desing()
         {
             PaketViewDuzenle(Paket1View);
-            PaketViewDuzenle(Paket2View,true);
+            PaketViewDuzenle(Paket2View);
             PaketViewDuzenle(Paket3View);
             PaketViewDuzenle(Paket4View);
 

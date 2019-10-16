@@ -28,7 +28,15 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Paket1Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView Paket1View { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Paket2Button { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,7 +44,15 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Paket3Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView Paket3View { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Paket4Button { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -63,9 +79,19 @@ namespace Buptis_iOS
                 KapatButton = null;
             }
 
+            if (Paket1Button != null) {
+                Paket1Button.Dispose ();
+                Paket1Button = null;
+            }
+
             if (Paket1View != null) {
                 Paket1View.Dispose ();
                 Paket1View = null;
+            }
+
+            if (Paket2Button != null) {
+                Paket2Button.Dispose ();
+                Paket2Button = null;
             }
 
             if (Paket2View != null) {
@@ -73,9 +99,19 @@ namespace Buptis_iOS
                 Paket2View = null;
             }
 
+            if (Paket3Button != null) {
+                Paket3Button.Dispose ();
+                Paket3Button = null;
+            }
+
             if (Paket3View != null) {
                 Paket3View.Dispose ();
                 Paket3View = null;
+            }
+
+            if (Paket4Button != null) {
+                Paket4Button.Dispose ();
+                Paket4Button = null;
             }
 
             if (Paket4View != null) {

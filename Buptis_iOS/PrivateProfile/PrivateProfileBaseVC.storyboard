@@ -47,7 +47,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2952"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2955">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3514">
@@ -222,6 +222,104 @@
                                     <constraint firstAttribute="height" constant="1" id="18698"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99466">
+                                <rect key="frame" x="16" y="760" width="70" height="70"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.20784313725490197" green="0.19607843137254902" blue="0.2" alpha="1"/>
+                                <state key="normal" image="Images/boost_icon.png">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="99491" firstAttribute="width" constant="70"/>
+                                    <constraint id="99492" firstAttribute="height" constant="70"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99471">
+                                <rect key="frame" x="125" y="799" width="70" height="70"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.20784313725490197" green="0.19607843137254902" blue="0.2" alpha="1"/>
+                                <state key="normal" image="Images/super_boost_icon.png">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="99499" firstAttribute="height" constant="70"/>
+                                    <constraint id="99500" firstAttribute="width" constant="70"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99472">
+                                <rect key="frame" x="234" y="760" width="70" height="70"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.20784313725490197" green="0.19607843137254902" blue="0.2" alpha="1"/>
+                                <state key="normal" image="Images/kredi_icon.png">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <constraints>
+                                    <constraint id="99507" firstAttribute="height" constant="70"/>
+                                    <constraint id="99508" firstAttribute="width" constant="70"/>
+                                </constraints>
+                            </button>
+                            <view contentMode="scaleToFill" id="99475" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="46" y="908" width="221" height="38"/>
+                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99473">
+                                        <rect key="frame" x="0.0" y="4" width="142" height="30"/>
+                                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <state key="normal" title="Buptis Gold">
+                                            <color key="titleColor" colorSpace="calibratedRGB" red="0.67843137254901964" green="0.5725490196078431" blue="0.24313725490196078" alpha="1"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99474">
+                                        <rect key="frame" x="150" y="4" width="63" height="30"/>
+                                        <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
+                                        <state key="normal" image="Images/gold_kapali.png">
+                                            <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <constraints>
+                                            <constraint id="99518" firstAttribute="height" constant="30"/>
+                                            <constraint id="99519" firstAttribute="width" constant="63"/>
+                                        </constraints>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint id="99512" firstAttribute="width" constant="221"/>
+                                    <constraint id="99513" firstAttribute="height" constant="38"/>
+                                    <constraint id="99515" firstItem="99473" firstAttribute="top" secondItem="99475" secondAttribute="top" constant="4"/>
+                                    <constraint id="99516" firstItem="99473" firstAttribute="leading" secondItem="99475" secondAttribute="leading"/>
+                                    <constraint id="99517" firstAttribute="bottom" secondItem="99473" secondAttribute="bottom" constant="4"/>
+                                    <constraint id="99520" firstAttribute="trailing" secondItem="99474" secondAttribute="trailing" constant="8"/>
+                                    <constraint id="99521" firstItem="99474" firstAttribute="top" secondItem="99475" secondAttribute="top" constant="4"/>
+                                    <constraint id="99522" firstItem="99474" firstAttribute="leading" secondItem="99473" secondAttribute="trailing" constant="8"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99523" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="66" y="810" width="20" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1"/>
+                                <constraints>
+                                    <constraint id="101971" firstAttribute="height" constant="20"/>
+                                    <constraint id="101972" firstAttribute="width" constant="20"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99526" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="284" y="810" width="20" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1"/>
+                                <constraints>
+                                    <constraint id="101979" firstAttribute="height" constant="20"/>
+                                    <constraint id="101980" firstAttribute="width" constant="20"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99524" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="175" y="849" width="20" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1"/>
+                                <constraints>
+                                    <constraint id="101975" firstAttribute="height" constant="20"/>
+                                    <constraint id="101976" firstAttribute="width" constant="20"/>
+                                </constraints>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -255,9 +353,23 @@
                             <constraint firstItem="18697" firstAttribute="leading" secondItem="2955" secondAttribute="leadingMargin" id="18774"/>
                             <constraint firstItem="18697" firstAttribute="trailing" secondItem="2955" secondAttribute="trailingMargin" id="18775"/>
                             <constraint firstItem="18697" firstAttribute="top" secondItem="18123" secondAttribute="bottom" constant="14" id="18776"/>
+                            <constraint id="99493" firstItem="99466" firstAttribute="leading" secondItem="2955" secondAttribute="leadingMargin"/>
+                            <constraint id="99494" firstItem="99466" firstAttribute="top" secondItem="18697" secondAttribute="bottom" constant="29"/>
+                            <constraint id="99501" firstItem="99471" firstAttribute="top" secondItem="18123" secondAttribute="bottom" constant="83"/>
+                            <constraint id="99502" firstItem="99471" firstAttribute="centerX" secondItem="2955" secondAttribute="centerX"/>
+                            <constraint id="99509" firstItem="99472" firstAttribute="trailing" secondItem="2955" secondAttribute="trailingMargin"/>
+                            <constraint id="99510" firstItem="99472" firstAttribute="top" secondItem="18123" secondAttribute="bottom" constant="44"/>
+                            <constraint id="99511" firstAttribute="centerX" secondItem="99475" secondAttribute="centerX" constant="3"/>
+                            <constraint id="99514" firstItem="99475" firstAttribute="top" secondItem="99471" secondAttribute="bottom" constant="39"/>
+                            <constraint id="101973" firstItem="99523" firstAttribute="trailing" secondItem="99466" secondAttribute="trailing"/>
+                            <constraint id="101974" firstItem="99523" firstAttribute="bottom" secondItem="99466" secondAttribute="bottom"/>
+                            <constraint id="101977" firstItem="99524" firstAttribute="trailing" secondItem="99471" secondAttribute="trailing"/>
+                            <constraint id="101978" firstItem="99524" firstAttribute="bottom" secondItem="99471" secondAttribute="bottom"/>
+                            <constraint id="101981" firstItem="99526" firstAttribute="trailing" secondItem="99472" secondAttribute="trailing"/>
+                            <constraint id="101982" firstItem="99526" firstAttribute="bottom" secondItem="99472" secondAttribute="bottom"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="320" height="750"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="AyarlarButton" destination="10432" id="name-outlet-10432"/>
                         <outlet property="FiltreButton" destination="3518" id="name-outlet-3518"/>
@@ -271,6 +383,14 @@
                         <outlet property="UserLocation" destination="4468" id="name-outlet-4468"/>
                         <outlet property="UserPhoto" destination="3521" id="name-outlet-3521"/>
                         <outlet property="UserTitle" destination="4352" id="name-outlet-4352"/>
+                        <outlet property="BoostButton" destination="99466" id="name-outlet-99466"/>
+                        <outlet property="BoostCountLabel" destination="99523" id="name-outlet-99523"/>
+                        <outlet property="SuperBoostButton" destination="99471" id="name-outlet-99471"/>
+                        <outlet property="SuperBoostCountLabel" destination="99524" id="name-outlet-99524"/>
+                        <outlet property="KrediButton" destination="99472" id="name-outlet-99472"/>
+                        <outlet property="KrediCountLabel" destination="99526" id="name-outlet-99526"/>
+                        <outlet property="BuptisGoldButton" destination="99473" id="name-outlet-99473"/>
+                        <outlet property="BuptisGoldToggle" destination="99474" id="name-outlet-99474"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2956" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -976,5 +1096,9 @@
         <image name="Images/profilsetting.png" width="60" height="60"/>
         <image name="Images/rightarrow.png" width="95" height="95"/>
         <image name="Images/userforgaleri.png" width="444" height="708"/>
+        <image name="Images/boost_icon.png" width="244" height="244"/>
+        <image name="Images/kredi_icon.png" width="244" height="244"/>
+        <image name="Images/super_boost_icon.png" width="244" height="244"/>
+        <image name="Images/gold_kapali.png" width="187" height="89"/>
     </resources>
 </document>
