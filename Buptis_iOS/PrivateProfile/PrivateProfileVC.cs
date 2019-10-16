@@ -289,6 +289,7 @@ namespace Buptis_iOS
             KrediButton.TouchUpInside += KrediButton_TouchUpInside;
             BuptisGoldButton.TouchUpInside += BuptisGoldButton_TouchUpInside;
             BuptisGoldToggle.TouchUpInside += BuptisGoldToggle_TouchUpInside;
+            GetUserLicence();
         }
 
         private void BuptisGoldToggle_TouchUpInside(object sender, EventArgs e)
@@ -339,6 +340,17 @@ namespace Buptis_iOS
             GelenBut.Layer.ShadowColor = UIColor.Black.CGColor;
             GelenBut.ContentEdgeInsets = new UIEdgeInsets(20, 20, 20, 20);
             GelenBut.ClipsToBounds = true;
+        }
+
+        void GetUserLicence()
+        {
+            var MeID = DataBase.MEMBER_DATA_GETIR()[0].id;
+            WebService webService = new WebService();
+            var Donus = webService.OkuGetir("users/" + MeID);
+            if (Donus != null)
+            {
+                var aa = Donus.ToString();
+            }
         }
 
         #endregion

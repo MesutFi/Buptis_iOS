@@ -1,6 +1,9 @@
+using Buptis_iOS.GenericClass;
+using Buptis_iOS.Web_Service;
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 using UIKit;
@@ -26,8 +29,15 @@ namespace Buptis_iOS
             Paket2Button.TouchUpInside += Paket2Button_TouchUpInside;
             Paket3Button.TouchUpInside += Paket3Button_TouchUpInside;
             Paket4Button.TouchUpInside += Paket4Button_TouchUpInside;
+            SatinAlButton.TouchUpInside += SatinAlButton_TouchUpInside;
 
         }
+
+        private void SatinAlButton_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketSatinAl(SecilenPaket);
+        }
+
         int SecilenPaket = 0;
         private void Paket1Button_TouchUpInside(object sender, EventArgs e)
         {
@@ -131,6 +141,63 @@ namespace Buptis_iOS
             {
                 return reader.ReadToEnd();
             }
+        }
+
+
+        void PaketSatinAl(int SeilenPaket)
+        {
+            var countt = 0;
+            switch (SeilenPaket)
+            {
+                case 1:
+                    countt = 200;
+                    break;
+                case 2:
+                    countt = 500;
+                    break;
+                case 3:
+                    countt = 1000;
+                    break;
+                case 4:
+                    countt = 2000;
+                    break;
+                default:
+                    break;
+            }
+
+            if (countt != 0)
+            {
+                LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+                {
+                    count = 0,
+                    credit = countt,
+                    licenceType = "ONLY_CREDÝT"
+                };
+
+                WebService webService = new WebService();
+                string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
+                var Donus = webService.ServisIslem("licences/buy", jsonString);
+                if (Donus != "Hata")
+                {
+                    CustomAlert.GetCustomAlert(this, countt + " Kredi Satýn Alýndý.");
+                }
+                else
+                {
+                    CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
+                }
+            }
+            else
+            {
+                CustomAlert.GetCustomAlert(this, "Lütfen bir paket seçin.");
+            }
+
+        }
+
+        public class LicenceBuyDTO
+        {
+            public int count { get; set; }
+            public int credit { get; set; }
+            public string licenceType { get; set; }
         }
     }
 }
