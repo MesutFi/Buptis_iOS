@@ -20,6 +20,14 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel AdSoyadText2 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel AdSoyadText3 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView Hazne1 { get; set; }
 
         [Outlet]
@@ -29,14 +37,6 @@ namespace Buptis_iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView Hazne3 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Label2 { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Label3 { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -57,6 +57,16 @@ namespace Buptis_iOS
                 AdSoyadText = null;
             }
 
+            if (AdSoyadText2 != null) {
+                AdSoyadText2.Dispose ();
+                AdSoyadText2 = null;
+            }
+
+            if (AdSoyadText3 != null) {
+                AdSoyadText3.Dispose ();
+                AdSoyadText3 = null;
+            }
+
             if (Hazne1 != null) {
                 Hazne1.Dispose ();
                 Hazne1 = null;
@@ -70,16 +80,6 @@ namespace Buptis_iOS
             if (Hazne3 != null) {
                 Hazne3.Dispose ();
                 Hazne3 = null;
-            }
-
-            if (Label2 != null) {
-                Label2.Dispose ();
-                Label2 = null;
-            }
-
-            if (Label3 != null) {
-                Label3.Dispose ();
-                Label3 = null;
             }
 
             if (Photo1 != null) {

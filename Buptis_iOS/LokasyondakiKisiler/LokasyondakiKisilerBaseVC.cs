@@ -167,7 +167,6 @@ namespace Buptis_iOS.LokasyondakiKisiler
         }
         #endregion
 
-
         #region Custom Class
         public static class LokasyondakiKisilerBaseVC_Kopya
         {

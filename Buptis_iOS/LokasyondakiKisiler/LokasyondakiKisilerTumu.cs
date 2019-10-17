@@ -54,10 +54,12 @@ namespace Buptis_iOS
             var MEDID = DataBase.MEMBER_DATA_GETIR()[0].id;
             if (Donus != null)
             {
+                var aa = Donus.ToString();
                 List1 = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MEMBER_DATA>>(Donus.ToString());
             }
             if (Donus2 != null)
             {
+                var aa = Donus2.ToString();
                 List2 = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MEMBER_DATA>>(Donus2.ToString());
             }
 
@@ -72,6 +74,7 @@ namespace Buptis_iOS
             {
 
                 FilterUsers();
+                SuperBoostKullaniminaGoreSirala();
                 FillDataModel();
             }
             else
@@ -80,7 +83,14 @@ namespace Buptis_iOS
                 CustomLoading.Hide();
             }
         }
-
+        void SuperBoostKullaniminaGoreSirala()
+        {
+            //SUPER BOSTA GÖRE SIRANMASI GEREK ÞUAN BOOSTA GÖRE SIRALIYOR
+            var PaketeGoreSirala = (from item in LokasyondakiKisilerList
+                                        orderby item.superBoost descending
+                                        select item).ToList();
+            LokasyondakiKisilerList = PaketeGoreSirala;
+        }
         void FilterUsers()
         {
             var GetUserFilter1 = DataBase.FILTRELER_GETIR();
@@ -173,7 +183,6 @@ namespace Buptis_iOS
                 }
             }
         }
-
         void FillDataModel()
         {
             var yukseklik = (UIKit.UIScreen.MainScreen.Bounds.Width - 2) / 3;
@@ -214,19 +223,17 @@ namespace Buptis_iOS
                 return (int)YukariYuvarla;
             }
         }
-        async Task BekletVeUygulaAsync()
+        async void BekletVeUygulaAsync()
         {
             await Task.Run(async () =>
              {
                  await Task.Delay(1000);
                  InvokeOnMainThread(delegate ()
                  {
-
                      HucreleriDuzenle();
                  });
              });
         }
-
         public class LokasyondakiKisilerDatModel
         {
             public string ID { get; set; }

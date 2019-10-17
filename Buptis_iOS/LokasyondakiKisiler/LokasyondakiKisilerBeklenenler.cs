@@ -101,6 +101,7 @@ namespace Buptis_iOS
                  
                     InvokeOnMainThread(() => {
                         FilterUsers();
+                        SuperBoostKullaniminaGoreSirala();
                         FillDataModel();
                     });
                 }
@@ -116,6 +117,15 @@ namespace Buptis_iOS
                 CustomLoading.Hide();
             }
         }
+        void SuperBoostKullaniminaGoreSirala()
+        {
+            //SUPER BOSTA GÖRE SIRANMASI GEREK ÞUAN BOOSTA GÖRE SIRALIYOR
+            var PaketeGoreSirala = (from item in LokasyondakiKisilerList
+                                    orderby item.superBoost descending
+                                    select item).ToList();
+            LokasyondakiKisilerList = PaketeGoreSirala;
+        }
+
         void HucreleriDuzenle()
         {
             if (LokasyondakiKisilerList.Count % 3 == 0)

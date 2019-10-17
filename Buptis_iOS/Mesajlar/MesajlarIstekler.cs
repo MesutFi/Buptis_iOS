@@ -34,7 +34,6 @@ namespace Buptis_iOS
             v.AraTxt = AraTxt2;
             return v;
         }
-
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
@@ -46,7 +45,6 @@ namespace Buptis_iOS
             })).Start();
             AraTxt.EditingChanged += AraTxt_EditingChanged;
         }
-
         private void AraTxt_EditingChanged(object sender, EventArgs e)
         {
             var LastText = AraTxt.Text;
@@ -74,7 +72,6 @@ namespace Buptis_iOS
                 }
             })).Start();
         }
-
         void SonMesajlariGetir()
         {
             WebService webService = new WebService();
@@ -87,18 +84,20 @@ namespace Buptis_iOS
                 mFriends = mFriends.FindAll(item => item.request == true);
                 if (mFriends.Count > 0)
                 {
-
+                    
                     mFriends.Where(item => item.receiverId == MeID).ToList().ForEach(item2 => item2.unreadMessageCount = 0);
                     SaveKeys();
                     InvokeOnMainThread(() =>
                     {
-                        //var boldd = Typeface.CreateFromAsset(this.Activity.Assets, "Fonts/muliBold.ttf");
-                        //var normall = Typeface.CreateFromAsset(this.Activity.Assets, "Fonts/muliRegular.ttf");
+                        //Geçmiþ gelecekten daha büyüktür
+                        mFriends.Sort((x, y) => DateTime.Compare(x.lastModifiedDate, y.lastModifiedDate));
+                        mFriends.Reverse();
                         Tablo.Source = new MesajlarCustomTableCellSoruce(mFriends, this, FavorileriCagir());
                         Tablo.ReloadData();
                         Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
                         Tablo.TableFooterView = new UIView();
                         CustomLoading.Hide();
+                        BoostUygula();
                     });
                 }
                 else
@@ -112,6 +111,52 @@ namespace Buptis_iOS
                 CustomLoading.Hide();
             }
         }
+
+        void BoostUygula()
+        {
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+            {
+                for (int i = 0; i < mFriends.Count; i++)
+                {
+                    WebService webService = new WebService();
+                    var Donus = webService.OkuGetir("users/" + mFriends[i].receiverId.ToString());
+                    if (Donus != null)
+                    {
+                        var aa = Donus.ToString();
+                        var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
+                        if (Icerikk.boost!=null)
+                        {
+                            if (Convert.ToInt32(Icerikk.boost) > 0)
+                            {
+                                mFriends[i].BoostOrSuperBoost = true;
+                            }
+                        }
+                        if (Icerikk.superBoost != null)
+                        {
+                            if (Convert.ToInt32(Icerikk.superBoost) > 0)
+                            {
+                                mFriends[i].BoostOrSuperBoost = true;
+                            }
+                        }
+                    }
+                }
+
+                var PaketeGoreSirala = (from item in mFriends
+                             orderby item.BoostOrSuperBoost descending
+                             select item).ToList();
+                mFriends = PaketeGoreSirala;
+
+                InvokeOnMainThread(() =>
+                {
+                    Tablo.Source = new MesajlarCustomTableCellSoruce(mFriends, this, FavorileriCagir());
+                    Tablo.ReloadData();
+                    Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+                    Tablo.TableFooterView = new UIView();
+                });
+
+            })).Start();
+        }
+
         List<string> FavorileriCagir()
         {
             List<string> FollowListID = new List<string>();
@@ -167,12 +212,10 @@ namespace Buptis_iOS
                 }
             }
         }
-
         public void RowSelectt(MesajKisileri TiklananKisi)
         {
             GetUserInfo(TiklananKisi.receiverId.ToString(), TiklananKisi.key);
         }
-
         void GetUserInfo(string UserID, string keyy)
         {
             WebService webService = new WebService();
@@ -188,7 +231,6 @@ namespace Buptis_iOS
                 this.GelenBase1.PresentViewController(controller, true, null);
             }
         }
-
         public class MesajlarCustomTableCellSoruce : UITableViewSource
         {
             List<MesajKisileri> TableItems;
@@ -239,6 +281,5 @@ namespace Buptis_iOS
                 MesajlarIstekler1.RowSelectt(item);
             }
         }
-
     }
 }

@@ -48,26 +48,22 @@ namespace Buptis_iOS
             controller.GenelBase = this;
             this.PresentViewController(controller, true, null);
         }
-
         private void ProfilDuzenleButton_TouchUpInside(object sender, EventArgs e)
         {
             var PrivateProfileBaseVC1 = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
             ProfilSorulariBaseVC controller = PrivateProfileBaseVC1.InstantiateViewController("ProfilSorulariBaseVC") as ProfilSorulariBaseVC;
             this.PresentViewController(controller, true, null);
         }
-
         private void GeriButton_TouchUpInside(object sender, EventArgs e)
         {
             this.DismissViewController(true, null);
         }
-
         private void AyarlarButton_TouchUpInside(object sender, EventArgs e)
         {
             var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
             AyarlarBaseVC controller = AyarlarBaseVC1.InstantiateViewController("AyarlarBaseVC") as AyarlarBaseVC;
             this.PresentViewController(controller, true, null);
         }
-
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
@@ -87,7 +83,6 @@ namespace Buptis_iOS
 
             PaketUIDuzenle();
         }
-
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
@@ -97,14 +92,12 @@ namespace Buptis_iOS
             FotografEkleButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
             ProfilDuzenleButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
         }
-
         void ButtonUIDuzenle(UIButton GelenButon, UIColor BorderColor)
         {
             GelenButon.Layer.CornerRadius = GelenButon.Frame.Height / 2;
             GelenButon.Layer.BorderColor = BorderColor.CGColor;
             GelenButon.Layer.BorderWidth = 3f;
         }
-
         void AddHeaderGradient()
         {
             var Color1 = UIColor.FromRGB(15, 0, 241).CGColor;
@@ -119,7 +112,6 @@ namespace Buptis_iOS
             HeaderHazne.ClipsToBounds = true;
             HeaderHazne.Layer.MaskedCorners = (CACornerMask.MaxXMaxYCorner) | (CACornerMask.MinXMaxYCorner);
         }
-
         void AddButtonGradient()
         {
             var Color1 = UIColor.FromRGB(237, 2, 59).CGColor;
@@ -133,7 +125,6 @@ namespace Buptis_iOS
             FotografEkleButton.Layer.CornerRadius = 30;
             FotografEkleButton.ClipsToBounds = true;
         }
-
         string GetUserAbout()
         {
             WebService webService = new WebService();
@@ -163,7 +154,6 @@ namespace Buptis_iOS
             }
 
         }
-
         void GetUserInfo()
         {
             var UserInfo = DataBase.MEMBER_DATA_GETIR();
@@ -268,7 +258,6 @@ namespace Buptis_iOS
 
             })).Start();
         }
-
         #region PaketIslemler
         void PaketUIDuzenle()
         {
@@ -350,12 +339,22 @@ namespace Buptis_iOS
             if (Donus != null)
             {
                 var aa = Donus.ToString();
+                var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
+                if (Icerikk!=null)
+                {
+                    if (Icerikk.boost<=0)
+                    {
+                        BoostCountLabel.Text = "+";
+                    }
+                    else
+                    {
+
+                    }
+                }
             }
         }
 
         #endregion
-
-
         public class UserImageDTO
         {
             public string createdDate { get; set; }

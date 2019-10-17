@@ -42,39 +42,39 @@ namespace Buptis_iOS
                 case 1:
                     Photo1.Tag = 0;
                     GetUserImage(Photo1, gelenUser[0].id.ToString());
-                    GetUserName(Convert.ToInt32(Tag));
+                    AdSoyadText.Text = gelenUser2[0].firstName + " " + gelenUser2[0].lastName.Substring(0, 1).ToString() + ".";
                     Hazne1.Hidden = false;
                     Photo1.TouchUpInside += Photo_TouchUpInside;
                     break;
                 case 2:
                     Photo1.Tag = 0;
                     GetUserImage(Photo1, gelenUser[0].id.ToString());
-                    GetUserName(Convert.ToInt32(Tag));
+                    AdSoyadText.Text = gelenUser2[0].firstName + " " + gelenUser2[0].lastName.Substring(0, 1).ToString() + ".";
                     Hazne1.Hidden = false;
                     Photo1.TouchUpInside += Photo_TouchUpInside;
                     //****
                     Photo2.Tag = 1;
                     GetUserImage(Photo2, gelenUser[1].id.ToString());
-                    GetUserName(Convert.ToInt32(Tag));
+                    AdSoyadText2.Text = gelenUser2[1].firstName + " " + gelenUser2[1].lastName.Substring(0, 1).ToString() + ".";
                     Hazne2.Hidden = false;
                     Photo2.TouchUpInside += Photo_TouchUpInside;
                     break;
                 case 3:
                     Photo1.Tag = 0;
                     GetUserImage(Photo1, gelenUser[0].id.ToString());
-                    GetUserName(Convert.ToInt32(Tag));
+                    AdSoyadText.Text = gelenUser2[0].firstName + " " + gelenUser2[0].lastName.Substring(0, 1).ToString() + ".";
                     Hazne1.Hidden = false;
                     Photo1.TouchUpInside += Photo_TouchUpInside;
                     //****
                     Photo2.Tag = 1;
                     GetUserImage(Photo2, gelenUser[1].id.ToString());
-                    GetUserName(Convert.ToInt32(Tag));
+                    AdSoyadText2.Text = gelenUser2[1].firstName + " " + gelenUser2[1].lastName.Substring(0, 1).ToString() + ".";
                     Hazne2.Hidden = false;
                     Photo2.TouchUpInside += Photo_TouchUpInside;
                     //*****
                     Photo3.Tag = 2;
                     GetUserImage(Photo3, gelenUser[2].id.ToString());
-                    GetUserName(Convert.ToInt32(Tag));
+                    AdSoyadText3.Text = gelenUser2[2].firstName + " " + gelenUser2[2].lastName.Substring(0, 1).ToString() + ".";
                     Hazne3.Hidden = false;
                     Photo3.TouchUpInside += Photo_TouchUpInside;
                     break;

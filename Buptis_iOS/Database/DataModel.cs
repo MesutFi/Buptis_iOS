@@ -15,10 +15,10 @@ namespace Buptis_iOS.Database
     public class MEMBER_DATA
     {
         [PrimaryKey, AutoIncrement]
-        public int local_id { get; set; }
         public bool activated { get; set; }
-       // public List<string> authorities { get; set; }
+        //public List<string> authorities { get; set; }
         public DateTime? birthDayDate { get; set; }
+        public int? boost { get; set; }
         public string createdBy { get; set; }
         public string createdDate { get; set; }
         public string email { get; set; }
@@ -31,9 +31,11 @@ namespace Buptis_iOS.Database
         public string lastModifiedDate { get; set; }
         public string lastName { get; set; }
         public string login { get; set; }
+        public int? superBoost { get; set; }
+        public int? messageCount { get; set; }
         public string userJob { get; set; }
-        public string townId { get; set; }
         //------------------------------------
+        public string townId { get; set; }
         public string API_TOKEN { get; set; }
         public string password { get; set; }
     }

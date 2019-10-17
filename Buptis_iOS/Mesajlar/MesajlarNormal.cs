@@ -92,8 +92,8 @@ namespace Buptis_iOS
                     SaveKeys();
                     InvokeOnMainThread(() =>
                     {
-                        //var boldd = Typeface.CreateFromAsset(this.Activity.Assets, "Fonts/muliBold.ttf");
-                        //var normall = Typeface.CreateFromAsset(this.Activity.Assets, "Fonts/muliRegular.ttf");
+                        mFriends.Sort((x, y) => DateTime.Compare(x.lastModifiedDate, y.lastModifiedDate));
+                        mFriends.Reverse();
                         Tablo.Source = new MesajlarCustomTableCellSoruce(mFriends, this, FavorileriCagir());
                         Tablo.ReloadData();
                         Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
