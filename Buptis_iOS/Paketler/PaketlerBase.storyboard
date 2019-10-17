@@ -70,7 +70,7 @@
                                                     <constraint id="9974" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9968" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9968" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                                     <constraint id="9981" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9969" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9969" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10311" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10311" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                                                     <constraint id="10312" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10313" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10313" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -200,7 +200,7 @@
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="74,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10335" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10335" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -209,7 +209,7 @@
                                                     <constraint id="10336" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10337" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10337" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -262,7 +262,7 @@
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10449" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10449" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -271,7 +271,7 @@
                                                     <constraint id="10450" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10451" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10451" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -428,7 +428,7 @@
                                                     <constraint id="11399" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11400" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11400" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -437,7 +437,7 @@
                                                     <constraint id="11401" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11402" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11402" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -496,7 +496,7 @@
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11422" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11422" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -505,7 +505,7 @@
                                                     <constraint id="11423" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11424" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11424" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -552,13 +552,13 @@
                                                     <constraint id="11441" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11442" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11442" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="74,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11443" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11443" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -567,7 +567,7 @@
                                                     <constraint id="11444" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11445" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11445" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11464" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11464" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -629,7 +629,7 @@
                                                     <constraint id="11465" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11466" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="11466" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -786,7 +786,7 @@
                                                     <constraint id="13467" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13468" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13468" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -795,7 +795,7 @@
                                                     <constraint id="13469" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13470" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13470" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -848,13 +848,13 @@
                                                     <constraint id="13488" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Super Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13489" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Super Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13489" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13490" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13490" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -863,7 +863,7 @@
                                                     <constraint id="13491" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13492" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13492" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -910,13 +910,13 @@
                                                     <constraint id="13509" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Super Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13510" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Super Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13510" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="74,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13511" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="79,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13511" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -925,7 +925,7 @@
                                                     <constraint id="13512" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13513" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13513" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -972,13 +972,13 @@
                                                     <constraint id="13530" firstAttribute="height" constant="32"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Super Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13531" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Super Boost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13531" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="42" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13532" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="109,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13532" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="63" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -987,7 +987,7 @@
                                                     <constraint id="13533" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13534" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="13534" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="83" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -1154,7 +1154,7 @@
                                                     <constraint id="16905" firstAttribute="height" constant="29"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16897" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16897" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="45" width="88" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -1163,7 +1163,7 @@
                                                     <constraint id="16898" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16901" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16901" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="68" width="88" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -1201,7 +1201,7 @@
                                         <rect key="frame" x="213" y="160" width="88" height="104"/>
                                         <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Ay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16929" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Yıl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16929" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="14" width="88" height="29"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="0.73725490196078436" green="0.62352941176470589" blue="0.2627450980392157" alpha="1"/>
@@ -1210,7 +1210,7 @@
                                                     <constraint id="16930" firstAttribute="height" constant="29"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16931" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16931" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="45" width="88" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -1219,9 +1219,9 @@
                                                     <constraint id="16932" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16933" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29,90₺ x12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="16933" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="68" width="88" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="textColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                                 <constraints>
@@ -1266,7 +1266,7 @@
                                                     <constraint id="17003" firstAttribute="height" constant="29"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17004" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="79,90₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17004" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="45" width="88" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
@@ -1275,7 +1275,7 @@
                                                     <constraint id="17005" firstAttribute="height" constant="21"/>
                                                 </constraints>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,00₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17006" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49,90₺ x6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="17006" translatesAutoresizingMaskIntoConstraints="NO">
                                                 <rect key="frame" x="0.0" y="68" width="88" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>

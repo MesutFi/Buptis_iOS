@@ -277,11 +277,45 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this,"Mesaj Gönderilemedi!");
+                KredisimiBitti();
                 return;
             }
         }
-        
+        void KredisimiBitti()
+        {
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+            {
+                var MeID = DataBase.MEMBER_DATA_GETIR()[0].id;
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("users/" + MeID);
+                if (Donus != null)
+                {
+                    var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
+                    if (Icerikk.messageCount <= 0)
+                    {
+                        InvokeOnMainThread(delegate () {
+                            var KrediModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+                            KrediYukleBaseVC controller = KrediModal.InstantiateViewController("KrediYukleBaseVC") as KrediYukleBaseVC;
+                            controller.PrivateProfileVC1 = null;
+                            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+                            this.PresentViewController(controller, true, null);
+                        });
+                    }
+                    else
+                    {
+                        InvokeOnMainThread(delegate () {
+                            CustomAlert.GetCustomAlert(this, "Mesaj Gönderilemedi!");
+                        });
+                    }
+                }
+                else
+                {
+                    InvokeOnMainThread(delegate () {
+                        CustomAlert.GetCustomAlert(this, "Mesaj Gönderilemedi!");
+                    });
+                }
+            })).Start();
+        }
         public void HediyeGonder(string GelenPath)
         {
             MesajGonderGenericMetod("sendGift#" + CDN.CDN_Path + GelenPath);

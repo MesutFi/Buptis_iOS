@@ -1,6 +1,9 @@
+using Buptis_iOS.GenericClass;
 using Buptis_iOS.Paketler;
+using Buptis_iOS.Web_Service;
 using CoreGraphics;
 using Foundation;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +15,7 @@ namespace Buptis_iOS
     {
         BuptisGoldCustomSlideItem[] Noktalar = new BuptisGoldCustomSlideItem[0];
         List<SlideContent> slideContents = new List<SlideContent>();
+        public PrivateProfileVC PrivateProfileVC1;
         public BustisGoldBaseVC (IntPtr handle) : base (handle)
         {
         }
@@ -22,14 +26,78 @@ namespace Buptis_iOS
             AciklamaWebView.Opaque = false;
             string contentDirectoryPath = Path.Combine(NSBundle.MainBundle.BundlePath, "Content/");
             AciklamaWebView.LoadHtmlString(ReadFile(), new NSUrl(contentDirectoryPath, true));
+            SatinAlButton.TouchUpInside += SatinAlButton_TouchUpInside;
             Desing();
             KapatButtonn.TouchUpInside += KapatButtonn_TouchUpInside;
             Paket1Button.TouchUpInside += Paket1Button_TouchUpInside;
             Paket2Button.TouchUpInside += Paket2Button_TouchUpInside;
             Paket3Button.TouchUpInside += Paket3Button_TouchUpInside;
             
+            
         }
-        int SecilenPaket = 0;
+
+        private void SatinAlButton_TouchUpInside(object sender, EventArgs e)
+        {
+            PaketSatinAl(SecilenPaket);
+        }
+
+
+        void PaketSatinAl(int SeilenPaket)
+        {
+            var countt = 0;
+            switch (SeilenPaket)
+            {
+                case 1:
+                    countt = 1;
+                    break;
+                case 2:
+                    countt = 6;
+                    break;
+                case 3:
+                    countt = 12;
+                    break;
+                default:
+                    break;
+            }
+
+
+            if (countt != 0)
+            {
+                LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+                {
+                    count = countt,
+                    credit = 0,
+                    licenceType = "GOLD"
+                };
+
+                WebService webService = new WebService();
+                string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
+                var Donus = webService.ServisIslem("licences/buy", jsonString);
+                if (Donus != "Hata")
+                {
+                    CustomAlert.GetCustomAlert(this, countt + " Aylýk Buptis Gold Paketi Satýn Alýndý.");
+                    if (PrivateProfileVC1 != null)
+                    {
+                        PrivateProfileVC1.GetUserLicence();
+                    }
+                    this.DismissViewController(true, null);
+                }
+                else
+                {
+                    CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
+
+                }
+            }
+            else
+            {
+                CustomAlert.GetCustomAlert(this, "Lütfen bir paket seçin.");
+            }
+
+
+        }
+
+
+        int SecilenPaket = 2;
         private void Paket1Button_TouchUpInside(object sender, EventArgs e)
         {
             PaketViewDuzenle(Paket2View);
@@ -82,20 +150,25 @@ namespace Buptis_iOS
         void Desing()
         {
             PaketViewDuzenle(Paket1View);
-            PaketViewDuzenle(Paket2View);
+            PaketViewDuzenle(Paket2View,true);
             PaketViewDuzenle(Paket3View);
 
             SatinAlButton.Layer.CornerRadius = 23f;
             SatinAlButton.Layer.ShadowOpacity = 0.8f;
             SatinAlButton.Layer.ShadowOffset = new CGSize(0, 0);
             SatinAlButton.Layer.ShadowColor = UIColor.Black.CGColor;
+
+
+            Paket2AyLabel.TextColor = UIColor.FromRGB(34, 30, 32);
+            Paket2FiyatLabel.TextColor = UIColor.White;
+            Paket2IndirimLabel.TextColor = UIColor.FromRGB(34, 30, 32);
         }
 
         void PaketViewDuzenle(UIView GelenView, bool IsSelecet = false)
         {
             if (IsSelecet)
             {
-                GelenView.BackgroundColor = UIColor.FromRGB(202, 171, 71);
+                GelenView.BackgroundColor = UIColor.FromRGB(198, 169, 70);
                 GelenView.Layer.BorderColor = UIColor.FromRGB(225, 0, 104).CGColor;
                 GelenView.Layer.BorderWidth = 0f;
                 GelenView.Layer.CornerRadius = 30f;
@@ -163,6 +236,11 @@ namespace Buptis_iOS
                 AciklamaText = "Anýnda 1000 Kredi kazanýn!",
                 ImageName = "gold_icon4.png"
             });
+            slideContents.Add(new SlideContent()
+            {
+                AciklamaText = "Reklam izlemeyin!",
+                ImageName = "gold_icon6.png"
+            });
 
             PageControll.Pages = slideContents.Count;
             Noktalar = new BuptisGoldCustomSlideItem[slideContents.Count];
@@ -197,6 +275,12 @@ namespace Buptis_iOS
         {
             public string ImageName { get; set; }
             public string AciklamaText { get; set; }
+        }
+        public class LicenceBuyDTO
+        {
+            public int count { get; set; }
+            public int credit { get; set; }
+            public string licenceType { get; set; }
         }
     }
 }

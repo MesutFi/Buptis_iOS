@@ -90,6 +90,7 @@ namespace Buptis_iOS.LokasyonDetay
             var LokasyonKisilerStory = UIStoryboard.FromName("LokasyondakiKisilerBaseVC", NSBundle.MainBundle);
             LokasyondakiKisilerBaseVC controller = LokasyonKisilerStory.InstantiateViewController("LokasyondakiKisilerBaseVC") as LokasyondakiKisilerBaseVC;
             controller.gelenMekan = GelenMekan;
+            MesajAtabilmekIcinSecilenSonLokasyon.TiklananMekan = GelenMekan;
             this.PresentViewController(controller, true, null);
         }
 
@@ -233,5 +234,9 @@ namespace Buptis_iOS.LokasyonDetay
             public int locationId { get; set; }
             public string status { get; set; }
         }
+    }
+    public static class MesajAtabilmekIcinSecilenSonLokasyon
+    {
+        public static Mekanlar_Location TiklananMekan { get; set; }
     }
 }

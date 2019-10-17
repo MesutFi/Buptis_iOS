@@ -119,11 +119,14 @@ namespace Buptis_iOS
         }
         void SuperBoostKullaniminaGoreSirala()
         {
-            //SUPER BOSTA GÖRE SIRANMASI GEREK ÞUAN BOOSTA GÖRE SIRALIYOR
-            var PaketeGoreSirala = (from item in LokasyondakiKisilerList
-                                    orderby item.superBoost descending
-                                    select item).ToList();
-            LokasyondakiKisilerList = PaketeGoreSirala;
+            LokasyondakiKisilerList.ForEach(item => {
+                if (item.superBoostTime == null)
+                {
+                    item.superBoostTime = new DateTime(1, 1, 1);
+                }
+            });
+            LokasyondakiKisilerList.Sort((x, y) => DateTime.Compare((DateTime)x.superBoostTime, (DateTime)y.superBoostTime));
+            LokasyondakiKisilerList.Reverse();
         }
 
         void HucreleriDuzenle()

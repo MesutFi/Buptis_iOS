@@ -300,14 +300,13 @@
                                     <constraint id="101972" firstAttribute="width" constant="20"/>
                                 </constraints>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99526" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99526" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="284" y="810" width="20" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1"/>
                                 <constraints>
-                                    <constraint id="101979" firstAttribute="height" constant="20"/>
-                                    <constraint id="101980" firstAttribute="width" constant="20"/>
+                                    <constraint id="105365" firstAttribute="height" constant="20"/>
                                 </constraints>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="99524" translatesAutoresizingMaskIntoConstraints="NO">

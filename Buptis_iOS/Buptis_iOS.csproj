@@ -738,6 +738,12 @@
   <ItemGroup>
     <BundleResource Include="Resources\Images\gold_acik.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_icon6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Images\gold_bg_img.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

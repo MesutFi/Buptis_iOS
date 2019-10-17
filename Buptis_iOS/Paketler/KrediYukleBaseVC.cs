@@ -12,6 +12,7 @@ namespace Buptis_iOS
 {
     public partial class KrediYukleBaseVC : UIViewController
     {
+        public PrivateProfileVC PrivateProfileVC1;
         public KrediYukleBaseVC (IntPtr handle) : base (handle)
         {
         }
@@ -38,7 +39,7 @@ namespace Buptis_iOS
             PaketSatinAl(SecilenPaket);
         }
 
-        int SecilenPaket = 0;
+        int SecilenPaket = 3;
         private void Paket1Button_TouchUpInside(object sender, EventArgs e)
         {
             PaketViewDuzenle(Paket1View, true);
@@ -96,7 +97,7 @@ namespace Buptis_iOS
         {
             PaketViewDuzenle(Paket1View);
             PaketViewDuzenle(Paket2View);
-            PaketViewDuzenle(Paket3View);
+            PaketViewDuzenle(Paket3View,true);
             PaketViewDuzenle(Paket4View);
 
             SatinAlButton.Layer.CornerRadius = 23f;
@@ -180,6 +181,11 @@ namespace Buptis_iOS
                 if (Donus != "Hata")
                 {
                     CustomAlert.GetCustomAlert(this, countt + " Kredi Satýn Alýndý.");
+                    if (PrivateProfileVC1!=null)
+                    {
+                        PrivateProfileVC1.GetUserLicence();
+                    }
+                    this.DismissViewController(true, null);
                 }
                 else
                 {

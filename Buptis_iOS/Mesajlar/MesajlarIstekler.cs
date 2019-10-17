@@ -124,20 +124,22 @@ namespace Buptis_iOS
                     {
                         var aa = Donus.ToString();
                         var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
-                        if (Icerikk.boost!=null)
+                        try
                         {
-                            if (Convert.ToInt32(Icerikk.boost) > 0)
+                            if (Icerikk.boostTime >= DateTime.Now.AddMinutes(-30) && Icerikk.boostTime <= DateTime.Now)
                             {
                                 mFriends[i].BoostOrSuperBoost = true;
                             }
-                        }
-                        if (Icerikk.superBoost != null)
-                        {
-                            if (Convert.ToInt32(Icerikk.superBoost) > 0)
+                            else if (Icerikk.superBoostTime >= DateTime.Now.AddMinutes(-30) && Icerikk.superBoostTime <= DateTime.Now)
                             {
                                 mFriends[i].BoostOrSuperBoost = true;
                             }
+                            else
+                            {
+                                mFriends[i].BoostOrSuperBoost = false;
+                            }
                         }
+                        catch {}
                     }
                 }
 

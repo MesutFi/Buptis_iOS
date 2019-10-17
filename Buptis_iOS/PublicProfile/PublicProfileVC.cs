@@ -1,5 +1,6 @@
 using Buptis_iOS.Database;
 using Buptis_iOS.GenericClass;
+using Buptis_iOS.LokasyonDetay;
 using Buptis_iOS.PublicProfile;
 using Buptis_iOS.Web_Service;
 using CoreAnimation;
@@ -133,13 +134,109 @@ namespace Buptis_iOS
 
         private void MesajAtButton_TouchUpInside(object sender, EventArgs e)
         {
-            MesajlarIcinSecilenKullanici.Kullanici = SecilenKisi.SecilenKisiDTO;
-            var mesKey = GetMessageKey(MesajlarIcinSecilenKullanici.Kullanici.id);
-            MesajlarIcinSecilenKullanici.key = mesKey;
+            MevcutMekandaChechInYapmismi();
+        }
 
-            var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
-            ChatVC controller = LokasyonKisilerStory.InstantiateViewController("ChatVC") as ChatVC;
-            this.PresentViewController(controller, true, null);
+        void MevcutMekandaChechInYapmismi()
+        {
+            //CustomLoading.Show(this, "Lütfen Bekleyin...");
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+            {
+                var MeId = DataBase.MEMBER_DATA_GETIR()[0].id;
+                WebService webService = new WebService();
+                var Donus3 = webService.OkuGetir("locations/user/" + MeId);
+                if (Donus3 != null)
+                {
+                    var MeLastLocation = Newtonsoft.Json.JsonConvert.DeserializeObject<GetUserLastLocation>(Donus3.ToString());
+                   // CustomLoading.Hide();
+                    if (MeLastLocation != null)
+                    {
+                        //Týklanan lokasyon benim lokasyonumdan farklýysa
+                        if (MesajAtabilmekIcinSecilenSonLokasyon.TiklananMekan.id != MeLastLocation.id)
+                        {
+                            if (KullanicininGoldPaketiVarmi(MeId))
+                            {
+                                MesajlariVeyaPaketiAc(true);
+                            }
+                            else
+                            {
+                                MesajlariVeyaPaketiAc(false);
+                            }
+                        }
+                        else
+                        {
+                            MesajlariVeyaPaketiAc(true);
+                        }
+                    }
+                    else
+                    {
+
+                        MesajlariVeyaPaketiAc(false);
+                    }
+                }
+                else
+                {
+                    if (KullanicininGoldPaketiVarmi(MeId))
+                    {
+                        MesajlariVeyaPaketiAc(true);
+                    }
+                    else
+                    {
+                        MesajlariVeyaPaketiAc(false);
+                    }
+                }
+            })).Start();
+        }
+
+        void MesajlariVeyaPaketiAc(bool Durum)
+        {
+            if (Durum)
+            {
+                InvokeOnMainThread(delegate ()
+                {
+                    MesajlarIcinSecilenKullanici.Kullanici = SecilenKisi.SecilenKisiDTO;
+                    var mesKey = GetMessageKey(MesajlarIcinSecilenKullanici.Kullanici.id);
+                    MesajlarIcinSecilenKullanici.key = mesKey;
+
+                    var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
+                    ChatVC controller = LokasyonKisilerStory.InstantiateViewController("ChatVC") as ChatVC;
+                    this.PresentViewController(controller, true, null);
+                });
+            }
+            else
+            {
+                InvokeOnMainThread(delegate ()
+                {
+                    var GoldModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+                    BustisGoldBaseVC controller = GoldModal.InstantiateViewController("BustisGoldBaseVC") as BustisGoldBaseVC;
+                    controller.PrivateProfileVC1 = null;
+                    controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+                    this.PresentViewController(controller, true, null);
+                });
+            }
+
+        }
+
+        bool KullanicininGoldPaketiVarmi(int MeID)
+        {
+            WebService webService = new WebService();
+            var Donus = webService.OkuGetir("users/" + MeID);
+            if (Donus != null)
+            {
+                var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
+                if (Icerikk.gold != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
         string GetMessageKey(int UserId)
         {

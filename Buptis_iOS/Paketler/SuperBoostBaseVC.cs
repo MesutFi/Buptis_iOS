@@ -11,6 +11,7 @@ namespace Buptis_iOS
 {
     public partial class SuperBoostBaseVC : UIViewController
     {
+        public PrivateProfileVC PrivateProfileVC1;
         public SuperBoostBaseVC (IntPtr handle) : base (handle)
         {
         }
@@ -36,7 +37,7 @@ namespace Buptis_iOS
             PaketSatinAl(SecilenPaket);
         }
 
-        int SecilenPaket = 0;
+        int SecilenPaket = 3;
         private void Paket1Button_TouchUpInside(object sender, EventArgs e)
         {
             PaketViewDuzenle(Paket1View, true);
@@ -93,7 +94,7 @@ namespace Buptis_iOS
         {
             PaketViewDuzenle(Paket1View);
             PaketViewDuzenle(Paket2View);
-            PaketViewDuzenle(Paket3View);
+            PaketViewDuzenle(Paket3View, true);
             PaketViewDuzenle(Paket4View);
 
             SatinAlButton.Layer.CornerRadius = 23f;
@@ -149,13 +150,13 @@ namespace Buptis_iOS
                     countt = 1;
                     break;
                 case 2:
-                    countt = 3;
+                    countt = 2;
                     break;
                 case 3:
-                    countt = 5;
+                    countt = 3;
                     break;
                 case 4:
-                    countt = 10;
+                    countt = 5;
                     break;
                 default:
                     break;
@@ -176,6 +177,8 @@ namespace Buptis_iOS
                 if (Donus != "Hata")
                 {
                     CustomAlert.GetCustomAlert(this, countt + " Super Boost Satýn Alýndý.");
+                    PrivateProfileVC1.GetUserLicence();
+                    this.DismissViewController(true,null);
                 }
                 else
                 {

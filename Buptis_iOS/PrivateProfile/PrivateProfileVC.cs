@@ -1,4 +1,5 @@
 using Buptis_iOS.Database;
+using Buptis_iOS.GenericClass;
 using Buptis_iOS.PrivateProfile.Ayarlar;
 using Buptis_iOS.Web_Service;
 using CoreAnimation;
@@ -11,6 +12,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UIKit;
 using static Buptis_iOS.ProfilSorulariBaseVC;
 
@@ -86,7 +88,12 @@ namespace Buptis_iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            //GetUserInfo();
+            UserTitle.Text = "";
+            UserJob.Text = "";
+            UserAbout.Text = "";
+            UserLocation.Text = "";
+            UserLastLocation.Text = "";
+            GetUserInfo();
             var marginn = 15;
             AyarlarButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
             FotografEkleButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
@@ -125,34 +132,46 @@ namespace Buptis_iOS
             FotografEkleButton.Layer.CornerRadius = 30;
             FotografEkleButton.ClipsToBounds = true;
         }
-        string GetUserAbout()
+        void GetUserAbout()
         {
-            WebService webService = new WebService();
-            var MeId = DataBase.MEMBER_DATA_GETIR()[0];
-            var Donus = webService.OkuGetir("answers/user/" + MeId.login);
-            if (Donus != null)
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
-                string CevaplarBirlesmis = "";
-                var Cevaplar = Newtonsoft.Json.JsonConvert.DeserializeObject<List<UserAnswersDTO>>(Donus.ToString());
-                if (Cevaplar.Count > 0)
+                WebService webService = new WebService();
+                var MeId = DataBase.MEMBER_DATA_GETIR()[0];
+                var Donus = webService.OkuGetir("answers/user/" + MeId.login);
+                if (Donus != null)
                 {
-                    for (int i = 0; i < Cevaplar.Count; i++)
+                    string CevaplarBirlesmis = "";
+                    var Cevaplar = Newtonsoft.Json.JsonConvert.DeserializeObject<List<UserAnswersDTO>>(Donus.ToString());
+                    if (Cevaplar.Count > 0)
                     {
-                        CevaplarBirlesmis += Cevaplar[i].option + ", ";
+                        for (int i = 0; i < Cevaplar.Count; i++)
+                        {
+                            CevaplarBirlesmis += Cevaplar[i].option + ", ";
+                        }
+                        InvokeOnMainThread(delegate ()
+                        {
+                            UserAbout.Text = CevaplarBirlesmis;
+                        });
                     }
-
-                    return CevaplarBirlesmis;
+                    else
+                    {
+                        InvokeOnMainThread(delegate ()
+                        {
+                            UserAbout.Text = "Diðer kullanýcýlarýn sizi tanýyabilmesi için lütfen profil sorularýný yanýtlayýn.";
+                        });
+                        
+                    }
                 }
                 else
                 {
-                    return "Diðer kullanýcýlarýn sizi tanýyabilmesi için lütfen profil sorularýný yanýtlayýn.";
+                    InvokeOnMainThread(delegate ()
+                    {
+                        UserAbout.Text = "Diðer kullanýcýlarýn sizi tanýyabilmesi için lütfen profil sorularýný yanýtlayýn.";
+                    });
+                    
                 }
-            }
-            else
-            {
-                return "Diðer kullanýcýlarýn sizi tanýyabilmesi için lütfen profil sorularýný yanýtlayýn.";
-            }
-
+            })).Start();
         }
         void GetUserInfo()
         {
@@ -167,7 +186,7 @@ namespace Buptis_iOS
                     UserTitle.Text += ((zeroTime + Fark).Year - 1).ToString();
                 }
                 UserJob.Text = UserInfo[0].userJob;
-                UserAbout.Text = GetUserAbout();
+                GetUserAbout();
                 UserInfo[0].townId = "-1";
                 GetUserTown(UserInfo[0].townId.ToString(), UserLocation);
                 GetLastCheckin(UserInfo[0].id);
@@ -194,26 +213,39 @@ namespace Buptis_iOS
         }
         void GetLastCheckin(int USERID)
         {
-            WebService webService = new WebService();
-            var Donus = webService.OkuGetir("locations/user/" + USERID);
-            if (Donus != null)
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
-                var LasLoc = Newtonsoft.Json.JsonConvert.DeserializeObject<LastLocationDTO>(Donus.ToString());
-                if (!string.IsNullOrEmpty(LasLoc.townId))
+
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("locations/user/" + USERID);
+                if (Donus != null)
                 {
-                    var TownID = LasLoc.townId;
-                    GetUserTown(TownID, UserLastLocation);
+                    var LasLoc = Newtonsoft.Json.JsonConvert.DeserializeObject<LastLocationDTO>(Donus.ToString());
+                    if (!string.IsNullOrEmpty(LasLoc.townId))
+                    {
+                        var TownID = LasLoc.townId;
+                        GetUserTown(TownID, UserLastLocation);
+                    }
+                    else
+                    {
+                        InvokeOnMainThread(delegate ()
+                        {
+                            UserLastLocation.Text = "Henüz check-in yok.";
+                        });
+                        
+                    }
+
                 }
                 else
                 {
-                    UserLastLocation.Text = "Henüz check-in yok.";
+                    InvokeOnMainThread(delegate ()
+                    {
+                        UserLastLocation.Text = "Henüz check-in yok.";
+                    });
                 }
+            })).Start();
 
-            }
-            else
-            {
-                UserLastLocation.Text = "Henüz check-in yok.";
-            }
+           
         }
         void GetUserTown(string townid, UILabel HangiText)
         {
@@ -285,14 +317,17 @@ namespace Buptis_iOS
         {
             var GoldModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
             BustisGoldBaseVC controller = GoldModal.InstantiateViewController("BustisGoldBaseVC") as BustisGoldBaseVC;
+            controller.PrivateProfileVC1 = this;
             controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
             this.PresentViewController(controller, true, null);
         }
 
         private void BuptisGoldButton_TouchUpInside(object sender, EventArgs e)
         {
+           
             var GoldModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
             BustisGoldBaseVC controller = GoldModal.InstantiateViewController("BustisGoldBaseVC") as BustisGoldBaseVC;
+            controller.PrivateProfileVC1 = this;
             controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
             this.PresentViewController(controller, true, null);
         }
@@ -301,26 +336,69 @@ namespace Buptis_iOS
         {
             var KrediModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
             KrediYukleBaseVC controller = KrediModal.InstantiateViewController("KrediYukleBaseVC") as KrediYukleBaseVC;
+            controller.PrivateProfileVC1 = this;
             controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
             this.PresentViewController(controller, true, null);
         }
 
         private void SuperBoostButton_TouchUpInside(object sender, EventArgs e)
         {
-            var SuperBoostModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
-            SuperBoostBaseVC controller = SuperBoostModal.InstantiateViewController("SuperBoostBaseVC") as SuperBoostBaseVC;
-            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
-            this.PresentViewController(controller, true, null);
+            if (SuperBoostCountLabel.Text == "+")
+            {
+                var SuperBoostModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+                SuperBoostBaseVC controller = SuperBoostModal.InstantiateViewController("SuperBoostBaseVC") as SuperBoostBaseVC;
+                controller.PrivateProfileVC1 = this;
+                controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+                this.PresentViewController(controller, true, null);
+            }
+            else
+            {
+                UseBoostOrSuperBoost("SUPER_BOOST");
+            }
+            
         }
 
         private void BoostButton_TouchUpInside(object sender, EventArgs e)
         {
-            var BoostModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
-            BoostBaseVC controller = BoostModal.InstantiateViewController("BoostBaseVC") as BoostBaseVC;
-            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
-            this.PresentViewController(controller, true, null);
-        }
 
+            if (BoostCountLabel.Text == "+")
+            {
+                var BoostModal = UIStoryboard.FromName("PaketlerBase", NSBundle.MainBundle);
+                BoostBaseVC controller = BoostModal.InstantiateViewController("BoostBaseVC") as BoostBaseVC;
+                controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+                this.PresentViewController(controller, true, null);
+            }
+            else
+            {
+                UseBoostOrSuperBoost("BOOST");
+            }
+            
+        }
+        void UseBoostOrSuperBoost(string LicenceType)
+        {
+            WebService webService = new WebService();
+            var Donus = webService.ServisIslem("licences/use", LicenceType,ContentType: "text/plain");
+            if (Donus != "Hata")
+            {
+                switch (LicenceType)
+                {
+                    case "SUPER_BOOST":
+                        CustomAlert.GetCustomAlert(this, "1 Super Boost Aktifleþtirildi.");
+                        break;
+                    case "BOOST":
+                        CustomAlert.GetCustomAlert(this, "1 Boost Aktifleþtirildi.");
+                        break;
+                    default:
+                        break;
+                }
+
+                GetUserLicence();
+            }
+            else
+            {
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen daha sonra tekrar deneyin.");
+            }
+        }
         void SetShadow(UIButton GelenBut)
         {
             GelenBut.Layer.CornerRadius = 20f;
@@ -330,30 +408,70 @@ namespace Buptis_iOS
             GelenBut.ContentEdgeInsets = new UIEdgeInsets(20, 20, 20, 20);
             GelenBut.ClipsToBounds = true;
         }
-
-        void GetUserLicence()
+        public void GetUserLicence()
         {
-            var MeID = DataBase.MEMBER_DATA_GETIR()[0].id;
-            WebService webService = new WebService();
-            var Donus = webService.OkuGetir("users/" + MeID);
-            if (Donus != null)
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
-                var aa = Donus.ToString();
-                var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
-                if (Icerikk!=null)
+                var MeID = DataBase.MEMBER_DATA_GETIR()[0].id;
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("users/" + MeID);
+                if (Donus != null)
                 {
-                    if (Icerikk.boost<=0)
+                    var aa = Donus.ToString();
+                    var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
+                    if (Icerikk != null)
                     {
-                        BoostCountLabel.Text = "+";
-                    }
-                    else
-                    {
+                        InvokeOnMainThread(delegate ()
+                        {
+                            if (Icerikk.boost <= 0)
+                            {
+                                BoostCountLabel.Text = "+";
+                            }
+                            else
+                            {
+                                BoostCountLabel.Text = Icerikk.boost.ToString();
+                            }
 
+                            if (Icerikk.superBoost <= 0)
+                            {
+                                SuperBoostCountLabel.Text = "+";
+                            }
+                            else
+                            {
+                                SuperBoostCountLabel.Text = Icerikk.superBoost.ToString();
+                            }
+
+                            if (Icerikk.messageCount <= 0 || Icerikk.messageCount == null)
+                            {
+                                KrediCountLabel.Text = "+";
+                            }
+                            else
+                            {
+                                KrediCountLabel.Text = " " + Icerikk.messageCount.ToString() + " ";
+                                KrediCountLabel.TranslatesAutoresizingMaskIntoConstraints = false;
+                                var Kisitlamalari = KrediCountLabel.Constraints;
+                                //KrediCountLabel.RemoveConstraints(KrediCountLabel.Constraints);
+                                // KrediCountLabel.Text = " " + "50000" + " ";
+                                KrediCountLabel.TextAlignment = UITextAlignment.Center;
+                                KrediCountLabel.LayoutIfNeeded();
+                                var withh = KrediCountLabel.IntrinsicContentSize.Width;
+                                var frmaee = KrediCountLabel.Frame;
+                                frmaee.Width = withh;
+                                frmaee.X = KrediCountLabel.Frame.Right - frmaee.Width;
+                                KrediCountLabel.Frame = frmaee;
+                                KrediCountLabel.Layer.CornerRadius = 0f;
+                                KrediCountLabel.Layer.CornerRadius = frmaee.Height / 2f;
+                                //KrediCountLabel.AddConstraints(Kisitlamalari);
+                            }
+                            if (Icerikk.gold != null)
+                            {
+                                BuptisGoldToggle.SetImage(UIImage.FromBundle("Images/gold_acik.png"), UIControlState.Normal);
+                            }
+                        });
                     }
                 }
-            }
+            })).Start();
         }
-
         #endregion
         public class UserImageDTO
         {
