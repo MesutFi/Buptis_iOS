@@ -42,7 +42,9 @@ namespace Buptis_iOS.Lokasyonlar
         {
             MekanTur.Text = "";
             MekanAdiLabel.Text ="   "+ mekanlarlocation.name;
-            if (Convert.ToDouble(mekanlarlocation.rating)>= 10)
+            //Console.WriteLine("RATINGGGG" + mekanlarlocation.rating);
+            var ratdurum = mekanlarlocation.rating;
+            if (ratdurum >= 10.0)
             {
                 MekanRating.SetTitle("10", UIControlState.Normal);
 

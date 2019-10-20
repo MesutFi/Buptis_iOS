@@ -39,7 +39,7 @@ namespace Buptis_iOS.LokasyonDetay
                 UIApplication.SharedApplication.OpenUrl(url);
             };
          
-            RatingButton.SetTitle((GelenMekan.rating).ToString(),UIControlState.Normal);
+            RatingButton.SetTitle(Math.Round(Convert.ToDouble(GelenMekan.rating), 1).ToString(),UIControlState.Normal);
             mekanTitle.Text= GelenMekan.name;
             KonumButton.TouchUpInside += KonumButton_TouchUpInside;
             BekletmeButton.TouchUpInside += BekletmeButton_TouchUpInside;

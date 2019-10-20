@@ -35,6 +35,10 @@ namespace Buptis_iOS.LokasyondakiKisiler
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel MekanAdiLabell { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView MenuHazne { get; set; }
 
         [Outlet]
@@ -70,6 +74,11 @@ namespace Buptis_iOS.LokasyondakiKisiler
             if (HeaderHazne != null) {
                 HeaderHazne.Dispose ();
                 HeaderHazne = null;
+            }
+
+            if (MekanAdiLabell != null) {
+                MekanAdiLabell.Dispose ();
+                MekanAdiLabell = null;
             }
 
             if (MenuHazne != null) {

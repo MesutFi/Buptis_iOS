@@ -49,9 +49,13 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignKey>Apple Development: Alkan Ulu (39NKHXNH34)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision />
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -286,6 +290,10 @@
     <InterfaceDefinition Include="Paketler\BuptisGoldCustomSlideItem.xib" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenericClass\CustomPaymentObserver.cs" />
+    <Compile Include="GenericClass\InAppPurchaseManager.cs" />
+    <Compile Include="GenericClass\PurchaseManager.cs" />
+    <Compile Include="GenericClass\SKProductExtension.cs" />
     <Compile Include="Paketler\BuptisGoldCustomSlideItem.cs" />
     <Compile Include="Paketler\BuptisGoldCustomSlideItem.designer.cs">
       <DependentUpon>BuptisGoldCustomSlideItem.cs</DependentUpon>

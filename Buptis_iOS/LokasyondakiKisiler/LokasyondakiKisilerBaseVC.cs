@@ -38,6 +38,7 @@ namespace Buptis_iOS.LokasyondakiKisiler
             BackButton.TouchUpInside += BackButton_TouchUpInside;
             BackButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
             MesajlarButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+
         }
 
         private void BackButton_TouchUpInside(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace Buptis_iOS.LokasyondakiKisiler
             if (!Actinmi2)
             {
                 this.View.Hidden = true;
+                MekanAdiLabell.Text = gelenMekan.name;
                 Actinmi2 = true;
             }
         }
