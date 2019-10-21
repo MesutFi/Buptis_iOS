@@ -4,6 +4,7 @@ using CoreAnimation;
 using CoreGraphics;
 using Foundation;
 using Newtonsoft.Json;
+using Plugin.InAppBilling;
 using System;
 using System.IO;
 using UIKit;
@@ -89,50 +90,52 @@ namespace Buptis_iOS
             HazneView.Layer.MaskedCorners = (CoreAnimation.CACornerMask)3;
         }
 
-        void PaketSatinAl(int SeilenPaket)
+        async void PaketSatinAl(int SeilenPaket)
         {
             var countt = 0;
+            string pakett = "";
             switch (SeilenPaket)
             {
                 case 1:
                     countt = 1;
+                    pakett = "com.buptis.ios.birboost";
                     break;
                 case 2:
                     countt = 3;
+                    pakett = "com.buptis.ios.ucboost";
                     break;
                 case 3:
                     countt = 5;
+                    pakett = "com.buptis.ios.besboost";
                     break;
                 case 4:
                     countt = 10;
+                    pakett = "com.buptis.ios.onboost";
                     break;
                 default:
                     break;
             }
 
-
             if (countt != 0)
             {
-                LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+                try
                 {
-                    count = countt,
-                    credit = 0,
-                    licenceType = "BOOST"
-                };
+                    var purchase = await CrossInAppBilling.Current.PurchaseAsync(pakett, Plugin.InAppBilling.Abstractions.ItemType.InAppPurchase, "buptispayload");
 
-                WebService webService = new WebService();
-                string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
-                var Donus = webService.ServisIslem("licences/buy", jsonString);
-                if (Donus != "Hata")
-                {
-                    CustomAlert.GetCustomAlert(this, countt + " Boost Paket Satýn Alýndý.");
-                    PrivateProfileVC1.GetUserLicence();
-                    this.DismissViewController(true, null);
+                    if (purchase == null)
+                    {
+                        CustomAlert.GetCustomAlert(this, "Bir Sorun Oluþtu!");
+                        //AlertHelper.AlertGoster("Bir Sorun Oluþtu!", this.Activity);
+                    }
+                    else
+                    {
+                        PaketSatinAlmaUzakDBAyarla(countt);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
-
+                    CustomAlert.GetCustomAlert(this, ex.Message);
+                    Console.WriteLine(ex);
                 }
             }
             else
@@ -143,6 +146,29 @@ namespace Buptis_iOS
           
         }
 
+        void PaketSatinAlmaUzakDBAyarla(int Miktar)
+        {
+            LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+            {
+                count = Miktar,
+                credit = 0,
+                licenceType = "BOOST"
+            };
+
+            WebService webService = new WebService();
+            string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
+            var Donus = webService.ServisIslem("licences/buy", jsonString);
+            if (Donus != "Hata")
+            {
+                CustomAlert.GetCustomAlert(this, Miktar + " Boost Paket Satýn Alýndý.");
+                PrivateProfileVC1.GetUserLicence();
+                this.DismissViewController(true, null);
+            }
+            else
+            {
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
+            }
+        }
 
         #region SetUI
         void Desing()

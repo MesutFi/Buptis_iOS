@@ -4,6 +4,7 @@ using CoreAnimation;
 using CoreGraphics;
 using Foundation;
 using Newtonsoft.Json;
+using Plugin.InAppBilling;
 using StoreKit;
 using System;
 using System.Collections.Generic;
@@ -16,19 +17,7 @@ namespace Buptis_iOS
     {
         public PrivateProfileVC PrivateProfileVC1;
 
-        #region iTunes Properties
-
-        public static string Kredi_200_ID = "com.buptis.ios.ikiyuzkredi";
-        public static string Kredi_500_ID = "com.buptis.ios.besyuzkredi";
-        public static string Kredi_1000_ID = "com.buptis.ios.binkredi"; 
-        public static string Kredi_2000_ID = "com.buptis.ios.ikibinkredi";
-        List<string> products;
-        bool pricesLoaded = false;
-        NSObject priceObserver, succeededObserver, failedObserver, requestObserver;
-
-        CustomPaymentObserver theObserver;
-        InAppPurchaseManager iap;
-        #endregion
+      
 
         public KrediYukleBaseVC (IntPtr handle) : base (handle)
         {
@@ -38,15 +27,7 @@ namespace Buptis_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            #region iTunes Satin Alma
-            products = new List<string>() { Kredi_200_ID, Kredi_500_ID, Kredi_1000_ID, Kredi_2000_ID };
-            iap = new InAppPurchaseManager();
-            theObserver = new CustomPaymentObserver(iap);
-            // Call this once upon startup of in-app-purchase activities
-            // This also kicks off the TransactionObserver which handles the various communications
-            SKPaymentQueue.DefaultQueue.AddTransactionObserver(theObserver);
-
-            #endregion
+            
         }
 
         public override void ViewWillAppear(bool animated)
@@ -64,84 +45,7 @@ namespace Buptis_iOS
             Paket4Button.TouchUpInside += Paket4Button_TouchUpInside;
             SatinAlButton.TouchUpInside += SatinAlButton_TouchUpInside;
 
-            #region iTunes SatinAlmaIslemleri
-            // setup the observer to wait for prices to come back from StoreKit <- AppStore
-            priceObserver = NSNotificationCenter.DefaultCenter.AddObserver(InAppPurchaseManager.InAppPurchaseManagerProductsFetchedNotification,
-                (notification) => {
-                    var info = notification.UserInfo;
-                    if (info == null)
-                        return;
-
-                    var NSKredi_200_IDProductId = new NSString(Kredi_200_ID);
-
-                    if (info.ContainsKey(NSKredi_200_IDProductId))
-                    {
-                        pricesLoaded = true;
-                        var product = (SKProduct)info[NSKredi_200_IDProductId];
-                        Print(product);
-                    }
-
-                    var NSKredi_500_IDProductId = new NSString(Kredi_500_ID);
-                    if (info.ContainsKey(NSKredi_500_IDProductId))
-                    {
-                        pricesLoaded = true;
-                        var product = (SKProduct)info[NSKredi_500_IDProductId];
-                        Print(product);
-                    }
-
-
-                    var NSKredi_1000_IDProductId = new NSString(Kredi_1000_ID);
-                    if (info.ContainsKey(NSKredi_1000_IDProductId))
-                    {
-                        pricesLoaded = true;
-                        var product = (SKProduct)info[NSKredi_1000_IDProductId];
-                        Print(product);
-                    }
-
-                    var NSKredi_2000_IDProductId = new NSString(Kredi_2000_ID);
-                    if (info.ContainsKey(NSKredi_2000_IDProductId))
-                    {
-                        pricesLoaded = true;
-                        var product = (SKProduct)info[NSKredi_2000_IDProductId];
-                        Print(product);
-                    }
-                });
-
-            // only if we can make payments, request the prices
-            if (iap.CanMakePayments())
-            {
-                // now go get prices, if we don't have them already
-                if (!pricesLoaded)
-                    iap.RequestProductData(products); // async request via StoreKit -> App Store
-            }
-            else
-            {
-                // can't make payments (purchases turned off in Settings?)
-                SatinAlButton.SetTitle("AppStore Kullaným Dýþý", UIControlState.Disabled);
-                SatinAlButton.SetTitle("AppStore Kullaným Dýþý", UIControlState.Disabled);
-            }
-
-            //balanceLabel.Text = String.Format(Balance, CreditManager.Balance());// + " monkey credits";
-
-            succeededObserver = NSNotificationCenter.DefaultCenter.AddObserver(InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
-            (notification) => {
-                Console.WriteLine("Satýn Alma Baþarýlý");
-                //balanceLabel.Text = String.Format(Balance, CreditManager.Balance());// + " monkey credits";
-            });
-            failedObserver = NSNotificationCenter.DefaultCenter.AddObserver(InAppPurchaseManager.InAppPurchaseManagerTransactionFailedNotification,
-            (notification) => {
-                // TODO:
-                Console.WriteLine("Transaction Failed");
-            });
-
-            requestObserver = NSNotificationCenter.DefaultCenter.AddObserver(InAppPurchaseManager.InAppPurchaseManagerRequestFailedNotification,
-                                                                             (notification) => {
-                                                                                 // TODO:
-                                                                                 Console.WriteLine("Request Failed");
-                                                                                 //buy5Button.SetTitle("Network down?", UIControlState.Disabled);
-                                                                                 //buy10Button.SetTitle("Network down?", UIControlState.Disabled);
-                                                                             });
-            #endregion
+    
 
         }
 
@@ -249,7 +153,7 @@ namespace Buptis_iOS
                 return reader.ReadToEnd();
             }
         }
-        void PaketSatinAl(int SeilenPaket)
+        async void PaketSatinAl(int SeilenPaket)
         {
             var countt = 0;
             string pakett = "";
@@ -257,26 +161,44 @@ namespace Buptis_iOS
             {
                 case 1:
                     countt = 200;
-                    pakett = Kredi_200_ID;
+                    pakett = "com.buptis.ios.ikiyuzkredi";
                     break;
                 case 2:
                     countt = 500;
-                    pakett = Kredi_500_ID;
+                    pakett = "com.buptis.ios.besyuzkredi";
                     break;
                 case 3:
                     countt = 1000;
-                    pakett = Kredi_1000_ID;
+                    pakett = "com.buptis.ios.binkredi";
                     break;
                 case 4:
                     countt = 2000;
-                    pakett = Kredi_2000_ID;
+                    pakett = "com.buptis.ios.ikibinkredi";
                     break;
                 default:
                     break;
             }
             if (countt != 0)
             {
-                iap.PurchaseProduct(pakett);
+                try
+                {
+                    var purchase = await CrossInAppBilling.Current.PurchaseAsync(pakett, Plugin.InAppBilling.Abstractions.ItemType.InAppPurchase, "buptispayload");
+
+                    if (purchase == null)
+                    {
+                        CustomAlert.GetCustomAlert(this, "Bir Sorun Oluþtu!");
+                        //AlertHelper.AlertGoster("Bir Sorun Oluþtu!", this.Activity);
+                    }
+                    else
+                    {
+                        PaketSatinAlmaUzakDBAyarla(countt);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CustomAlert.GetCustomAlert(this, ex.Message);
+                    Console.WriteLine(ex);
+                }
             }
             else
             {

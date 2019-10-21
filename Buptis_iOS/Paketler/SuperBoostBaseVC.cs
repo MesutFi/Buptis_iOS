@@ -3,6 +3,7 @@ using Buptis_iOS.Web_Service;
 using CoreGraphics;
 using Foundation;
 using Newtonsoft.Json;
+using Plugin.InAppBilling;
 using System;
 using System.IO;
 using UIKit;
@@ -141,22 +142,27 @@ namespace Buptis_iOS
             }
         }
 
-        void PaketSatinAl(int SeilenPaket)
+        async void PaketSatinAl(int SeilenPaket)
         {
             var countt = 0;
+            string pakett = "";
             switch (SeilenPaket)
             {
                 case 1:
                     countt = 1;
+                    pakett = "com.buptis.ios.birsuperboost";
                     break;
                 case 2:
                     countt = 2;
+                    pakett = "com.buptis.ios.ikisuperboost";
                     break;
                 case 3:
                     countt = 3;
+                    pakett = "com.buptis.ios.ucsuperboost";
                     break;
                 case 4:
                     countt = 5;
+                    pakett = "com.buptis.ios.bessuperboost";
                     break;
                 default:
                     break;
@@ -164,25 +170,24 @@ namespace Buptis_iOS
 
             if (countt!= 0)
             {
-                LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+                try
                 {
-                    count = countt,
-                    credit = 0,
-                    licenceType = "SUPER_BOOST"
-                };
+                    var purchase = await CrossInAppBilling.Current.PurchaseAsync(pakett, Plugin.InAppBilling.Abstractions.ItemType.InAppPurchase, "buptispayload");
 
-                WebService webService = new WebService();
-                string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
-                var Donus = webService.ServisIslem("licences/buy", jsonString);
-                if (Donus != "Hata")
-                {
-                    CustomAlert.GetCustomAlert(this, countt + " Super Boost Satýn Alýndý.");
-                    PrivateProfileVC1.GetUserLicence();
-                    this.DismissViewController(true,null);
+                    if (purchase == null)
+                    {
+                        CustomAlert.GetCustomAlert(this, "Bir Sorun Oluþtu!");
+                        //AlertHelper.AlertGoster("Bir Sorun Oluþtu!", this.Activity);
+                    }
+                    else
+                    {
+                        PaketSatinAlmaUzakDBAyarla(countt);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
+                    CustomAlert.GetCustomAlert(this, ex.Message);
+                    Console.WriteLine(ex);
                 }
             }
             else
@@ -190,6 +195,30 @@ namespace Buptis_iOS
                 CustomAlert.GetCustomAlert(this, "Lütfen bir paket seçin.");
             }
           
+        }
+
+        void PaketSatinAlmaUzakDBAyarla(int Miktar)
+        {
+            LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+            {
+                count = Miktar,
+                credit = 0,
+                licenceType = "SUPER_BOOST"
+            };
+
+            WebService webService = new WebService();
+            string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
+            var Donus = webService.ServisIslem("licences/buy", jsonString);
+            if (Donus != "Hata")
+            {
+                CustomAlert.GetCustomAlert(this, Miktar + " Super Boost Satýn Alýndý.");
+                PrivateProfileVC1.GetUserLicence();
+                this.DismissViewController(true, null);
+            }
+            else
+            {
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
+            }
         }
 
         public class LicenceBuyDTO

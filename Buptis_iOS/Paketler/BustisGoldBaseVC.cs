@@ -4,6 +4,7 @@ using Buptis_iOS.Web_Service;
 using CoreGraphics;
 using Foundation;
 using Newtonsoft.Json;
+using Plugin.InAppBilling;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,19 +43,23 @@ namespace Buptis_iOS
         }
 
 
-        void PaketSatinAl(int SeilenPaket)
+        async void PaketSatinAl(int SeilenPaket)
         {
             var countt = 0;
+            string pakett = "";
             switch (SeilenPaket)
             {
                 case 1:
                     countt = 1;
+                    pakett = "com.buptis.ios.birgold";
                     break;
                 case 2:
                     countt = 6;
+                    pakett = "com.buptis.ios.altigold";
                     break;
                 case 3:
                     countt = 12;
+                    pakett = "com.buptis.ios.onikigold";
                     break;
                 default:
                     break;
@@ -63,37 +68,56 @@ namespace Buptis_iOS
 
             if (countt != 0)
             {
-                LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+                try
                 {
-                    count = countt,
-                    credit = 0,
-                    licenceType = "GOLD"
-                };
-
-                WebService webService = new WebService();
-                string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
-                var Donus = webService.ServisIslem("licences/buy", jsonString);
-                if (Donus != "Hata")
-                {
-                    CustomAlert.GetCustomAlert(this, countt + " Aylýk Buptis Gold Paketi Satýn Alýndý.");
-                    if (PrivateProfileVC1 != null)
+                    var purchase = await CrossInAppBilling.Current.PurchaseAsync(pakett, Plugin.InAppBilling.Abstractions.ItemType.InAppPurchase, "buptispayload");
+                    if (purchase == null)
                     {
-                        PrivateProfileVC1.GetUserLicence();
+                        CustomAlert.GetCustomAlert(this, "Bir Sorun Oluþtu!");
+                        //AlertHelper.AlertGoster("Bir Sorun Oluþtu!", this.Activity);
                     }
-                    this.DismissViewController(true, null);
+                    else
+                    {
+                        PaketSatinAlmaUzakDBAyarla(countt);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
-
+                    CustomAlert.GetCustomAlert(this, ex.Message);
+                    Console.WriteLine(ex);
                 }
             }
             else
             {
                 CustomAlert.GetCustomAlert(this, "Lütfen bir paket seçin.");
             }
+        }
+        void PaketSatinAlmaUzakDBAyarla(int Miktar)
+        {
+            LicenceBuyDTO licenceBuyDTO = new LicenceBuyDTO()
+            {
+                count = Miktar,
+                credit = 0,
+                licenceType = "GOLD"
+            };
 
+            WebService webService = new WebService();
+            string jsonString = JsonConvert.SerializeObject(licenceBuyDTO);
+            var Donus = webService.ServisIslem("licences/buy", jsonString);
+            if (Donus != "Hata")
+            {
+                CustomAlert.GetCustomAlert(this, Miktar + " Aylýk Buptis Gold Paketi Satýn Alýndý.");
+                if (PrivateProfileVC1 != null)
+                {
+                    PrivateProfileVC1.GetUserLicence();
+                }
+                this.DismissViewController(true, null);
+            }
+            else
+            {
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
 
+            }
         }
 
 
