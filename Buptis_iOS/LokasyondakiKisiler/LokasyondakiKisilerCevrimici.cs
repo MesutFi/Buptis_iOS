@@ -199,7 +199,7 @@ namespace Buptis_iOS
                 ScrollVieww.AddSubview(NoktaItem);
                 Noktalar[i] = NoktaItem;
             }
-
+            //
             ScrollVieww.ContentSize = new CoreGraphics.CGSize(UIKit.UIScreen.MainScreen.Bounds.Width, Noktalar[Noktalar.Length - 1].Frame.Bottom);
             BekletVeUygulaAsync();
         }

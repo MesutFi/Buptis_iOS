@@ -280,6 +280,7 @@ namespace Buptis_iOS
         {
             //this.ContentView.BackgroundColor = UIColor.Clear;
             ViewHazne.BackgroundColor = UIColor.White;
+            ViewHazne.Layer.MaskedCorners = (CoreAnimation.CACornerMask)3;
             ViewHazne.Layer.CornerRadius = 30f;
             ViewHazne.ClipsToBounds = true;
             ImageOkButton.BackgroundColor = UIColor.FromRGB(226, 0, 93);

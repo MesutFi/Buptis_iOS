@@ -82,8 +82,10 @@ namespace Buptis_iOS
 
             FiltreButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
             GeriButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+             
 
             PaketUIDuzenle();
+           
         }
         public override void ViewWillAppear(bool animated)
         {
@@ -93,11 +95,11 @@ namespace Buptis_iOS
             UserAbout.Text = "";
             UserLocation.Text = "";
             UserLastLocation.Text = "";
-            GetUserInfo();
             var marginn = 15;
             AyarlarButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
             FotografEkleButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
             ProfilDuzenleButton.ContentEdgeInsets = new UIEdgeInsets(marginn, marginn, marginn, marginn);
+            GetUserInfo();
         }
         void ButtonUIDuzenle(UIButton GelenButon, UIColor BorderColor)
         {
@@ -249,46 +251,55 @@ namespace Buptis_iOS
         }
         void GetUserTown(string townid, UILabel HangiText)
         {
-            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+            if (townid=="-1")
             {
-                LastLocationDTO lastlocDTO = new LastLocationDTO();
-                var Me = DataBase.MEMBER_DATA_GETIR()[0];
-                WebService webService = new WebService();
-                var Donus1 = webService.OkuGetir("towns/" + townid.ToString());
-
-                if (Donus1 != null)
+                HangiText.Text = "";
+                return;
+            }
+            else
+            {
+                new System.Threading.Thread(new System.Threading.ThreadStart(delegate
                 {
-                    JObject js = JObject.Parse(Donus1.ToString());
-                    var TownName = (string)js["townName"];
-                    var CityID = (string)js["cityId"];
-                    var Donus2 = webService.OkuGetir("cities/ " + CityID.ToString());
-                    if (Donus2 != null)
+                    LastLocationDTO lastlocDTO = new LastLocationDTO();
+                    var Me = DataBase.MEMBER_DATA_GETIR()[0];
+                    WebService webService = new WebService();
+                    var Donus1 = webService.OkuGetir("towns/" + townid.ToString());
+
+                    if (Donus1 != null)
                     {
-                        JObject js2 = JObject.Parse(Donus2.ToString());
-                        var CityName = (string)js2["cityName"];
-                        
-                        InvokeOnMainThread(() =>
+                        JObject js = JObject.Parse(Donus1.ToString());
+                        var TownName = (string)js["townName"];
+                        var CityID = (string)js["cityId"];
+                        var Donus2 = webService.OkuGetir("cities/ " + CityID.ToString());
+                        if (Donus2 != null)
                         {
-                            HangiText.Text = CityName + ", " + TownName;
-                        });
+                            JObject js2 = JObject.Parse(Donus2.ToString());
+                            var CityName = (string)js2["cityName"];
+
+                            InvokeOnMainThread(() =>
+                            {
+                                HangiText.Text = CityName + ", " + TownName;
+                            });
+                        }
+                        else
+                        {
+                            InvokeOnMainThread(() =>
+                            {
+                                HangiText.Text = TownName;
+                            });
+                        }
                     }
                     else
                     {
                         InvokeOnMainThread(() =>
                         {
-                            HangiText.Text = TownName;
+                            HangiText.Text = "";
                         });
                     }
-                }
-                else
-                {
-                    InvokeOnMainThread(() =>
-                    {
-                        HangiText.Text = "";
-                    });
-                }
 
-            })).Start();
+                })).Start();
+            }
+          
         }
         #region PaketIslemler
         void PaketUIDuzenle()

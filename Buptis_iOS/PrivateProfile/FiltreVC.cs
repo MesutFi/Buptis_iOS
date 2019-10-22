@@ -114,10 +114,10 @@ namespace Buptis_iOS
             this.View.BackgroundColor = UIColor.Clear;
             rangeSlider.ShowTextAboveThumbs = false;
             rangeSlider.DragCompleted += RangeSlider_DragCompleted;
-            rangeSlider.MinimumRange = 1;
-            rangeSlider.MaximumValue = 100;
-            rangeSlider.LowerValue = 30;
-            rangeSlider.UpperValue = 90;
+            rangeSlider.MinimumRange = 18;
+            rangeSlider.MaximumValue = 70;
+            rangeSlider.LowerValue = 25;
+            rangeSlider.UpperValue = 50;
         }
         private void RangeSlider_DragCompleted(object sender, EventArgs e)
         {
@@ -230,6 +230,7 @@ namespace Buptis_iOS
             TabViewMenu.ClipsToBounds = true;
 
             FilterTabView.BackgroundColor = UIColor.White;
+            FilterTabView.Layer.MaskedCorners = (CoreAnimation.CACornerMask)12;
             FilterTabView.Layer.CornerRadius = 30f;
             FilterTabView.ClipsToBounds = true;
 

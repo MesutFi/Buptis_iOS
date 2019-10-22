@@ -169,12 +169,10 @@
       <HintPath>..\packages\sqlite-net-pcl.1.6.292\lib\netstandard1.1\SQLite-net.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\DLL\iOS\Xamarin.RangeSlider.Common.dll</HintPath>
+      <HintPath>..\packages\Xamarin.RangeSlider.1.0.2\lib\Xamarin.iOS10\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.RangeSlider.iOS, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\DLL\iOS\Xamarin.RangeSlider.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.RangeSlider.1.0.2\lib\Xamarin.iOS10\Xamarin.RangeSlider.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -757,6 +755,36 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\gold_bg_img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackCrossedOver%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackCrossedOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackBackground%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-trackBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-track%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-track.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-handle%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-handle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-handle-disabled%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slider-default7-handle-disabled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

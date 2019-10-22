@@ -70,6 +70,7 @@ namespace Buptis_iOS
         private void GonderButton_TouchUpInside(object sender, EventArgs e)
         {
             BizeYazinGonder();
+          
         }
 
         void BizeYazinGonder()
@@ -88,7 +89,18 @@ namespace Buptis_iOS
                 var Donus = webService.ServisIslem("contacts", jsonString);
                 if (Donus != "Hata")
                 {
-                    CustomAlert.GetCustomAlert(this, "Destek talebiniz iletildi. Teþekkürler...");
+                   var alert = new UIAlertView();
+                    alert.Title = "Buptis";
+                    alert.AddButton("Tamam");
+                    alert.Message = "Destek talebiniz iletildi. Teþekkürler...";
+                    alert.AlertViewStyle = UIAlertViewStyle.Default;
+                    alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                    {
+                        alert.Dispose();
+                        this.DismissViewController(true, null);
+
+                    };
+                    alert.Show();
                     textField.Text ="";
                     MesajTextView.Text = "";
                 }
@@ -132,7 +144,6 @@ namespace Buptis_iOS
             Backbutton.TouchUpInside += Backbutton_TouchUpInside;
 
         }
-
         private void Backbutton_TouchUpInside(object sender, EventArgs e)
         {
             this.DismissViewController(true, null);
