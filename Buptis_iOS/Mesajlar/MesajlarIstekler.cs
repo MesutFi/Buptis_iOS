@@ -230,6 +230,7 @@ namespace Buptis_iOS
 
                 var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
                 ChatVC controller = LokasyonKisilerStory.InstantiateViewController("ChatVC") as ChatVC;
+                controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                 this.GelenBase1.PresentViewController(controller, true, null);
             }
         }

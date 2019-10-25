@@ -54,6 +54,7 @@ namespace Buptis_iOS.Mesajlar
             ClearViewContents();
             var MesajlarFavoriler1 = MesajlarFavoriler.Create(this,AraText);
             MesajlarFavoriler1.Frame = new CGRect(0, 0, ContentView.Frame.Width, ContentView.Frame.Height);
+
             ContentView.AddSubview(MesajlarFavoriler1);
         }
 

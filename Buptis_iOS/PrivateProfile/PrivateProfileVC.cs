@@ -33,12 +33,23 @@ namespace Buptis_iOS
             ProfilDuzenleButton.TouchUpInside += ProfilDuzenleButton_TouchUpInside;
             FotografEkleButton.TouchUpInside += FotografEkleButton_TouchUpInside;
             FiltreButton.TouchUpInside += FiltreButton_TouchUpInside;
+            PhotoEditButton.TouchUpInside += PhotoEditButton_TouchUpInside;
+        }
+
+        private void PhotoEditButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var FotografEkle1 = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
+            GalleryView controller = FotografEkle1.InstantiateViewController("GalleryView") as GalleryView;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
+            controller.GenelBase = this;
+            this.PresentViewController(controller, true, null);
         }
 
         private void FiltreButton_TouchUpInside(object sender, EventArgs e)
         {
             var FiltreBaseVC = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
             FiltreVC controller = FiltreBaseVC.InstantiateViewController("FiltreVC") as FiltreVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 
@@ -54,6 +65,7 @@ namespace Buptis_iOS
         {
             var PrivateProfileBaseVC1 = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
             ProfilSorulariBaseVC controller = PrivateProfileBaseVC1.InstantiateViewController("ProfilSorulariBaseVC") as ProfilSorulariBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
         private void GeriButton_TouchUpInside(object sender, EventArgs e)
@@ -64,6 +76,7 @@ namespace Buptis_iOS
         {
             var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
             AyarlarBaseVC controller = AyarlarBaseVC1.InstantiateViewController("AyarlarBaseVC") as AyarlarBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
         public override void ViewDidAppear(bool animated)
@@ -83,7 +96,6 @@ namespace Buptis_iOS
             FiltreButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
             GeriButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
              
-
             PaketUIDuzenle();
            
         }
@@ -509,5 +521,7 @@ namespace Buptis_iOS
             public int checkincount { get; set; }
             public string catid { get; set; }
         }
+
+       
     }
 }

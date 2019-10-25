@@ -49,7 +49,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Buptis&apos;i kullanmaya devam edebilmeniz için konum hizmetlerine izin vermelisiniz.</string>
 	<key>MinimumOSVersion</key>
-	<string>10.0</string>
+	<string>13.0</string>
 	<key>CFBundleName</key>
 	<string>Buptis_iOS</string>
 	<key>CFBundleIdentifier</key>

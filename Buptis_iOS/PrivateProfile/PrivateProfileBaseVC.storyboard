@@ -100,6 +100,17 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="112853" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="89" y="124" width="150" height="150"/>
+                                        <connections>
+                                            <action selector="UIButton112853_TouchUpInside:" destination="2954" id="114177" eventType="touchUpInside"/>
+                                        </connections>
+                                        <state key="normal"/>
+                                        <constraints>
+                                            <constraint id="117369" firstAttribute="height" constant="150"/>
+                                            <constraint id="118344" firstAttribute="width" constant="150"/>
+                                        </constraints>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul, Türkiye" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4468">
                                         <rect key="frame" x="0.0" y="346.5" width="320" height="21"/>
                                         <constraints>
@@ -128,6 +139,8 @@
                                     <constraint firstAttribute="centerY" secondItem="3521" secondAttribute="centerY" constant="7" id="11673"/>
                                     <constraint firstAttribute="trailing" secondItem="3518" secondAttribute="trailing" constant="7" id="11725"/>
                                     <constraint firstItem="4352" firstAttribute="top" secondItem="3521" secondAttribute="bottom" constant="15" id="11775"/>
+                                    <constraint id="114807" firstItem="112853" firstAttribute="centerX" secondItem="3521" secondAttribute="centerX"/>
+                                    <constraint id="117857" firstItem="112853" firstAttribute="centerY" secondItem="3521" secondAttribute="top" constant="75"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10436">
@@ -366,6 +379,7 @@
                             <constraint id="101978" firstItem="99524" firstAttribute="bottom" secondItem="99471" secondAttribute="bottom"/>
                             <constraint id="101981" firstItem="99526" firstAttribute="trailing" secondItem="99472" secondAttribute="trailing"/>
                             <constraint id="101982" firstItem="99526" firstAttribute="bottom" secondItem="99472" secondAttribute="bottom"/>
+                            <constraint id="107881" firstItem="3514" firstAttribute="top" secondItem="2955" secondAttribute="top"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="320" height="1000"/>
@@ -390,6 +404,7 @@
                         <outlet property="KrediCountLabel" destination="99526" id="name-outlet-99526"/>
                         <outlet property="BuptisGoldButton" destination="99473" id="name-outlet-99473"/>
                         <outlet property="BuptisGoldToggle" destination="99474" id="name-outlet-99474"/>
+                        <outlet property="PhotoEditButton" destination="112853" id="name-outlet-112853"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2956" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -964,7 +979,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 - 70" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67920">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 - 5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67920">
                                         <rect key="frame" x="167" y="197" width="132" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="97076"/>

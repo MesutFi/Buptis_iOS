@@ -28,17 +28,14 @@ namespace Buptis_iOS
             WomanButton.Tag = 2;
             BothButton.Tag = 3;
             ManButton.TouchUpInside += ManButton_TouchUpInside;
-            WomanButton.TouchUpInside += WomanButton_TouchUpInside; ;
+            WomanButton.TouchUpInside += WomanButton_TouchUpInside;
             BothButton.TouchUpInside += BothButton_TouchUpInside;
             BackButton.TouchUpInside += BackButton_TouchUpInside;
             OkButon.TouchUpInside += OkButon_TouchUpInside;
-
         }
 
         private void OkButon_TouchUpInside(object sender, EventArgs e)
         {
-
-
             var MinValue = Math.Round(rangeSlider.LowerValue, 0);
             var MaxValue = Math.Round(rangeSlider.UpperValue, 0);
 
@@ -73,11 +70,7 @@ namespace Buptis_iOS
             {
                 CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu.");
             }
-
-
-
         }
-
         private void BothButton_TouchUpInside(object sender, EventArgs e)
         {
             var Tagg = (int)((UIButton)sender).Tag;
@@ -114,10 +107,10 @@ namespace Buptis_iOS
             this.View.BackgroundColor = UIColor.Clear;
             rangeSlider.ShowTextAboveThumbs = false;
             rangeSlider.DragCompleted += RangeSlider_DragCompleted;
-            rangeSlider.MinimumRange = 18;
-            rangeSlider.MaximumValue = 70;
-            rangeSlider.LowerValue = 25;
-            rangeSlider.UpperValue = 50;
+            rangeSlider.MinimumValue = 25;
+            rangeSlider.MaximumValue = 50;
+            rangeSlider.LowerValue = 18;
+            rangeSlider.UpperValue = 70;
         }
         private void RangeSlider_DragCompleted(object sender, EventArgs e)
         {

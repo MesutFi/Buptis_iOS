@@ -79,6 +79,20 @@ namespace Buptis_iOS
                 FavoriIslemleri(SecilenKisi.SecilenKisiDTO.firstName + " Favorilerine eklendi.");
             }
         }
+        //void ButtonAktifPasifBgYap(bool durum)
+        //{
+        //    .BackgroundColor = UIColor.Clear;
+        //    FavButton.Layer.BorderWidth = 0;
+        //    FavButton.Layer.BorderColor = UIColor.Clear.CGColor;
+        //    if (!durum)
+        //    {
+        //        FavButton.SetImage(UIImage.FromBundle("Images/fav_pasif.png"), UIControlState.Normal);
+        //    }
+        //    else
+        //    {
+        //        FavButton.SetImage(UIImage.FromBundle("Images/fav_aktif.png"), UIControlState.Normal);
+        //    }
+        //}
         void FavoriIslemleri(string Message)
         {
             var MeID = DataBase.MEMBER_DATA_GETIR()[0].id;
@@ -123,6 +137,7 @@ namespace Buptis_iOS
             var PublicProfileBaseVC1 = UIStoryboard.FromName("PublicProfileBaseVC", NSBundle.MainBundle);
             EngelleVC controller = PublicProfileBaseVC1.InstantiateViewController("EngelleVC") as EngelleVC;
             controller.BaseVC = this;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 
@@ -200,6 +215,7 @@ namespace Buptis_iOS
 
                     var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
                     ChatVC controller = LokasyonKisilerStory.InstantiateViewController("ChatVC") as ChatVC;
+                    controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                     this.PresentViewController(controller, true, null);
                 });
             }

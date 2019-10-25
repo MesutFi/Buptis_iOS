@@ -38,6 +38,7 @@ namespace Buptis_iOS
             var LokasyonDetayStory = UIStoryboard.FromName("LokasyonDetayBaseVC", NSBundle.MainBundle);
             LokasyonDetayBaseVC controller = LokasyonDetayStory.InstantiateViewController("LokasyonDetayBaseVC") as LokasyonDetayBaseVC;
             controller.GelenMekan = GelenMekan;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             GelenBase1.PresentViewController(controller, true, null);
         }
 

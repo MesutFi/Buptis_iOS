@@ -29,11 +29,7 @@ namespace Buptis_iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            HeaderTasarim();
-            BackButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
-            BackButton.TouchUpInside += BackButton_TouchUpInside;
-            BlockedTableView.BackgroundColor = UIColor.Clear;
-            BlockedTableView.TableFooterView = new UIView();
+         
             GetBlockedUserList();
             BlockedTableView.ReloadData();
             
@@ -47,6 +43,11 @@ namespace Buptis_iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            HeaderTasarim();
+            BackButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+            BackButton.TouchUpInside += BackButton_TouchUpInside;
+            BlockedTableView.BackgroundColor = UIColor.Clear;
+            BlockedTableView.TableFooterView = new UIView();
         }
         void GetBlockedUserList()
         {
