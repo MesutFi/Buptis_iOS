@@ -262,13 +262,8 @@ namespace Buptis_iOS.GirisKayit
 
         private void UyeOlButton_TouchUpInside(object sender, EventArgs e)
         {
-            //var story = UIStoryboard.FromName("GenericUI", NSBundle.MainBundle);
-            //PopUp controller = story.InstantiateViewController("PopUp") as PopUp;
-            //controller.ModalPresentationStyle = UIModalPresentationStyle.BlurOverFullScreen;
-            //controller.InitVC("title", "title", "title", "title");
-            //this.PresentViewController(controller, true, null);
-
             KayitVC controller = this.Storyboard.InstantiateViewController("KayitVC") as KayitVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 

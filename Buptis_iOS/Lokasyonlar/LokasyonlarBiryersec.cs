@@ -1,4 +1,5 @@
 using Buptis_iOS.GenericClass;
+using Buptis_iOS.LokasyonDetay;
 using Buptis_iOS.Lokasyonlar;
 using Buptis_iOS.Web_Service;
 using CoreGraphics;
@@ -122,10 +123,20 @@ namespace Buptis_iOS
                 if (i == 0)
                 {
                     NoktaItem.Frame = new CoreGraphics.CGRect(0, 0, UIKit.UIScreen.MainScreen.Bounds.Width, 144f);
+                    NoktaItem.UserInteractionEnabled = true;
+                    NoktaItem.Tag = i;
+                    Action Actionn = () => MekanClick(NoktaItem);
+                    UITapGestureRecognizer tapGesture = new UITapGestureRecognizer(Actionn);
+                    NoktaItem.AddGestureRecognizer(tapGesture);
                 }
                 else
                 {
                     NoktaItem.Frame = new CoreGraphics.CGRect(UIKit.UIScreen.MainScreen.Bounds.Width * i, 0, UIKit.UIScreen.MainScreen.Bounds.Width, 144f);
+                    NoktaItem.UserInteractionEnabled = true;
+                    NoktaItem.Tag = i;
+                    Action Actionn = () => MekanClick(NoktaItem);
+                    UITapGestureRecognizer tapGesture = new UITapGestureRecognizer(Actionn);
+                    NoktaItem.AddGestureRecognizer(tapGesture);
                 }
 
                 Scrolll.AddSubview(NoktaItem);
@@ -135,7 +146,21 @@ namespace Buptis_iOS
             Scrolll.ContentSize = new CoreGraphics.CGSize(Noktalar[Noktalar.Length - 1].Frame.Right, 144f);
             Scrolll.Scrolled += Scrolll_Scrolled;
         }
-
+        void MekanClick(UIView GlenView)
+        {
+            try
+            {
+                var LokasyonDetayStory = UIStoryboard.FromName("LokasyonDetayBaseVC", NSBundle.MainBundle);
+                LokasyonDetayBaseVC controller = LokasyonDetayStory.InstantiateViewController("LokasyonDetayBaseVC") as LokasyonDetayBaseVC;
+                controller.GelenMekan = mekanlar_list[(int)GlenView.Tag];
+                controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                GelenBase1.PresentViewController(controller, true, null);
+            }
+            catch 
+            {
+            }
+           
+        }
         private void Scrolll_Scrolled(object sender, EventArgs e)
         {
             var PageeIndex = (double)(Scrolll.ContentOffset.X / Scrolll.Frame.Width);

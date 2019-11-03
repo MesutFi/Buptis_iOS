@@ -24,15 +24,20 @@ namespace Buptis_iOS
         public SonucVC (IntPtr handle) : base (handle)
         {
         }
+        bool Actinmi = false;
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            ViewBackground();
-            Hazne1.BackgroundColor = UIColor.Clear;
-            ButtonlariDuzenle(CloseButton);
-            ActionButton.TouchUpInside += ActionButton_TouchUpInside;
-            CloseButton.TouchUpInside += CloseButton_TouchUpInside;
-            DahaSonraButton.TouchUpInside += DahaSonraButton_TouchUpInside;
+            if (!Actinmi)
+            {
+                ViewBackground();
+                Hazne1.BackgroundColor = UIColor.Clear;
+                ButtonlariDuzenle(CloseButton);
+                ActionButton.TouchUpInside += ActionButton_TouchUpInside;
+                CloseButton.TouchUpInside += CloseButton_TouchUpInside;
+                DahaSonraButton.TouchUpInside += DahaSonraButton_TouchUpInside;
+                Actinmi = true;
+            }
         }
         private void DahaSonraButton_TouchUpInside(object sender, EventArgs e)
         {
@@ -55,12 +60,17 @@ namespace Buptis_iOS
                 this.DismissViewController(false, null);
             }
         }
+        bool Actinmi2 = false;
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            ActionButtonBg();
-            SonDurumuYansit();
-            CreateProgress();
+            if (!Actinmi2)
+            {
+                ActionButtonBg();
+                SonDurumuYansit();
+                CreateProgress();
+                Actinmi = true;
+            }
         }
         void SonDurumuYansit()
         {

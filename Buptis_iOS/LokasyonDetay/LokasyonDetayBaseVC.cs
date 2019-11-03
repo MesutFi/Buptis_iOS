@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Buptis_iOS.GenericClass;
 using Buptis_iOS.LokasyondakiKisiler;
 using Buptis_iOS.Lokasyonlar;
+using Buptis_iOS.Mesajlar;
 using Buptis_iOS.Web_Service;
 using CoreAnimation;
 using CoreGraphics;
@@ -47,6 +48,15 @@ namespace Buptis_iOS.LokasyonDetay
             RatingButton.TouchUpInside += RatingButton_TouchUpInside;
             MekandakilerButton.TouchUpInside += MekandakilerButton_TouchUpInside;
             BackButton.TouchUpInside += BackButton_TouchUpInside;
+            MessageButton.TouchUpInside += MessageButton_TouchUpInside;
+        }
+
+        private void MessageButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
+            MesajlarBaseVC controller = LokasyonKisilerStory.InstantiateViewController("MesajlarBaseVC") as MesajlarBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+            this.PresentViewController(controller, true, null);
         }
 
         private void BackButton_TouchUpInside(object sender, EventArgs e)
@@ -82,6 +92,7 @@ namespace Buptis_iOS.LokasyonDetay
             var LokasyonDetayStory = UIStoryboard.FromName("LokasyonDetayBaseVC", NSBundle.MainBundle);
             RatingVC controller = LokasyonDetayStory.InstantiateViewController("RatingVC") as RatingVC;
             controller.gelenMekan = GelenMekan;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 
@@ -91,6 +102,7 @@ namespace Buptis_iOS.LokasyonDetay
             LokasyondakiKisilerBaseVC controller = LokasyonKisilerStory.InstantiateViewController("LokasyondakiKisilerBaseVC") as LokasyondakiKisilerBaseVC;
             controller.gelenMekan = GelenMekan;
             MesajAtabilmekIcinSecilenSonLokasyon.TiklananMekan = GelenMekan;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 

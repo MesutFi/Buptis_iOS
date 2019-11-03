@@ -38,7 +38,15 @@ namespace Buptis_iOS.LokasyondakiKisiler
             BackButton.TouchUpInside += BackButton_TouchUpInside;
             BackButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
             MesajlarButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
+            MesajlarButton.TouchUpInside += MesajlarButton_TouchUpInside;
+        }
 
+        private void MesajlarButton_TouchUpInside(object sender, EventArgs e)
+        {
+            var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
+            MesajlarBaseVC controller = LokasyonKisilerStory.InstantiateViewController("MesajlarBaseVC") as MesajlarBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+            this.PresentViewController(controller, true, null);
         }
 
         private void BackButton_TouchUpInside(object sender, EventArgs e)

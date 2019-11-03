@@ -24,6 +24,10 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton GeriButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton GirisYapButton { get; set; }
 
         [Outlet]
@@ -52,6 +56,11 @@ namespace Buptis_iOS
             if (EmailTxt != null) {
                 EmailTxt.Dispose ();
                 EmailTxt = null;
+            }
+
+            if (GeriButton != null) {
+                GeriButton.Dispose ();
+                GeriButton = null;
             }
 
             if (GirisYapButton != null) {

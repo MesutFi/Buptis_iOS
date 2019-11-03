@@ -21,8 +21,25 @@ namespace Buptis_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
+            TasarimlariOlustur();
+            GirisYapButton.TouchUpInside += GirisYapButton_TouchUpInside;
+            KayitOlButton.TouchUpInside += KayitOlButton_TouchUpInside;
+            GeriButton.TouchUpInside += GeriButton_TouchUpInside;
+            AdText.Text = "Mobil13";
+            SoyadText.Text = "Fi";
+            EmailTxt.Text = "mobil13@intellifi.tech";
+            SifreTxt.Text = "1234qwer";
+            SifreTekrarTxt.Text = "1234qwer";
+            SifreTxt.SecureTextEntry = true;
+            SifreTekrarTxt.SecureTextEntry = true;
+
         }
+
+        private void GeriButton_TouchUpInside(object sender, EventArgs e)
+        {
+            this.DismissViewController(true, null);
+        }
+
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
@@ -56,16 +73,7 @@ namespace Buptis_iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            TasarimlariOlustur();
-            GirisYapButton.TouchUpInside += GirisYapButton_TouchUpInside;
-            KayitOlButton.TouchUpInside += KayitOlButton_TouchUpInside;
-            AdText.Text = "Mobil13";
-            SoyadText.Text = "Fi";
-            EmailTxt.Text = "mobil13@intellifi.tech";
-            SifreTxt.Text = "1234qwer";
-            SifreTekrarTxt.Text = "1234qwer";
-            SifreTxt.SecureTextEntry = true;
-            SifreTekrarTxt.SecureTextEntry = true;
+           
         }
 
         private void KayitOlButton_TouchUpInside(object sender, EventArgs e)
