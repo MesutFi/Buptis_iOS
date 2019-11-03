@@ -91,6 +91,8 @@ namespace Buptis_iOS
             var PublicProfileBaseVC1 = UIStoryboard.FromName("PublicProfileBaseVC", NSBundle.MainBundle);
             PublicProfileBaseVC controller = PublicProfileBaseVC1.InstantiateViewController("PublicProfileBaseVC") as PublicProfileBaseVC;
             SecilenKisi.SecilenKisiDTO = tiklananUser;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             LokasyondakiKisilerBaseVC_Kopya.LokasyondakiKisilerBaseVC1.PresentViewController(controller, true, null);
         }
       

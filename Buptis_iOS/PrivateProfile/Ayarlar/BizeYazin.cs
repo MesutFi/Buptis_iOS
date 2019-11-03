@@ -25,6 +25,15 @@ namespace Buptis_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            textField.ShouldChangeCharacters = (UITextField field, NSRange range, string ReplacementString) =>
+            {
+                int maxLength = 300;
+                if (field.Text.Length + ReplacementString.Length > maxLength)
+                {
+                    return false;
+                }
+                return true;
+            };
             List<ContactDTO> KonuList = new List<ContactDTO>
             {
                 new ContactDTO{ topic = "Teknik Sorun"},

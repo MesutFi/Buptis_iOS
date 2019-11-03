@@ -377,6 +377,7 @@ namespace Buptis_iOS
             SecilenKisi.SecilenKisiDTO = MesajlarIcinSecilenKullanici.Kullanici;
             var PublicProfileBaseVC1 = UIStoryboard.FromName("PublicProfileBaseVC", NSBundle.MainBundle);
             PublicProfileBaseVC controller = PublicProfileBaseVC1.InstantiateViewController("PublicProfileBaseVC") as PublicProfileBaseVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
             this.PresentViewController(controller, true, null);
         }
 

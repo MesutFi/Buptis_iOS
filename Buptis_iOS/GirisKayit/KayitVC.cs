@@ -9,6 +9,7 @@ using System;
 using UIKit;
 using CoreAnimation;
 using Buptis_iOS.GenericClass;
+using System.Text.RegularExpressions;
 
 namespace Buptis_iOS
 {
@@ -72,40 +73,91 @@ namespace Buptis_iOS
         {
             if (BosVarmi())
             {
-                CustomLoading.Show(this, "Lütfen Bekleyin...");
-                new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+                if (ControlUserAction())
                 {
-                    WebService webService = new WebService();
-                    KayitIcinRoot kayitIcinRoot = null;
-                    InvokeOnMainThread(delegate () {
+                    CustomLoading.Show(this, "Lütfen Bekleyin...");
+                    new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+                    {
+                        WebService webService = new WebService();
+                        KayitIcinRoot kayitIcinRoot = null;
+                        InvokeOnMainThread(delegate () {
 
-                        kayitIcinRoot = new KayitIcinRoot()
+                            kayitIcinRoot = new KayitIcinRoot()
+                            {
+                                firstName = AdText.Text.Trim(),
+                                lastName = SoyadText.Text.Trim(),
+                                password = SifreTxt.Text,
+                                login = EmailTxt.Text,
+                                email = EmailTxt.Text
+                            };
+                        });
+
+                        string jsonString = JsonConvert.SerializeObject(kayitIcinRoot);
+                        var Responsee = webService.ServisIslem("register", jsonString, true);
+                        if (Responsee != "Hata")
                         {
-                            firstName = AdText.Text.Trim(),
-                            lastName = SoyadText.Text.Trim(),
-                            password = SifreTxt.Text,
-                            login = EmailTxt.Text,
-                            email = EmailTxt.Text
-                        };
-                    });
-                    
-                    string jsonString = JsonConvert.SerializeObject(kayitIcinRoot);
-                    var Responsee = webService.ServisIslem("register", jsonString, true);
-                    if (Responsee != "Hata")
-                    {
-                        TokenAlDevamEt();
+                            TokenAlDevamEt();
 
-                    }
-                    else
-                    {
-                        CustomLoading.Hide();
-                        CustomAlert.GetCustomAlert(this," Bir sorun oluþtu lütfen internet baðlantýnýzý kontrol edin.");
-                        return;
-                    }
-                })).Start();
+                        }
+                        else
+                        {
+                            CustomLoading.Hide();
+                            CustomAlert.GetCustomAlert(this, " Bir sorun oluþtu lütfen internet baðlantýnýzý kontrol edin.");
+                            return;
+                        }
+                    })).Start();
+                }
             }
         }
-
+        bool ControlUserAction()
+        {
+            if (AdText.Text.Length < 2)
+            {
+                CustomAlert.GetCustomAlert(this,"Lütfen adýnýzý kontrol edin!");
+                return false;
+            }
+            else if (SoyadText.Text.Length < 2)
+            {
+                CustomAlert.GetCustomAlert(this, "Lütfen soyadýnýzý kontrol edin!");
+                return false;
+            }
+            else if (isValidEmail(EmailTxt.Text) == false)
+            {
+                CustomAlert.GetCustomAlert(this, "Lütfen emalinizi kontrol edin!");
+                return false;
+            }
+            else if (SifreTxt.Text.Length < 6 == true)
+            {
+                CustomAlert.GetCustomAlert(this, "Þifreniz 6 karakterden az olamaz!");
+                return false;
+            }
+            else if (SifreTekrarTxt.Text.Length < 6 == true)
+            {
+                CustomAlert.GetCustomAlert(this, "Þifreniz 6 karakterden az olamaz!");
+                return false;
+            }
+            else if (SifreTxt.Text != SifreTekrarTxt.Text)
+            {
+                CustomAlert.GetCustomAlert(this, "Þifreler uyuþmuyor lütfen tekrar kontrol edin.");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private bool isValidEmail(string email)
+        {
+            var emailPattern = @"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$";
+            if (Regex.IsMatch(email, emailPattern))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void GirisYapButton_TouchUpInside(object sender, EventArgs e)
         {
             this.DismissViewController(true, null);

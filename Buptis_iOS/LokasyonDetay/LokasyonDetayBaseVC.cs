@@ -82,6 +82,7 @@ namespace Buptis_iOS.LokasyonDetay
             var LokasyonDetayStory = UIStoryboard.FromName("LokasyonDetayBaseVC", NSBundle.MainBundle);
             RatingVC controller = LokasyonDetayStory.InstantiateViewController("RatingVC") as RatingVC;
             controller.gelenMekan = GelenMekan;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 
@@ -91,6 +92,7 @@ namespace Buptis_iOS.LokasyonDetay
             LokasyondakiKisilerBaseVC controller = LokasyonKisilerStory.InstantiateViewController("LokasyondakiKisilerBaseVC") as LokasyondakiKisilerBaseVC;
             controller.gelenMekan = GelenMekan;
             MesajAtabilmekIcinSecilenSonLokasyon.TiklananMekan = GelenMekan;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 

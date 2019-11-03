@@ -58,7 +58,7 @@ namespace Buptis_iOS.Lokasyonlar
         {
             var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
             MesajlarBaseVC controller = LokasyonKisilerStory.InstantiateViewController("MesajlarBaseVC") as MesajlarBaseVC;
-            // PrivateProfileVC controller = LokasyonKisilerStory.InstantiateViewController("PrivateProfileVC") as PrivateProfileVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
 
@@ -66,7 +66,7 @@ namespace Buptis_iOS.Lokasyonlar
         {
             var LokasyonKisilerStory = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
             PrivateProfileBaseVC controller = LokasyonKisilerStory.InstantiateViewController("PrivateProfileBaseVC") as PrivateProfileBaseVC;
-            // PrivateProfileVC controller = LokasyonKisilerStory.InstantiateViewController("PrivateProfileVC") as PrivateProfileVC;
+            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
         bool Actinmi2 = false;
