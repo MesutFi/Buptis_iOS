@@ -79,20 +79,6 @@ namespace Buptis_iOS
                 FavoriIslemleri(SecilenKisi.SecilenKisiDTO.firstName + " Favorilerine eklendi.");
             }
         }
-        //void ButtonAktifPasifBgYap(bool durum)
-        //{
-        //    .BackgroundColor = UIColor.Clear;
-        //    FavButton.Layer.BorderWidth = 0;
-        //    FavButton.Layer.BorderColor = UIColor.Clear.CGColor;
-        //    if (!durum)
-        //    {
-        //        FavButton.SetImage(UIImage.FromBundle("Images/fav_pasif.png"), UIControlState.Normal);
-        //    }
-        //    else
-        //    {
-        //        FavButton.SetImage(UIImage.FromBundle("Images/fav_aktif.png"), UIControlState.Normal);
-        //    }
-        //}
         void FavoriIslemleri(string Message)
         {
             var MeID = DataBase.MEMBER_DATA_GETIR()[0].id;
@@ -134,24 +120,62 @@ namespace Buptis_iOS
         }
         private void EngelleButton_TouchUpInside(object sender, EventArgs e)
         {
-            var PublicProfileBaseVC1 = UIStoryboard.FromName("PublicProfileBaseVC", NSBundle.MainBundle);
-            EngelleVC controller = PublicProfileBaseVC1.InstantiateViewController("EngelleVC") as EngelleVC;
-            controller.BaseVC = this;
-            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
-            this.PresentViewController(controller, true, null);
-        }
+            var engeldurum = GetBlockedFriends();
+            if (engeldurum)
+            {
+                UIAlertView alert = new UIAlertView();
+                alert.Title = "Buptis";
+                alert.AddButton("Evet");
+                alert.AddButton("Hayýr");
+                alert.Message = "Kullanýcýnýn engelini kaldýrmak istediðinize emin misiniz ?";
+                alert.AlertViewStyle = UIAlertViewStyle.Default;
+                alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                {
+                    if (ev.ButtonIndex == 0)
+                    {
+                        alert.Dispose();
+                        WebService webService = new WebService();
+                        var Donus = webService.ServisIslem("blocked-users/" + SecilenKisi.SecilenKisiDTO.id, "", Method: "DELETE");
+                        if (Donus != "Hata")
+                        {
+                            var engeldurum2 = GetBlockedFriends();
+                            if (engeldurum2)
+                            {
+                                EngelleButton.SetTitle("Engeli Kaldýr", UIControlState.Normal);
+                            }
+                            else
+                            {
+                                EngelleButton.SetTitle("Engelle, Þikayet Et", UIControlState.Normal);
+                            }
+                            CustomAlert.GetCustomAlert(this, "Kullanýcýnýn engeli kaldýrýldý");
+                        }
 
+                    }
+                    else
+                    {
+                        alert.Dispose();
+                    }
+                };
+                alert.Show();
+            }
+            else
+            {
+                var PublicProfileBaseVC1 = UIStoryboard.FromName("PublicProfileBaseVC", NSBundle.MainBundle);
+                EngelleVC controller = PublicProfileBaseVC1.InstantiateViewController("EngelleVC") as EngelleVC;
+                controller.BaseVC = this;
+                controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                this.PresentViewController(controller, true, null);
+            }
+        }
         private void ScrollFotograf_Scrolled(object sender, EventArgs e)
         {
             var PageeIndex = (nint)(ScrollFotograf.ContentOffset.X / ScrollFotograf.Frame.Width);
             PageControll.CurrentPage = PageeIndex;
         }
-
         private void MesajAtButton_TouchUpInside(object sender, EventArgs e)
         {
             MevcutMekandaChechInYapmismi();
         }
-
         void MevcutMekandaChechInYapmismi()
         {
             //CustomLoading.Show(this, "Lütfen Bekleyin...");
@@ -202,7 +226,6 @@ namespace Buptis_iOS
                 }
             })).Start();
         }
-
         void MesajlariVeyaPaketiAc(bool Durum)
         {
             if (Durum)
@@ -232,7 +255,6 @@ namespace Buptis_iOS
             }
 
         }
-
         bool KullanicininGoldPaketiVarmi(int MeID)
         {
             WebService webService = new WebService();
@@ -491,6 +513,15 @@ namespace Buptis_iOS
                 }
             });
             GetFavorite();
+            var engeldurum = GetBlockedFriends();
+            if (engeldurum)
+            {
+                InvokeOnMainThread(delegate () {
+
+                    EngelleButton.SetTitle("Engeli Kaldýr", UIControlState.Normal);
+
+                });
+            }
         }
         string GetUserAbout()
         {
@@ -557,6 +588,35 @@ namespace Buptis_iOS
 
             })).Start();
         }
+        bool GetBlockedFriends()
+        {
+            WebService webservice = new WebService();
+            var donus = webservice.OkuGetir("blocked-user/block-list");
+            if (donus != null)
+            {
+                var blockedList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<BlockedUserDataModel>>(donus.ToString());
+                if (blockedList.Count > 0)
+                {
+                    var varmii = blockedList.FindAll(item => item.blockUserId == SecilenKisi.SecilenKisiDTO.id);
+                    if (varmii.Count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
         void BekletVeGuncelle()
         {
             Task.Run(async delegate () {
@@ -620,6 +680,15 @@ namespace Buptis_iOS
             public int favUserId { get; set; }
             public int userId { get; set; }
         }
-
+        public class BlockedUserDataModel
+        {
+            public int blockUserId { get; set; }
+            public string createdDate { get; set; }
+            public int id { get; set; }
+            public string lastModifiedDate { get; set; }
+            public string reasonType { get; set; }
+            public string status { get; set; }
+            public int userId { get; set; }
+        }
     }
 }

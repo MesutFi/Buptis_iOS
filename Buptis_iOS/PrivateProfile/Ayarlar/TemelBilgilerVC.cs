@@ -115,11 +115,10 @@ namespace Buptis_iOS
             var startingTime = DateTime.Today;
             var dialog = new DatePickerDialog();
             dialog.BackgroundColor = UIColor.FromRGBA(0, 0, 0, 0);
-            
             dialog.Show("Doðum Tarihi Seçin", "Tamam", "Vazgeç", UIDatePickerMode.Date, (dt) =>
             {
                 birtdLbl.Text = dt.ToShortDateString();
-            }, startingTime);
+            }, startingTime,DateTime.Now.AddYears(-18));
         }
         private void KadinTouch_TouchUpInside(object sender, EventArgs e)
         {

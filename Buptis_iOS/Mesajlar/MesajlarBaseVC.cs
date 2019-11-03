@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using Buptis_iOS.Database;
+using Buptis_iOS.Web_Service;
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
@@ -14,6 +16,7 @@ namespace Buptis_iOS.Mesajlar
     {
         #region Tanimlamalar
         List<UIButton> Menuler = new List<UIButton>();
+        List<MesajKisileri> mFriends = new List<MesajKisileri>();
         #endregion
         public MesajlarBaseVC(IntPtr handle) : base(handle)
         {
@@ -35,6 +38,7 @@ namespace Buptis_iOS.Mesajlar
                 textField.ResignFirstResponder();
                 return true;
             };
+            GetUnReadMessage();
         }
 
         private void KapatButton_TouchUpInside(object sender, EventArgs e)
@@ -111,7 +115,105 @@ namespace Buptis_iOS.Mesajlar
                 ContentView.AddSubview(MesajlarNormal1);
                 Actinmi2 = true;
             }
+            
         }
+        #endregion
+
+
+        #region Okunmamis Mesaj Sayisi
+        void GetUnReadMessage()
+        {
+            #region Message Count
+            WebService webService = new WebService();
+            var Donus = webService.OkuGetir("chats/user");
+            if (Donus != null)
+            {
+                mFriends = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MesajKisileri>>(Donus.ToString());
+                TitleGuncelle(MesajlarButton, 0, mFriends);
+                TitleGuncelle(IsteklerButton, 1, mFriends);
+                TitleGuncelle(FavorilerButton, 2, mFriends);
+            }
+            #endregion
+        }
+
+        void TitleGuncelle(UIButton GelenButton, int ButtonIndex, List<MesajKisileri> Liste)
+        {
+            List<MesajKisileri> Liste2 = new List<MesajKisileri>();
+            int OkunmamisMesajSayisi = 0;
+            string Baslik = "";
+            switch (ButtonIndex)
+            {
+                case 0:
+                    Liste = mFriends.FindAll(item => item.request == false);
+                    Baslik = "Mesajlar";
+                    break;
+                case 1:
+                    Liste = mFriends.FindAll(item => item.request == true); //Bana Gelen İstekler;
+                    Baslik = "İstekler";
+                    break;
+                case 2:
+                    Liste = mFriends.FindAll(item => item.request == false);
+                    Liste = FavorileriAyir(Liste);
+                    Baslik = "Favoriler";
+                    break;
+                default:
+                    break;
+            }
+            Liste.ForEach(item =>
+            {
+                OkunmamisMesajSayisi += item.unreadMessageCount;
+            });
+
+            if (Liste.Count > 0)
+            {
+                GelenButton.SetTitle(Baslik + " (" + OkunmamisMesajSayisi + ")", UIControlState.Normal);
+            }
+            else
+            {
+                GelenButton.SetTitle(Baslik, UIControlState.Normal);
+            }
+        }
+
+
+
+        List<MesajKisileri> FavorileriAyir(List<MesajKisileri> GelenListe)
+        {
+            var FavList = FavorileriCagir();
+            List<FavListDTO> newList = new List<FavListDTO>();
+            for (int i = 0; i < FavList.Count; i++)
+            {
+                newList.Add(new FavListDTO()
+                {
+                    FavUserID = Convert.ToInt32(FavList[i])
+                });
+            }
+            var Ayiklanmis = (from list1 in GelenListe
+                              join list2 in newList
+                              on list1.receiverId equals list2.FavUserID
+                              select list1).ToList();
+            return Ayiklanmis;
+        }
+        List<string> FavorileriCagir()
+        {
+            List<string> FollowListID = new List<string>();
+            WebService webService = new WebService();
+            var MeDTO = DataBase.MEMBER_DATA_GETIR()[0];
+            var Donus4 = webService.OkuGetir("users/favList/" + MeDTO.id.ToString());
+            if (Donus4 != null)
+            {
+                var JSONStringg = Donus4.ToString().Replace("[", "").Replace("]", "");
+                if (!string.IsNullOrEmpty(JSONStringg))
+                {
+                    FollowListID = JSONStringg.Split(',').ToList();
+                }
+            }
+            return FollowListID;
+        }
+        public class FavListDTO
+        {
+            public int FavUserID { get; set; }
+        }
+
         #endregion
 
 

@@ -16,6 +16,8 @@ namespace Buptis_iOS
         #region Tanimlamalar
         List<UIButton> Menuler = new List<UIButton>();
         int SonCinsiyetSecim = 1;
+        
+
         #endregion
         public FiltreVC(IntPtr handle) : base(handle)
         {
@@ -102,22 +104,32 @@ namespace Buptis_iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+           
             Design();
             FilterTabView.Hidden = true;
             this.View.BackgroundColor = UIColor.Clear;
             rangeSlider.ShowTextAboveThumbs = false;
             rangeSlider.DragCompleted += RangeSlider_DragCompleted;
-            rangeSlider.MinimumValue = 25;
-            rangeSlider.MaximumValue = 50;
-            rangeSlider.LowerValue = 18;
-            rangeSlider.UpperValue = 70;
+            Menuler = new List<UIButton>();
+            Menuler.Add(ManButton);
+            Menuler.Add(WomanButton);
+            Menuler.Add(BothButton);
+
+            GetFilter();
         }
         private void RangeSlider_DragCompleted(object sender, EventArgs e)
         {
             var MinValue = Math.Round(rangeSlider.LowerValue, 0);
             var MaxValue = Math.Round(rangeSlider.UpperValue, 0);
-
-            maxText.Text = MinValue.ToString() + " - " + MaxValue.ToString();
+            if (MaxValue>=65)
+            {
+                maxText.Text = MinValue.ToString() + " - " + "65+";
+            }
+            else
+            {
+                maxText.Text = MinValue.ToString() + " - " + MaxValue.ToString();
+            }
+            
         }
         public override void ViewDidAppear(bool animated)
         {
@@ -125,13 +137,42 @@ namespace Buptis_iOS
             viewCenter = FilterTabView.Center;
             ViewAnimation();
             SetBackGround();
-
-            Menuler = new List<UIButton>();
-            Menuler.Add(ManButton);
-            Menuler.Add(WomanButton);
-            Menuler.Add(BothButton);
             ButtonTasarimlariniDuzenle(0);
         }
+        void GetFilter()
+        {
+            var filtre2 = DataBase.FILTRELER_GETIR();
+            if (filtre2.Count > 0)
+            {
+                var filtre = filtre2[0];
+
+                rangeSlider.LowerValue = filtre.minAge;
+                rangeSlider.UpperValue = filtre.maxAge;
+
+                maxText.Text = filtre.minAge.ToString() + " - " + filtre.maxAge.ToString();
+
+
+                if (filtre.Cinsiyet == 1)
+                {
+                    HepsiniSifirla(ManButton);
+                    SonCinsiyetSecim = 1;
+                    ButtonTasarimlariniDuzenle(0);
+                }
+                else if (filtre.Cinsiyet == 2)
+                {
+                    HepsiniSifirla(WomanButton);
+                    SonCinsiyetSecim = 2;
+                    ButtonTasarimlariniDuzenle(1);
+                }
+                else
+                {
+                    HepsiniSifirla(BothButton);
+                    SonCinsiyetSecim = 3;
+                    ButtonTasarimlariniDuzenle(2);
+                }
+            }
+        }
+
         private void BackButton_TouchUpInside(object sender, EventArgs e)
         {
 
@@ -193,7 +234,6 @@ namespace Buptis_iOS
             );
         }
 
-
         void SetBackGround()
         {
             float sayac = 0;
@@ -215,6 +255,7 @@ namespace Buptis_iOS
         }
 
         #endregion
+
         #region UI Tasarim
         public void Design()
         {

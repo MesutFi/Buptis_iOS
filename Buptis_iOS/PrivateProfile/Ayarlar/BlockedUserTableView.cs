@@ -29,7 +29,7 @@ namespace Buptis_iOS.PrivateProfile.Ayarlar
         {
             var returnView = (BlockedUserTableView)Nib.Instantiate(null, null)[0];
             returnView.User = User2;
-          
+            returnView.BackgroundColor = UIColor.Clear;
             return returnView;
 
         }

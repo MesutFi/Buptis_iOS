@@ -210,9 +210,11 @@ namespace Buptis_iOS
                 Noktalar[i] = NoktaItem;
 
             }
-
-            ScrollVieww.ContentSize = new CoreGraphics.CGSize(UIKit.UIScreen.MainScreen.Bounds.Width, Noktalar[Noktalar.Length - 1].Frame.Bottom);
-            BekletVeUygulaAsync();
+            if (Noktalar.Length>0)
+            {
+                ScrollVieww.ContentSize = new CoreGraphics.CGSize(UIKit.UIScreen.MainScreen.Bounds.Width, Noktalar[Noktalar.Length - 1].Frame.Bottom);
+                BekletVeUygulaAsync();
+            }
         }
         int UcluRowSayisiGetir()
         {

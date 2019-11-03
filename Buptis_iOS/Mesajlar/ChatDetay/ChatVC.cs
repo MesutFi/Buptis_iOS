@@ -28,6 +28,7 @@ namespace Buptis_iOS
         List<string> FollowListID = new List<string>();
         List<HazirMesaklarDTO> HazirMesaklarDTO1 = new List<HazirMesaklarDTO>();
         UIButton[] Noktalar = new UIButton[0];
+        bool KullaniciEngellemeDurumu = false;
         #endregion
 
         #region Genel Ýþler
@@ -85,6 +86,7 @@ namespace Buptis_iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            KullaniciEngellemeDurumu =  GetBlockedFriends();
             if (!Actinmi1)
             {
                 HeaderView.Hidden = true;
@@ -259,27 +261,63 @@ namespace Buptis_iOS
         #region Mesaj Gonderme
         void MesajGonderGenericMetod(string Message)
         {
-            ChatDetayDTO chatRecyclerViewDataModel = new ChatDetayDTO()
+            if (!KullaniciEngellemeDurumu)
             {
-                userId = MeDTO.id,
-                receiverId = MesajlarIcinSecilenKullanici.Kullanici.id,
-                text = Message,
-                key = MesajlarIcinSecilenKullanici.key
-            };
-            WebService webService = new WebService();
-            string jsonString = JsonConvert.SerializeObject(chatRecyclerViewDataModel);
-            var Donus = webService.ServisIslem("chats", jsonString);
-            if (Donus != "Hata")
-            {
-                var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<KeyIslemleriIcinDTO>(Donus.ToString());
-                MesajText.Text = "";
-                SaveKeys(Icerikk);
+                if (!KisiBilgileriTammi())
+                {
+                    UIAlertView alert = new UIAlertView();
+                    alert.Title = "Buptis";
+                    alert.AddButton("Evet");
+                    alert.AddButton("Hayýr");
+                    alert.Message = "Yaþ ve Cinsiyet bilgilerinizi tamamlamadan mesaj gönderemezsiniz. Bilgilerini güncellemek ister misiniz?";
+                    alert.AlertViewStyle = UIAlertViewStyle.Default;
+                    alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                    {
+                        if (ev.ButtonIndex == 0)
+                        {
+                            var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
+                            TemelBilgilerVC controller = AyarlarBaseVC1.InstantiateViewController("TemelBilgilerVC") as TemelBilgilerVC;
+                            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                            this.PresentViewController(controller, true, null);
+                            alert.Dispose();
+                        }
+                        else
+                        {
+                            alert.Dispose();
+                        }
+                    };
+                    alert.Show();
+                }
+                else
+                {
+                    ChatDetayDTO chatRecyclerViewDataModel = new ChatDetayDTO()
+                    {
+                        userId = MeDTO.id,
+                        receiverId = MesajlarIcinSecilenKullanici.Kullanici.id,
+                        text = Message,
+                        key = MesajlarIcinSecilenKullanici.key
+                    };
+                    WebService webService = new WebService();
+                    string jsonString = JsonConvert.SerializeObject(chatRecyclerViewDataModel);
+                    var Donus = webService.ServisIslem("chats", jsonString);
+                    if (Donus != "Hata")
+                    {
+                        var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<KeyIslemleriIcinDTO>(Donus.ToString());
+                        MesajText.Text = "";
+                        SaveKeys(Icerikk);
+                    }
+                    else
+                    {
+                        KredisimiBitti();
+                        return;
+                    }
+                }
             }
             else
             {
-                KredisimiBitti();
-                return;
+                CustomAlert.GetCustomAlert(this, "Kullanýcý Engelli");
             }
+
         }
         void KredisimiBitti()
         {
@@ -315,6 +353,18 @@ namespace Buptis_iOS
                     });
                 }
             })).Start();
+        }
+        bool KisiBilgileriTammi()
+        {
+            var Me = DataBase.MEMBER_DATA_GETIR()[0];
+            if (string.IsNullOrEmpty(Me.gender) || string.IsNullOrEmpty(Me.birthDayDate.ToString()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         public void HediyeGonder(string GelenPath)
         {
@@ -710,6 +760,38 @@ namespace Buptis_iOS
         }
         #endregion
 
+        #region Engelli Kontrolu
+        bool GetBlockedFriends()
+        {
+            WebService webservice = new WebService();
+            var donus = webservice.OkuGetir("blocked-user/block-list");
+            if (donus != null)
+            {
+                var blockedList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<BlockedUserDataModel>>(donus.ToString());
+                if (blockedList.Count > 0)
+                {
+                    var varmii = blockedList.FindAll(item => item.blockUserId == SecilenKisi.SecilenKisiDTO.id);
+                    if (varmii.Count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
+
         #region Chat Table Source
         public class ChatCustomTableCellSoruce : UITableViewSource
         {
@@ -876,6 +958,16 @@ namespace Buptis_iOS
             public bool read { get; set; }
             public int receiverId { get; set; }
             public string text { get; set; }
+            public int userId { get; set; }
+        }
+        public class BlockedUserDataModel
+        {
+            public int blockUserId { get; set; }
+            public string createdDate { get; set; }
+            public int id { get; set; }
+            public string lastModifiedDate { get; set; }
+            public string reasonType { get; set; }
+            public string status { get; set; }
             public int userId { get; set; }
         }
         #endregion

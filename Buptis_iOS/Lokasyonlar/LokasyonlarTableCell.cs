@@ -38,12 +38,22 @@ namespace Buptis_iOS.Lokasyonlar
             GetData();
         }
 
+
+
+
         public void GetData()
         {
             MekanTur.Text = "";
             MekanAdiLabel.Text ="   "+ mekanlarlocation.name;
-            //Console.WriteLine("RATINGGGG" + mekanlarlocation.rating);
-            var ratdurum = mekanlarlocation.rating;
+
+            MekanAdiLabel.LayoutIfNeeded();
+            var genislik = (MekanAdiLabel.IntrinsicContentSize.Width);
+            var manewframee = MekanAdiLabel.Frame;
+            manewframee.Width = genislik;
+            MekanAdiLabel.Frame = manewframee;
+
+
+           var ratdurum = mekanlarlocation.rating;
             if (ratdurum >= 10.0)
             {
                 MekanRating.SetTitle("10", UIControlState.Normal);
@@ -57,6 +67,16 @@ namespace Buptis_iOS.Lokasyonlar
             //MekanYer.Text = mekanlarlocation.townId.ToString() +" " + mekanlarlocation.place +"km";
             GetLocationOtherInfo(mekanlarlocation.id, mekanlarlocation.catIds, mekanlarlocation.townId, mekanlarlocation.environment.ToString());
         }
+
+
+        nfloat ButonGenislikHesapla(string Content)
+        {
+            var SanalLabel = new UILabel();
+            SanalLabel.Text = Content;
+            SanalLabel.LayoutIfNeeded();
+            return (SanalLabel.IntrinsicContentSize.Width + 20f);
+        }
+
 
         void GetLocationOtherInfo(int locid, List<string> catid, string townid,string uzaklik)
         {

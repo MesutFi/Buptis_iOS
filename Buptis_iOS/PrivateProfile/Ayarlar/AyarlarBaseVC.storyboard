@@ -827,7 +827,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1"/>
                         <constraints>
                             <constraint id="85951" firstItem="63754" firstAttribute="trailing" secondItem="63653" secondAttribute="trailingMargin" constant="16"/>
                             <constraint id="86099" firstAttribute="leadingMargin" secondItem="63754" secondAttribute="leading" constant="16"/>

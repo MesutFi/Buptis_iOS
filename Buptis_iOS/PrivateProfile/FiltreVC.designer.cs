@@ -50,10 +50,6 @@ namespace Buptis_iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton WomanButton { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView YasRangeSlider { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (BackButton != null) {
@@ -99,11 +95,6 @@ namespace Buptis_iOS
             if (WomanButton != null) {
                 WomanButton.Dispose ();
                 WomanButton = null;
-            }
-
-            if (YasRangeSlider != null) {
-                YasRangeSlider.Dispose ();
-                YasRangeSlider = null;
             }
         }
     }

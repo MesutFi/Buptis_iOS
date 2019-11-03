@@ -951,26 +951,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65119">
-                                        <rect key="frame" x="18" y="239" width="297" height="46"/>
-                                        <subviews>
-                                            <control opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="67674" customClass="RangeSlider">
-                                                <rect key="frame" x="0.0" y="6" width="297" height="34"/>
-                                                <color key="tintColor" red="0.90980392156862744" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="34" id="76017"/>
-                                                </constraints>
-                                            </control>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="67674" firstAttribute="leading" secondItem="65119" secondAttribute="leading" id="76015"/>
-                                            <constraint firstItem="67674" firstAttribute="trailing" secondItem="65119" secondAttribute="trailing" id="76016"/>
-                                            <constraint firstItem="67674" firstAttribute="top" secondItem="65119" secondAttribute="top" constant="6" id="76018"/>
-                                            <constraint firstAttribute="height" constant="46" id="97080"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65783">
                                         <rect key="frame" x="56" y="301" width="206" height="50"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -984,7 +964,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 - 5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67920">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 - 60" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67920">
                                         <rect key="frame" x="167" y="197" width="132" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="97076"/>
@@ -1049,11 +1029,34 @@
                                             <constraint firstItem="95163" firstAttribute="width" secondItem="95159" secondAttribute="width" id="95177"/>
                                         </constraints>
                                     </view>
+                                    <control opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="67674" customClass="RangeSlider">
+                                        <rect key="frame" x="22" y="235" width="277" height="34"/>
+                                        <color key="tintColor" red="0.90980392156862744" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="LowerValue">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="MaximumValue">
+                                                <real key="value" value="65"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="StepValue">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="UpperValue">
+                                                <real key="value" value="60"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="MinimumValue">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <constraints>
+                                            <constraint id="123791" firstAttribute="height" constant="34"/>
+                                        </constraints>
+                                    </control>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="65119" secondAttribute="trailing" constant="5" id="76013"/>
                                     <constraint firstAttribute="height" constant="380" id="97046"/>
                                     <constraint firstItem="56690" firstAttribute="top" secondItem="56324" secondAttribute="top" constant="51" id="97047"/>
                                     <constraint firstItem="56690" firstAttribute="leading" secondItem="56324" secondAttribute="leading" constant="22" id="97048"/>
@@ -1072,11 +1075,11 @@
                                     <constraint firstItem="62488" firstAttribute="top" secondItem="95158" secondAttribute="bottom" constant="21" id="97071"/>
                                     <constraint firstAttribute="trailing" secondItem="67920" secondAttribute="trailing" constant="21" id="97074"/>
                                     <constraint firstItem="67920" firstAttribute="top" secondItem="95158" secondAttribute="bottom" constant="21" id="97075"/>
-                                    <constraint firstItem="65119" firstAttribute="leading" secondItem="56324" secondAttribute="leading" constant="18" id="97078"/>
-                                    <constraint firstAttribute="trailing" secondItem="65119" secondAttribute="trailing" constant="5" id="97079"/>
-                                    <constraint firstItem="65119" firstAttribute="top" secondItem="67920" secondAttribute="bottom" constant="21" id="97081"/>
                                     <constraint firstAttribute="centerX" secondItem="65783" secondAttribute="centerX" constant="1" id="97095"/>
-                                    <constraint firstItem="65783" firstAttribute="top" secondItem="65119" secondAttribute="bottom" constant="16" id="97096"/>
+                                    <constraint id="123792" firstItem="67674" firstAttribute="leading" secondItem="56324" secondAttribute="leading" constant="22"/>
+                                    <constraint id="123793" firstAttribute="trailing" secondItem="67674" secondAttribute="trailing" constant="21"/>
+                                    <constraint id="123794" firstItem="67674" firstAttribute="top" secondItem="62488" secondAttribute="bottom" constant="17"/>
+                                    <constraint id="123795" firstItem="65783" firstAttribute="top" secondItem="67674" secondAttribute="bottom" constant="32"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1086,6 +1089,7 @@
                             <constraint firstItem="56324" firstAttribute="trailing" secondItem="54813" secondAttribute="trailingMargin" constant="16" id="69119"/>
                             <constraint firstAttribute="leadingMargin" secondItem="56324" secondAttribute="leading" constant="16" id="69120"/>
                         </constraints>
+                        <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                     </view>
                     <connections>
                         <outlet property="BackButton" destination="56690" id="name-outlet-56690"/>
@@ -1095,7 +1099,6 @@
                         <outlet property="OkButon" destination="65783" id="name-outlet-65783"/>
                         <outlet property="TabViewMenu" destination="95158" id="name-outlet-95158"/>
                         <outlet property="WomanButton" destination="95161" id="name-outlet-95161"/>
-                        <outlet property="YasRangeSlider" destination="65119" id="name-outlet-65119"/>
                         <outlet property="maxText" destination="67920" id="name-outlet-67920"/>
                         <outlet property="rangeSlider" destination="67674" id="name-outlet-67674"/>
                     </connections>

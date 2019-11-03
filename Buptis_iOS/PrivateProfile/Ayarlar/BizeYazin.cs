@@ -25,15 +25,8 @@ namespace Buptis_iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            textField.ShouldChangeCharacters = (UITextField field, NSRange range, string ReplacementString) =>
-            {
-                int maxLength = 300;
-                if (field.Text.Length + ReplacementString.Length > maxLength)
-                {
-                    return false;
-                }
-                return true;
-            };
+
+            MesajTextView.Changed += MesajTextView_Changed;
             List<ContactDTO> KonuList = new List<ContactDTO>
             {
                 new ContactDTO{ topic = "Teknik Sorun"},
@@ -74,6 +67,15 @@ namespace Buptis_iOS
             toolbar.SetItems(new[] { new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace), doneButton }, true);
             MesajTextView.InputAccessoryView = toolbar;
             #endregion
+        }
+
+        private void MesajTextView_Changed(object sender, EventArgs e)
+        {
+            int maxLength = 300;
+            if (MesajTextView.Text.Length > maxLength)
+            {
+                MesajTextView.Text = MesajTextView.Text.Substring(0, maxLength - 1);
+            }
         }
 
         private void GonderButton_TouchUpInside(object sender, EventArgs e)
@@ -158,6 +160,7 @@ namespace Buptis_iOS
             this.DismissViewController(true, null);
         }
         #endregion
+
         #region UI Tasarim 
         void AddButtonGradient()
         {

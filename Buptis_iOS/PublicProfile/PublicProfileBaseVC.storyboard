@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="639">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="639">
+    <device id="retina4_0" orientation="portrait"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,6 +55,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="411" id="2371"/>
                                 </constraints>
+                                <color key="backgroundColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0" alpha="0"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="779">
                                 <rect key="frame" x="16" y="65" width="35" height="35"/>
@@ -64,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="35" id="780"/>
                                     <constraint firstAttribute="width" constant="35" id="781"/>
                                 </constraints>
-                                <color key="tintColor" colorSpace="calibratedRGB" red="0.8784313725490196" green="0" blue="0.42352941176470588" alpha="1"/>
+                                <color key="tintColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="Images/backicon2.png">
                                     <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -148,17 +147,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5468">
-                                <rect key="frame" x="230" y="382" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="5469"/>
-                                    <constraint firstAttribute="width" constant="60" id="5470"/>
-                                </constraints>
-                                <state key="normal" image="Images/messageSend.png">
-                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="12617">
+                                <rect key="frame" x="0.0" y="350" width="320" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="0.39215686274509803" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7832">
                                 <rect key="frame" x="19" y="757" width="288" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -170,11 +163,17 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="12617">
-                                <rect key="frame" x="0.0" y="350" width="320" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="0.39215686274509803" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5468">
+                                <rect key="frame" x="250" y="340" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.0" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5469"/>
+                                    <constraint firstAttribute="width" constant="60" id="5470"/>
+                                </constraints>
+                                <state key="normal" image="Images/messageSend.png">
+                                    <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -182,8 +181,6 @@
                             <constraint firstItem="667" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="16" id="1680"/>
                             <constraint firstAttribute="leadingMargin" secondItem="667" secondAttribute="leading" constant="16" id="1761"/>
                             <constraint firstItem="667" firstAttribute="top" secondItem="647" secondAttribute="top" id="1842"/>
-                            <constraint firstItem="5468" firstAttribute="centerY" secondItem="667" secondAttribute="bottom" constant="1" id="7057"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5468" secondAttribute="trailing" constant="14" id="7138"/>
                             <constraint firstItem="2774" firstAttribute="leading" secondItem="647" secondAttribute="leadingMargin" constant="3" id="9035"/>
                             <constraint firstItem="2774" firstAttribute="top" secondItem="667" secondAttribute="bottom" constant="22" id="9116"/>
                             <constraint firstItem="4633" firstAttribute="leading" secondItem="2774" secondAttribute="trailing" constant="8" id="9197"/>
@@ -217,19 +214,21 @@
                             <constraint firstItem="12617" firstAttribute="trailing" secondItem="647" secondAttribute="trailingMargin" constant="16" id="13259"/>
                             <constraint firstItem="667" firstAttribute="bottom" secondItem="12617" secondAttribute="bottom" constant="24" id="13340"/>
                             <constraint firstItem="779" firstAttribute="top" secondItem="667" secondAttribute="top" constant="65" id="18999"/>
+                            <constraint id="26718" firstItem="667" firstAttribute="trailing" secondItem="5468" secondAttribute="trailing" constant="10"/>
+                            <constraint id="26719" firstItem="667" firstAttribute="bottom" secondItem="5468" secondAttribute="bottom" constant="11"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="320" height="820"/>
                     <connections>
+                        <outlet property="EnSonLokasyonu" destination="2601" id="name-outlet-2601"/>
                         <outlet property="EngelleButton" destination="7832" id="name-outlet-7832"/>
                         <outlet property="FavoriEkleButton" destination="2774" id="name-outlet-2774"/>
                         <outlet property="GeriButton" destination="779" id="name-outlet-779"/>
+                        <outlet property="HakkindaYazisi" destination="2595" id="name-outlet-2595"/>
+                        <outlet property="KullaniciAdiYasi" destination="4633" id="name-outlet-4633"/>
                         <outlet property="MesajAtButton" destination="5468" id="name-outlet-5468"/>
                         <outlet property="PageControll" destination="12617" id="name-outlet-12617"/>
                         <outlet property="ScrollFotograf" destination="667" id="name-outlet-667"/>
-                        <outlet property="KullaniciAdiYasi" destination="4633" id="name-outlet-4633"/>
-                        <outlet property="HakkindaYazisi" destination="2595" id="name-outlet-2595"/>
-                        <outlet property="EnSonLokasyonu" destination="2601" id="name-outlet-2601"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="648" userLabel="First Responder" sceneMemberID="firstResponder"/>

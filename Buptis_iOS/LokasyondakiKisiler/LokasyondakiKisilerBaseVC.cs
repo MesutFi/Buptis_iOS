@@ -5,6 +5,7 @@ using System.Drawing;
 using Buptis_iOS.Database;
 using Buptis_iOS.GenericClass;
 using Buptis_iOS.Lokasyonlar;
+using Buptis_iOS.Mesajlar;
 using Buptis_iOS.Web_Service;
 using CoreAnimation;
 using CoreGraphics;

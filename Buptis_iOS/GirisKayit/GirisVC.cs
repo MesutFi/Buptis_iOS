@@ -259,10 +259,8 @@ namespace Buptis_iOS.GirisKayit
             {
                 if (ControlUserAction())
                 {
-                    new System.Threading.Thread(new System.Threading.ThreadStart(delegate
-                    {
-                        GirisYapMetod(EmailTxt.Text.Trim(), SifreTxt.Text);
-                    })).Start();
+                    GirisYapMetod(EmailTxt.Text.Trim(), SifreTxt.Text);
+                    
                 }
                
             }

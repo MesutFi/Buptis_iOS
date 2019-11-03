@@ -29,6 +29,7 @@ namespace Buptis_iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            BlockedTableView.BackgroundColor = UIColor.Clear;
             GetBlockedUserList();
             BlockedTableView.ReloadData();
         }
@@ -130,7 +131,7 @@ namespace Buptis_iOS
                     cell = BlockedUserTableView.Create(itemss);
                     
                 }
-
+                cell.BackgroundColor = UIColor.Clear;
                 return cell;
             }
 
