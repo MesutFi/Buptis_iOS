@@ -29,12 +29,25 @@ namespace Buptis_iOS
             ErkekTouch.TouchUpInside += ErkekTouch_TouchUpInside;
             KadinTouch.TouchUpInside += KadinTouch_TouchUpInside;
             birthdayButton.TouchUpInside += BirthdayButton_TouchUpInside;
+            
             MeslekText.ShouldReturn += (textField) =>
             {
                 textField.ResignFirstResponder();
                 return true;
             };
+
+            MeslekText.ShouldChangeCharacters = (UITextField field, NSRange range, string ReplacementString) =>
+            {
+                int maxLength = 30; 
+                if (field.Text.Length + ReplacementString.Length > maxLength)
+                {
+                    return false;
+                }
+                return true;
+            };
         }
+
+        
 
         private void KaydetButton_TouchUpInside(object sender, EventArgs e)
         {

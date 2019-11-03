@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 using Buptis_iOS.Database;
 using Buptis_iOS.GenericClass;
@@ -256,7 +257,14 @@ namespace Buptis_iOS.GirisKayit
         {
             if (BosVarmi())
             {
-                GirisYapMetod(EmailTxt.Text.Trim(), SifreTxt.Text);
+                if (ControlUserAction())
+                {
+                    new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+                    {
+                        GirisYapMetod(EmailTxt.Text.Trim(), SifreTxt.Text);
+                    })).Start();
+                }
+               
             }
         }
 
@@ -297,6 +305,35 @@ namespace Buptis_iOS.GirisKayit
                 });
                 DataBase.MEMBER_DATA_TEMIZLE();
                 DataBase.MEMBER_DATA_EKLE(Icerik);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        bool ControlUserAction()
+        {
+            if (isValidEmail(EmailTxt.Text) == false)
+            {
+                CustomAlert.GetCustomAlert(this, "Lütfen emalinizi kontrol edin!");
+                return false;
+            }
+            else if (SifreTxt.Text.Length < 6 == true)
+            {
+                CustomAlert.GetCustomAlert(this, "Şifreniz 6 karakterden az olamaz!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private bool isValidEmail(string email)
+        {
+            var emailPattern = @"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$";
+            if (Regex.IsMatch(email, emailPattern))
+            {
                 return true;
             }
             else

@@ -97,26 +97,31 @@ namespace Buptis_iOS.PrivateProfile.Ayarlar
                 case 0:
                     var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
                     TemelBilgilerVC controller = AyarlarBaseVC1.InstantiateViewController("TemelBilgilerVC") as TemelBilgilerVC;
+                    controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                     this.PresentViewController(controller, true, null);
                     break;
                 case 1:
                     var AyarlarBaseVC2 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
                     HesapVC controller2 = AyarlarBaseVC2.InstantiateViewController("HesapVC") as HesapVC;
+                    controller2.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                     this.PresentViewController(controller2, true, null);
                     break;
                 case 2:
                     var AyarlarBaseVC3 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
                     BizeYazin controller3 = AyarlarBaseVC3.InstantiateViewController("BizeYazin") as BizeYazin;
+                    controller3.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                     this.PresentViewController(controller3, true, null);
                     break;
                 case 3:
                     var AyarlarBaseVC4 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
                     HakkimizdaVC controller4 = AyarlarBaseVC4.InstantiateViewController("HakkimizdaVC") as HakkimizdaVC;
+                    controller4.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                     this.PresentViewController(controller4, true, null);
                     break;
                 case 4:
                     var AyarlarBaseVC5 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
                     BlockedUsersVC controller5 = AyarlarBaseVC5.InstantiateViewController("BlockedUsersVC") as BlockedUsersVC;
+                    controller5.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                     this.PresentViewController(controller5, true, null);
                     break;
                 default:

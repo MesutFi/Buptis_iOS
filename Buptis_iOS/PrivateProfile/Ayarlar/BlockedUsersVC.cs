@@ -29,10 +29,8 @@ namespace Buptis_iOS
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-         
             GetBlockedUserList();
             BlockedTableView.ReloadData();
-            
         }
 
         private void BackButton_TouchUpInside(object sender, EventArgs e)
