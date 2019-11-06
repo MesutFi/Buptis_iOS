@@ -771,6 +771,15 @@ namespace Buptis_iOS
                 if (blockedList.Count > 0)
                 {
                     var varmii = blockedList.FindAll(item => item.blockUserId == SecilenKisi.SecilenKisiDTO.id);
+                    var donus2 = webservice.OkuGetir("blocked-user/" + DataBase.MEMBER_DATA_GETIR()[0].id.ToString());
+                    if (donus2 != null)
+                    {
+                        var varmii2 = blockedList.FindAll(item => item.blockUserId == SecilenKisi.SecilenKisiDTO.id);
+                        if (varmii2.Count >= 0)
+                        {
+                            varmii.AddRange(varmii2);
+                        }
+                    }
                     if (varmii.Count > 0)
                     {
                         return true;

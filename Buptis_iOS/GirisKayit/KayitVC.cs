@@ -26,11 +26,11 @@ namespace Buptis_iOS
             GirisYapButton.TouchUpInside += GirisYapButton_TouchUpInside;
             KayitOlButton.TouchUpInside += KayitOlButton_TouchUpInside;
             GeriButton.TouchUpInside += GeriButton_TouchUpInside;
-            AdText.Text = "Mobil13";
-            SoyadText.Text = "Fi";
-            EmailTxt.Text = "mobil13@intellifi.tech";
-            SifreTxt.Text = "1234qwer";
-            SifreTekrarTxt.Text = "1234qwer";
+            //AdText.Text = "Mobil13";
+            //SoyadText.Text = "Fi";
+            //EmailTxt.Text = "mobil13@intellifi.tech";
+            //SifreTxt.Text = "1234qwer";
+            //SifreTekrarTxt.Text = "1234qwer";
             SifreTxt.SecureTextEntry = true;
             SifreTekrarTxt.SecureTextEntry = true;
 

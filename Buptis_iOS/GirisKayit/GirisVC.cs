@@ -282,8 +282,8 @@ namespace Buptis_iOS.GirisKayit
                 TasarimlariOlustur();
                 Acildimi = true;
             }
-            EmailTxt.Text = "mesut@intellifi.tech";
-            SifreTxt.Text = "qwer1234";
+            //EmailTxt.Text = "mesut@intellifi.tech";
+            //SifreTxt.Text = "qwer1234";
 
         }
         #endregion
