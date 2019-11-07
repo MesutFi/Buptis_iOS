@@ -79,7 +79,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(gelenbase, "Henüz bu lokasyonda kimse yok...");
+                CustomAlert.GetCustomAlert(gelenbase, "HenÃ¼z bu lokasyonda kimse bulunamÄ±yor...");
                 CustomLoading.Hide();
             }
         }
@@ -111,11 +111,11 @@ namespace Buptis_iOS
                     }
                     else if (GetUserFilter.Cinsiyet == 2)
                     {
-                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Kadın" & item.birthDayDate <= minDT & item.birthDayDate >= maxDate);
+                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "KadÄ±n" & item.birthDayDate <= minDT & item.birthDayDate >= maxDate);
                     }
                     else
                     {
-                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Kadın" | item.gender == "Erkek" & item.birthDayDate <= minDT & item.birthDayDate >= maxDate);
+                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "KadÄ±n" | item.gender == "Erkek" & item.birthDayDate <= minDT & item.birthDayDate >= maxDate);
                     }
                 }
             }
@@ -144,11 +144,11 @@ namespace Buptis_iOS
         {
             if (LokasyondakiKisilerList.Count % 3 == 0)
             {
-                var NewList2 = new List<List<MEMBER_DATA>>();//3lü listelerin listesi
+                var NewList2 = new List<List<MEMBER_DATA>>();//3lÃ¼ listelerin listesi
                 var DonusSayisi = UcluRowSayisiGetir();
                 for (int i2 = 0; i2 < LokasyondakiKisilerList.Count; i2 += 3)
                 {
-                    var NewListt = new List<MEMBER_DATA>();//3lü liste
+                    var NewListt = new List<MEMBER_DATA>();//3lÃ¼ liste
                     NewListt.Add(LokasyondakiKisilerList[i2]);//0 - 3
                     NewListt.Add(LokasyondakiKisilerList[i2 + 1]);//1 - 4
                     NewListt.Add(LokasyondakiKisilerList[i2 + 2]);//2 - 5
@@ -162,10 +162,10 @@ namespace Buptis_iOS
             }
             else
             {
-                var NewList2 = new List<List<MEMBER_DATA>>();//3lü listelerin listesi
+                var NewList2 = new List<List<MEMBER_DATA>>();//3lÃ¼ listelerin listesi
                 for (int i2 = 0; i2 < LokasyondakiKisilerList.Count; i2 += 3)
                 {
-                    var NewListt = new List<MEMBER_DATA>();//3lü liste
+                    var NewListt = new List<MEMBER_DATA>();//3lÃ¼ liste
                     NewListt.Add(LokasyondakiKisilerList[i2]);//0 - 3
 
                     if (LokasyondakiKisilerList.Count >= (i2 + 1 + 1))
