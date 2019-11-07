@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+Buptis_iOS/Buptis_iOS.csproj
+Buptis_iOS/Info.plist
