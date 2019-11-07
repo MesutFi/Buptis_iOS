@@ -11,7 +11,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -22,10 +21,6 @@
 		<string>armv7</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
@@ -46,9 +41,9 @@
 	<key>MinimumOSVersion</key>
 	<string>13.0</string>
 	<key>CFBundleName</key>
-	<string>Buptis_iOS</string>
+	<string>Buptis</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.buptis.ios</string>
+	<string>com.buptis.app.ios</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
