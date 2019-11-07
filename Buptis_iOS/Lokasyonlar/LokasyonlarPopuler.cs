@@ -47,7 +47,7 @@ namespace Buptis_iOS
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
-            CustomLoading.Show(GelenBase1, "Lokasyonlar Yükleniyor...");
+            CustomLoading.Show(GelenBase1, "Lokasyonlar YÃ¼kleniyor...");
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
                 PopulerLokasyonlariGetir();
@@ -62,7 +62,7 @@ namespace Buptis_iOS
             {
                 var aa = Donus.ToString();
                 Mekanlar_Locations = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mekanlar_Location>>(Donus.ToString());
-                Mekanlar_Locations = Mekanlar_Locations.OrderBy(o => o.allUserCheckIn).ToList();//Checkin sayýsýna göre sýralýyor.
+                Mekanlar_Locations = Mekanlar_Locations.OrderBy(o => o.allUserCheckIn).ToList();//Checkin sayÃ½sÃ½na gÃ¶re sÃ½ralÃ½yor.
                 Mekanlar_Locations.Reverse();
                 if (Mekanlar_Locations.Count > 0)
                 {
@@ -76,7 +76,7 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(GelenBase1, "Çevrenizde popüler lokasyon bulunamadý...");
+                    CustomAlert.GetCustomAlert(GelenBase1, "Ã‡evrenizde hiÃ§ popÃ¼ler lokasyon bulunamadÄ±...");
                     InvokeOnMainThread(delegate () {
                         
                         CustomLoading.Hide();
