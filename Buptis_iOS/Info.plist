@@ -40,6 +40,10 @@
 	<string>Buptis&apos;i kullanmaya devam edebilmeniz için konum hizmetlerine izin vermelisiniz.</string>
 	<key>MinimumOSVersion</key>
 	<string>13.0</string>
+	<key>CFBundleName</key>
+	<string>Buptis</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.buptis.app.ios</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
