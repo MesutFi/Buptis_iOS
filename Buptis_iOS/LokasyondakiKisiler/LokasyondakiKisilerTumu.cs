@@ -237,6 +237,7 @@ namespace Buptis_iOS
                  InvokeOnMainThread(delegate ()
                  {
                      HucreleriDuzenle();
+                    
                  });
              });
         }

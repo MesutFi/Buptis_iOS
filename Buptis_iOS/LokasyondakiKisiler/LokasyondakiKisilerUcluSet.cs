@@ -9,6 +9,7 @@ using Foundation;
 using ObjCRuntime;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UIKit;
 using static Buptis_iOS.LokasyondakiKisiler.LokasyondakiKisilerBaseVC;
 
@@ -85,6 +86,8 @@ namespace Buptis_iOS
 
         private void Photo_TouchUpInside(object sender, EventArgs e)
         {
+            Console.WriteLine("DURUMMM 2 =>> " + Hazne1.Frame.Height + "X" + Hazne1.Frame.Width);
+            Console.WriteLine("DURUMMM 5 =>> " + Photo1.Frame.Height + "X" + Photo1.Frame.Width);
             var Tagg = (int)((UIButton)sender).Tag;
             var tiklananUser = gelenUser2[Tagg];
 
@@ -95,27 +98,13 @@ namespace Buptis_iOS
             controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             LokasyondakiKisilerBaseVC_Kopya.LokasyondakiKisilerBaseVC1.PresentViewController(controller, true, null);
         }
-      
-        void GetUserName(int tagi)
-        {
-            AdSoyadText.Text = gelenUser2[tagi].firstName + " " + gelenUser2[tagi].lastName.Substring(0, 1).ToString() + ".";
-        }
         void GetUserImage(UIButton UserImage, string USERID)
         {
-            UserImage.LayoutIfNeeded();
-            UserImage.ClipsToBounds = true;
-            var newFrame = Photo1.Frame;
-            var EksiXPosition = (newFrame.Height - newFrame.Width) / 2;
-            newFrame.Width = newFrame.Height;
-            newFrame.X -= EksiXPosition;
-            UserImage.Frame = newFrame;
-            UserImage.Layer.CornerRadius = UserImage.Frame.Height / 2;
-            UserImage.Layer.BorderWidth = 4f;
-            UserImage.Layer.BorderColor = UIColor.White.CGColor;
+           
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
-            WebService webService = new WebService();
-            var Donus = webService.OkuGetir("images/user/" + USERID);
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("images/user/" + USERID);
                 if (Donus != null)
                 {
                     InvokeOnMainThread(delegate ()
@@ -124,14 +113,49 @@ namespace Buptis_iOS
                         if (Images.Count > 0)
                         {
 
-                            ImageService.Instance.LoadUrl(CDN.CDN_Path + Images[Images.Count - 1].imagePath).LoadingPlaceholder("https://demo.intellifi.tech/demo/Buptis/Generic/auser.jpg", ImageSource.Url).Transform(new CircleTransformation(15, "#FFFFFF")).Into(UserImage);
+                            ImageService.Instance.LoadUrl(CDN.CDN_Path + Images[Images.Count - 1].imagePath).LoadingPlaceholder("https://demo.intellifi.tech/demo/Buptis/Generic/auser.jpg", ImageSource.Url).Into(UserImage);
 
                         }
                     });
                 }
             })).Start();
         }
-
+        
+        public override void LayoutSubviews()
+        {
+            base.LayoutSubviews();
+            Duzenlee(Photo1);
+            Duzenlee(Photo2);
+            Duzenlee(Photo3);
+            Console.WriteLine("DURUMMM 3 =>> " + Hazne1.Frame.Height + "X" + Hazne1.Frame.Width);
+        }
+        void Duzenlee(UIButton UserImage)
+        {
+            UserImage.LayoutIfNeeded();
+            Hazne1.LayoutIfNeeded();
+            AdSoyadText.LayoutIfNeeded();
+            UserImage.ClipsToBounds = true;
+            var newFrame = UserImage.Frame;
+            newFrame.Width = Hazne1.Frame.Height - AdSoyadText.Frame.Height-4;
+            newFrame.Height = newFrame.Width;
+            newFrame.X = 2;
+            newFrame.Y = 2;
+            UserImage.ContentMode = UIViewContentMode.ScaleAspectFill;
+            UserImage.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+            //var EksiXPosition = (newFrame.Height - newFrame.Width) / 2;
+            //newFrame.Height = newFrame.Width;
+            //newFrame.X -= EksiXPosition;
+            UserImage.Frame = newFrame;
+            UserImage.Layer.CornerRadius = UserImage.Frame.Height / 2;
+            UserImage.Layer.BorderWidth = 4f;
+            UserImage.Layer.BorderColor = UIColor.White.CGColor;
+            Console.WriteLine("DURUMMM 1 =>> " + UserImage.Frame.Height + "X" + UserImage.Frame.Width);
+        }
+        public override void DidChange(NSString forKey, NSKeyValueSetMutationKind mutationKind, NSSet objects)
+        {
+            base.DidChange(forKey, mutationKind, objects);
+            Console.WriteLine("DURUMMM 4 =>> " + Hazne1.Frame.Height + "X" + Hazne1.Frame.Width);
+        }
         public class UsaerImageDTO
         {
             public string createdDate { get; set; }

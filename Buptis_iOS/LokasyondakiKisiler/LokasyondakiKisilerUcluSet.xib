@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,11 +24,12 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19724">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19724" fixedFrame="YES">
                             <rect key="frame" x="13" y="0.0" width="80" height="80"/>
                             <state key="normal" backgroundImage="Images/auser2.png">
                                 <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,10 +37,6 @@
                         <constraint firstItem="11304" firstAttribute="trailing" secondItem="476" secondAttribute="trailing" id="11365"/>
                         <constraint firstAttribute="bottom" secondItem="11304" secondAttribute="bottom" constant="2" id="11376"/>
                         <constraint firstItem="11304" firstAttribute="leading" secondItem="476" secondAttribute="leading" id="11387"/>
-                        <constraint firstAttribute="trailing" secondItem="19724" secondAttribute="trailing" constant="13" id="21823"/>
-                        <constraint firstItem="19724" firstAttribute="top" secondItem="476" secondAttribute="top" id="22115"/>
-                        <constraint firstItem="19724" firstAttribute="leading" secondItem="476" secondAttribute="leading" constant="13" id="22261"/>
-                        <constraint firstItem="11304" firstAttribute="top" secondItem="19724" secondAttribute="bottom" constant="3" id="22552"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="597">
@@ -53,11 +51,12 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24438">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24438" fixedFrame="YES">
                             <rect key="frame" x="13" y="0.0" width="80" height="80"/>
                             <state key="normal" backgroundImage="Images/auser2.png">
                                 <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,10 +64,6 @@
                         <constraint firstItem="12926" firstAttribute="trailing" secondItem="597" secondAttribute="trailing" id="13023"/>
                         <constraint firstItem="12926" firstAttribute="leading" secondItem="597" secondAttribute="leading" id="13034"/>
                         <constraint firstItem="12926" firstAttribute="bottom" secondItem="597" secondAttribute="bottom" id="13045"/>
-                        <constraint firstItem="24438" firstAttribute="top" secondItem="597" secondAttribute="top" id="26255"/>
-                        <constraint firstAttribute="trailing" secondItem="24438" secondAttribute="trailing" constant="13" id="26437"/>
-                        <constraint firstItem="24438" firstAttribute="leading" secondItem="597" secondAttribute="leading" constant="13" id="26583"/>
-                        <constraint firstItem="12926" firstAttribute="top" secondItem="24438" secondAttribute="bottom" constant="5" id="26729"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="658">
@@ -83,11 +78,12 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25534">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25534" fixedFrame="YES">
                             <rect key="frame" x="13" y="0.0" width="80" height="80"/>
                             <state key="normal" backgroundImage="Images/auser2.png">
                                 <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,10 +91,6 @@
                         <constraint firstItem="13301" firstAttribute="bottom" secondItem="658" secondAttribute="bottom" id="13377"/>
                         <constraint firstItem="13301" firstAttribute="trailing" secondItem="658" secondAttribute="trailing" id="13388"/>
                         <constraint firstItem="13301" firstAttribute="leading" secondItem="658" secondAttribute="leading" id="13399"/>
-                        <constraint firstAttribute="trailing" secondItem="25534" secondAttribute="trailing" constant="13" id="26953"/>
-                        <constraint firstItem="25534" firstAttribute="leading" secondItem="658" secondAttribute="leading" constant="13" id="27139"/>
-                        <constraint firstItem="25534" firstAttribute="top" secondItem="658" secondAttribute="top" id="27285"/>
-                        <constraint firstItem="13301" firstAttribute="top" secondItem="25534" secondAttribute="bottom" constant="5" id="27431"/>
                     </constraints>
                 </view>
             </subviews>
