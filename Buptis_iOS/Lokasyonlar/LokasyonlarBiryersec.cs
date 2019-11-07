@@ -37,7 +37,7 @@ namespace Buptis_iOS
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
-            CustomLoading.Show(GelenBase1, "Lokasyonlar Yükleniyor...");
+            CustomLoading.Show(GelenBase1, "Lokasyonlar YÃ¼kleniyor...");
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
                 BanaYakinLokasyonlariGetir();
@@ -103,7 +103,7 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(GelenBase1, "Çevrenizde hiç lokasyon bulunamadý...");
+                    CustomAlert.GetCustomAlert(GelenBase1, "Ã‡evrenizde hiÃ§ lokasyon bulunamadÄ±...");
                     CustomLoading.Hide();
                 }
             }
