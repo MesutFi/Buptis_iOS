@@ -83,7 +83,7 @@ namespace Buptis_iOS
             {
                 if (ControlUserAction())
                 {
-                    CustomLoading.Show(this, "L�tfen Bekleyin...");
+                    CustomLoading.Show(this, "Lütfen Bekleyin...");
                     new System.Threading.Thread(new System.Threading.ThreadStart(delegate
                     {
                         WebService webService = new WebService();
@@ -110,7 +110,7 @@ namespace Buptis_iOS
                         else
                         {
                             CustomLoading.Hide();
-                            CustomAlert.GetCustomAlert(this, " Bir sorun olu?tu l�tfen internet ba?lant?n?z? kontrol edin.");
+                            CustomAlert.GetCustomAlert(this, " Bir sorun oluştu lütfen internet bağlantınızı kontrol edin.");
                             return;
                         }
                     })).Start();
@@ -121,32 +121,32 @@ namespace Buptis_iOS
         {
             if (AdText.Text.Length < 2)
             {
-                CustomAlert.GetCustomAlert(this,"L�tfen ad?n?z? kontrol edin!");
+                CustomAlert.GetCustomAlert(this,"Lütfen adınızı kontrol edin!");
                 return false;
             }
             else if (SoyadText.Text.Length < 2)
             {
-                CustomAlert.GetCustomAlert(this, "L�tfen soyad?n?z? kontrol edin!");
+                CustomAlert.GetCustomAlert(this, "Lütfen soyadınızı kontrol edin!");
                 return false;
             }
             else if (isValidEmail(EmailTxt.Text) == false)
             {
-                CustomAlert.GetCustomAlert(this, "L�tfen emalinizi kontrol edin!");
+                CustomAlert.GetCustomAlert(this, "Lütfen emalinizi kontrol edin!");
                 return false;
             }
             else if (SifreTxt.Text.Length < 6 == true)
             {
-                CustomAlert.GetCustomAlert(this, "?ifreniz 6 karakterden az olamaz!");
+                CustomAlert.GetCustomAlert(this, "Şifreniz 6 karakterden az olamaz!");
                 return false;
             }
             else if (SifreTekrarTxt.Text.Length < 6 == true)
             {
-                CustomAlert.GetCustomAlert(this, "?ifreniz 6 karakterden az olamaz!");
+                CustomAlert.GetCustomAlert(this, "Şifreniz 6 karakterden az olamaz!");
                 return false;
             }
             else if (SifreTxt.Text != SifreTekrarTxt.Text)
             {
-                CustomAlert.GetCustomAlert(this, "?ifreler uyu?muyor l�tfen tekrar kontrol edin.");
+                CustomAlert.GetCustomAlert(this, "Şifreler uyu?muyor lütfen tekrar kontrol edin.");
                 return false;
             }
             else
@@ -188,7 +188,7 @@ namespace Buptis_iOS
             if (Donus == "Hata")
             {
                 CustomLoading.Hide();
-                CustomAlert.GetCustomAlert(this,"Giri? Yap?lamad?!");
+                CustomAlert.GetCustomAlert(this,"Giriş Yapılamadı!");
                 return;
             }
             else
@@ -210,7 +210,7 @@ namespace Buptis_iOS
                     else
                     {
                         CustomLoading.Hide();
-                        CustomAlert.GetCustomAlert(this,"Bir sorun olu?tu l�tfen daha sonra tekrar deneyin.");
+                        CustomAlert.GetCustomAlert(this,"Bir sorun oluştu lütfen daha sonra tekrar deneyin.");
                         return;
                     }
                 }
@@ -244,32 +244,32 @@ namespace Buptis_iOS
         {
             if (AdText.Text.Trim() == "")
             {
-                CustomAlert.GetCustomAlert(this,"L�tfen Ad?n?z? Girin");
+                CustomAlert.GetCustomAlert(this,"Lütfen Adınızı Girin");
                 return false;
             }
             else if (SoyadText.Text.Trim() == "")
             {
-                CustomAlert.GetCustomAlert(this,"L�tfen Soyad?n?z? Girin");
+                CustomAlert.GetCustomAlert(this,"Lütfen Soyadınızı Girin");
                 return false;
             }
             else if (EmailTxt.Text.Trim() == "")
             {
-                CustomAlert.GetCustomAlert(this,"L�tfen Email Girin");
+                CustomAlert.GetCustomAlert(this,"Lütfen Email Girin");
                 return false;
             }
             else if (SifreTxt.Text.Trim() == "")
             {
-                CustomAlert.GetCustomAlert(this,"L�tfen bir ?ifre belirtin");
+                CustomAlert.GetCustomAlert(this,"Lütfen bir şifre belirtin");
                 return false;
             }
             else if (SifreTekrarTxt.Text.Trim() == "")
             {
-                CustomAlert.GetCustomAlert(this,"L�tfen ?ifre tekrar?n?");
+                CustomAlert.GetCustomAlert(this,"Lütfen şifre tekrarını girin");
                 return false;
             }
             else if (SifreTxt.Text != SifreTekrarTxt.Text)
             {
-                CustomAlert.GetCustomAlert(this,"?ifreler uyu?muyor l�tfen tekrar kontrol edin.");
+                CustomAlert.GetCustomAlert(this,"Şifreler uyuşmuyor lütfen tekrar kontrol edin.");
                 return false;
             }
             else
@@ -283,8 +283,8 @@ namespace Buptis_iOS
             EditTextAyarla(AdText, "Ad");
             EditTextAyarla(SoyadText, "Soyad");
             EditTextAyarla(EmailTxt,"Mail");
-            EditTextAyarla(SifreTekrarTxt, "?ifre Tekrarre");
-            EditTextAyarla(SifreTxt, "?ifreeeeee");
+            EditTextAyarla(SifreTekrarTxt, "Şifre Tekrarı");
+            EditTextAyarla(SifreTxt, "Şifre");
         #region UI Tasarim
             ButtonBg(KayitOlButton);
         }
