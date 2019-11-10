@@ -35,8 +35,8 @@ namespace Buptis_iOS.GirisKayit
         {
             base.ViewDidLoad();
             SifreTxt.SecureTextEntry = true;
-            
         }
+
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
@@ -124,7 +124,6 @@ namespace Buptis_iOS.GirisKayit
         }
 
         #endregion
-
 
         UIViewController FacebookVC;
         private void FacebookButton_TouchUpInside(object sender, EventArgs e)

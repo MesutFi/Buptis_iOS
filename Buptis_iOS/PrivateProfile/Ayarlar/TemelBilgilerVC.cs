@@ -112,14 +112,31 @@ namespace Buptis_iOS
         }
         private void BirthdayButton_TouchUpInside(object sender, EventArgs e)
         {
-            var startingTime = DateTime.Today;
+            var startingTime = KayitliTarihVarmi();
             var dialog = new DatePickerDialog();
             dialog.BackgroundColor = UIColor.FromRGBA(0, 0, 0, 0);
             dialog.Show("Doðum Tarihi Seçin", "Tamam", "Vazgeç", UIDatePickerMode.Date, (dt) =>
             {
                 birtdLbl.Text = dt.ToShortDateString();
-            }, startingTime,DateTime.Now.AddYears(-18));
+            }, startingTime,DateTime.Now.AddYears(-18), DateTime.Now.AddYears(-65));
         }
+
+        DateTime KayitliTarihVarmi()
+        {
+            var Me = DataBase.MEMBER_DATA_GETIR()[0];
+            if (Me.birthDayDate != null)
+            {
+                return (DateTime)Me.birthDayDate;
+            }
+            else
+            {
+                return DateTime.Now.AddYears(-18);
+            }
+        }
+
+
+
+
         private void KadinTouch_TouchUpInside(object sender, EventArgs e)
         {
             HepsiniSifirla(KadinRadio);

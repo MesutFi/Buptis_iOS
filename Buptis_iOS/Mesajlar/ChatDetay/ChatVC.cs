@@ -261,63 +261,65 @@ namespace Buptis_iOS
         #region Mesaj Gonderme
         void MesajGonderGenericMetod(string Message)
         {
-            if (!KullaniciEngellemeDurumu)
+            if (!string.IsNullOrEmpty(Message.Trim()))
             {
-                if (!KisiBilgileriTammi())
+                if (!KullaniciEngellemeDurumu)
                 {
-                    UIAlertView alert = new UIAlertView();
-                    alert.Title = "Buptis";
-                    alert.AddButton("Evet");
-                    alert.AddButton("Hayýr");
-                    alert.Message = "Yaþ ve Cinsiyet bilgilerinizi tamamlamadan mesaj gönderemezsiniz. Bilgilerini güncellemek ister misiniz?";
-                    alert.AlertViewStyle = UIAlertViewStyle.Default;
-                    alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                    if (!KisiBilgileriTammi())
                     {
-                        if (ev.ButtonIndex == 0)
+                        UIAlertView alert = new UIAlertView();
+                        alert.Title = "Buptis";
+                        alert.AddButton("Evet");
+                        alert.AddButton("Hayýr");
+                        alert.Message = "Yaþ ve Cinsiyet bilgilerinizi tamamlamadan mesaj gönderemezsiniz. Bilgilerini güncellemek ister misiniz?";
+                        alert.AlertViewStyle = UIAlertViewStyle.Default;
+                        alert.Clicked += (object s, UIButtonEventArgs ev) =>
                         {
-                            var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
-                            TemelBilgilerVC controller = AyarlarBaseVC1.InstantiateViewController("TemelBilgilerVC") as TemelBilgilerVC;
-                            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
-                            this.PresentViewController(controller, true, null);
-                            alert.Dispose();
-                        }
-                        else
-                        {
-                            alert.Dispose();
-                        }
-                    };
-                    alert.Show();
-                }
-                else
-                {
-                    ChatDetayDTO chatRecyclerViewDataModel = new ChatDetayDTO()
-                    {
-                        userId = MeDTO.id,
-                        receiverId = MesajlarIcinSecilenKullanici.Kullanici.id,
-                        text = Message,
-                        key = MesajlarIcinSecilenKullanici.key
-                    };
-                    WebService webService = new WebService();
-                    string jsonString = JsonConvert.SerializeObject(chatRecyclerViewDataModel);
-                    var Donus = webService.ServisIslem("chats", jsonString);
-                    if (Donus != "Hata")
-                    {
-                        var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<KeyIslemleriIcinDTO>(Donus.ToString());
-                        MesajText.Text = "";
-                        SaveKeys(Icerikk);
+                            if (ev.ButtonIndex == 0)
+                            {
+                                var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
+                                TemelBilgilerVC controller = AyarlarBaseVC1.InstantiateViewController("TemelBilgilerVC") as TemelBilgilerVC;
+                                controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                                this.PresentViewController(controller, true, null);
+                                alert.Dispose();
+                            }
+                            else
+                            {
+                                alert.Dispose();
+                            }
+                        };
+                        alert.Show();
                     }
                     else
                     {
-                        KredisimiBitti();
-                        return;
+                        ChatDetayDTO chatRecyclerViewDataModel = new ChatDetayDTO()
+                        {
+                            userId = MeDTO.id,
+                            receiverId = MesajlarIcinSecilenKullanici.Kullanici.id,
+                            text = Message,
+                            key = MesajlarIcinSecilenKullanici.key
+                        };
+                        WebService webService = new WebService();
+                        string jsonString = JsonConvert.SerializeObject(chatRecyclerViewDataModel);
+                        var Donus = webService.ServisIslem("chats", jsonString);
+                        if (Donus != "Hata")
+                        {
+                            var Icerikk = Newtonsoft.Json.JsonConvert.DeserializeObject<KeyIslemleriIcinDTO>(Donus.ToString());
+                            MesajText.Text = "";
+                            SaveKeys(Icerikk);
+                        }
+                        else
+                        {
+                            KredisimiBitti();
+                            return;
+                        }
                     }
                 }
+                else
+                {
+                    CustomAlert.GetCustomAlert(this, "Kullanýcý Engelli");
+                }
             }
-            else
-            {
-                CustomAlert.GetCustomAlert(this, "Kullanýcý Engelli");
-            }
-
         }
         void KredisimiBitti()
         {

@@ -33,9 +33,35 @@ namespace Buptis_iOS
             //SifreTekrarTxt.Text = "1234qwer";
             SifreTxt.SecureTextEntry = true;
             SifreTekrarTxt.SecureTextEntry = true;
-
+            AdText.ValueChanged += AdText_ValueChanged;
+            SoyadText.ValueChanged += SoyadText_ValueChanged;
         }
 
+        private void SoyadText_ValueChanged(object sender, EventArgs e)
+        {
+            SayisalKontrol(((UITextField)sender));
+        }
+
+        private void AdText_ValueChanged(object sender, EventArgs e)
+        {
+            SayisalKontrol(((UITextField)sender));
+        }
+
+        string[] Rakanlar = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+        void SayisalKontrol(UITextField GelenText)
+        {
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+            {
+                for (int i = 0; i < Rakanlar.Length; i++)
+                {
+                    InvokeOnMainThread(delegate ()
+                    {
+                        GelenText.Text = GelenText.Text.Replace(Rakanlar[i], "");
+                    });
+                }
+            })).Start();
+
+        }
         private void GeriButton_TouchUpInside(object sender, EventArgs e)
         {
             this.DismissViewController(true, null);

@@ -111,7 +111,7 @@ namespace Buptis_iOS
         }
 
 
-        int SonSecilenRate = 10;
+        int SonSecilenRate = 0;
         void ArkaPlanSifirla(int index)
         {
             for (int i = 0; i < ratingButtons.Length; i++)
