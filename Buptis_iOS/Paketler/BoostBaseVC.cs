@@ -129,7 +129,7 @@ namespace Buptis_iOS
                     }
                     else
                     {
-                        CustomAlert.GetCustomAlert(this,"Satýn Alma Baþarýsýz");
+                        CustomAlert.GetCustomAlert(this,"Satin Alma BaÅŸarÄ±sÄ±z");
                     }
                 }
                 catch (Exception ex)
@@ -140,7 +140,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen bir paket seçin.");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen bir paket seÃ§in.");
             }
 
           
@@ -224,13 +224,13 @@ namespace Buptis_iOS
             var Donus = webService.ServisIslem("licences/buy", jsonString);
             if (Donus != "Hata")
             {
-                CustomAlert.GetCustomAlert(this, Miktar + " Boost Paket Satýn Alýndý.");
+                CustomAlert.GetCustomAlert(this, Miktar + " Boost Paket SatÄ±n AldÄ±nÄ±z.");
                 PrivateProfileVC1.GetUserLicence();
                 this.DismissViewController(true, null);
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu. LÃ¼tfen tekrar deneyin.");
             }
         }
 
