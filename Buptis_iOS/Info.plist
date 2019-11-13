@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIDeviceFamily</key>
@@ -41,7 +37,7 @@
 	<key>MinimumOSVersion</key>
 	<string>13.0</string>
 	<key>CFBundleName</key>
-	<string>Buptis</string>
+	<string>Buptis_iOS</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.buptis.app.ios</string>
 	<key>CFBundleURLTypes</key>
@@ -66,9 +62,9 @@
 	<string>GirisKayit</string>
 	<key>CFBundleDisplayName</key>
 	<string>Buptis</string>
-	<key>CFBundleName</key>
-	<string>Buptis_iOS</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.buptis.app.ios</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.0</string>
+	<key>CFBundleVersion</key>
+	<string>3.0</string>
 </dict>
 </plist>
