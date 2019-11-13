@@ -79,7 +79,7 @@ namespace Buptis_iOS
                     }
                     else
                     {
-                        CustomAlert.GetCustomAlert(this, "Satýn Alma Baþarýsýz");
+                        CustomAlert.GetCustomAlert(this, "SatÄ±n Alma BaÅŸarÄ±sÄ±z.");
                     }
                 }
                 catch (Exception ex)
@@ -90,7 +90,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen bir paket seçin.");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen bir paket seÃ§in.");
             }
         }
 
@@ -173,7 +173,7 @@ namespace Buptis_iOS
             var Donus = webService.ServisIslem("licences/buy", jsonString);
             if (Donus != "Hata")
             {
-                CustomAlert.GetCustomAlert(this, Miktar + " Aylýk Buptis Gold Paketi Satýn Alýndý.");
+                CustomAlert.GetCustomAlert(this, Miktar + " AylÄ±k Gold Paket SatÄ±n AldÄ±nÄ±z.");
                 if (PrivateProfileVC1 != null)
                 {
                     PrivateProfileVC1.GetUserLicence();
@@ -182,7 +182,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen tekrar deneyin.");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu. LÃ¼tfen tekrar deneyin.");
 
             }
         }
@@ -304,27 +304,27 @@ namespace Buptis_iOS
             InfoScroll.ShowsVerticalScrollIndicator = false;
             InfoScroll.ShowsHorizontalScrollIndicator = false;
             slideContents.Add(new SlideContent() { 
-            AciklamaText = "Daha çok kiþiyle sohbet edin!",
+            AciklamaText = "Daha Ã§ok kiÅŸiyle sohbet edin!",
             ImageName = "gold_icon1.png"
             });
             slideContents.Add(new SlideContent()
             {
-                AciklamaText = "Ýsterseniz kimliðinizi gizleyin!",
+                AciklamaText = "Ä°sterseniz kimliÄŸinizi gizleyin!",
                 ImageName = "gold_icon2.png"
             });
             slideContents.Add(new SlideContent()
             {
-                AciklamaText = "Her ay 3 Boost kazanýn!",
+                AciklamaText = "Her ay 3 Boost kazanÄ±n!",
                 ImageName = "gold_icon3.png"
             });
             slideContents.Add(new SlideContent()
             {
-                AciklamaText = "Her ay 3 Super Boost kazanýn!",
+                AciklamaText = "Her ay 3 Super Boost kazanÄ±n!",
                 ImageName = "gold_icon5.png"
             });
             slideContents.Add(new SlideContent()
             {
-                AciklamaText = "Anýnda 1000 Kredi kazanýn!",
+                AciklamaText = "AnÄ±nda 1000 Kredi kazanÄ±n!",
                 ImageName = "gold_icon4.png"
             });
             slideContents.Add(new SlideContent()
