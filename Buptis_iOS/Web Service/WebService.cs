@@ -70,13 +70,21 @@ namespace Buptis_iOS.Web_Service
                 }
                 else
                 {
-                    if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                    if (ex.Response != null)
                     {
-                        SetApiToken();
-                        goto Atla;
+                        if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.Unauthorized)
+                        {
+                            SetApiToken();
+                            goto Atla;
+                        }
+                        var Mes = ex.Message.ToString();
+                        return "Hata";
                     }
-                    var Mes = ex.Message.ToString();
-                    return "Hata";
+                    else
+                    {
+                        return "Hata";
+                    }
+                    
                 }
 
             }
