@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
@@ -365,7 +365,7 @@ namespace Buptis_iOS.GirisKayit
             EmailTxt.BackgroundColor = UIColor.White.ColorWithAlpha(0.33f);
             EmailTxt.Layer.CornerRadius = EmailTxt.Frame.Height / 2;
             EmailTxt.TextColor = UIColor.White;
-            EmailTxt.AttributedPlaceholder = new NSAttributedString("Mail / Telefon Numarası", null, UIColor.White);
+            EmailTxt.AttributedPlaceholder = new NSAttributedString("E-mail", null, UIColor.White);
             UIView paddingView = new UIView(new CGRect(0, 0, 15f, EmailTxt.Frame.Height));
             paddingView.BackgroundColor = UIColor.Clear;
             EmailTxt.LeftView = paddingView;
