@@ -70,7 +70,7 @@ namespace Buptis_iOS
                     alert = new UIAlertView();
                     alert.Title = "Buptis";
                     alert.AddButton("Tamam");
-                    alert.Message = "Buptis'i kullanmaya devam edebilmeniz için konum hizmetlerine izin vermelisiniz.";
+                    alert.Message = "Buptis'i kullanmaya devam edebilmeniz iÃ§in konum hizmetlerine izin vermelisiniz.";
                     alert.AlertViewStyle = UIAlertViewStyle.Default;
                     alert.Clicked += (object s, UIButtonEventArgs ev) =>
                     {
@@ -176,6 +176,7 @@ namespace Buptis_iOS
             })).Start();
         }
     }
+
 
     public static class UserLocationn
     {
