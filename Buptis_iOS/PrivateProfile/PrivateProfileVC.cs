@@ -446,7 +446,7 @@ namespace Buptis_iOS
                     {
                         InvokeOnMainThread(delegate ()
                         {
-                            if (Icerikk.boost <= 0)
+                            if (Icerikk.boost <= 0 || Icerikk.boost == null)
                             {
                                 BoostCountLabel.Text = "+";
                             }
@@ -455,7 +455,7 @@ namespace Buptis_iOS
                                 BoostCountLabel.Text = Icerikk.boost.ToString();
                             }
 
-                            if (Icerikk.superBoost <= 0)
+                            if (Icerikk.superBoost <= 0 || Icerikk.boost == null)
                             {
                                 SuperBoostCountLabel.Text = "+";
                             }

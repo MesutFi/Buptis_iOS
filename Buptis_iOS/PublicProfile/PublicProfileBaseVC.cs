@@ -39,12 +39,12 @@ namespace Buptis_iOS.PublicProfile
                 var PublicProfileVC1 = MainStoryBoard.InstantiateViewController("PublicProfileVC") as PublicProfileVC;
                 PublicProfileVC1.GelenBase = this;
                 var viewController = PublicProfileVC1;
-                viewController.View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 820);
+                viewController.View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width-10, 820);
                 viewController.WillMoveToParentViewController(this);
                 ScrollVieww.AddSubview(viewController.View);
                 this.AddChildViewController(viewController);
                 viewController.DidMoveToParentViewController(this);
-                ScrollVieww.ContentSize = new CoreGraphics.CGSize(UIScreen.MainScreen.Bounds.Width, 820);
+                ScrollVieww.ContentSize = new CoreGraphics.CGSize(UIScreen.MainScreen.Bounds.Width-10, 820);
                 ScrollTopp();
                 Actimi = true;
             }
@@ -56,7 +56,7 @@ namespace Buptis_iOS.PublicProfile
         void ScrollTopp()
         {
             Task.Run(async delegate () {
-                await Task.Delay(1000);
+                await Task.Delay(500);
 
                 InvokeOnMainThread(delegate () {
                     ScrollVieww.SetContentOffset(new CoreGraphics.CGPoint(0, ScrollVieww.ContentInset.Top), true);

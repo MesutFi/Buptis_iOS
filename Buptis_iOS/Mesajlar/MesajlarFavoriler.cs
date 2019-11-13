@@ -62,7 +62,7 @@ namespace Buptis_iOS
                 {
                     InvokeOnMainThread(() =>
                     {
-                        Tablo.Source = new MesajlarCustomTableCellSoruce(mFriends, this, FavorileriCagir());
+                        Tablo.Source = new MesajlarCustomTableCellSoruce(searchedFriends, this, FavorileriCagir());
                         Tablo.ReloadData();
                     });
                 }
@@ -136,7 +136,7 @@ namespace Buptis_iOS
                 var cell = (MesajlarCustomItemCell)tableView.DequeueReusableCell(MesajlarCustomItemCell.Key);
                 if (cell == null)
                 {
-                    cell = MesajlarCustomItemCell.Create(FavList, this);
+                    cell = MesajlarCustomItemCell.Create(FavList, this, indexPath);
                 }
                 cell.UpdateCell(itemss,false);
                 return cell;

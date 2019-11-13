@@ -36,8 +36,6 @@
 	<string>Buptis&apos;i kullanmaya devam edebilmeniz için konum hizmetlerine izin vermelisiniz.</string>
 	<key>MinimumOSVersion</key>
 	<string>13.0</string>
-	<key>CFBundleName</key>
-	<string>Buptis_iOS</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.buptis.app.ios</string>
 	<key>CFBundleURLTypes</key>
@@ -62,9 +60,11 @@
 	<string>GirisKayit</string>
 	<key>CFBundleDisplayName</key>
 	<string>Buptis</string>
+	<key>CFBundleName</key>
+	<string>Buptis</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>4.0</string>
 	<key>CFBundleVersion</key>
-	<string>3.0</string>
+	<string>4.0</string>
 </dict>
 </plist>

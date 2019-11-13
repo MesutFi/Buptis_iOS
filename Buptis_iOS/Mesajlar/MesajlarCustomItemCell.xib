@@ -51,15 +51,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31636">
-                        <rect key="frame" x="292" y="8" width="20" height="20"/>
+                        <rect key="frame" x="282" y="8" width="30" height="30"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="33085"/>
-                            <constraint firstAttribute="width" constant="20" id="33189"/>
-                        </constraints>
                         <state key="normal" image="Images/star2.png">
                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <constraints>
+                            <constraint id="35529" firstAttribute="height" constant="30"/>
+                            <constraint id="35530" firstAttribute="width" constant="30"/>
+                        </constraints>
                     </button>
                 </subviews>
                 <constraints>

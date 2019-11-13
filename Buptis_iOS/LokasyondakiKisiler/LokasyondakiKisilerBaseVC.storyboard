@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="511">
+    <device id="retina4_0" orientation="portrait"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="509"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="512">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1551">
-                                <rect key="frame" x="4" y="0.0" width="406" height="196"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1552">
                                         <rect key="frame" x="16" y="49" width="35" height="35"/>
@@ -31,7 +32,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1555">
-                                        <rect key="frame" x="356" y="49" width="35" height="35"/>
+                                        <rect key="frame" x="270" y="49" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="1556"/>
                                             <constraint firstAttribute="width" constant="35" id="1557"/>
@@ -41,10 +42,10 @@
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1562">
-                                        <rect key="frame" x="12" y="130" width="383" height="37"/>
+                                        <rect key="frame" x="12" y="130" width="297" height="37"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1563">
-                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="99" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="1564"/>
                                                 </constraints>
@@ -54,7 +55,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1565">
-                                                <rect key="frame" x="126.5" y="0.0" width="128" height="37"/>
+                                                <rect key="frame" x="98" y="0.0" width="99" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="1566"/>
                                                 </constraints>
@@ -64,7 +65,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1567">
-                                                <rect key="frame" x="255.5" y="0.0" width="127.5" height="37"/>
+                                                <rect key="frame" x="198" y="0.0" width="99" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="1568"/>
                                                 </constraints>
@@ -92,7 +93,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zorlu Center" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="2753">
-                                        <rect key="frame" x="59" y="56" width="289" height="21"/>
+                                        <rect key="frame" x="59" y="56" width="203" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3835"/>
                                         </constraints>
@@ -101,7 +102,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoşgeldiniz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3935">
-                                        <rect key="frame" x="0.0" y="95" width="406" height="21"/>
+                                        <rect key="frame" x="0.0" y="95" width="320" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="4773"/>
                                         </constraints>
@@ -129,7 +130,7 @@
                                 </constraints>
                             </view>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1596">
-                                <rect key="frame" x="4" y="196" width="406" height="540"/>
+                                <rect key="frame" x="0.0" y="196" width="320" height="372"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

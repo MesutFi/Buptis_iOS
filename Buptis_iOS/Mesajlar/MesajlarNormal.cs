@@ -60,7 +60,7 @@ namespace Buptis_iOS
                 {
                     InvokeOnMainThread(() =>
                     {
-                        Tablo.Source = new MesajlarCustomTableCellSoruce(mFriends, this, FavorileriCagir());
+                        Tablo.Source = new MesajlarCustomTableCellSoruce(searchedFriends, this, FavorileriCagir());
                         Tablo.ReloadData();
                     });
                 }
@@ -194,13 +194,14 @@ namespace Buptis_iOS
             List<MesajKisileri> TableItems;
             MesajlarNormal MesajlarNormal1;
             List<string> FollowListID;
+            UITableView BuTablo;
             public MesajlarCustomTableCellSoruce(List<MesajKisileri> mekanlist, MesajlarNormal MesajlarNormal2,List<string> FollowListt)
             {
                 TableItems = mekanlist;
                 MesajlarNormal1 = MesajlarNormal2;
                 FollowListID = FollowListt;
             }
-            public void FavListGuncelle(string UserID,bool EkleKaldir)
+            public void FavListGuncelle(string UserID,bool EkleKaldir, NSIndexPath CellIndexPathh)
             {
                 if (EkleKaldir)
                 {
@@ -210,6 +211,10 @@ namespace Buptis_iOS
                 {
                     FollowListID.Remove(UserID.ToString());
                 }
+
+                BuTablo.BeginUpdates();
+                BuTablo.ReloadRows(new NSIndexPath[] { CellIndexPathh }, UITableViewRowAnimation.Automatic);
+                BuTablo.EndUpdates();
             }
             public override nint RowsInSection(UITableView tableview, nint section)
             {
@@ -222,12 +227,12 @@ namespace Buptis_iOS
             }
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
-
+                BuTablo = tableView;
                 var itemss = TableItems[indexPath.Row];
                 var cell = (MesajlarCustomItemCell)tableView.DequeueReusableCell(MesajlarCustomItemCell.Key);
                 if (cell == null)
                 {
-                    cell = MesajlarCustomItemCell.Create(FollowListID,this);
+                    cell = MesajlarCustomItemCell.Create(FollowListID,this,indexPath);
                 }
                 cell.UpdateCell(itemss, true);
                 return cell;

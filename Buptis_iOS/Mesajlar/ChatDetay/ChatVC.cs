@@ -78,10 +78,7 @@ namespace Buptis_iOS
             }
         }
 
-        private void FavButton_TouchUpInside(object sender, EventArgs e)
-        {
-            FavoriIslemleri();
-        }
+        
         bool Actinmi1 = false;
         public override void ViewWillAppear(bool animated)
         {
@@ -232,7 +229,7 @@ namespace Buptis_iOS
             gradientLayer.Colors = new CoreGraphics.CGColor[] { Color1, Color2 };
             gradientLayer.StartPoint = new CoreGraphics.CGPoint(0, 0);
             gradientLayer.EndPoint = new CoreGraphics.CGPoint(1, 1);
-            gradientLayer.Frame = HeaderView.Frame;
+            gradientLayer.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 140f);
             HeaderView.Layer.InsertSublayer(gradientLayer, 0);
             HeaderView.Layer.CornerRadius = 30;
             HeaderView.ClipsToBounds = true;
@@ -455,10 +452,15 @@ namespace Buptis_iOS
         #endregion
 
         #region Favori Islemleri
+        private void FavButton_TouchUpInside(object sender, EventArgs e)
+        {
+            FavoriIslemleri();
+        }
         void FavorileriCagir()
         {
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
+                FollowListID = new List<string>();
                 WebService webService = new WebService();
                 var Donus4 = webService.OkuGetir("users/favList/" + MeDTO.id.ToString());
                 if (Donus4 != null)
@@ -511,7 +513,7 @@ namespace Buptis_iOS
             if (Donus != "Hata")
             {
                 //CustomAlert.GetCustomAlert(this, "Favorilere Ekledi.");
-                ButtonAktifPasifBgYap(true);
+                //ButtonAktifPasifBgYap(true);
                 FavorileriCagir();
                 return;
             }

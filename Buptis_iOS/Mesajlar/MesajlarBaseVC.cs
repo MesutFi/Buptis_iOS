@@ -235,7 +235,7 @@ namespace Buptis_iOS.Mesajlar
             gradientLayer.Colors = new CoreGraphics.CGColor[] { Color1, Color2 };
             gradientLayer.StartPoint = new CoreGraphics.CGPoint(0, 0);
             gradientLayer.EndPoint = new CoreGraphics.CGPoint(1, 1);
-            gradientLayer.Frame = HeaderView.Frame;
+            gradientLayer.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 180f);
             HeaderView.Layer.InsertSublayer(gradientLayer, 0);
             HeaderView.Layer.CornerRadius = 30;
             HeaderView.ClipsToBounds = true;

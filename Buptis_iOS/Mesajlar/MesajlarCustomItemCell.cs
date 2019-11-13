@@ -20,6 +20,7 @@ namespace Buptis_iOS.Mesajlar
         MesajKisileri mesajKisileri;
         List<string> FollowListID;
         UITableViewSource GelenAdapter1;
+        NSIndexPath CellIndexPath;
         static MesajlarCustomItemCell()
         {
             Nib = UINib.FromName("MesajlarCustomItemCell", NSBundle.MainBundle);
@@ -29,11 +30,12 @@ namespace Buptis_iOS.Mesajlar
         {
             // Note: this .ctor should not contain any initialization logic.
         }
-        public static MesajlarCustomItemCell Create(List<string> FollowListt, UITableViewSource GelenAdapter2)
+        public static MesajlarCustomItemCell Create(List<string> FollowListt, UITableViewSource GelenAdapter2, NSIndexPath CellIndexPath2)
         {
             var OlusanView = (MesajlarCustomItemCell)Nib.Instantiate(null, null)[0];
             OlusanView.FollowListID = FollowListt;
             OlusanView.GelenAdapter1 = GelenAdapter2;
+            OlusanView.CellIndexPath = CellIndexPath2;
             return OlusanView;
         }
         public override void LayoutSubviews()
@@ -85,11 +87,11 @@ namespace Buptis_iOS.Mesajlar
         {
             if (GelenAdapter1 is MesajlarNormal.MesajlarCustomTableCellSoruce)
             {
-                ((MesajlarNormal.MesajlarCustomTableCellSoruce)GelenAdapter1).FavListGuncelle(mesajKisileri.receiverId.ToString(), eklekaldir);
+                ((MesajlarNormal.MesajlarCustomTableCellSoruce)GelenAdapter1).FavListGuncelle(mesajKisileri.receiverId.ToString(), eklekaldir,CellIndexPath);
             }
             else if (GelenAdapter1 is MesajlarIstekler.MesajlarCustomTableCellSoruce)
             {
-                ((MesajlarIstekler.MesajlarCustomTableCellSoruce)GelenAdapter1).FavListGuncelle(mesajKisileri.receiverId.ToString(), eklekaldir);
+                ((MesajlarIstekler.MesajlarCustomTableCellSoruce)GelenAdapter1).FavListGuncelle(mesajKisileri.receiverId.ToString(), eklekaldir, CellIndexPath);
 
             }
             else if (GelenAdapter1 is MesajlarFavoriler.MesajlarCustomTableCellSoruce)

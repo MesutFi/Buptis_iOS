@@ -151,7 +151,7 @@ namespace Buptis_iOS.LokasyondakiKisiler
             gradientLayer.Colors = new CoreGraphics.CGColor[] { Color1, Color2 };
             gradientLayer.StartPoint = new CoreGraphics.CGPoint(0, 0);
             gradientLayer.EndPoint = new CoreGraphics.CGPoint(1, 1);
-            gradientLayer.Frame = HeaderHazne.Frame;
+            gradientLayer.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 196f);
             HeaderHazne.Layer.InsertSublayer(gradientLayer, 0);
             HeaderHazne.Layer.CornerRadius = 30;
             HeaderHazne.ClipsToBounds = true;
