@@ -191,7 +191,7 @@ namespace Buptis_iOS
                     }
                     else
                     {
-                        CustomAlert.GetCustomAlert(this, "Satın Alma Başarısız");
+                        CustomAlert.GetCustomAlert(this, "SatÄ±n Alma BaÅŸarÄ±sÄ±z.");
                     }
                 }
                 catch (Exception ex)
@@ -202,7 +202,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen bir paket seçin.");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen bir paket seÃ§in.");
             }
 
         }
@@ -277,7 +277,7 @@ namespace Buptis_iOS
             {
                 count = 0,
                 credit = Miktar,
-                licenceType = "ONLY_CREDİT"
+                licenceType = "ONLY_CREDÃT"
             };
 
             WebService webService = new WebService();
@@ -285,7 +285,7 @@ namespace Buptis_iOS
             var Donus = webService.ServisIslem("licences/buy", jsonString);
             if (Donus != "Hata")
             {
-                CustomAlert.GetCustomAlert(this, Miktar + " Kredi Satın Alındı.");
+                CustomAlert.GetCustomAlert(this, Miktar + " Kredi SatÄ±n AldÄ±nÄ±z.");
                 if (PrivateProfileVC1 != null)
                 {
                     PrivateProfileVC1.GetUserLicence();
@@ -294,7 +294,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluştu. Lütfen tekrar deneyin.");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu. LÃ¼tfen tekrar deneyin.");
             }
         }
         public class LicenceBuyDTO
