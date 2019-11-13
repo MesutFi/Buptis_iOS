@@ -89,7 +89,7 @@ namespace Buptis_iOS
                     SaveKeys();
                     InvokeOnMainThread(() =>
                     {
-                        //Geçmiþ gelecekten daha büyüktür
+                        //GeÃ§miÃ¾ gelecekten daha bÃ¼yÃ¼ktÃ¼r
                         mFriends.Sort((x, y) => DateTime.Compare(x.lastModifiedDate, y.lastModifiedDate));
                         mFriends.Reverse();
                         Tablo.Source = new MesajlarCustomTableCellSoruce(mFriends, this, FavorileriCagir());
@@ -102,7 +102,7 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(GelenBase1, "Hiç Mesaj Bulunamadý...");
+                    CustomAlert.GetCustomAlert(GelenBase1, "HiÃ§ Mesaj BulunamadÄ±...");
                     CustomLoading.Hide();
                 }
             }
@@ -188,7 +188,7 @@ namespace Buptis_iOS
                     {
                         if (KeyKarsilastirmaDurum[KeyKarsilastirmaDurum.Count - 1].MessageKey != mFriends[i].key)
                         {
-                            //Güncelle
+                            //GÃ¼ncelle
                             DataBase.CHAT_KEYS_Guncelle(new CHAT_KEYS()
                             {
                                 UserID = KeyKarsilastirmaDurum[KeyKarsilastirmaDurum.Count - 1].UserID,
@@ -198,7 +198,7 @@ namespace Buptis_iOS
                         }
                         else
                         {
-                            //Eþitse birþey yapma
+                            //EÃ¾itse birÃ¾ey yapma
                             continue;
                         }
                     }
@@ -209,7 +209,7 @@ namespace Buptis_iOS
                             UserID = mFriends[i].receiverId,
                             MessageKey = mFriends[i].key
                         });
-                        //Hiç Yok Yeni Ekle
+                        //HiÃ§ Yok Yeni Ekle
                     }
                 }
             }
