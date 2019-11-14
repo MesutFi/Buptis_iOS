@@ -53,11 +53,11 @@ namespace Buptis_iOS.GirisKayit
         UIViewController GoogleVC;
         private void GoogleButton_TouchUpInside(object sender, EventArgs e)
         {
-            //store = AccountStore.Create();
+            store = AccountStore.Create();
             string clientId = "702647090904-45v1qskciukrf1ojmnotljnmk9k7ph23.apps.googleusercontent.com";
-            string redirectUri = "com.buptis.ios:/oauth2redirect";
+            string redirectUri = "com.buptis.app.ios:/oauth2redirect";
 
-            //account = store.FindAccountsForService("Buptis").FirstOrDefault();
+            account = store.FindAccountsForService("Buptis").FirstOrDefault();
             var authenticator = new OAuth2Authenticator(
                clientId,
                null,
@@ -71,13 +71,13 @@ namespace Buptis_iOS.GirisKayit
             authenticator.Completed += OnAuthCompleted;
             authenticator.Error += OnAuthError;
 
-            GoogleVC = authenticator.GetUI();
-            this.PresentViewController(GoogleVC, true, null);
+            //GoogleVC = authenticator.GetUI();
+            //this.PresentViewController(GoogleVC, true, null);
 
-            //AuthenticationState.Authenticator = authenticator;
+            AuthenticationState.Authenticator = authenticator;
 
-            //var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-            //presenter.Login(authenticator);
+            var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            presenter.Login(authenticator);
         }
         async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
         {
@@ -102,7 +102,7 @@ namespace Buptis_iOS.GirisKayit
                     var aaa = userJson.ToString();
                     user = JsonConvert.DeserializeObject<User>(userJson);
                     
-                    SosyalKullaniciKaydet(user.given_name, user.family_name, user.email, "Buptis2019");
+                    SosyalKullaniciKaydet(user.given_name, user.family_name, user.email, "Buptis2019@@");
                 }
                 else
                 {
