@@ -170,7 +170,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this,"Henüz profil sorularýn hazýr deðil.");
+                CustomAlert.GetCustomAlert(this,"HenÃ¼z profil sorularÄ±n hazÄ±r deÄŸil.");
                 this.DismissViewController(true,null);
             }
         }
