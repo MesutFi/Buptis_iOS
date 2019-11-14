@@ -45,7 +45,7 @@ namespace Buptis_iOS
         }
         #endregion
 
-        #region PopUp UI Tasarým
+        #region PopUp UI Tasarim
         public void UITasarim()
         {
             var C1 = UIColor.FromRGB(238, 0, 60).CGColor;
