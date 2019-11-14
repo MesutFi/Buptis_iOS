@@ -22,11 +22,11 @@ namespace Buptis_iOS
         string[] Titlesss = new string[]
         {
             "Sahte Profil",
-            "Uygunsuz Ýçerik",
-            "Kabalýk ve saygýsýzlýk",
+            "Uygunsuz Ä°Ã§erik",
+            "KabalÄ±k ve saygÄ±sÄ±zlÄ±k",
             "Spam",
-            "Dolandýrýcýlýk",
-            "Diðer"
+            "DolandÄ±rÄ±cÄ±lÄ±k",
+            "DiÄŸer"
         };
 
         string[] reasonTypes = new string[]
