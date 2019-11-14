@@ -46,6 +46,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.buptis.app.ios</string>
+				<string>com.googleusercontent.apps.702647090904-45v1qskciukrf1ojmnotljnmk9k7ph23</string>
 			</array>
 			<key>CFBundleURLTypes</key>
 			<string>Viewer</string>
