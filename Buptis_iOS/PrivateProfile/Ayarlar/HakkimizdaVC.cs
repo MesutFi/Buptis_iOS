@@ -53,7 +53,7 @@ namespace Buptis_iOS
             this.DismissViewController(true, null);
         }
 
-        #region UI Tasarým 
+        #region UI Tasarim 
         void HeaderTasarim()
         {
             var Color1 = UIColor.FromRGB(15, 0, 241).CGColor;
