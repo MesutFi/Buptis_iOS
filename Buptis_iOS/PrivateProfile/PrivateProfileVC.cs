@@ -172,7 +172,7 @@ namespace Buptis_iOS
                     {
                         InvokeOnMainThread(delegate ()
                         {
-                            UserAbout.Text = "Diðer kullanýcýlarýn sizi tanýyabilmesi için lütfen profil sorularýný yanýtlayýn.";
+                            UserAbout.Text = "DiÄŸer kullanÄ±cÄ±larÄ±n sizi tanÄ±yabilmesi iÃ§in lÃ¼tfen profil sorularÄ±nÄ± yanÄ±tlayÄ±n.";
                         });
                         
                     }
@@ -181,7 +181,7 @@ namespace Buptis_iOS
                 {
                     InvokeOnMainThread(delegate ()
                     {
-                        UserAbout.Text = "Diðer kullanýcýlarýn sizi tanýyabilmesi için lütfen profil sorularýný yanýtlayýn.";
+                        UserAbout.Text = "DiÄŸer kullanÄ±cÄ±larÄ±n sizi tanÄ±yabilmesi iÃ§in lÃ¼tfen profil sorularÄ±nÄ± yanÄ±tlayÄ±n.";
                     });
                     
                 }
@@ -244,7 +244,7 @@ namespace Buptis_iOS
                     {
                         InvokeOnMainThread(delegate ()
                         {
-                            UserLastLocation.Text = "Henüz check-in yok.";
+                            UserLastLocation.Text = "HenÃ¼z check-in yok.";
                         });
                         
                     }
@@ -254,7 +254,7 @@ namespace Buptis_iOS
                 {
                     InvokeOnMainThread(delegate ()
                     {
-                        UserLastLocation.Text = "Henüz check-in yok.";
+                        UserLastLocation.Text = "HenÃ¼z check-in yok.";
                     });
                 }
             })).Start();
@@ -406,10 +406,10 @@ namespace Buptis_iOS
                 switch (LicenceType)
                 {
                     case "SUPER_BOOST":
-                        CustomAlert.GetCustomAlert(this, "1 Super Boost Aktifleþtirildi.");
+                        CustomAlert.GetCustomAlert(this, "1 Super Boost AktifleÅŸtirildi.");
                         break;
                     case "BOOST":
-                        CustomAlert.GetCustomAlert(this, "1 Boost Aktifleþtirildi.");
+                        CustomAlert.GetCustomAlert(this, "1 Boost AktifleÅŸtirildi.");
                         break;
                     default:
                         break;
@@ -419,7 +419,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. Lütfen daha sonra tekrar deneyin.");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu. LÃ¼tfen daha sonra tekrar deneyin.");
             }
         }
         void SetShadow(UIButton GelenBut)
