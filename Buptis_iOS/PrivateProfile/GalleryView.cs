@@ -168,7 +168,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Fotoðraf Yüklenemedi!...");
+                CustomAlert.GetCustomAlert(this, "FotoÄŸraf YÃ¼klenemedi!...");
                 CustomLoading.Hide();
             }
            
