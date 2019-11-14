@@ -57,8 +57,8 @@ namespace Buptis_iOS
                 UIAlertView alert = new UIAlertView();
                 alert.Title = "Buptis";
                 alert.AddButton("Evet");
-                alert.AddButton("Hayýr");
-                alert.Message = SecilenKisi.SecilenKisiDTO.firstName + " adlý kullanýcýyý favorilerilerinden çýkartmak istediðini emin misiniz?";
+                alert.AddButton("HayÃ½r");
+                alert.Message = SecilenKisi.SecilenKisiDTO.firstName + " adlÄ± kullanÄ±cÄ±yÄ± favorilerilerinden Ã§Ä±kartmak istediÄŸinize emin misiniz?";
                 alert.AlertViewStyle = UIAlertViewStyle.Default;
                 alert.Clicked += (object s, UIButtonEventArgs ev) =>
                 {
@@ -69,14 +69,14 @@ namespace Buptis_iOS
                     else
                     {
                         alert.Dispose();
-                        FavoriIslemleri(SecilenKisi.SecilenKisiDTO.firstName + " Favorilerinde çýkarýldý.");
+                        FavoriIslemleri(SecilenKisi.SecilenKisiDTO.firstName + " favorilerinden Ã§Ä±kartÄ±ldÄ±.");
                     }
                 };
                 alert.Show();
             }
             else
             {
-                FavoriIslemleri(SecilenKisi.SecilenKisiDTO.firstName + " Favorilerine eklendi.");
+                FavoriIslemleri(SecilenKisi.SecilenKisiDTO.firstName + " favorilerine eklendi.");
             }
         }
         void FavoriIslemleri(string Message)
@@ -126,8 +126,8 @@ namespace Buptis_iOS
                 UIAlertView alert = new UIAlertView();
                 alert.Title = "Buptis";
                 alert.AddButton("Evet");
-                alert.AddButton("Hayýr");
-                alert.Message = "Kullanýcýnýn engelini kaldýrmak istediðinize emin misiniz ?";
+                alert.AddButton("HayÄ±r");
+                alert.Message = "KullanÄ±cÄ±nÄ±n engelini kaldÄ±rmak istediÄŸinize emin misiniz ?";
                 alert.AlertViewStyle = UIAlertViewStyle.Default;
                 alert.Clicked += (object s, UIButtonEventArgs ev) =>
                 {
@@ -141,13 +141,13 @@ namespace Buptis_iOS
                             var engeldurum2 = GetBlockedFriends();
                             if (engeldurum2)
                             {
-                                EngelleButton.SetTitle("Engeli Kaldýr", UIControlState.Normal);
+                                EngelleButton.SetTitle("Engeli KaldÄ±r", UIControlState.Normal);
                             }
                             else
                             {
-                                EngelleButton.SetTitle("Engelle, Þikayet Et", UIControlState.Normal);
+                                EngelleButton.SetTitle("Engelle, Ãžikayet Et", UIControlState.Normal);
                             }
-                            CustomAlert.GetCustomAlert(this, "Kullanýcýnýn engeli kaldýrýldý");
+                            CustomAlert.GetCustomAlert(this, "KullanÄ±cÄ±nÄ±n engeli kaldÄ±rÄ±ldÄ±");
                         }
 
                     }
@@ -178,7 +178,7 @@ namespace Buptis_iOS
         }
         void MevcutMekandaChechInYapmismi()
         {
-            //CustomLoading.Show(this, "Lütfen Bekleyin...");
+            //CustomLoading.Show(this, "LÃ¼tfen Bekleyin...");
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
                 var MeId = DataBase.MEMBER_DATA_GETIR()[0].id;
@@ -190,7 +190,7 @@ namespace Buptis_iOS
                    // CustomLoading.Hide();
                     if (MeLastLocation != null)
                     {
-                        //Týklanan lokasyon benim lokasyonumdan farklýysa
+                        //TÃ½klanan lokasyon benim lokasyonumdan farklÃ½ysa
                         if (MesajAtabilmekIcinSecilenSonLokasyon.TiklananMekan.id != MeLastLocation.id)
                         {
                             if (KullanicininGoldPaketiVarmi(MeId))
@@ -509,7 +509,7 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    EnSonLokasyonu.Text = "Henüz Check-in yapýlmadý.";
+                    EnSonLokasyonu.Text = "HenÃ¼z Check-in yapÄ±lmadÄ±.";
                 }
             });
             GetFavorite();
@@ -518,7 +518,7 @@ namespace Buptis_iOS
             {
                 InvokeOnMainThread(delegate () {
 
-                    EngelleButton.SetTitle("Engeli Kaldýr", UIControlState.Normal);
+                    EngelleButton.SetTitle("Engeli KaldÄ±r", UIControlState.Normal);
 
                 });
             }
@@ -542,13 +542,13 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    return "Henüz bilgi yok.";
+                    return "HenÃ¼z bilgi yok.";
                 }
 
             }
             else
             {
-                return "Henüz bilgi yok.";
+                return "HenÃ¼z bilgi yok.";
             }
 
         }
