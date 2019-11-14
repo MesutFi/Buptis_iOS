@@ -30,9 +30,9 @@ namespace Buptis_iOS
             List<ContactDTO> KonuList = new List<ContactDTO>
             {
                 new ContactDTO{ topic = "Teknik Sorun"},
-                new ContactDTO{ topic = "Þikayet"},
-                new ContactDTO{ topic = "Öneri"},
-                new ContactDTO{ topic = "Diðer"}
+                new ContactDTO{ topic = "Åžikayet"},
+                new ContactDTO{ topic = "Ã–neri"},
+                new ContactDTO{ topic = "DiÄŸer"}
             };
             for (int i = 0; i < KonuList.Count; i++)
             {
@@ -103,7 +103,7 @@ namespace Buptis_iOS
                    var alert = new UIAlertView();
                     alert.Title = "Buptis";
                     alert.AddButton("Tamam");
-                    alert.Message = "Destek talebiniz iletildi. Teþekkürler...";
+                    alert.Message = "Destek talebiniz iletildi. TeÅŸekkÃ¼rler...";
                     alert.AlertViewStyle = UIAlertViewStyle.Default;
                     alert.Clicked += (object s, UIButtonEventArgs ev) =>
                     {
@@ -117,7 +117,7 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu...");
+                    CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu...");
                     return;
                 }
            
@@ -128,12 +128,12 @@ namespace Buptis_iOS
             //textField.Text.Trim())
             if (string.IsNullOrEmpty(textField.Text.Trim()))
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen konuyu belirtin..");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen konuyu belirtin..");
                 return false;
             }
             else if (string.IsNullOrEmpty(MesajTextView.Text.Trim()))
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen mesajýnýzý belirtin..");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen mesajÄ±nÄ±zÄ± belirtin..");
                 return false;
             }
             else
