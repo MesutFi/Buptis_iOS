@@ -14,7 +14,7 @@ namespace Buptis_iOS
 {
     public partial class HediyeGonderVC : UIViewController
     {
-        #region Tanýmlamalar
+        #region TanÃ½mlamalar
         List<HediyelerDataModel> GaleriDataModel1 = new List<HediyelerDataModel>();
         public ChatVC ChatVC1;
         HediyelerCustomListItem[] Noktalar = new HediyelerCustomListItem[0];
@@ -110,7 +110,7 @@ namespace Buptis_iOS
 
         void FillDataModel()
         {
-            CustomLoading.Show(this, "Yükleniyor...");
+            CustomLoading.Show(this, "YÃ¼kleniyor...");
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
                 KategoriyeGoreHediyeleriGetir();
@@ -143,7 +143,7 @@ namespace Buptis_iOS
                     else
                     {
                         InvokeOnMainThread(() => {
-                            CustomAlert.GetCustomAlert(this, "Hediye bulunamadý...");
+                            CustomAlert.GetCustomAlert(this, "Hediye bulunamadÄ±...");
                             this.DismissModalViewController(true);
                         });
                     }
@@ -151,7 +151,7 @@ namespace Buptis_iOS
                 else
                 {
                     InvokeOnMainThread(() => {
-                        CustomAlert.GetCustomAlert(this, "Hediye bulunamadý...");
+                        CustomAlert.GetCustomAlert(this, "Hediye bulunamadÄ±...");
                         this.DismissModalViewController(true);
                     });
                 }
@@ -159,7 +159,7 @@ namespace Buptis_iOS
             else
             {
                 InvokeOnMainThread(() => {
-                    CustomAlert.GetCustomAlert(this, "Hediye bulunamadý...");
+                    CustomAlert.GetCustomAlert(this, "Hediye bulunamadÄ±...");
                     this.DismissModalViewController(true);
                 });
             }
