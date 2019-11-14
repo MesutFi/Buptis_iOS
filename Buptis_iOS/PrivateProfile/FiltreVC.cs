@@ -65,12 +65,12 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu.");
+                    CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu.");
                 }
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu.");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu.");
             }
         }
         private void BothButton_TouchUpInside(object sender, EventArgs e)
