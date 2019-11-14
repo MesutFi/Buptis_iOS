@@ -109,9 +109,9 @@ namespace Buptis_iOS
             }
             else
             {
-                MentionLabel.Text = "Tebrikler, tüm profil bilgilerini tamamladýn...";
+                MentionLabel.Text = "Tebrikler, tÃ¼m profil bilgilerini tamamladÄ±n...";
                 DahaSonraButton.Hidden = true;
-                ActionButton.SetTitle("Profiline dön", UIControlState.Normal);
+                ActionButton.SetTitle("Profiline dÃ¶n", UIControlState.Normal);
             }
         }
          void Kayit()
@@ -129,14 +129,14 @@ namespace Buptis_iOS
             var Donus = webService.ServisIslem("answers/user", jsonString);
             if (Donus != "Hata")
             {
-                CustomAlert.GetCustomAlert(this, "Cevaplarýnýz için teþekkürler.");
+                CustomAlert.GetCustomAlert(this, "CevaplarÄ±nÄ±z iÃ§in teÅŸekkÃ¼rler.");
                 ProfilSorulariBaseVC1.DismissViewController(false, null);
                 DismissViewController(false, null);
                 return;
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu");
                 return;
             }
         }
