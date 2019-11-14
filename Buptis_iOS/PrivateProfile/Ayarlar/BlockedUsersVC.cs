@@ -76,8 +76,8 @@ namespace Buptis_iOS
             UIAlertView alert = new UIAlertView();
             alert.Title = "Buptis";
             alert.AddButton("Evet");
-            alert.AddButton("Hayır");
-            alert.Message = "Kullanıcının engelini kaldırmak istediğinize emin misiniz ?";
+            alert.AddButton("HayÃ½r");
+            alert.Message = "KullanÄ±cÄ±nÄ±n engelini kaldÄ±rmak istediÄŸinize emin misiniz ?";
             alert.AlertViewStyle = UIAlertViewStyle.Default;
             alert.Clicked += (object s, UIButtonEventArgs ev) =>
             {
@@ -89,7 +89,7 @@ namespace Buptis_iOS
                     if (Donus != "Hata")
                     {
                         GetBlockedUserList();
-                        CustomAlert.GetCustomAlert(this, "Kullanıcının engeli kaldırıldı");
+                        CustomAlert.GetCustomAlert(this, "KullanÄ±cÄ±nÄ±n engeli kaldÄ±rÄ±lÄ±yor.");
                     }
                     
                 }
