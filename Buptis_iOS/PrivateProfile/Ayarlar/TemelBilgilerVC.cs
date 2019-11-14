@@ -71,13 +71,13 @@ namespace Buptis_iOS
                     UserData.gender = getGender;
                     if (DataBase.MEMBER_DATA_Guncelle(UserData))
                     {
-                        CustomAlert.GetCustomAlert(this, "Bilgileriniz güncellendi.");
+                        CustomAlert.GetCustomAlert(this, "Bilgileriniz gÃ¼ncellendi.");
                         this.DismissViewController(true, null);
                     }
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(this, "Bir Sorun Oluþtu.");
+                    CustomAlert.GetCustomAlert(this, "Bir Sorun OluÅŸtu.");
                 }
 
             }
@@ -86,22 +86,22 @@ namespace Buptis_iOS
         {
             if (birtdLbl.Text.Trim() == "" && MeslekText.Text.Trim() == "" && !KadinRadio.Selected == true && !ErkekRadio.Selected == true)
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen bilgilerinizi tamamlayýn.");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen bilgilerinizi tamamlayÄ±n.");
                 return false;
             }
             else if (birtdLbl.Text.Trim() == "")
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen doðum tarihinizi girin.");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen doÄŸum tarihinizi girin.");
                 return false;
             }
             else if(MeslekText.Text.Trim() == "")
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen mesleðinizi girin.");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen mesleÄŸinizi girin.");
                 return false;
             }
             else if(!KadinRadio.Selected==true && !ErkekRadio.Selected == true)
             {
-                CustomAlert.GetCustomAlert(this, "Lütfen cinsiyetinizi belirtiniz.");
+                CustomAlert.GetCustomAlert(this, "LÃ¼tfen cinsiyetinizi belirtiniz.");
                 return false;
             }
             else
@@ -115,7 +115,7 @@ namespace Buptis_iOS
             var startingTime = KayitliTarihVarmi();
             var dialog = new DatePickerDialog();
             dialog.BackgroundColor = UIColor.FromRGBA(0, 0, 0, 0);
-            dialog.Show("Doðum Tarihi Seçin", "Tamam", "Vazgeç", UIDatePickerMode.Date, (dt) =>
+            dialog.Show("DoÄŸum Tarihi SeÃ§in", "Tamam", "VazgeÃ§", UIDatePickerMode.Date, (dt) =>
             {
                 birtdLbl.Text = dt.ToShortDateString();
             }, startingTime,DateTime.Now.AddYears(-18), DateTime.Now.AddYears(-65));
@@ -140,7 +140,7 @@ namespace Buptis_iOS
         private void KadinTouch_TouchUpInside(object sender, EventArgs e)
         {
             HepsiniSifirla(KadinRadio);
-            getGender = "Kadýn";
+            getGender = "KadÄ±n";
         }
         private void ErkekTouch_TouchUpInside(object sender, EventArgs e)
         {
@@ -171,7 +171,7 @@ namespace Buptis_iOS
         }
         void AdSoyadTextFieldDuzenle()
         {
-            AdSoyadTxt.AttributedPlaceholder = new NSAttributedString("Ýsminiz..", null, UIColor.White.ColorWithAlpha(0.5f));
+            AdSoyadTxt.AttributedPlaceholder = new NSAttributedString("Ä°sminiz..", null, UIColor.White.ColorWithAlpha(0.5f));
             UIView paddingView = new UIView(new CGRect(0, 0, 15f, 30f));
             paddingView.BackgroundColor = UIColor.Clear;
             AdSoyadTxt.LeftView = paddingView;
