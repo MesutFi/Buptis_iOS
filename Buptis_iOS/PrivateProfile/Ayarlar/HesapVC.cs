@@ -38,8 +38,8 @@ namespace Buptis_iOS
             UIAlertView alert = new UIAlertView();
             alert.Title = "Buptis";
             alert.AddButton("Evet");
-            alert.AddButton("Hayýr");
-            alert.Message = "Hesabýnýzý silerseniz bu kullanýcý ile Buptis'e birdaha giriþ yapamazsýnýz.\nHesabý silmek istiyor musunuz?";
+            alert.AddButton("HayÃ½r");
+            alert.Message = "HesabÄ±nÄ±zÄ± silerseniz bu kullanÄ±cÄ± ile Buptis'e bir daha giriÅŸ yapamazsÄ±nÄ±z.\nHesabÄ± silmek istiyor musunuz?";
             alert.AlertViewStyle = UIAlertViewStyle.Default;
             alert.Clicked += (object s, UIButtonEventArgs ev) =>
             {
@@ -86,7 +86,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluþtu. ");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu. ");
                 return false;
             }
         }
@@ -96,7 +96,7 @@ namespace Buptis_iOS
             UIAlertView alert = new UIAlertView()
             {
                 Title = "Buptis",
-                Message = "Þifreniz : " + GetPassword()
+                Message = "Ãžifreniz : " + GetPassword()
             };
             alert.AddButton("Tamam");
             alert.Show();
@@ -108,7 +108,7 @@ namespace Buptis_iOS
         }
         private void CikisYapButton_TouchUpInside(object sender, EventArgs e)
         {
-            var Confirm = new UIAlertView("Buptis", "Çýkmak istediðinize emin misiniz ?", null, "Evet", "Hayýr");
+            var Confirm = new UIAlertView("Buptis", "Ã‡Ä±kmak istediÄŸinize emin misiniz ?", null, "Evet", "HayÄ±r");
             Confirm.Show();
             Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
             {
@@ -130,7 +130,7 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    // hayýrsa
+                    // hayÄ±rsa
                     Confirm.Dispose();
                 }
                
