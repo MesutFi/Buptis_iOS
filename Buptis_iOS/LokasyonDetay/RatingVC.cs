@@ -100,12 +100,12 @@ namespace Buptis_iOS
             var Donus = webService.ServisIslem("locations/rating/" + gelenMekan.id, Ratee);
             if (Donus != "Hata")
             {
-                CustomAlert.GetCustomAlert(this, "Değerlendirme için teşekkürler!");
+                CustomAlert.GetCustomAlert(this, "DeÄŸerlendirme iÃ§in teÅŸekkÃ¼rler!");
                 return;
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir sorun oluştu!");
+                CustomAlert.GetCustomAlert(this, "Bir sorun oluÅŸtu!");
                 return;
             }
         }
