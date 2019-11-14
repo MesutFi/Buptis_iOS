@@ -50,14 +50,14 @@ namespace Buptis_iOS.GirisKayit
 
         #region Gmail Login
 
-       
+        UIViewController GoogleVC;
         private void GoogleButton_TouchUpInside(object sender, EventArgs e)
         {
-            store = AccountStore.Create();
+            //store = AccountStore.Create();
             string clientId = "702647090904-45v1qskciukrf1ojmnotljnmk9k7ph23.apps.googleusercontent.com";
             string redirectUri = "com.buptis.ios:/oauth2redirect";
 
-            account = store.FindAccountsForService("Buptis").FirstOrDefault();
+            //account = store.FindAccountsForService("Buptis").FirstOrDefault();
             var authenticator = new OAuth2Authenticator(
                clientId,
                null,
@@ -71,10 +71,13 @@ namespace Buptis_iOS.GirisKayit
             authenticator.Completed += OnAuthCompleted;
             authenticator.Error += OnAuthError;
 
-            AuthenticationState.Authenticator = authenticator;
+            GoogleVC = authenticator.GetUI();
+            this.PresentViewController(GoogleVC, true, null);
 
-            var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-            presenter.Login(authenticator);
+            //AuthenticationState.Authenticator = authenticator;
+
+            //var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            //presenter.Login(authenticator);
         }
         async void OnAuthCompleted(object sender, AuthenticatorCompletedEventArgs e)
         {
