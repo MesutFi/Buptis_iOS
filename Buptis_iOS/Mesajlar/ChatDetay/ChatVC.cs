@@ -31,7 +31,7 @@ namespace Buptis_iOS
         bool KullaniciEngellemeDurumu = false;
         #endregion
 
-        #region Genel Ýþler
+        #region Genel ÃÃ¾ler
         public ChatVC (IntPtr handle) : base (handle)
         {
         }
@@ -267,8 +267,8 @@ namespace Buptis_iOS
                         UIAlertView alert = new UIAlertView();
                         alert.Title = "Buptis";
                         alert.AddButton("Evet");
-                        alert.AddButton("Hayýr");
-                        alert.Message = "Yaþ ve Cinsiyet bilgilerinizi tamamlamadan mesaj gönderemezsiniz. Bilgilerini güncellemek ister misiniz?";
+                        alert.AddButton("HayÄ±r");
+                        alert.Message = "YaÅŸ ve Cinsiyet bilgilerinizi tamamlamadan mesaj gÃ¶nderemezsiniz. Bilgilerini gÃ¼ncellemek ister misiniz?";
                         alert.AlertViewStyle = UIAlertViewStyle.Default;
                         alert.Clicked += (object s, UIButtonEventArgs ev) =>
                         {
@@ -314,7 +314,7 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(this, "Kullanýcý Engelli");
+                    CustomAlert.GetCustomAlert(this, "KullanÄ±cÄ± Engelli");
                 }
             }
         }
@@ -341,14 +341,14 @@ namespace Buptis_iOS
                     else
                     {
                         InvokeOnMainThread(delegate () {
-                            CustomAlert.GetCustomAlert(this, "Mesaj Gönderilemedi!");
+                            CustomAlert.GetCustomAlert(this, "Mesaj GÃ¶nderilemedi!");
                         });
                     }
                 }
                 else
                 {
                     InvokeOnMainThread(delegate () {
-                        CustomAlert.GetCustomAlert(this, "Mesaj Gönderilemedi!");
+                        CustomAlert.GetCustomAlert(this, "Mesaj GÃ¶nderilemedi!");
                     });
                 }
             })).Start();
@@ -519,7 +519,7 @@ namespace Buptis_iOS
             }
             else
             {
-                CustomAlert.GetCustomAlert(this, "Bir Sorun Oluþtu.");
+                CustomAlert.GetCustomAlert(this, "Bir Sorun OluÃ¾tu.");
                 ButtonAktifPasifBgYap(false);
                 return;
             }
@@ -704,7 +704,7 @@ namespace Buptis_iOS
                         var Durum = MesajlariGetir();
                         InvokeOnMainThread(() =>
                         {
-                            if (Durum) //Ýçerik  Deðiþmiþse Uygula
+                            if (Durum) //Ä°Ã§erik  DeÄŸiÅŸmiÅŸse Uygula
                             {
 
 
@@ -751,7 +751,7 @@ namespace Buptis_iOS
         {
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
-                //Bana gelen ve okumadýklarým
+                //Bana gelen ve okumadÄ±klarÄ±m
                 var BanaGelenler = ChatDetayDTO1.FindAll(item => item.read == false && item.receiverId == MeDTO.id);
                 for (int i = 0; i < BanaGelenler.Count; i++)
                 {
