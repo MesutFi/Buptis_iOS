@@ -28,11 +28,27 @@ namespace Buptis_iOS
             base.ViewDidAppear(animated);
             //if (!Actinmi)
             //{
-                locationManager = new CLLocationManager();
-                locationManager.RequestWhenInUseAuthorization();
-                CustomMapView = new MKMapView() { ShowsUserLocation = true };
-                UserLocationCheck();
-                Actinmi = true;
+                //locationManager = new CLLocationManager();
+                //locationManager.RequestWhenInUseAuthorization();
+                //CustomMapView = new MKMapView() { ShowsUserLocation = true };
+                var UserInfoVarmidur = DataBase.MEMBER_DATA_GETIR();
+                if (UserInfoVarmidur.Count > 0)
+                {
+                    InvokeOnMainThread(delegate () {
+                        var appDelegate = UIApplication.SharedApplication.Delegate as AppDelegate;
+                        appDelegate.SetRootLokasyonlarViewController();
+                    });
+                }
+                else
+                {
+                    InvokeOnMainThread(delegate ()
+                    {
+                        var appDelegate = UIApplication.SharedApplication.Delegate as AppDelegate;
+                        appDelegate.SetRootSplashViewController();
+                    });
+                }
+
+            Actinmi = true;
             //}
         }
 
@@ -70,7 +86,7 @@ namespace Buptis_iOS
                     alert = new UIAlertView();
                     alert.Title = "Buptis";
                     alert.AddButton("Tamam");
-                    alert.Message = "Buptis'i kullanmaya devam edebilmeniz için konum hizmetlerine izin vermelisiniz.";
+                    alert.Message = "Buptis konumunuzu kullanarak çevrenizde size yakın mekanları listelemektedir.";
                     alert.AlertViewStyle = UIAlertViewStyle.Default;
                     alert.Clicked += (object s, UIButtonEventArgs ev) =>
                     {

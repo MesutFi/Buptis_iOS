@@ -104,6 +104,17 @@ namespace Buptis_iOS
             HazneView.ClipsToBounds = true;
             HazneView.Layer.CornerRadius = 30f;
             HazneView.Layer.MaskedCorners = (CoreAnimation.CACornerMask)3;
+
+
+            UzeriCiziliYap(EskiFiyat1);
+            UzeriCiziliYap(EskiFiyat2);
+            UzeriCiziliYap(Eskifiyat3);
+            UzeriCiziliYap(EakiFiyat4);
+        }
+        void UzeriCiziliYap(UILabel GelenLabel)
+        {
+            var attrString = new NSAttributedString(GelenLabel.Text, new UIStringAttributes { StrikethroughStyle = NSUnderlineStyle.Single });
+            GelenLabel.AttributedText = attrString;
         }
         #region SetUI
         void Desing()

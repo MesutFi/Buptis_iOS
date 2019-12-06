@@ -20,6 +20,22 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel EskiFiyat1 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Eskifiyat2 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel EskiFiyat3 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel EskiFiyat4 { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView HazneView { get; set; }
 
         [Outlet]
@@ -67,6 +83,26 @@ namespace Buptis_iOS
             if (AciklamaWebView != null) {
                 AciklamaWebView.Dispose ();
                 AciklamaWebView = null;
+            }
+
+            if (EskiFiyat1 != null) {
+                EskiFiyat1.Dispose ();
+                EskiFiyat1 = null;
+            }
+
+            if (Eskifiyat2 != null) {
+                Eskifiyat2.Dispose ();
+                Eskifiyat2 = null;
+            }
+
+            if (EskiFiyat3 != null) {
+                EskiFiyat3.Dispose ();
+                EskiFiyat3 = null;
+            }
+
+            if (EskiFiyat4 != null) {
+                EskiFiyat4.Dispose ();
+                EskiFiyat4 = null;
             }
 
             if (HazneView != null) {

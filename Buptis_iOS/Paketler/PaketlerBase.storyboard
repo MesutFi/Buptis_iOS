@@ -358,6 +358,10 @@
                         <outlet property="Paket2Button" destination="37430" id="name-outlet-37430"/>
                         <outlet property="Paket3Button" destination="37435" id="name-outlet-37435"/>
                         <outlet property="Paket4Button" destination="37440" id="name-outlet-37440"/>
+                        <outlet property="EskiFiyat1" destination="9968" id="name-outlet-9968"/>
+                        <outlet property="EskiFiyat2" destination="10311" id="name-outlet-10311"/>
+                        <outlet property="Eskifiyat3" destination="10335" id="name-outlet-10335"/>
+                        <outlet property="EakiFiyat4" destination="10449" id="name-outlet-10449"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1665" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,6 +720,10 @@
                         <outlet property="Paket2Button" destination="38905" id="name-outlet-38905"/>
                         <outlet property="Paket3Button" destination="38906" id="name-outlet-38906"/>
                         <outlet property="Paket4Button" destination="38907" id="name-outlet-38907"/>
+                        <outlet property="EskiFiyat1" destination="11400" id="name-outlet-11400"/>
+                        <outlet property="EskiFiyat2" destination="11422" id="name-outlet-11422"/>
+                        <outlet property="EskiFiyat3" destination="11443" id="name-outlet-11443"/>
+                        <outlet property="EskiFiyatt4" destination="11464" id="name-outlet-11464"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11184" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1074,6 +1082,10 @@
                         <outlet property="Paket3Button" destination="38926" id="name-outlet-38926"/>
                         <outlet property="Paket4Button" destination="38927" id="name-outlet-38927"/>
                         <outlet property="Paket1Button" destination="38924" id="name-outlet-38924"/>
+                        <outlet property="EskiFiyat1" destination="13468" id="name-outlet-13468"/>
+                        <outlet property="Eskifiyat2" destination="13490" id="name-outlet-13490"/>
+                        <outlet property="EskiFiyat3" destination="13511" id="name-outlet-13511"/>
+                        <outlet property="EskiFiyat4" destination="13532" id="name-outlet-13532"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13358" userLabel="First Responder" sceneMemberID="firstResponder"/>

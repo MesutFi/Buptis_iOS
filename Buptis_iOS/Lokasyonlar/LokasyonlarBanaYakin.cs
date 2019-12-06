@@ -4,7 +4,9 @@ using Buptis_iOS.LokasyondakiKisiler;
 using Buptis_iOS.LokasyonDetay;
 using Buptis_iOS.Lokasyonlar;
 using Buptis_iOS.Web_Service;
+using CoreLocation;
 using Foundation;
+using MapKit;
 using ObjCRuntime;
 using SQLite;
 using System;
@@ -18,6 +20,10 @@ namespace Buptis_iOS
         #region Tanimlamalar
         List<Mekanlar_Location> Mekanlar_Locations = new List<Mekanlar_Location>();
         LokasyonlarBaseVC GelenBase1;
+
+
+        MKMapView CustomMapView;
+        CLLocationManager locationManager;
         #endregion
         public LokasyonlarBanaYakin (IntPtr handle) : base (handle)
         {
@@ -31,6 +37,8 @@ namespace Buptis_iOS
             v.Tablo.BackgroundColor = UIColor.Clear;
             v.Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
             v.Tablo.TableFooterView = new UIView();
+            v.locationManager = new CLLocationManager();
+            v.locationManager.RequestWhenInUseAuthorization();
             return v;
         }
         public void RowSelectt(Mekanlar_Location GelenMekan)
@@ -47,6 +55,7 @@ namespace Buptis_iOS
             base.LayoutSubviews();
             CustomLoading.Show(GelenBase1, "Lokasyonlar Yükleniyor...");
             
+           
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
                 BanaYakinLokasyonlariGetir();
@@ -56,40 +65,98 @@ namespace Buptis_iOS
         }
         void BanaYakinLokasyonlariGetir()
         {
-            WebService webService = new WebService();
-            var x = UserLocationn.UserLoc.Coordinate.Latitude.ToString().Replace(",", ".");
-            var y = UserLocationn.UserLoc.Coordinate.Longitude.ToString().Replace(",", ".");
-            var Donus = webService.OkuGetir("locations/near?x=" + x + "&y=" + y);
-            if (Donus != null)
+            if (locationManager.Location != null)
             {
-                var aa = Donus.ToString();
-                Mekanlar_Locations = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mekanlar_Location>>(Donus.ToString());
-                if (Mekanlar_Locations.Count > 0)
+                WebService webService = new WebService();
+                var x = locationManager.Location.Coordinate.Latitude.ToString().Replace(",", ".");
+                var y = locationManager.Location.Coordinate.Longitude.ToString().Replace(",", ".");
+                var Donus = webService.OkuGetir("locations/near?x=" + x + "&y=" + y);
+                if (Donus != null)
                 {
-                    InvokeOnMainThread(delegate () {
-                        Tablo.Source = new LokasyonlarCustomTableCellSoruce(Mekanlar_Locations, this);
-                        Tablo.ReloadData();
-                        Tablo.BackgroundColor = UIColor.Clear;
-                        Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-                        CustomLoading.Hide();
-                    });
+                    var aa = Donus.ToString();
+                    Mekanlar_Locations = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Mekanlar_Location>>(Donus.ToString());
+                    if (Mekanlar_Locations.Count > 0)
+                    {
+                        InvokeOnMainThread(delegate () {
+                            Tablo.Source = new LokasyonlarCustomTableCellSoruce(Mekanlar_Locations, this);
+                            Tablo.ReloadData();
+                            Tablo.BackgroundColor = UIColor.Clear;
+                            Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+                            CustomLoading.Hide();
+                        });
+                    }
+                    else
+                    {
+                        CustomAlert.GetCustomAlert(GelenBase1, "Çevrenizde hiç lokasyon bulunamadı...");
+                        InvokeOnMainThread(delegate () {
+                            Tablo.BackgroundColor = UIColor.Clear;
+                            Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+                            Tablo.TableFooterView = new UIView();
+                            CustomLoading.Hide();
+                        });
+                    }
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(GelenBase1, "Çevrenizde hiç lokasyon bulunamadı...");
-                    InvokeOnMainThread(delegate () {
-                        Tablo.BackgroundColor = UIColor.Clear;
-                        Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
-                        Tablo.TableFooterView = new UIView();
-                        CustomLoading.Hide();
-                    });
+                    CustomLoading.Hide();
                 }
             }
             else
             {
                 CustomLoading.Hide();
+                CustomAlert.GetCustomAlert(GelenBase1, "Konumunuza Ulaşılamıyor..");
+                return;
+
+                var durum = CheckLocationPermission();
+                if (!(bool)durum)
+                {
+                    InvokeOnMainThread(delegate ()
+                    {
+                        var alert = new UIAlertView();
+                        alert.Title = "Buptis";
+                        alert.AddButton("Evet");
+                        alert.AddButton("Hayır");
+                        alert.Message = "Buptis konumunuzu kullanarak çevrenizde size yakın mekanları listelemektedir.\nKonum ayarlarını açmak istiyor musunuz?";
+                        alert.AlertViewStyle = UIAlertViewStyle.Default;
+                        alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                        {
+                            if (ev.ButtonIndex == 0)
+                            {
+                                alert.Dispose();
+                                UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
+                            }
+                            else
+                            {
+                                alert.Dispose();
+                            }
+                        };
+                        alert.Show();
+                    });
+                }
             }
         }
+
+        bool? CheckLocationPermission()
+        {
+            var CLAuthorizationStatuss = CLLocationManager.Status;
+
+            if (CLAuthorizationStatuss == CLAuthorizationStatus.NotDetermined ||
+                CLAuthorizationStatuss == CLAuthorizationStatus.Restricted ||
+                CLAuthorizationStatuss == CLAuthorizationStatus.Denied)
+            {
+                return false;
+            }
+            else if (CLAuthorizationStatuss == CLAuthorizationStatus.AuthorizedAlways ||
+                     CLAuthorizationStatuss == CLAuthorizationStatus.AuthorizedWhenInUse)
+            {
+                return true;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         class LokasyonlarCustomTableCellSoruce : UITableViewSource
         {
             List<Mekanlar_Location> TableItems;

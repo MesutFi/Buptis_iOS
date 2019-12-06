@@ -64,6 +64,7 @@ namespace Buptis_iOS.Web_Service
             }
             catch (WebException ex)
             {
+                string aaa = ex.Message;
                 if (url == "authenticate")
                 {
                     return "Hata";

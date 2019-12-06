@@ -281,6 +281,7 @@ namespace Buptis_iOS.GirisKayit
             base.ViewDidAppear(animated);
             if (!Acildimi)
             {
+                SozlesmeMetniOlustur();
                 TasarimlariOlustur();
                 Acildimi = true;
             }
@@ -410,6 +411,7 @@ namespace Buptis_iOS.GirisKayit
 
         #endregion
 
+
         #region Facebook Login DTO
 
         public class Data
@@ -449,6 +451,98 @@ namespace Buptis_iOS.GirisKayit
             public string locale { get; set; }
         }
 
+        #endregion
+
+        #region Gizlilik ve Kullanim Kosullari
+
+        void SozlesmeMetniOlustur()
+        {
+            Sozlesmelabel.Text = "Giriş yaparak Gizlilik Politikası ve Kullanım Koşullarını kabul etmiş sayılırsınız.";
+            var text = Sozlesmelabel.Text;
+
+            var underlineAttriString = new NSMutableAttributedString(text);
+
+            underlineAttriString.BeginEditing();
+
+            underlineAttriString.AddAttribute(UIStringAttributeKey.Font, UIFont.SystemFontOfSize(17), new NSRange(0, underlineAttriString.Length));
+
+            var range1 = getRangeOfString(text, "Kullanım Koşullarını");
+            underlineAttriString.AddAttribute(UIStringAttributeKey.UnderlineStyle, NSNumber.FromInt32((int)NSUnderlineStyle.Single), range1);
+
+
+
+            var range2 = getRangeOfString(text, "Gizlilik Politikası");
+            underlineAttriString.AddAttribute(UIStringAttributeKey.UnderlineStyle, NSNumber.FromInt32((int)NSUnderlineStyle.Single), range2);
+
+            underlineAttriString.EndEditing();
+            Sozlesmelabel.UserInteractionEnabled = true;
+            Sozlesmelabel.AttributedText = underlineAttriString;
+
+
+            UITapGestureRecognizer tapGesture = new UITapGestureRecognizer((tap) =>
+            {
+                if (didTapAttributedTextInLabel(tap, Sozlesmelabel, range1))
+                {
+                    //ShowAlert("Terms & Conditions");
+                    UIApplication.SharedApplication.OpenUrl(new NSUrl("http://buptis.com/assets/doc/buptis_kullanim-kosullari.pdf"));//
+                }
+
+                else if (didTapAttributedTextInLabel(tap, Sozlesmelabel, range2))
+                {
+                    //ShowAlert("Privacy Policy");
+                    UIApplication.SharedApplication.OpenUrl(new NSUrl("http://buptis.com/assets/doc/buptis_gizlilik-politikasi.pdf"));
+                }
+            });
+
+            Sozlesmelabel.AddGestureRecognizer(tapGesture);
+        }
+
+        bool didTapAttributedTextInLabel(UITapGestureRecognizer tap, UILabel label, NSRange targetRange)
+        {
+
+            var layoutManager = new NSLayoutManager();
+            var textContainer = new NSTextContainer(CGSize.Empty);
+            var textStorage = new NSTextStorage();
+            textStorage.SetString(label.AttributedText);
+
+            layoutManager.AddTextContainer(textContainer);
+            textStorage.AddLayoutManager(layoutManager);
+
+
+            textContainer.LineFragmentPadding = 0;
+            textContainer.LineBreakMode = label.LineBreakMode;
+            textContainer.MaximumNumberOfLines = (nuint)label.Lines;
+            var labelSize = label.Bounds.Size;
+            textContainer.Size = labelSize;
+
+
+            var locationOfTouchInLabel = tap.LocationInView(label);
+            var textBoundingBox = layoutManager.GetUsedRectForTextContainer(textContainer);
+            var textContainerOffset = new CGPoint((labelSize.Width - textBoundingBox.Size.Width) * 0.5 - textBoundingBox.Location.X,
+            (labelSize.Height - textBoundingBox.Size.Height) * 0.5 - textBoundingBox.Location.Y);
+
+            var locationOfTouchInTextContainer = new CGPoint(locationOfTouchInLabel.X - textContainerOffset.X,
+                locationOfTouchInLabel.Y - textContainerOffset.Y);
+
+            nfloat partialFraction = 1;
+            var indexOfCharacter = layoutManager.CharacterIndexForPoint(locationOfTouchInTextContainer, textContainer, ref partialFraction);
+
+            if (((nint)indexOfCharacter >= targetRange.Location) && ((nint)indexOfCharacter < targetRange.Location + targetRange.Length))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+
+        NSRange getRangeOfString(string str, string containStr)
+        {
+            int begin = str.IndexOf(containStr);
+
+            return new NSRange(begin, containStr.Length);
+        }
         #endregion
     }
 }

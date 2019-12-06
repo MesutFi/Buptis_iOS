@@ -30,12 +30,12 @@ namespace Buptis_iOS
                 var MainStoryBoard = UIStoryboard.FromName("GirisKayit", NSBundle.MainBundle);
                 var GirisVC1 = MainStoryBoard.InstantiateViewController("GirisVC") as GirisVC;
                 var viewController = GirisVC1;
-                viewController.View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width, 700);
+                viewController.View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width-10, 700);
                 viewController.WillMoveToParentViewController(this);
                 ScrollHazne.AddSubview(viewController.View);
                 this.AddChildViewController(viewController);
                 viewController.DidMoveToParentViewController(this);
-                ScrollHazne.ContentSize = new CoreGraphics.CGSize(UIScreen.MainScreen.Bounds.Width, 700);
+                ScrollHazne.ContentSize = new CoreGraphics.CGSize(UIScreen.MainScreen.Bounds.Width-10, 700);
                 Actimi = true;
             }
         }

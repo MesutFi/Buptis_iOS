@@ -39,6 +39,10 @@ namespace Buptis_iOS.GirisKayit
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Sozlesmelabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton UyeOlButton { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -71,6 +75,11 @@ namespace Buptis_iOS.GirisKayit
             if (SifreTxt != null) {
                 SifreTxt.Dispose ();
                 SifreTxt = null;
+            }
+
+            if (Sozlesmelabel != null) {
+                Sozlesmelabel.Dispose ();
+                Sozlesmelabel = null;
             }
 
             if (UyeOlButton != null) {

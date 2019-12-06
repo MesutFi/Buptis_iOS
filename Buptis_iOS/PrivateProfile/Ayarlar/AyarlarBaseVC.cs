@@ -78,17 +78,27 @@ namespace Buptis_iOS.PrivateProfile.Ayarlar
         }
         public string GetEmail()
         {
-            string email;
-            var UserEmail = DataBase.MEMBER_DATA_GETIR()[0].email;
-            var Bol = UserEmail.Split('@');
-            var IlkHarf = Bol[0].Substring(0, 1);
-            var yildizlar = "";
-            for (int i = 1; i < Bol[0].Length; i++)
+            try
             {
-                yildizlar += "*";
+                var UserEmail = DataBase.MEMBER_DATA_GETIR()[0].email;
+                var Bol = UserEmail.Split('@');
+                var IlkHarf = Bol[0].Substring(0, 1);
+                var yildizlar = "";
+                for (int i = 1; i < Bol[0].Length; i++)
+                {
+                    yildizlar += "*";
+                }
+                string email;
+                email = IlkHarf + yildizlar + "@" + Bol[1];
+                return email;
+                
             }
-            email = IlkHarf + yildizlar + "@" + Bol[1];
-            return email;
+            catch (Exception ex)
+            {
+                return "";
+            }
+       
+         
         }
         public void RowClick(int Index)
         {

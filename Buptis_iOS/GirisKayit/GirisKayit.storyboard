@@ -55,7 +55,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4294"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4297">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="690"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Images/logo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="4346" misplaced="YES" ambiguous="YES">
@@ -172,6 +172,15 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş yaparak Gizlilik Politikası ve Kullanım Koşullarını kabul etmiş sayılırsınız." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="26842" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="0" minimumFontSize="9" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="16" y="718" width="288" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="1" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="29408" firstAttribute="height" constant="62"/>
+                                </constraints>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
@@ -201,9 +210,12 @@
                             <constraint firstItem="4713" firstAttribute="top" secondItem="4712" secondAttribute="bottom" constant="26" id="15746"/>
                             <constraint firstItem="5607" firstAttribute="top" secondItem="5590" secondAttribute="bottom" constant="18" id="15749"/>
                             <constraint firstItem="5641" firstAttribute="top" secondItem="5607" secondAttribute="bottom" constant="29" id="15751"/>
+                            <constraint id="29409" firstItem="26842" firstAttribute="trailing" secondItem="4297" secondAttribute="trailingMargin"/>
+                            <constraint id="29410" firstItem="26842" firstAttribute="leading" secondItem="4297" secondAttribute="leadingMargin"/>
+                            <constraint id="29411" firstItem="26842" firstAttribute="top" secondItem="5641" secondAttribute="bottom" constant="28"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="320" height="690"/>
+                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
                         <outlet property="EmailTxt" destination="4710" id="name-outlet-4710"/>
                         <outlet property="FacebookButton" destination="5607" id="name-outlet-5607"/>
@@ -212,6 +224,7 @@
                         <outlet property="SifreTxt" destination="4711" id="name-outlet-4711"/>
                         <outlet property="SifrenimiUnuttunButton" destination="4713" id="name-outlet-4713"/>
                         <outlet property="UyeOlButton" destination="5641" id="name-outlet-5641"/>
+                        <outlet property="Sozlesmelabel" destination="26842" id="name-outlet-26842"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4298" userLabel="First Responder" sceneMemberID="firstResponder"/>

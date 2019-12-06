@@ -22,18 +22,14 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Buptis&apos;i daha iyi kullanabilmeniz için galerinize erişmemize izin vermelisiniz.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Buptis&apos;i daha iyi kullanabilmeniz için galerinize erişmemize izin vermelisiniz.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Buptis&apos;i kullanmaya devam edebilmeniz için konum hizmetlerine izin vermelisiniz.</string>
+	<string>Buptis konumunuzu kullanarak çevrenizde size yakın mekanları listelemektedir.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Buptis&apos;i kullanmaya devam edebilmeniz için konum hizmetlerine izin vermelisiniz.</string>
+	<string>Buptis konumunuzu kullanarak çevrenizde size yakın mekanları listelemektedir.</string>
 	<key>MinimumOSVersion</key>
 	<string>13.0</string>
 	<key>CFBundleIdentifier</key>
@@ -64,8 +60,8 @@
 	<key>CFBundleName</key>
 	<string>Buptis</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.0</string>
+	<string>6.0</string>
 	<key>CFBundleVersion</key>
-	<string>4.0</string>
+	<string>6.0</string>
 </dict>
 </plist>
