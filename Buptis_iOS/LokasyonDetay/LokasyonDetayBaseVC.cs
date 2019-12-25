@@ -34,7 +34,7 @@ namespace Buptis_iOS.LokasyonDetay
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
+            ObjCRuntime.Class.ThrowOnInitFailure = false;
             CallButton.TouchUpInside += delegate {
                 var url = new NSUrl("tel:" + GelenMekan.telephone);
                 UIApplication.SharedApplication.OpenUrl(url);
@@ -73,8 +73,13 @@ namespace Buptis_iOS.LokasyonDetay
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            new GetUnReadMessage().GetUnReadMessageCount(MessageCount, this);
             if (!Actinmi)
             {
+                MessageCount.Layer.CornerRadius = MessageCount.Frame.Height / 2;
+                MessageCount.ClipsToBounds = true;
+                MessageCount.Hidden = true;
+
                 Tasarim();
                 BackButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
                 MessageButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);

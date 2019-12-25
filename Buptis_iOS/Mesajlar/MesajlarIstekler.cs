@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UIKit;
+using static Buptis_iOS.ChatVC;
 using static Buptis_iOS.Mesajlar.MesajlarBaseVC;
 
 namespace Buptis_iOS
@@ -32,6 +33,7 @@ namespace Buptis_iOS
             v.Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
             v.Tablo.TableFooterView = new UIView();
             v.AraTxt = AraTxt2;
+            v.MeData = DataBase.MEMBER_DATA_GETIR()[0];
             return v;
         }
         public override void LayoutSubviews()
@@ -87,9 +89,10 @@ namespace Buptis_iOS
                     
                     mFriends.Where(item => item.receiverId == MeID).ToList().ForEach(item2 => item2.unreadMessageCount = 0);
                     SaveKeys();
+                    SonMesajKiminKontrolunuYap();
                     InvokeOnMainThread(() =>
                     {
-                        //Geçmiþ gelecekten daha büyüktür
+                        //Geçmiş gelecekten daha büyüktür
                         mFriends.Sort((x, y) => DateTime.Compare(x.lastModifiedDate, y.lastModifiedDate));
                         mFriends.Reverse();
                         Tablo.Source = new MesajlarCustomTableCellSoruce(mFriends, this, FavorileriCagir());
@@ -214,26 +217,87 @@ namespace Buptis_iOS
                 }
             }
         }
+
+        MEMBER_DATA MeData;
+        void SonMesajKiminKontrolunuYap()
+        {
+            for (int i = 0; i < mFriends.Count; i++)
+            {
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("chats/user/" + mFriends[i].receiverId);
+                if (Donus != null)
+                {
+                    var AA = Donus.ToString();
+                    var NewChatList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ChatDetayDTO>>(Donus.ToString());
+                    if (NewChatList.Count > 0)//chatList
+                    {
+
+                        if (NewChatList[0].userId == MeData.id)
+                        {
+                            mFriends[i].unreadMessageCount = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+
         public void RowSelectt(MesajKisileri TiklananKisi)
         {
             GetUserInfo(TiklananKisi.receiverId.ToString(), TiklananKisi.key);
         }
+        int Engelliler;
         void GetUserInfo(string UserID, string keyy)
         {
+
             WebService webService = new WebService();
+            var Donus2 = webService.OkuGetir("blocked-user/block-list");
+            if (Donus2 != null)
+            {
+                var EngelliKul = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EngelliKullanicilarDTO>>(Donus2.ToString());
+
+                if (EngelliKul.Count > 0)
+                {
+                    InvokeOnMainThread(delegate ()
+                    {
+                        Engelliler = EngelliKul[0].blockUserId;
+
+                    });
+                }
+            }
             var Donus = webService.OkuGetir("users/" + UserID);
             if (Donus != null)
             {
                 var Userrr = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(Donus.ToString());
                 MesajlarIcinSecilenKullanici.Kullanici = Userrr;
                 MesajlarIcinSecilenKullanici.key = keyy;
+                if (Engelliler == Userrr.id)
+                {
 
-                var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
-                ChatVC controller = LokasyonKisilerStory.InstantiateViewController("ChatVC") as ChatVC;
-                controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
-                this.GelenBase1.PresentViewController(controller, true, null);
+                    CustomAlert.GetCustomAlert(GelenBase1, "Bu kullanıcıyı engellediğiniz için mesaj atamazsınız!");
+                }
+                else
+                {
+                    var LokasyonKisilerStory = UIStoryboard.FromName("MesajlarBaseVC", NSBundle.MainBundle);
+                    ChatVC controller = LokasyonKisilerStory.InstantiateViewController("ChatVC") as ChatVC;
+                    controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                    this.GelenBase1.PresentViewController(controller, true, null);
+                }
             }
         }
+
+
+        public class EngelliKullanicilarDTO
+        {
+            public int blockUserId { get; set; }
+            public string createdDate { get; set; }
+            public int id { get; set; }
+            public string lastModifiedDate { get; set; }
+            public string reasonType { get; set; }
+            public string status { get; set; }
+            public int userId { get; set; }
+        }
+
         public class MesajlarCustomTableCellSoruce : UITableViewSource
         {
             List<MesajKisileri> TableItems;

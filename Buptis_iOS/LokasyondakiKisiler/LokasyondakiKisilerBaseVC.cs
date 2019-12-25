@@ -58,8 +58,12 @@ namespace Buptis_iOS.LokasyondakiKisiler
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+            new GetUnReadMessage().GetUnReadMessageCount(MessageCount, this);
             if (!Actinmi2)
             {
+                MessageCount.Layer.CornerRadius = MessageCount.Frame.Height / 2;
+                MessageCount.ClipsToBounds = true;
+                MessageCount.Hidden = true;
                 this.View.Hidden = true;
                 MekanAdiLabell.Text = gelenMekan.name;
                 Actinmi2 = true;

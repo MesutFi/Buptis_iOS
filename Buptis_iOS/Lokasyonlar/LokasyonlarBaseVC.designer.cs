@@ -35,6 +35,10 @@ namespace Buptis_iOS.Lokasyonlar
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel MessageCount { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton MyProfileButton { get; set; }
 
         [Outlet]
@@ -70,6 +74,11 @@ namespace Buptis_iOS.Lokasyonlar
             if (MesajlarButton != null) {
                 MesajlarButton.Dispose ();
                 MesajlarButton = null;
+            }
+
+            if (MessageCount != null) {
+                MessageCount.Dispose ();
+                MessageCount = null;
             }
 
             if (MyProfileButton != null) {

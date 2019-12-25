@@ -55,6 +55,10 @@ namespace Buptis_iOS.LokasyonDetay
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel MessageCount { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton RatingButton { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -107,6 +111,11 @@ namespace Buptis_iOS.LokasyonDetay
             if (MessageButton != null) {
                 MessageButton.Dispose ();
                 MessageButton = null;
+            }
+
+            if (MessageCount != null) {
+                MessageCount.Dispose ();
+                MessageCount = null;
             }
 
             if (RatingButton != null) {

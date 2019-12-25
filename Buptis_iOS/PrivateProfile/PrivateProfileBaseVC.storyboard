@@ -493,7 +493,7 @@
                                     <constraint firstItem="20237" firstAttribute="centerX" secondItem="20130" secondAttribute="centerX" id="20358"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20463">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20463" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO">
                                 <rect key="frame" x="0.0" y="90" width="320" height="395"/>
                             </scrollView>
                         </subviews>

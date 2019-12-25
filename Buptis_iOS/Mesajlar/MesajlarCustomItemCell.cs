@@ -134,15 +134,15 @@ namespace Buptis_iOS.Mesajlar
             {
                 SonMesajText.Text = "Hediye";
             }
-            
+            if (mesajKisileri.unreadMessageCount > 0)
+            {
+
+                OkunmamisMesajCount.Hidden = false;
+                OkunmamisMesajCount.Text = mesajKisileri.unreadMessageCount.ToString();
+            }
             if (!invisibleButton)
             {
-                if (mesajKisileri.unreadMessageCount > 0)
-                {
-
-                    OkunmamisMesajCount.Hidden = false;
-                    OkunmamisMesajCount.Text = mesajKisileri.unreadMessageCount.ToString();
-                }
+                
             }
             
         }

@@ -110,6 +110,17 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8821">
+                                        <rect key="frame" x="292" y="39" width="15" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
+                                        <constraints>
+                                            <constraint id="8822" firstAttribute="height" constant="15"/>
+                                            <constraint id="8823" firstAttribute="width" constant="15"/>
+                                        </constraints>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
@@ -127,6 +138,8 @@
                                     <constraint firstItem="3935" firstAttribute="leading" secondItem="1551" secondAttribute="leading" id="4723"/>
                                     <constraint firstItem="1562" firstAttribute="top" secondItem="3935" secondAttribute="bottom" constant="14" id="4823"/>
                                     <constraint firstAttribute="height" constant="196" id="5344"/>
+                                    <constraint id="10616" firstItem="8821" firstAttribute="trailing" secondItem="1555" secondAttribute="trailing" constant="2"/>
+                                    <constraint id="10816" firstItem="1555" firstAttribute="top" secondItem="8821" secondAttribute="top" constant="10"/>
                                 </constraints>
                             </view>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1596">
@@ -154,6 +167,7 @@
                         <outlet property="MesajlarButton" destination="1555" id="name-outlet-1555"/>
                         <outlet property="TumuButton" destination="1563" id="name-outlet-1563"/>
                         <outlet property="MekanAdiLabell" destination="2753" id="name-outlet-2753"/>
+                        <outlet property="MessageCount" destination="8821" id="name-outlet-8821"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="513" userLabel="First Responder" sceneMemberID="firstResponder"/>

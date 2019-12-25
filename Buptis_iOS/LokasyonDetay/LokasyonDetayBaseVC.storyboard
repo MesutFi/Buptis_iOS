@@ -57,6 +57,17 @@
                                             <color key="titleColor" red="0.039215686274509803" green="0.37647058823529411" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98503">
+                                        <rect key="frame" x="297" y="39" width="15" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
+                                        <constraints>
+                                            <constraint id="98504" firstAttribute="height" constant="15"/>
+                                            <constraint id="98505" firstAttribute="width" constant="15"/>
+                                        </constraints>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
@@ -68,6 +79,8 @@
                                     <constraint firstItem="1376" firstAttribute="leading" secondItem="1373" secondAttribute="trailing" constant="8" id="2767"/>
                                     <constraint firstItem="1386" firstAttribute="leading" secondItem="1376" secondAttribute="trailing" constant="8" id="2768"/>
                                     <constraint firstItem="1376" firstAttribute="top" secondItem="1372" secondAttribute="top" constant="56" id="2769"/>
+                                    <constraint id="99124" firstItem="98503" firstAttribute="trailing" secondItem="1386" secondAttribute="trailing"/>
+                                    <constraint id="99181" firstItem="1386" firstAttribute="top" secondItem="98503" secondAttribute="top" constant="10"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1392">
@@ -188,6 +201,7 @@
                         <outlet property="MessageButton" destination="1386" id="name-outlet-1386"/>
                         <outlet property="RatingButton" destination="1394" id="name-outlet-1394"/>
                         <outlet property="mekanTitle" destination="1376" id="name-outlet-1376"/>
+                        <outlet property="MessageCount" destination="98503" id="name-outlet-98503"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1347" userLabel="First Responder" sceneMemberID="firstResponder"/>

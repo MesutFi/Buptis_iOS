@@ -47,6 +47,10 @@ namespace Buptis_iOS.LokasyondakiKisiler
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel MessageCount { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton TumuButton { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -89,6 +93,11 @@ namespace Buptis_iOS.LokasyondakiKisiler
             if (MesajlarButton != null) {
                 MesajlarButton.Dispose ();
                 MesajlarButton = null;
+            }
+
+            if (MessageCount != null) {
+                MessageCount.Dispose ();
+                MessageCount = null;
             }
 
             if (TumuButton != null) {

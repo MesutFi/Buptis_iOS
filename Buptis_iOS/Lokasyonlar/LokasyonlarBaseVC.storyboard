@@ -112,6 +112,17 @@
                                             <constraint firstItem="11562" firstAttribute="width" secondItem="8334" secondAttribute="width" id="14400"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27431">
+                                        <rect key="frame" x="299" y="40" width="15" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" colorSpace="custom" customColorSpace="sRGB" red="1" green="0.231372549019608" blue="0.188235294117647" alpha="1"/>
+                                        <constraints>
+                                            <constraint id="27436" firstAttribute="height" constant="15"/>
+                                            <constraint id="27437" firstAttribute="width" constant="15"/>
+                                        </constraints>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
@@ -129,6 +140,8 @@
                                     <constraint firstItem="5947" firstAttribute="leading" secondItem="350" secondAttribute="leading" constant="12" id="10893"/>
                                     <constraint firstItem="5947" firstAttribute="top" secondItem="3677" secondAttribute="bottom" constant="23" id="11116"/>
                                     <constraint firstAttribute="height" constant="263" id="24639"/>
+                                    <constraint id="27438" firstItem="27431" firstAttribute="trailing" secondItem="866" secondAttribute="trailing" constant="2"/>
+                                    <constraint id="27439" firstItem="866" firstAttribute="top" secondItem="27431" secondAttribute="top" constant="9"/>
                                 </constraints>
                             </view>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14704">
@@ -155,6 +168,7 @@
                         <outlet property="MyProfileButton" destination="528" id="name-outlet-528"/>
                         <outlet property="PopulerButton" destination="11339" id="name-outlet-11339"/>
                         <outlet property="TabMenuHazne" destination="5947" id="name-outlet-5947"/>
+                        <outlet property="MessageCount" destination="27431" id="name-outlet-27431"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="343" userLabel="First Responder" sceneMemberID="firstResponder"/>

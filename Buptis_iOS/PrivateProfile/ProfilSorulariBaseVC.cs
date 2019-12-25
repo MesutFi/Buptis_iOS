@@ -48,7 +48,6 @@ namespace Buptis_iOS
             SonucVC controller = PrivateProfileBaseVC1.InstantiateViewController("SonucVC") as SonucVC;
             controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             controller.ProfilSorulariBaseVC1 = this;
-            controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen; 
             this.PresentViewController(controller, true, null);
         }
 
@@ -131,7 +130,7 @@ namespace Buptis_iOS
             if (QuestionDTOs.Count > 0)
             {
                 Noktalar = new UIViewController[QuestionDTOs.Count];
-               
+                var b1 = ContentScroll.Frame.Width;
                 for (int i = 0; i < QuestionDTOs.Count; i++)
                 {
                     
@@ -140,22 +139,22 @@ namespace Buptis_iOS
                         NoktaItem = this.Storyboard.InstantiateViewController("CoktanSecmeliSoruVC") as CoktanSecmeliSoruVC;
                         (NoktaItem as CoktanSecmeliSoruVC).GelenSoru = QuestionDTOs[i];
                         (NoktaItem as CoktanSecmeliSoruVC).userAnswer = this.userAnswer;
-                        NoktaItem.View.Frame = new CoreGraphics.CGRect(0, 0, UIKit.UIScreen.MainScreen.Bounds.Width, ContentScroll.Frame.Height);
+                        NoktaItem.View.Frame = new CoreGraphics.CGRect(0, 0, b1, ContentScroll.Frame.Height);
                     }
                     else if (QuestionDTOs[i].type == "OPEN_TIP")
                     {
                         NoktaItem = this.Storyboard.InstantiateViewController("RangeSoruVC") as RangeSoruVC;
                         (NoktaItem as RangeSoruVC).GelenSoru = QuestionDTOs[i];
                         (NoktaItem as RangeSoruVC).userAnswer = this.userAnswer;
-                        NoktaItem.View.Frame = new CoreGraphics.CGRect(0, 0, UIKit.UIScreen.MainScreen.Bounds.Width, ContentScroll.Frame.Height);
+                        NoktaItem.View.Frame = new CoreGraphics.CGRect(0, 0, b1, ContentScroll.Frame.Height);
                     }
                     if(i==0)
                     {
-                        NoktaItem.View.Frame = new CoreGraphics.CGRect(0, 0, UIKit.UIScreen.MainScreen.Bounds.Width, ContentScroll.Frame.Height);
+                        NoktaItem.View.Frame = new CoreGraphics.CGRect(0, 0, b1, ContentScroll.Frame.Height);
                     }
                     else
                     {
-                        NoktaItem.View.Frame = new CoreGraphics.CGRect(UIKit.UIScreen.MainScreen.Bounds.Width * i, 0, UIKit.UIScreen.MainScreen.Bounds.Width, ContentScroll.Frame.Height);
+                        NoktaItem.View.Frame = new CoreGraphics.CGRect(b1 * i, 0, b1, ContentScroll.Frame.Height);
                     }
                     NoktaItem.WillMoveToParentViewController(this);
                     ContentScroll.AddSubview(NoktaItem.View);

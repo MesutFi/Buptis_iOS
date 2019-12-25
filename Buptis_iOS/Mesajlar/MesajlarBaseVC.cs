@@ -9,6 +9,7 @@ using CoreAnimation;
 using CoreGraphics;
 using Foundation;
 using UIKit;
+using static Buptis_iOS.ChatVC;
 
 namespace Buptis_iOS.Mesajlar
 {
@@ -33,6 +34,7 @@ namespace Buptis_iOS.Mesajlar
             FavorilerButton.TouchUpInside += FavorilerButton_TouchUpInside;
             AraButton.TouchUpInside += AraButton_TouchUpInside;
             KapatButton.TouchUpInside += KapatButton_TouchUpInside;
+            MeData = DataBase.MEMBER_DATA_GETIR()[0];
             AraText.ShouldReturn += (textField) =>
             {
                 textField.ResignFirstResponder();
@@ -129,6 +131,7 @@ namespace Buptis_iOS.Mesajlar
             if (Donus != null)
             {
                 mFriends = Newtonsoft.Json.JsonConvert.DeserializeObject<List<MesajKisileri>>(Donus.ToString());
+                SonMesajKiminKontrolunuYap();
                 TitleGuncelle(MesajlarButton, 0, mFriends);
                 TitleGuncelle(IsteklerButton, 1, mFriends);
                 TitleGuncelle(FavorilerButton, 2, mFriends);
@@ -174,7 +177,28 @@ namespace Buptis_iOS.Mesajlar
             }
         }
 
+        MEMBER_DATA MeData;
+        void SonMesajKiminKontrolunuYap()
+        {
+            for (int i = 0; i < mFriends.Count; i++)
+            {
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("chats/user/" + mFriends[i].receiverId);
+                if (Donus != null)
+                {
+                    var AA = Donus.ToString();
+                    var NewChatList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ChatDetayDTO>>(Donus.ToString());
+                    if (NewChatList.Count > 0)//chatList
+                    {
 
+                        if (NewChatList[0].userId == MeData.id)
+                        {
+                            mFriends[i].unreadMessageCount = 0;
+                        }
+                    }
+                }
+            }
+        }
 
         List<MesajKisileri> FavorileriAyir(List<MesajKisileri> GelenListe)
         {

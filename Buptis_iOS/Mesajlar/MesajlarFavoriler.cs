@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UIKit;
+using static Buptis_iOS.ChatVC;
 using static Buptis_iOS.Mesajlar.MesajlarBaseVC;
 
 namespace Buptis_iOS
@@ -34,6 +35,7 @@ namespace Buptis_iOS
             v.Tablo.BackgroundColor = UIColor.Clear;
             v.Tablo.SeparatorStyle = UITableViewCellSeparatorStyle.None;
             v.Tablo.TableFooterView = new UIView();
+            v.MeData = DataBase.MEMBER_DATA_GETIR()[0];
             return v;
         }
 
@@ -98,56 +100,8 @@ namespace Buptis_iOS
             }
         }
 
-        public class MesajlarCustomTableCellSoruce : UITableViewSource
-        {
-            List<MesajKisileri> TableItems;
-            MesajlarFavoriler MesajlarFavoriler1;
-            List<string> FavList;
-            public MesajlarCustomTableCellSoruce(List<MesajKisileri> mekanlist, MesajlarFavoriler MesajlarFavoriler2, List<string> FavList2)
-            {
-                TableItems = mekanlist;
-                MesajlarFavoriler1 = MesajlarFavoriler2;
-                FavList = FavList2;
-            }
-            public void FavListGuncelle(string UserID)
-            {
-                var Indexx = TableItems.FindIndex(item => item.receiverId.ToString() == UserID);
+        
 
-                if (Indexx != -1)
-                {
-                    TableItems.RemoveAt(Indexx);
-                    tableView1.ReloadData();
-                }
-            }
-            public override nint RowsInSection(UITableView tableview, nint section)
-            {
-                return TableItems.Count;
-            }
-            public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
-            {
-                return 92f;
-
-            }
-            UITableView tableView1;
-            public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
-            {
-                tableView1 = tableView;
-                var itemss = TableItems[indexPath.Row];
-                var cell = (MesajlarCustomItemCell)tableView.DequeueReusableCell(MesajlarCustomItemCell.Key);
-                if (cell == null)
-                {
-                    cell = MesajlarCustomItemCell.Create(FavList, this, indexPath);
-                }
-                cell.UpdateCell(itemss,false);
-                return cell;
-            }
-            public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
-            {
-                tableView.DeselectRow(indexPath, true);
-                var item = TableItems[indexPath.Row];
-                MesajlarFavoriler1.RowSelectt(item);
-            }
-        }
         void SonMesajlariGetir()
         {
             WebService webService = new WebService();
@@ -164,6 +118,7 @@ namespace Buptis_iOS
 
                     mFriends.Where(item => item.receiverId == MeID).ToList().ForEach(item2 => item2.unreadMessageCount = 0);
                     SaveKeys();
+                    SonMesajKiminKontrolunuYap();
                     InvokeOnMainThread(() =>
                     {
                         mFriends.Sort((x, y) => DateTime.Compare(x.lastModifiedDate, y.lastModifiedDate));
@@ -224,6 +179,31 @@ namespace Buptis_iOS
                 }
             }
         }
+
+        MEMBER_DATA MeData;
+        void SonMesajKiminKontrolunuYap()
+        {
+            for (int i = 0; i < mFriends.Count; i++)
+            {
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("chats/user/" + mFriends[i].receiverId);
+                if (Donus != null)
+                {
+                    var AA = Donus.ToString(); ;
+                    var NewChatList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ChatDetayDTO>>(Donus.ToString());
+                    if (NewChatList.Count > 0)//chatList
+                    {
+
+                        if (NewChatList[0].userId == MeData.id)
+                        {
+                            mFriends[i].unreadMessageCount = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+
         void FavorileriAyir()
         {
             var FavList = FavorileriCagir();
@@ -258,6 +238,7 @@ namespace Buptis_iOS
             }
             return FollowListID;
         }
+
         public class FavListDTO
         {
             public int FavUserID { get; set; }
@@ -272,6 +253,66 @@ namespace Buptis_iOS
             public int receiverId { get; set; }
             public bool request { get; set; }
             public int unreadMessageCount { get; set; }
+        }
+        public class EngelliKullanicilarDTO
+        {
+            public int blockUserId { get; set; }
+            public string createdDate { get; set; }
+            public int id { get; set; }
+            public string lastModifiedDate { get; set; }
+            public string reasonType { get; set; }
+            public string status { get; set; }
+            public int userId { get; set; }
+        }
+        public class MesajlarCustomTableCellSoruce : UITableViewSource
+        {
+            List<MesajKisileri> TableItems;
+            MesajlarFavoriler MesajlarFavoriler1;
+            List<string> FavList;
+            public MesajlarCustomTableCellSoruce(List<MesajKisileri> mekanlist, MesajlarFavoriler MesajlarFavoriler2, List<string> FavList2)
+            {
+                TableItems = mekanlist;
+                MesajlarFavoriler1 = MesajlarFavoriler2;
+                FavList = FavList2;
+            }
+            public void FavListGuncelle(string UserID)
+            {
+                var Indexx = TableItems.FindIndex(item => item.receiverId.ToString() == UserID);
+
+                if (Indexx != -1)
+                {
+                    TableItems.RemoveAt(Indexx);
+                    tableView1.ReloadData();
+                }
+            }
+            public override nint RowsInSection(UITableView tableview, nint section)
+            {
+                return TableItems.Count;
+            }
+            public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+            {
+                return 92f;
+
+            }
+            UITableView tableView1;
+            public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+            {
+                tableView1 = tableView;
+                var itemss = TableItems[indexPath.Row];
+                var cell = (MesajlarCustomItemCell)tableView.DequeueReusableCell(MesajlarCustomItemCell.Key);
+                if (cell == null)
+                {
+                    cell = MesajlarCustomItemCell.Create(FavList, this, indexPath);
+                }
+                cell.UpdateCell(itemss, false);
+                return cell;
+            }
+            public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+            {
+                tableView.DeselectRow(indexPath, true);
+                var item = TableItems[indexPath.Row];
+                MesajlarFavoriler1.RowSelectt(item);
+            }
         }
     }
 }
