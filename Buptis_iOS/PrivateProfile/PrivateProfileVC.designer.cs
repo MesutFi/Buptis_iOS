@@ -60,10 +60,6 @@ namespace Buptis_iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton PhotoEditButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ProfilDuzenleButton { get; set; }
 
         [Outlet]
@@ -97,10 +93,6 @@ namespace Buptis_iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel UserTitle { get; set; }
-
-        [Action ("UIButton112853_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton112853_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -157,11 +149,6 @@ namespace Buptis_iOS
             if (KrediCountLabel != null) {
                 KrediCountLabel.Dispose ();
                 KrediCountLabel = null;
-            }
-
-            if (PhotoEditButton != null) {
-                PhotoEditButton.Dispose ();
-                PhotoEditButton = null;
             }
 
             if (ProfilDuzenleButton != null) {

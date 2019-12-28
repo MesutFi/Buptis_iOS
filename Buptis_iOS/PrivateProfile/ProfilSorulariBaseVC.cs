@@ -65,6 +65,7 @@ namespace Buptis_iOS
             {
                 var PrivateProfileBaseVC1 = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
                 SonucVC controller = PrivateProfileBaseVC1.InstantiateViewController("SonucVC") as SonucVC;
+                controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
                 controller.ProfilSorulariBaseVC1 = this;
                 this.PresentViewController(controller, true, null);
             }

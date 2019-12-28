@@ -33,16 +33,9 @@ namespace Buptis_iOS
             ProfilDuzenleButton.TouchUpInside += ProfilDuzenleButton_TouchUpInside;
             FotografEkleButton.TouchUpInside += FotografEkleButton_TouchUpInside;
             FiltreButton.TouchUpInside += FiltreButton_TouchUpInside;
-            PhotoEditButton.TouchUpInside += PhotoEditButton_TouchUpInside;
-        }
-
-        private void PhotoEditButton_TouchUpInside(object sender, EventArgs e)
-        {
-            var FotografEkle1 = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
-            GalleryView controller = FotografEkle1.InstantiateViewController("GalleryView") as GalleryView;
-            controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
-            controller.GenelBase = this;
-            this.PresentViewController(controller, true, null);
+            Action Actionn = () => FotoEkle();
+            UITapGestureRecognizer tapGesture = new UITapGestureRecognizer(Actionn);
+            UserPhoto.AddGestureRecognizer(tapGesture);
         }
 
         private void FiltreButton_TouchUpInside(object sender, EventArgs e)
@@ -52,14 +45,17 @@ namespace Buptis_iOS
             controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
             this.PresentViewController(controller, true, null);
         }
-
-        private void FotografEkleButton_TouchUpInside(object sender, EventArgs e)
+        void FotoEkle()
         {
             var FotografEkle1 = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
             GalleryView controller = FotografEkle1.InstantiateViewController("GalleryView") as GalleryView;
             controller.ModalPresentationStyle = UIModalPresentationStyle.OverFullScreen;
             controller.GenelBase = this;
             this.PresentViewController(controller, true, null);
+        }
+        private void FotografEkleButton_TouchUpInside(object sender, EventArgs e)
+        {
+            FotoEkle();
         }
         private void ProfilDuzenleButton_TouchUpInside(object sender, EventArgs e)
         {

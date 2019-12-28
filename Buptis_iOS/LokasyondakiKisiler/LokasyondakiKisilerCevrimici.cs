@@ -63,13 +63,13 @@ namespace Buptis_iOS
                 }
                 else
                 {
-                    CustomAlert.GetCustomAlert(gelenbase, "Henüz bu lokasyonda kimse bulunamıyor.");
+                    CustomAlert.GetCustomAlert(gelenbase, "Henüz bu lokasyonda çevrim içi kimse bulunamıyor.");
                     CustomLoading.Hide();
                 }
             }
             else
             {
-                CustomAlert.GetCustomAlert(gelenbase, "Henüz bu lokasyonda kimse bulunamıyor.");
+                CustomAlert.GetCustomAlert(gelenbase, "Henüz bu lokasyonda çevrim içi kimse bulunamıyor.");
                 CustomLoading.Hide();
             }
         }
@@ -90,21 +90,21 @@ namespace Buptis_iOS
             if (GetUserFilter1.Count > 0)
             {
                 var GetUserFilter = GetUserFilter1[0];
-                var minDT = DateTime.Now.AddYears((-1) * (GetUserFilter.minAge));//2015
-                var maxDate = DateTime.Now.AddYears((-1) * GetUserFilter.maxAge);//1990
+                var minDT = DateTime.Now.AddYears((-1) * (GetUserFilter.minAge));
+                var maxDate = DateTime.Now.AddYears(GetUserFilter.maxAge);
                 if (GetUserFilter.Cinsiyet != 0)
                 {
                     if (GetUserFilter.Cinsiyet == 1)
                     {
-                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Erkek" & item.birthDayDate <= minDT & item.birthDayDate >= maxDate);
+                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Erkek" & item.birthDayDate >= minDT & item.birthDayDate <= maxDate);
                     }
                     else if (GetUserFilter.Cinsiyet == 2)
                     {
-                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Kadın" & item.birthDayDate <= minDT & item.birthDayDate >= maxDate);
+                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Kadın" & item.birthDayDate >= minDT & item.birthDayDate <= maxDate);
                     }
                     else
                     {
-                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Kadın" | item.gender == "Erkek"  & item.birthDayDate <= minDT & item.birthDayDate >= maxDate);
+                        LokasyondakiKisilerList = LokasyondakiKisilerList.FindAll(item => item.gender == "Kadın" | item.gender == "Erkek" & item.birthDayDate >= minDT & item.birthDayDate <= maxDate);
                     }
                 }
             }
@@ -199,9 +199,12 @@ namespace Buptis_iOS
                 ScrollVieww.AddSubview(NoktaItem);
                 Noktalar[i] = NoktaItem;
             }
-            //
-            ScrollVieww.ContentSize = new CoreGraphics.CGSize(UIKit.UIScreen.MainScreen.Bounds.Width, Noktalar[Noktalar.Length - 1].Frame.Bottom);
-            BekletVeUygulaAsync();
+            if (Noktalar.Length > 0)
+            {
+                ScrollVieww.ContentSize = new CoreGraphics.CGSize(UIKit.UIScreen.MainScreen.Bounds.Width, Noktalar[Noktalar.Length - 1].Frame.Bottom);
+                BekletVeUygulaAsync();
+            }
+        
         }
         int UcluRowSayisiGetir()
         {

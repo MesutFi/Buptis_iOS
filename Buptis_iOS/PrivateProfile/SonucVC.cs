@@ -130,8 +130,8 @@ namespace Buptis_iOS
             if (Donus != "Hata")
             {
                 CustomAlert.GetCustomAlert(this, "Cevaplarınız için teşekkürler.");
-                ProfilSorulariBaseVC1.DismissViewController(false, null);
                 DismissViewController(false, null);
+                ProfilSorulariBaseVC1.DismissViewController(false, null);
                 return;
             }
             else

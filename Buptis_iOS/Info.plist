@@ -31,7 +31,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Buptis konumunuzu kullanarak çevrenizde size yakın mekanları listelemektedir.</string>
 	<key>MinimumOSVersion</key>
-	<string>13.0</string>
+	<string>12.0</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.buptis.app.ios</string>
 	<key>CFBundleURLTypes</key>

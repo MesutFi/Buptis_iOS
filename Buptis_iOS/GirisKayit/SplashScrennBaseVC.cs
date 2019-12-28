@@ -1,4 +1,5 @@
 using Buptis_iOS.Database;
+using Buptis_iOS.GenericClass;
 using Buptis_iOS.Web_Service;
 using CoreLocation;
 using Foundation;
@@ -31,10 +32,13 @@ namespace Buptis_iOS
                 //locationManager = new CLLocationManager();
                 //locationManager.RequestWhenInUseAuthorization();
                 //CustomMapView = new MKMapView() { ShowsUserLocation = true };
-                var UserInfoVarmidur = DataBase.MEMBER_DATA_GETIR();
-                if (UserInfoVarmidur.Count > 0)
+            var UserInfoVarmidur = DataBase.MEMBER_DATA_GETIR();
+            if (UserInfoVarmidur.Count > 0)
+            {
+                if (new GetUserInformation().isActive())
                 {
-                    InvokeOnMainThread(delegate () {
+                    InvokeOnMainThread(delegate ()
+                    {
                         var appDelegate = UIApplication.SharedApplication.Delegate as AppDelegate;
                         appDelegate.SetRootLokasyonlarViewController();
                     });
@@ -43,10 +47,20 @@ namespace Buptis_iOS
                 {
                     InvokeOnMainThread(delegate ()
                     {
-                        var appDelegate = UIApplication.SharedApplication.Delegate as AppDelegate;
-                        appDelegate.SetRootSplashViewController();
+                        CustomAlert.GetCustomAlert(this, "Hesabınız pasifleştirildi.");
+                        this.DismissViewController(true, null);
                     });
                 }
+
+            }
+            else
+            {
+                InvokeOnMainThread(delegate ()
+                {
+                    var appDelegate = UIApplication.SharedApplication.Delegate as AppDelegate;
+                    appDelegate.SetRootSplashViewController();
+                });
+            }
 
             Actinmi = true;
             //}
@@ -193,6 +207,24 @@ namespace Buptis_iOS
         }
     }
 
+    public class GetUserInformation
+    {
+        public bool isActive()
+        {
+            WebService webService = new WebService();
+            var JSONData = webService.OkuGetir("account");
+            if (JSONData != null)
+            {
+                var JsonSting = JSONData.ToString();
+                var Icerik = Newtonsoft.Json.JsonConvert.DeserializeObject<MEMBER_DATA>(JSONData.ToString());
+                return Icerik.activated;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 
     public static class UserLocationn
     {

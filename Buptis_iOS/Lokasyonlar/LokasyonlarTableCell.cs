@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Buptis_iOS.Web_Service;
 using CoreAnimation;
 using CoreGraphics;
+using CoreLocation;
 using Foundation;
 using Newtonsoft.Json.Linq;
 using UIKit;
@@ -65,7 +66,7 @@ namespace Buptis_iOS.Lokasyonlar
             }
             DolulukProgress.Progress = (float)Math.Round( (float)(mekanlarlocation.allUserCheckIn / mekanlarlocation.capacity), 2);
             //MekanYer.Text = mekanlarlocation.townId.ToString() +" " + mekanlarlocation.place +"km";
-            GetLocationOtherInfo(mekanlarlocation.id, mekanlarlocation.catIds, mekanlarlocation.townId, mekanlarlocation.environment.ToString());
+            GetLocationOtherInfo(mekanlarlocation.id, mekanlarlocation.catIds, mekanlarlocation.townId, mekanlarlocation.coordinateX,mekanlarlocation.coordinateY);
         }
 
 
@@ -78,7 +79,7 @@ namespace Buptis_iOS.Lokasyonlar
         }
 
 
-        void GetLocationOtherInfo(int locid, List<string> catid, string townid,string uzaklik)
+        void GetLocationOtherInfo(int locid, List<string> catid, string townid, double FromLat, double FromLon)
         {
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate
             {
@@ -93,8 +94,21 @@ namespace Buptis_iOS.Lokasyonlar
                         JObject obj = JObject.Parse(Donus1.ToString());
                         string TownName = (string)obj["townName"];
                         InvokeOnMainThread(() => {
-                            var km = uzaklik;
-                            MekanYer.Text = TownName +" / " + km + " km";
+                            if (UserLastloc != null)
+                            {
+                                var km = GetUserCityCountryAndDistance(UserLastloc.Coordinate.Latitude, UserLastloc.Coordinate.Longitude, FromLat, FromLon);
+                                if (km > 0)
+                                {
+                                    var yuvarla = Math.Round(km, 1);
+                                    MekanYer.Text = TownName + " / " + yuvarla.ToString() + " km";
+                                }
+                                
+                            }
+                            else
+                            {
+                                MekanYer.Text = TownName;
+                            }
+                           
                         });
                     }
                     else
@@ -168,6 +182,35 @@ namespace Buptis_iOS.Lokasyonlar
         }
         #endregion
 
+
+
+        public double GetUserCityCountryAndDistance(double ToLat,double ToLon, double FromLat, double FromLon)
+        {
+            try
+            {
+                float pk = (float)(180f / Math.PI);
+
+                float a1 = (float)FromLat / pk;
+                float a2 = (float)FromLon / pk;
+                float b1 = (float)ToLat / pk;
+                float b2 = (float)ToLon / pk;
+
+                double t1 = Math.Cos(a1) * Math.Cos(a2) * Math.Cos(b1) * Math.Cos(b2);
+                double t2 = Math.Cos(a1) * Math.Sin(a2) * Math.Cos(b1) * Math.Sin(b2);
+                double t3 = Math.Sin(a1) * Math.Sin(b1);
+                double tt = Math.Acos(t1 + t2 + t3);
+
+                var aaaaa = ((6366000 * tt) / 1000);
+                return aaaaa;
+            }
+            catch (Exception ex)
+            {
+                var aa = ex.Message;
+                return 0;
+            }
+        }
+
+
         public class CatDTO
         {
             public string createdDate { get; set; }
@@ -176,5 +219,7 @@ namespace Buptis_iOS.Lokasyonlar
             public string name { get; set; }
             public string type { get; set; }
         }
+
+        public static CLLocation UserLastloc { get; set; }
     }
 }

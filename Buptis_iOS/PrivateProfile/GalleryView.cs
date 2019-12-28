@@ -44,10 +44,23 @@ namespace Buptis_iOS
         {
             base.ViewDidLoad();
             ImageBackButton.TouchUpInside += ImageBackButton_TouchUpInside;
+            ImageOkButton.TouchUpInside += ImageOkButton_TouchUpInside;
             GalleryViewUI();
             GetPhotos();
             CreateScrollViews();
         }
+
+        private void ImageOkButton_TouchUpInside(object sender, EventArgs e)
+        {
+            this.View.BackgroundColor = UIColor.Clear;
+            Task.Run(delegate () {
+                InvokeOnMainThread(delegate ()
+                {
+                    this.DismissViewController(true, null);
+                });
+            });
+        }
+
         private void ImageBackButton_TouchUpInside(object sender, EventArgs e)
         {
             this.View.BackgroundColor = UIColor.Clear;

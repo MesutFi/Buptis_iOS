@@ -33,12 +33,12 @@ namespace Buptis_iOS.PrivateProfile
                 var MainStoryBoard = UIStoryboard.FromName("PrivateProfileBaseVC", NSBundle.MainBundle);
                 var PrivateProfileVC1 = MainStoryBoard.InstantiateViewController("PrivateProfileVC") as PrivateProfileVC;
                 var viewController = PrivateProfileVC1;
-                viewController.View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width-10 , 1000);
+                viewController.View.Frame = new CoreGraphics.CGRect(0, 0, UIScreen.MainScreen.Bounds.Width-10 , 930);
                 viewController.WillMoveToParentViewController(this);
                 ScrollView.AddSubview(viewController.View);
                 this.AddChildViewController(viewController);
                 viewController.DidMoveToParentViewController(this);
-                ScrollView.ContentSize = new CoreGraphics.CGSize(UIScreen.MainScreen.Bounds.Width-10, 1000);
+                ScrollView.ContentSize = new CoreGraphics.CGSize(UIScreen.MainScreen.Bounds.Width-10, 930);
                 ScrollTopp();
                 Actimi = true;
             }

@@ -70,6 +70,8 @@ namespace Buptis_iOS
                 WebService webService = new WebService();
                 var x = locationManager.Location.Coordinate.Latitude.ToString().Replace(",", ".");
                 var y = locationManager.Location.Coordinate.Longitude.ToString().Replace(",", ".");
+                InvokeOnMainThread(delegate { LokasyonlarTableCell.UserLastloc = locationManager.Location; });
+                
                 var Donus = webService.OkuGetir("locations/near?x=" + x + "&y=" + y);
                 if (Donus != null)
                 {
