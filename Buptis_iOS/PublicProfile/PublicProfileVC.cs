@@ -174,7 +174,38 @@ namespace Buptis_iOS
         }
         private void MesajAtButton_TouchUpInside(object sender, EventArgs e)
         {
-            MevcutMekandaChechInYapmismi();
+            if (!KisiBilgileriTammi())
+            {
+                UIAlertView alert = new UIAlertView();
+                alert.Title = "Buptis";
+                alert.AddButton("Evet");
+                alert.AddButton("Hayır");
+                alert.Message = "Yaş ve Cinsiyet Bilgilerinizi Tamamlamadan Mesaj Gönderemezsiniz. Bilgilerini güncellemek ister misiniz?";
+                alert.AlertViewStyle = UIAlertViewStyle.Default;
+                alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                {
+                    if (ev.ButtonIndex == 0)
+                    {
+                        alert.Dispose();
+
+                        var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
+                        TemelBilgilerVC controller = AyarlarBaseVC1.InstantiateViewController("TemelBilgilerVC") as TemelBilgilerVC;
+                        controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                        this.PresentViewController(controller, true, null);
+                    }
+                    else
+                    {
+                        alert.Dispose();
+                    }
+                };
+                alert.Show();
+
+            }
+            else
+            {
+                MevcutMekandaChechInYapmismi();
+            }
+            
         }
         void MevcutMekandaChechInYapmismi()
         {
@@ -226,6 +257,20 @@ namespace Buptis_iOS
                 }
             })).Start();
         }
+
+        bool KisiBilgileriTammi()
+        {
+            var Me = DataBase.MEMBER_DATA_GETIR()[0];
+            if (string.IsNullOrEmpty(Me.gender) || string.IsNullOrEmpty(Me.birthDayDate.ToString()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         void MesajlariVeyaPaketiAc(bool Durum)
         {
             if (Durum)
@@ -526,7 +571,7 @@ namespace Buptis_iOS
         string GetUserAbout()
         {
             WebService webService = new WebService();
-            var Donus = webService.OkuGetir("answers/user/all");
+            var Donus = webService.OkuGetir("answers/user/" + SecilenKisi.SecilenKisiDTO.login);
             if (Donus != null)
             {
                 string CevaplarBirlesmis = "";

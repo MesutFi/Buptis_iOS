@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
+using Buptis_iOS.Database;
 using Buptis_iOS.GenericClass;
 using Buptis_iOS.LokasyondakiKisiler;
 using Buptis_iOS.Lokasyonlar;
@@ -23,7 +24,7 @@ namespace Buptis_iOS.LokasyonDetay
     {
         #region Tanimlamalar 
         MapView mapView;
-        public Mekanlar_Location  GelenMekan;
+        public Mekanlar_Location GelenMekan;
         #endregion
         public LokasyonDetayBaseVC(IntPtr handle) : base(handle)
         {
@@ -39,9 +40,9 @@ namespace Buptis_iOS.LokasyonDetay
                 var url = new NSUrl("tel:" + GelenMekan.telephone);
                 UIApplication.SharedApplication.OpenUrl(url);
             };
-         
-            RatingButton.SetTitle(Math.Round(Convert.ToDouble(GelenMekan.rating), 1).ToString(),UIControlState.Normal);
-            mekanTitle.Text= GelenMekan.name;
+
+            RatingButton.SetTitle(Math.Round(Convert.ToDouble(GelenMekan.rating), 1).ToString(), UIControlState.Normal);
+            mekanTitle.Text = GelenMekan.name;
             KonumButton.TouchUpInside += KonumButton_TouchUpInside;
             BekletmeButton.TouchUpInside += BekletmeButton_TouchUpInside;
             CheckinButton.TouchUpInside += CheckinButton_TouchUpInside;
@@ -76,6 +77,7 @@ namespace Buptis_iOS.LokasyonDetay
             new GetUnReadMessage().GetUnReadMessageCount(MessageCount, this);
             if (!Actinmi)
             {
+                UzaklikHesapla();
                 MessageCount.Layer.CornerRadius = MessageCount.Frame.Height / 2;
                 MessageCount.ClipsToBounds = true;
                 MessageCount.Hidden = true;
@@ -85,6 +87,18 @@ namespace Buptis_iOS.LokasyonDetay
                 MessageButton.ContentEdgeInsets = new UIEdgeInsets(5, 5, 5, 5);
                 Actinmi = true;
             }
+        }
+        void UzaklikHesapla()
+        {
+            var km = new DistanceCalculator().GetUserCityCountryAndDistance(LokasyonlarTableCell.UserLastloc.Coordinate.Latitude,
+                                                                                             LokasyonlarTableCell.UserLastloc.Coordinate.Longitude,
+                                                                                             GelenMekan.coordinateX,
+                                                                                             GelenMekan.coordinateY);
+            if (km > 0.5)
+            {
+                CheckinButton.Hidden = true;
+            }
+
         }
         public override void ViewDidAppear(bool animated)
         {
@@ -113,12 +127,73 @@ namespace Buptis_iOS.LokasyonDetay
 
         private void CheckinButton_TouchUpInside(object sender, EventArgs e)
         {
-            CheckInYap("ONLINE", "Check-in Yapılıyor...", "Check-in Yapıldı...");
+            if (!KisiBilgileriTammi())
+            {
+                UIAlertView alert = new UIAlertView();
+                alert.Title = "Buptis";
+                alert.AddButton("Evet");
+                alert.AddButton("Hayır");
+                alert.Message = "Yaş ve Cinsiyet Bilgilerinizi Tamamlamadan Check-in Bekletme Yapamazsınız. Bilgilerini güncellemek ister misiniz?";
+                alert.AlertViewStyle = UIAlertViewStyle.Default;
+                alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                {
+                    if (ev.ButtonIndex == 0)
+                    {
+                        alert.Dispose();
+
+                        var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
+                        TemelBilgilerVC controller = AyarlarBaseVC1.InstantiateViewController("TemelBilgilerVC") as TemelBilgilerVC;
+                        controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                        this.PresentViewController(controller, true, null);
+                    }
+                    else
+                    {
+                        alert.Dispose();
+                    }
+                };
+                alert.Show();
+
+            }
+            else
+            {
+                CheckInYap("ONLINE", "Check-in Yapılıyor...", "Check-in Yapıldı...");
+            }
         }
 
         private void BekletmeButton_TouchUpInside(object sender, EventArgs e)
         {
-            CheckInYap("WAITING", "Check-in Bekletme Yapılıyor...", "Check-in Bekletme Yapıldı...");
+            if (!KisiBilgileriTammi())
+            {
+                UIAlertView alert = new UIAlertView();
+                alert.Title = "Buptis";
+                alert.AddButton("Evet");
+                alert.AddButton("Hayır");
+                alert.Message = "Yaş ve Cinsiyet Bilgilerinizi Tamamlamadan Check-in Bekletme Yapamazsınız. Bilgilerini güncellemek ister misiniz?";
+                alert.AlertViewStyle = UIAlertViewStyle.Default;
+                alert.Clicked += (object s, UIButtonEventArgs ev) =>
+                {
+                    if (ev.ButtonIndex == 0)
+                    {
+                        alert.Dispose();
+
+                        var AyarlarBaseVC1 = UIStoryboard.FromName("AyarlarBaseVC", NSBundle.MainBundle);
+                        TemelBilgilerVC controller = AyarlarBaseVC1.InstantiateViewController("TemelBilgilerVC") as TemelBilgilerVC;
+                        controller.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                        this.PresentViewController(controller, true, null);
+                    }
+                    else
+                    {
+                        alert.Dispose();
+                    }
+                };
+                alert.Show();
+
+            }
+            else
+            {
+                CheckInYap("WAITING", "Check-in Bekletme Yapılıyor...", "Check-in Bekletme Yapıldı...");
+            }
+            
         }
 
         private void KonumButton_TouchUpInside(object sender, EventArgs e)
@@ -133,7 +208,18 @@ namespace Buptis_iOS.LokasyonDetay
                 new UIAlertView("Hata", "Harita Bu Cihazda Desteklenmiyor", null, "Tamam").Show();
             }
         }
-
+        bool KisiBilgileriTammi()
+        {
+            var Me = DataBase.MEMBER_DATA_GETIR()[0];
+            if (string.IsNullOrEmpty(Me.gender) || string.IsNullOrEmpty(Me.birthDayDate.ToString()))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         #endregion
 
         #region Check - in 
@@ -255,5 +341,6 @@ namespace Buptis_iOS.LokasyonDetay
     public static class MesajAtabilmekIcinSecilenSonLokasyon
     {
         public static Mekanlar_Location TiklananMekan { get; set; }
+        public static double TiklananMekanUzakligi { get; set; }
     }
 }

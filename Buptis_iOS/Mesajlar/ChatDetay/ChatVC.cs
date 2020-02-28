@@ -341,14 +341,14 @@ namespace Buptis_iOS
                     else
                     {
                         InvokeOnMainThread(delegate () {
-                            CustomAlert.GetCustomAlert(this, "Mesaj Gönderilemedi!");
+                            CustomAlert.GetCustomAlert(this, "Lütfen internet bağlantınızı kontrol edin.");
                         });
                     }
                 }
                 else
                 {
                     InvokeOnMainThread(delegate () {
-                        CustomAlert.GetCustomAlert(this, "Mesaj Gönderilemedi!");
+                        CustomAlert.GetCustomAlert(this, "Lütfen internet bağlantınızı kontrol edin.");
                     });
                 }
             })).Start();

@@ -76,7 +76,7 @@ namespace Buptis_iOS
             UIAlertView alert = new UIAlertView();
             alert.Title = "Buptis";
             alert.AddButton("Evet");
-            alert.AddButton("Hayýr");
+            alert.AddButton("Hayır");
             alert.Message = "Kullanıcının engelini kaldırmak istediğinize emin misiniz ?";
             alert.AlertViewStyle = UIAlertViewStyle.Default;
             alert.Clicked += (object s, UIButtonEventArgs ev) =>

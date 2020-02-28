@@ -26,7 +26,7 @@ namespace Buptis_iOS
         private void GizlilikButton_TouchUpInside(object sender, EventArgs e)
         {
 
-            string UrlString = "https://www.buptis.com/gizlilik.html";
+            string UrlString = "http://buptis.com/assets/doc/buptis_gizlilik-politikasi.pdf";
             this.InvokeOnMainThread(() =>
             {
                 var uri = NSUrl.FromString(UrlString);
@@ -36,7 +36,7 @@ namespace Buptis_iOS
 
         private void SartlarButton_TouchUpInside(object sender, EventArgs e)
         {
-            string UrlString = "https://www.buptis.com/kullanim-kosullari.html";
+            string UrlString = "http://buptis.com/assets/doc/buptis_kullanim-kosullari.pdf";
             this.InvokeOnMainThread(() =>
             {
                 var uri = NSUrl.FromString(UrlString);

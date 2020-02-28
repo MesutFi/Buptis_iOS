@@ -398,6 +398,7 @@ namespace Buptis_iOS.GirisKayit
             ButtonBg(GirisButton);
             ButtonBg(GoogleButton);
             ButtonBg(FacebookButton);
+            ButtonBg(UyeOlButton);
         }
 
         void ButtonBg(UIButton GelenButton)

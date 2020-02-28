@@ -106,7 +106,7 @@ namespace Buptis_iOS
             else
             {
                 CustomLoading.Hide();
-                CustomAlert.GetCustomAlert(GelenBase1, "Konumunuza Ulaşılamıyor..");
+                CustomAlert.GetCustomAlert(GelenBase1, "Çevrenizde hiç lokasyon bulunamadı...");
                 return;
 
                 var durum = CheckLocationPermission();

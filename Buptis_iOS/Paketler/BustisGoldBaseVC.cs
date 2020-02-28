@@ -53,15 +53,15 @@ namespace Buptis_iOS
             {
                 case 1:
                     countt = 1;
-                    pakett = "com.buptis.ios.birgold";
+                    pakett = "com.buptis.ios.goldbir";
                     break;
                 case 2:
                     countt = 6;
-                    pakett = "com.buptis.ios.altigold";
+                    pakett = "com.buptis.ios.goldalti";
                     break;
                 case 3:
                     countt = 12;
-                    pakett = "com.buptis.ios.onikigold";
+                    pakett = "com.buptis.ios.goldoniki";
                     break;
                 default:
                     break;
@@ -99,7 +99,7 @@ namespace Buptis_iOS
             var billing = CrossInAppBilling.Current;
             try
             {
-                var connected = await billing.ConnectAsync(ItemType.InAppPurchase);
+                var connected = await billing.ConnectAsync(ItemType.Subscription);
                 if (!connected)
                 {
                     //we are offline or can't connect, don't try to purchase
@@ -107,7 +107,7 @@ namespace Buptis_iOS
                 }
 
                 //check purchases
-                var purchase = await billing.PurchaseAsync(productId, ItemType.InAppPurchase, payload);
+                var purchase = await billing.PurchaseAsync(productId, ItemType.Subscription, payload);
 
                 //possibility that a null came through.
                 if (purchase == null)

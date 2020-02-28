@@ -26,6 +26,7 @@ namespace Buptis_iOS.Lokasyonlar
         public string telephone { get; set; }
         public string townId { get; set; }
         public string townName { get; set; }
+        
     }
    
 }

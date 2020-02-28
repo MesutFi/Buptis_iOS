@@ -557,6 +557,7 @@
     <Compile Include="TestVcBase.designer.cs">
       <DependentUpon>TestVcBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenericClass\DistanceCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Images\splashbg.jpg" />

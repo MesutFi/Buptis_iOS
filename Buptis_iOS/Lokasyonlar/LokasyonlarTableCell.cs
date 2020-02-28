@@ -97,6 +97,7 @@ namespace Buptis_iOS.Lokasyonlar
                             if (UserLastloc != null)
                             {
                                 var km = GetUserCityCountryAndDistance(UserLastloc.Coordinate.Latitude, UserLastloc.Coordinate.Longitude, FromLat, FromLon);
+
                                 if (km > 0)
                                 {
                                     var yuvarla = Math.Round(km, 1);
@@ -200,7 +201,7 @@ namespace Buptis_iOS.Lokasyonlar
                 double t3 = Math.Sin(a1) * Math.Sin(b1);
                 double tt = Math.Acos(t1 + t2 + t3);
 
-                var aaaaa = ((6366000 * tt) / 1000);
+                var aaaaa = Math.Round(((6366000 * tt) / 1000),1);
                 return aaaaa;
             }
             catch (Exception ex)
